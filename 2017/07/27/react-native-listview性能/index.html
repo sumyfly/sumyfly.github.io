@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>react-native-preformace | QSL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="React-Native ListView性能优化方案1.使用react-native-sglistview、react-native-gifted-listview2.设置removeClippedSubviews 为true，子类需要添加样式overflow:’hidden’3.设置拖动速率 decelerationRate4.dataSource里的数组个数做限制，做分页处理，10~15一页">
+<meta name="keywords" content="react-native,性能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native-preformace">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/react-native-listview性能/index.html">
+<meta property="og:site_name" content="QSL">
+<meta property="og:description" content="React-Native ListView性能优化方案1.使用react-native-sglistview、react-native-gifted-listview2.设置removeClippedSubviews 为true，子类需要添加样式overflow:’hidden’3.设置拖动速率 decelerationRate4.dataSource里的数组个数做限制，做分页处理，10~15一页">
+<meta property="og:updated_time" content="2018-08-16T06:46:14.815Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native-preformace">
+<meta name="twitter:description" content="React-Native ListView性能优化方案1.使用react-native-sglistview、react-native-gifted-listview2.设置removeClippedSubviews 为true，子类需要添加样式overflow:’hidden’3.设置拖动速率 decelerationRate4.dataSource里的数组个数做限制，做分页处理，10~15一页">
+  
+    <link rel="alternate" href="/atom.xml" title="QSL" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">QSL</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-react-native-listview性能" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/27/react-native-listview性能/" class="article-date">
+  <time datetime="2017-07-27T09:14:00.000Z" itemprop="datePublished">2017-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React-Native/">React-Native</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      react-native-preformace
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="React-Native-ListView性能"><a href="#React-Native-ListView性能" class="headerlink" title="React-Native ListView性能"></a>React-Native ListView性能</h1><h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><p>1.使用react-native-sglistview、react-native-gifted-listview<br>2.设置removeClippedSubviews 为true，子类需要添加样式overflow:’hidden’<br>3.设置拖动速率 decelerationRate<br>4.dataSource里的数组个数做限制，做分页处理，10~15一页<br>5.在sholudComponentUpdate处理，确保不要重复刷新<br>6.上拉下拉刷新操作，加载过程中隐藏listview，显示加载界面</p>
+<a id="more"></a>
+<h3 id="优化建议"><a href="#优化建议" class="headerlink" title="优化建议"></a>优化建议</h3><ol>
+<li>异步逐层渲染。</li>
+</ol>
+<p>React Native 虽然一直标榜媲美Native的体验，但实际使用下来，其渲染性还是非常低效，基于ScrollView和ListView两大容器，在渲染上，相当于web端的table布局，需要等整个大table渲染完成才显示页面，也就是说，当容器内有大量的子元素，其白屏时间会非常长。</p>
+<p>如何让React Native做到像web端边渲染边加载？可以采用异步渲染的方式，使用requestAnimationFrame 或 setTimeout 定时将单个组件push进ScrollView容器。</p>
+<p>基于这个原理，写了个逐层渲染的组件： react-progressive[<a href="https://github.com/hugohua/react-progressive" target="_blank" rel="external">https://github.com/hugohua/react-progressive</a>]</p>
+<ol>
+<li>实现shouldComponentUpdate方法</li>
+</ol>
+<p>如上第一点，逐层渲染提升打开时间，但是也会导致component重复渲染，也就是执行了大量无用的diff算法。虽然React里引以为傲的diff算法非常高效，但是执行数量达到一定程度后，也会带来非常大的影响。那么可使用 shouldComponentUpdate 来控制component的渲染次数。</p>
+<p>如何做？</p>
+<p>如果确定该组件渲染完后无需再次更新，即这个组件是一个静态组件，那么可以直接return false。<br>shouldComponentUpdate(){<br>    return false<br>如果组件比较复杂，自己对RN的更新机制不太熟，可以直接Minxi一下React提供的 PureRenderMixin 组件<br>mixins: [React.addons.PureRenderMixin]<br>手动实现或使用第三方组件库，比如 Immutable-js<br>说白了，就是要确定组件内的不可变数据，让其不再执行diff及render。</p>
+<ol>
+<li>使用setNativeProps方法</li>
+</ol>
+<p>setNativeProps 方法可以理解为web的直接修改dom。使用该方法修改 View 、 Text 等 RN自带的组件 ，则不会触发组件的 componentWillReceiveProps 、 shouldComponentUpdate 、 componentWillUpdate 等组件生命周期中的方法。</p>
+<p>建议频繁更新的操作，如slider、tabs切换等拖曳操作时，使用 setNativeProps 来更新属性，会获得意想不到的性能体验。</p>
+<p>代码片段：</p>
+<p>me.refs.tabView.setNativeProps({<br>                style : {<br>                    height : 0,<br>                    opacity : 0<br>                }<br>            });<br>性能分析工具： React.addons.Perf</p>
+<ol>
+<li>不要使用阴影效果</li>
+</ol>
+<p>React Native 里面的 shadow 相关的样式，是非常耗性能的css属性。这在web上，以前android 2.0年代，也是一样耗性能的css属性之一。如果需要使用阴影效果，建议使用图片来代替反而性能更好一些。</p>
+<ol>
+<li>最小化DOM</li>
+</ol>
+<p>React Native里虚拟dom结构越复杂，则越低效。感觉RN的渲染性能，和以前android2.x时代没多大区别，如果层级结构大于5级，则要考虑下优化了。这没啥技巧，纯靠经验及硬实力。</p>
+<p>6.组件粒度化</p>
+<p>如何更好的划分组件粒度，这需要合理的对组件进行更细粒度的划分，区分出静态组件及动态组件。</p>
+<p>7.bind和()=&gt;{}<br>最好不要使用lambda函数，因为它每次都是产生一个新的函数，可能引起控件不必要的渲染。所以用一个函数wrap那些按需求变化的功能函数，保持这个wrapper不变。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(props)&#123;</div><div class="line">    <span class="comment">//...</span></div><div class="line">    <span class="keyword">this</span>.wrapperFunc = <span class="keyword">this</span>.wrapperFunc.bind(<span class="keyword">this</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">wrapperFunc()&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.state.xx = <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">this</span>.fun1()</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">this</span>.fun2(p1,p2)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;Componet fun=&#123;<span class="keyword">this</span>.wrapperFunc&#125;&gt;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/27/react-native-listview性能/" data-id="cjkw98epb001z8ji6o8hj0ju8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-native/">react-native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能/">性能</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/30/go入门/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          go入门
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/26/css/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React-Native</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构/">架构</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache2/">apache2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hoc/">hoc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native/">react-native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native-tools/">react-native tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native-web/">react-native-web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原理/">原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原生模块/">原生模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/签名/">签名</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/JNI/" style="font-size: 10px;">JNI</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/apache2/" style="font-size: 10px;">apache2</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/debug/" style="font-size: 15px;">debug</a> <a href="/tags/emacs/" style="font-size: 10px;">emacs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go/" style="font-size: 10px;">go</a> <a href="/tags/hoc/" style="font-size: 10px;">hoc</a> <a href="/tags/ios/" style="font-size: 15px;">ios</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/mac/" style="font-size: 20px;">mac</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/react-native/" style="font-size: 20px;">react-native</a> <a href="/tags/react-native-tools/" style="font-size: 10px;">react-native tools</a> <a href="/tags/react-native-web/" style="font-size: 10px;">react-native-web</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 20px;">web</a> <a href="/tags/原理/" style="font-size: 10px;">原理</a> <a href="/tags/原生模块/" style="font-size: 10px;">原生模块</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/05/Android使用JNI/">Android使用JNI</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/flutter/">flutter</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/30/架构/">架构</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/30/beyond-compare/">beyond-compare</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/25/Charles使用/">Charles使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 qsl<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

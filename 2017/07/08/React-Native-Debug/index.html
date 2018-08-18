@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React-Native-Debug | QSL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
+<meta name="keywords" content="debug,react-native">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-Native-Debug">
+<meta property="og:url" content="http://yoursite.com/2017/07/08/React-Native-Debug/index.html">
+<meta property="og:site_name" content="QSL">
+<meta property="og:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
+<meta property="og:updated_time" content="2018-08-18T16:30:33.988Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React-Native-Debug">
+<meta name="twitter:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
+  
+    <link rel="alternate" href="/atom.xml" title="QSL" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">QSL</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-React-Native-Debug" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/08/React-Native-Debug/" class="article-date">
+  <time datetime="2017-07-08T14:28:36.000Z" itemprop="datePublished">2017-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React-Native/">React-Native</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React-Native-Debug
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-Image-overflow"><a href="#1-Image-overflow" class="headerlink" title="1. Image overflow"></a>1. Image overflow</h3><p>Image是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。</p>
+<a id="more"></a>
+<h3 id="2-flex-layout"><a href="#2-flex-layout" class="headerlink" title="2. flex layout"></a>2. flex layout</h3><h4 id="2-1-yoga"><a href="#2-1-yoga" class="headerlink" title="2.1 yoga"></a>2.1 yoga</h4><p>RN使用的layout引擎是yoga，<a href="https://github.com/facebook/yoga，" target="_blank" rel="external">https://github.com/facebook/yoga，</a> 跨平台的，实现flexbox。<br>RN默认是display:flex，block和inner-block都是有效的，in-line无效。</p>
+<h4 id="2-2-BFC"><a href="#2-2-BFC" class="headerlink" title="2.2 BFC"></a>2.2 BFC</h4><p>BFC blcok Formatting Context，这个文档流是相互隔离的盒子，所以margin不会合并而是并加，<br>这个可以都能通过overflow:hidden来设置，其实设置方式有很多，满足以下条件的任何一条都是BFC</p>
+<ul>
+<li>float不为none</li>
+<li>position 的值不为 static 或者 relative</li>
+<li>display 的值为 table-cell , table-caption , inline-block , flex , 或者 inline-flex 中的其中一个</li>
+<li>overflow 的值不为 visible</li>
+</ul>
+<p>RN默认IOS overflow:visiable, Android是overflow:hidden，但是它们都是display:flex, 所以都是用的BFC，相互隔离的盒子。<br><a href="https://segmentfault.com/a/1190000009139500" target="_blank" rel="external">https://segmentfault.com/a/1190000009139500</a></p>
+<h4 id="2-3-RN-CSS继承"><a href="#2-3-RN-CSS继承" class="headerlink" title="2.3 RN CSS继承"></a>2.3 RN CSS继承</h4><p>注意：CSS都是强制继承的，但是RN不是。React Native still has the concept of style inheritance, but limited to text subtrees.RN的继承只有Text。</p>
+<h4 id="2-4-RN-flex"><a href="#2-4-RN-flex" class="headerlink" title="2.4 RN flex"></a>2.4 RN flex</h4><p>flex在网页CSS中是flex-grow,flex-shrink,flex-basis的简写，默认值是0 1 auto，后两个属性可选；RN中flex是布局用</p>
+<p>宽高度应该是确定的，或者是可以推断的，如子节点宽高度，父容器宽高度。如果父节点、子节点皆不能推断，那么显示就会不确定，有问题。</p>
+<h5 id="2-4-1父节点-gt-子节点"><a href="#2-4-1父节点-gt-子节点" class="headerlink" title="2.4.1父节点-&gt;子节点"></a>2.4.1父节点-&gt;子节点</h5><p>1)子节点如果没有设置(alignItems,justifyContent），那么宽度为其父节点宽度,高度由内容决定。<br>2)子节点如果设置了(alignItems,justifyContent），那么宽高度为其内容宽高度。<br>3)子节点设置了宽高度，那么以此宽高度为准。</p>
+<h5 id="2-4-2-父节点flex-1"><a href="#2-4-2-父节点flex-1" class="headerlink" title="2.4.2 父节点flex:1"></a>2.4.2 父节点flex:1</h5><p>1)如果父节点flex:1不能推断大小，那么子节点flex:1也没有效果</p>
+<h5 id="2-4-3-父节点absolute-子节点flex-1"><a href="#2-4-3-父节点absolute-子节点flex-1" class="headerlink" title="2.4.3 父节点absolute,子节点flex:1"></a>2.4.3 父节点absolute,子节点flex:1</h5><p>如果父节点是position:absolute,那么子元素忽视flex:1</p>
+<h4 id="2-5-style覆盖"><a href="#2-5-style覆盖" class="headerlink" title="2.5 style覆盖"></a>2.5 style覆盖</h4><p>flex：1会覆盖width,height设置。</p>
+<p>marginTop，mrginBootom 会覆盖marginVertical；marginLeft, marginRight会覆盖marginHorizontal;<br>paddingTop, paddingBottom会覆盖paddingVertical;paddingLeft, paddingRight会覆盖paddingHorizontal。</p>
+<h3 id="3-postion-absolute"><a href="#3-postion-absolute" class="headerlink" title="3. postion:absolute"></a>3. postion:absolute</h3><p>position:absolute不在flow中，忽视flex:1布局。其位置,大小由left,right,top,bottom设置，大小也可以由内容大小确定。</p>
+<h3 id="4-Text"><a href="#4-Text" class="headerlink" title="4. Text"></a>4. Text</h3><p>如果元素为Text，其内容过长，并不会换行，而是一直显示下去。如果设置了宽度，或者推断出宽度，那么就会换行。</p>
+<h3 id="5-borderRadius"><a href="#5-borderRadius" class="headerlink" title="5. borderRadius"></a>5. borderRadius</h3><p>有时候borderRadius设置了，但是只有下半部份有效果，那么设置一下overflow:hidden</p>
+<h3 id="6-setState"><a href="#6-setState" class="headerlink" title="6. setState"></a>6. setState</h3><p>setState是异步的，在contructor里面初始化this.state={…},然后紧接着设置setState,那么可能初始化值覆盖了后面的setState，所以setState这里并不可靠。放到didMount里面去设置。</p>
+<h3 id="7-ListView-中的onEndReached"><a href="#7-ListView-中的onEndReached" class="headerlink" title="7. ListView 中的onEndReached"></a>7. ListView 中的onEndReached</h3><p>不能设置contentContainerStyle,不然onEndReached不能再安卓上正确触发(初始化后的第一个onEndReached不能fired)。</p>
+<h3 id="8-子组件和父组件通讯问题"><a href="#8-子组件和父组件通讯问题" class="headerlink" title="8.子组件和父组件通讯问题"></a>8.子组件和父组件通讯问题</h3><p>如果使用ref,那么还可以用state来保证同步状态。如果用this.xx的私有变量，不能保证同步状态。因为显示的时候，可能在diff后不去更换控件，而私有变量就算变化了，也不能取到。<br>继续讨论： 我觉得使用ref还是可能会出问题，我应该传props去子控件，那样会保证状态是父组件可以预料的。</p>
+<h3 id="9-ref调用共有方法"><a href="#9-ref调用共有方法" class="headerlink" title="9.ref调用共有方法"></a>9.ref调用共有方法</h3><p>如果使用ref调用子控件的共有方法，那么可以不用bind(this)到子控件。在render函数中调用也不需要bind(this)，但是回调函数需要bind(this)。</p>
+<h3 id="10-继承和组合"><a href="#10-继承和组合" class="headerlink" title="10.继承和组合"></a>10.继承和组合</h3><p>实际项目中，使用了普通类作为Model，里面有函数来渲染一些组件，它继承自普通父类，而不是Component。像这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//应该使用Componet， extends Conponet</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Model</span></span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubModel</span> <span class="keyword">extends</span> <span class="title">Model</span></span>&#123;</div><div class="line">  validated()&#123;</div><div class="line">    <span class="comment">//.....</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span> <span class="comment">// or false</span></div><div class="line">  &#125;</div><div class="line">  renderComponent()&#123;</div><div class="line">    reutnr (&lt;ValidatedComponent&gt;</div><div class="line">    //....</div><div class="line">    &lt;/ValidatedCoponent&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span> <span class="keyword">extends</span> <span class="title">Component</span>&lt;<span class="title">Props</span>,<span class="title">State</span>&gt;</span>&#123;</div><div class="line">  render()&#123;</div><div class="line">    Model model = <span class="keyword">new</span> SubModel()</div><div class="line">    <span class="keyword">return</span>(</div><div class="line">      &lt;View&gt;</div><div class="line">      &#123;model.renderComponent()&#125;</div><div class="line">      &lt;/View&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样导致的结果是，在容器redner中初始化后，其组件的state与从外部获取不匹配，是因为diff时发现组件props没变，所以没有用刚刚初始化状态的组件替代。所以要加上props传到组件中，并且加上key，这样还不如用Componet的组件保存数据和状态。（如果是Componet那么还有另外一个方法是用componentWillReceiveProps中去判断某个props改变了，然后setState.）<br>教训：<br>1.如果没有渲染，使用普通类型，如果涉及到渲染UI，使用Compoent<br>2.优先使用props从父组件往下传递，包括回调函数，而不是this.ref.xx直接调用公开方法<br>共享功能时组合和继承选择？<br>1.is A 继承， has A 组合。<br>2.主动调用方法用继承（依赖构造函数传属性），回调方法用组合（用props传入更加方便）。</p>
+<h3 id="11-requestAnimationFrame"><a href="#11-requestAnimationFrame" class="headerlink" title="11.requestAnimationFrame"></a>11.requestAnimationFrame</h3><p>使用requestAnimationFrame要注意，在componentWillReceiveProps中,不要使用requestAnimationFrame中setState，因为此时可能导致这个setState在render之后，导致多了一次render，所以在componentWillReceiveProps中，不使用requestAnimationFrame中setState。也就是说不用requresAnimationFrame, setState会延迟渲染，等待此state更新成功。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">componentWillReceiveProps(nextProps) &#123;</div><div class="line">   <span class="keyword">if</span> (!nextProps.refreshing &amp;&amp; <span class="keyword">this</span>.props.rowSource != nextProps.rowSource) &#123;</div><div class="line">       <span class="comment">// requestAnimationFrame(() =&gt; &#123; //不要加上这个，否则导致额外的render</span></div><div class="line">         <span class="keyword">this</span>.setState(&#123; <span class="attr">showActivityIndicator</span>: <span class="literal">true</span> &#125;)</div><div class="line">       <span class="comment">// &#125;)</span></div><div class="line">   &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="12-gitignore"><a href="#12-gitignore" class="headerlink" title="12. .gitignore"></a>12. .gitignore</h3><p>.gitignore 没有起效，是因为我使用了 import ‘../../smile-shared/xx’ 应该是使用 ‘smile-shared/xxx’,这个是引用的问题，tsc运行时，output结果错误。</p>
+<h3 id="13-import-require外部文件"><a href="#13-import-require外部文件" class="headerlink" title="13. import require外部文件"></a>13. import require外部文件</h3><p>web在src文件夹里面的文件，不可以import那些在src外的其它文件，但是可以用require。比如在src文件夹外面的libs文件夹。</p>
+<h3 id="14-Text-布局"><a href="#14-Text-布局" class="headerlink" title="14. Text 布局"></a>14. Text 布局</h3><h3 id="14-1-Text-宽度"><a href="#14-1-Text-宽度" class="headerlink" title="14.1 Text 宽度"></a>14.1 Text 宽度</h3><p>Text如果不设置宽度，默认是一直延伸的，不会换行。默认占满容器宽度。可以设置固定宽度，或flex:1，或给它容器设置可计算宽度。</p>
+<h4 id="14-2-Text中嵌套View-要设置width-height"><a href="#14-2-Text中嵌套View-要设置width-height" class="headerlink" title="14.2 Text中嵌套View,要设置width,height"></a>14.2 Text中嵌套View,要设置width,height</h4><p>在Text中的嵌套View,Image都要设置width,height。可能是因为Text的样式会继承。</p>
+<h4 id="14-3-Text在View中布局"><a href="#14-3-Text在View中布局" class="headerlink" title="14.3 Text在View中布局"></a>14.3 Text在View中布局</h4><p>Text如果不设置宽度，会导致在flexDirection:row中，计算错误，会穿透本组件，到上一层容器(换行位置不对)。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123;flexDirection: 'row'&#125;&#125;&gt;</div><div class="line">  &lt;Text style=&#123;&#123;marginRight: 3&#125;&#125;&gt;Title&lt;/Text&gt;</div><div class="line">  &lt;Text &gt;This is a long contetn.&lt;/Text&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
+<h3 id="15-yield"><a href="#15-yield" class="headerlink" title="15. yield"></a>15. yield</h3><p> 调用generator时，没有yield会造成generator没有预期行为，比如直接使用saga effects的call没有阻塞调用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; takeLatest, delay &#125; <span class="keyword">from</span> <span class="string">'redux-saga'</span></div><div class="line"><span class="keyword">import</span> &#123; put, call, fork, take, race, select &#125; <span class="keyword">from</span> <span class="string">'redux-saga/effects'</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">mySaga</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">yield</span> call(delay, <span class="number">1000</span>) <span class="comment">// don't less yield call(delay, 1000)</span></div><div class="line">&#125;</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"></div><div class="line">### 16. RCTNativeAppEventEmitter vs DeviceEventManagerModule.RCTDeviceEventEmitter</div><div class="line">RN中这两个Emitter应该没什么区别，我没有接受到消息，是因为我拼写中大小写有错误，浪费时间在寻找这两个Emitter区别。</div><div class="line">`<span class="string">``</span> java</div><div class="line">  private <span class="keyword">static</span> final <span class="built_in">String</span> RCTInmobiEventName = <span class="string">"Inmobi_Resp"</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="17-moment-format-‘M-D’"><a href="#17-moment-format-‘M-D’" class="headerlink" title="17. moment format ‘M-D’"></a>17. moment format ‘M-D’</h3><p>在排序时，没有考虑跨年的问题，只是按’M-D’排序，应该按’YYYY-M-D’排序。</p>
+<h3 id="18-键盘"><a href="#18-键盘" class="headerlink" title="18. 键盘"></a>18. 键盘</h3><p>RN的键盘输入，比较麻烦，不是很方便。</p>
+<ul>
+<li>android 用padding， ios用position。</li>
+<li>padding是在后面添加一个键盘的高度，position应该是修改了position。所以padding在一个高度固定的View中，而不是ScrollView，就需要考虑控件后面的空白问题。</li>
+<li>安卓计算Modal的flex:1时，扣除了键盘高度，IOS没有扣除键盘高度。</li>
+</ul>
+<blockquote>
+<p>如果焦点变化了，并且当前焦点不可以输入，键盘自动隐藏。就像<code>this._textInput.blur()</code>这样。</p>
+<p>如果使用KeyboardAvoidingView behavior=’padding’,它的容器高度可能会变化，比如Modal，那么在ScrollView中，并且顶部有个flex:1的View，它的高度包含了键盘高度。需要去掉这个高度，使用<code>View</code>包含它，这个其实就是不需要KeyboardAvoidingView了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">renderContent() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;KeyboardAvoidingView behavior=&#123;IsAndroid ? 'padding' : 'position'&#125;&gt;</div><div class="line">        &#123;this.renderFooter()&#125;</div><div class="line">      &lt;/KeyboardAvoidingView&gt;</div><div class="line">    )</div><div class="line">&#125;</div><div class="line">render ()&#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">      &lt;Modal</div><div class="line">        visible=&#123;fullType == currentModal&#125;</div><div class="line">        animationType="fade"</div><div class="line">        transparent=&#123;true&#125;</div><div class="line">        onRequestClose=&#123;() =&gt; this.closeModal()&#125;&gt;</div><div class="line">        &lt;View style=&#123;&#123; flex: 1 &#125;&#125;&gt;</div><div class="line">          &lt;ScrollView</div><div class="line">            style=&#123;&#123; flex: 1 &#125;&#125;</div><div class="line">            contentContainerStyle=&#123;&#123; flex: 1 &#125;&#125;</div><div class="line">            showsVerticalScrollIndicator=&#123;false&#125;</div><div class="line">            automaticallyAdjustContentInsets=&#123;false&#125;</div><div class="line">          &gt;</div><div class="line">            &lt;TouchableOpacity</div><div class="line">              style=&#123;styles.empty&#125;</div><div class="line">              onPress=&#123;() =&gt; this.closeModal()&#125;&gt;</div><div class="line">            &lt;/TouchableOpacity&gt;</div><div class="line">            &#123;</div><div class="line">              IsAndroid ?</div><div class="line">                &lt;View&gt;</div><div class="line">                  &#123;this.renderContent()&#125;</div><div class="line">                &lt;/View&gt; :</div><div class="line">                this.renderContent()</div><div class="line">            &#125;</div><div class="line">          &lt;/ScrollView&gt;</div><div class="line">        &lt;/View&gt;</div><div class="line">      &lt;/Modal&gt;</div><div class="line">  )</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;KeyboardAvoidingView&#125; <span class="keyword">from</span> <span class="string">'react-native'</span></div><div class="line">&lt;KeyboardAvoidingView</div><div class="line">  style=&#123;&#123; <span class="attr">paddingBottom</span>: IsAndroid ? <span class="number">260</span> * heightScale : <span class="number">160</span> * widthScale &#125;&#125;</div><div class="line">  behavior=&#123;IsAndroid ? <span class="string">'padding'</span> : <span class="string">'position'</span>&#125;&gt;</div><div class="line">  &#123;children&#125;</div><div class="line">&lt;<span class="regexp">/KeyboardAvoidingView&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="19-Image-dimension"><a href="#19-Image-dimension" class="headerlink" title="19.Image dimension"></a>19.Image dimension</h3><p>Image source如果是本地，需要设置width,或者height.</p>
+<h3 id="19-1-本地图片"><a href="#19-1-本地图片" class="headerlink" title="19.1 本地图片"></a>19.1 本地图片</h3><h4 id="19-1-1-只设置width，或者只设置height-然后加上resizeMode-’contain’"><a href="#19-1-1-只设置width，或者只设置height-然后加上resizeMode-’contain’" class="headerlink" title="19.1.1 只设置width，或者只设置height,然后加上resizeMode:’contain’"></a>19.1.1 只设置width，或者只设置height,然后加上resizeMode:’contain’</h4><p>之前这么用，大部分没什么问题，但是如果这样用，图片显示没问题，但是图片占用的空间不是显示的大小。比如图片大小是100*50,<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Image style=&#123;&#123;<span class="attr">width</span>:<span class="number">80</span>,<span class="attr">resizeMode</span>:<span class="string">'contain'</span>&#125;&#125; source=&#123;<span class="built_in">require</span>(...)&#125;&gt;</div></pre></td></tr></table></figure></p>
+<p>如上，没有设置height,但是这个Image的实际高度是50,然后垂直居中显示。这样导致图片的相邻元素的位置不对。</p>
+<h4 id="19-2-网络图片"><a href="#19-2-网络图片" class="headerlink" title="19.2 网络图片"></a>19.2 网络图片</h4><h4 id="19-2-1-使用Image-getSize-url-width-height-gt-error-gt"><a href="#19-2-1-使用Image-getSize-url-width-height-gt-error-gt" class="headerlink" title="19.2.1 使用Image.getSize(url, (width,height)=&gt;{}, error=&gt;{})"></a>19.2.1 使用Image.getSize(url, (width,height)=&gt;{}, error=&gt;{})</h4><p>在回调中setState({widht, height})</p>
+<h4 id="19-2-2-使用flex-1-或者-position-’absolute’"><a href="#19-2-2-使用flex-1-或者-position-’absolute’" class="headerlink" title="19.2.2 使用flex:1 或者 position=’absolute’"></a>19.2.2 使用flex:1 或者 position=’absolute’</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注意：容器中不能设置justifyContent和alignItems,不然图片不显示</span></div><div class="line">&lt;Image source=&#123;&#123;<span class="attr">uri</span>: url&#125;&#125; style=&#123;&#123;<span class="attr">flex</span>: <span class="number">1</span>, <span class="attr">width</span>: <span class="literal">null</span>, <span class="attr">height</span>: <span class="literal">null</span>&#125;&#125; resizeMode=<span class="string">'contain'</span>/&gt;</div><div class="line"></div><div class="line"><span class="comment">//使用position='absolute'</span></div><div class="line">&lt;Image source=&#123;&#123;<span class="attr">uri</span>: url&#125;&#125; style=&#123;&#123;<span class="attr">position</span>: <span class="string">'absolute'</span>, <span class="attr">left</span>: <span class="number">0</span>, <span class="attr">top</span>: <span class="number">0</span>, <span class="attr">right</span>: <span class="number">0</span>, <span class="attr">bottom</span>: <span class="number">0</span>&#125;&#125; resizeMode=<span class="string">'contain'</span>/&gt;</div></pre></td></tr></table></figure>
+<p>如果Image的height，width不固定，用Image.getSize回调。如果容器size固定(不一定有width,height，而是可以是flex布局)，用flex:1或posiiton=’absolute’。</p>
+<blockquote>
+<p>注意本地图片如果也这么用，最好在外面加上一个View作为container, 这个container使用absolute或者flex:1。</p>
+</blockquote>
+<h3 id="20-tricky-of-ListView"><a href="#20-tricky-of-ListView" class="headerlink" title="20. tricky of ListView"></a>20. tricky of ListView</h3><p>ListView在ScrollView中，那么ListView不设置style={flex:1}, 那么ListView 和ScrollView的滑动事件很完美结合，表现为整体滑动。react-native-web中，Chrome表现和mobile一样，safari不行，ListView的父节点必须有个高度，手工计算它的高度，这个高度必须大于等于ListView content 的height, 那样滑动起来就像是一个整体，不然就会是局部滑动。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;ScrollView&gt;</div><div class="line">  &lt;View style=&#123;&#123;flex:1&#125;&#125; &#123;/*这个flex:1在mobile app和chrome环境下会忽视，但是safari不行 */&#125;&gt; </div><div class="line">    &lt;ListView</div><div class="line">      dataSource=&#123;dataSource&#125;</div><div class="line">      renderRow=&#123;this.renderRow&#125;</div><div class="line">    /&gt;</div><div class="line">  &lt;/View&gt;</div><div class="line">&lt;/ScrollView&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="21-react-native-run-android真机调试"><a href="#21-react-native-run-android真机调试" class="headerlink" title="21. react-native run-android真机调试"></a>21. react-native run-android真机调试</h3><p>Failed to install all. run-android on device<br>一种情况是真机没连上或者同时开了模拟器<br>第二种就是要这样执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">adb devices</div><div class="line">List of devices attached</div><div class="line">85EABNGMFABC    device</div><div class="line"></div><div class="line">react-native run-android --deviceId 85EABNGMFABC <span class="comment">#这样可以成功安装到真机</span></div></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/facebook/react-native/issues/9498" target="_blank" rel="external">github issue</a></p>
+<h3 id="22-flex布局中，子元素的宽高度"><a href="#22-flex布局中，子元素的宽高度" class="headerlink" title="22. flex布局中，子元素的宽高度"></a>22. flex布局中，子元素的宽高度</h3><h4 id="22-1-flexDirection-’column’"><a href="#22-1-flexDirection-’column’" class="headerlink" title="22.1 flexDirection:’column’"></a>22.1 flexDirection:’column’</h4><p>子元素的宽度通常内容决定的，高度是固定高度或flex布局。</p>
+<h4 id="22-2-flexDirection-‘row’"><a href="#22-2-flexDirection-‘row’" class="headerlink" title="22.2 flexDirection: ‘row’"></a>22.2 flexDirection: ‘row’</h4><p>子元素的高度通常是<strong>容器高度</strong>，宽度是固定宽度或flex布局。但这个有意外，可能是父容器设置了<code>alignItems:&#39;center&#39;</code>，所以当此时子元素高度不是父容器高度时，按需要可以设置<code>alignSelf:&#39;stretch&#39;</code>。</p>
+<h4 id="22-3-alignItmes-’center’-flexDirection-’column’"><a href="#22-3-alignItmes-’center’-flexDirection-’column’" class="headerlink" title="22.3 alignItmes:’center’, flexDirection:’column’"></a>22.3 alignItmes:’center’, flexDirection:’column’</h4><p><code>marginLeft: 20</code>，实际偏移10，因为alignItems:’center’的原因。这个是layout，影响占有空间。<br><code>left:10</code>,实际偏移10。left一般和position:’relative’和position:’absolute’一起使用。注意在relative时候，原有位置空间不会消失。也会影响占有空间。</p>
+<h4 id="23-lipo-ios的库查询"><a href="#23-lipo-ios的库查询" class="headerlink" title="23. lipo ios的库查询"></a>23. lipo ios的库查询</h4><p>有时候第三方sdk不支持x86_64（模拟器architecture),所以不能在模拟器上运行。查看skd支持的cpu的architecture，lipo -inof xxsdk.o</p>
+<blockquote>
+<p>ios release app, Project-&gt;Build Settings-&gt;Build Acitve Architecture Only,在release下是false,表示build出的.iap支持多个CPU架构。而通常debug下我们只需要x86_64（模拟器）的CPU架构就够了，或者当前真机的CPU架构。</p>
+</blockquote>
+<h4 id="24-js-class-vs-object"><a href="#24-js-class-vs-object" class="headerlink" title="24. js class vs object"></a>24. js class vs object</h4><blockquote>
+<p>区别就是有没有逗号<br>如果是class<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">  fun1 = (a)&#123;</div><div class="line">    <span class="built_in">console</span>.warn(a)</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//没有逗号','</span></div><div class="line">  fun2 = (b)&#123;</div><div class="line">    <span class="built_in">console</span>.warn(b)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>如果是object<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> A = &#123;</div><div class="line">  fun1(a)&#123;</div><div class="line">    <span class="built_in">console</span>.warn(a)</div><div class="line">  &#125;,</div><div class="line">  fun2(b)&#123;</div><div class="line">    <span class="built_in">console</span>.warn(b)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="25-android-build-error-with"><a href="#25-android-build-error-with" class="headerlink" title="25. android build error with"></a>25. android build error with</h3><p>发现自己写的react-native inmobi广告模块有问题，build.gradle的build tools版本不匹配<br>解决，使用和主build tool一致的版本号<br>造成冲突的原因，应该是此模块和主程序都使用了支持包</p>
+<p>主build.gradle</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">android &#123;</div><div class="line">    compileSdkVersion <span class="number">25</span></div><div class="line">    buildToolsVersion <span class="string">"25.0.2"</span></div><div class="line"></div><div class="line">    defaultConfig &#123;</div><div class="line">        minSdkVersion <span class="number">16</span></div><div class="line">        targetSdkVersion <span class="number">22</span></div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:appcompat-v7:23.0.1"</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>react-native第三方模块的build.gradle<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">android &#123;</div><div class="line">    compileSdkVersion <span class="number">23</span></div><div class="line">    buildToolsVersion <span class="string">"23.0.1"</span></div><div class="line"></div><div class="line">    defaultConfig &#123;</div><div class="line">        minSdkVersion <span class="number">16</span></div><div class="line">        targetSdkVersion <span class="number">22</span></div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"></div><div class="line">ext &#123;</div><div class="line">    androidSupportLibVersion = <span class="string">"23.0.1"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:design:$&#123;androidSupportLibVersion&#125;"</span></div><div class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:appcompat-v7:$&#123;androidSupportLibVersion&#125;"</span></div><div class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:recyclerview-v7:$&#123;androidSupportLibVersion&#125;"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>修改第三方模块的build.gradle<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> android &#123;</div><div class="line">-    compileSdkVersion <span class="number">23</span></div><div class="line">-    buildToolsVersion <span class="string">"23.0.1"</span></div><div class="line">+    compileSdkVersion <span class="number">25</span> <span class="comment">//改成和主build.gradle一样</span></div><div class="line">+    buildToolsVersion <span class="string">"25.0.2"</span> <span class="comment">//改成和主build.gradle一样</span></div><div class="line"> </div><div class="line">     defaultConfig &#123;</div><div class="line">         minSdkVersion <span class="number">16</span></div><div class="line">        targetSdkVersion <span class="number">22</span></div><div class="line">     &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="26-读取Anroid的AndroidManifest-xml中的meta-data"><a href="#26-读取Anroid的AndroidManifest-xml中的meta-data" class="headerlink" title="26.读取Anroid的AndroidManifest.xml中的meta-data"></a>26.读取Anroid的AndroidManifest.xml中的meta-data</h3><p>meta-data的值读的时候不会自动类型转换，比如你要一个String,实际value是一个float，那么就会报警，返回一个null。<br>比如build.gradle中SomeValue值类型是int,那么AndroidMainfest.xml中的”${SomeValue}就是int,读取时就不能用getString.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//metaData.getString如果读到了float就会报警告，返回一个null</span></div><div class="line">metaData.get(metaDataKey).toString();</div></pre></td></tr></table></figure></p>
+<p>我遇到的是grovey的问题，它读取一个Long的值，toString时变成了科学计数法，没有办法就只有加个前缀了，我觉得它应该有个方法toString时是直接String，不改变表示方法的。</p>
+<h3 id="27-map不返回"><a href="#27-map不返回" class="headerlink" title="27.map不返回"></a>27.map不返回</h3><p>我有时遇到map使用的时候，不加return,导致页面不显示。跟lambada时更加要注意，是<code>=&gt;()</code>还是<code>=&gt;{}</code>。</p>
+<h3 id="28-Component-bind-this"><a href="#28-Component-bind-this" class="headerlink" title="28.Component bind this"></a>28.Component bind this</h3><p>Component中的回调如果是用了this.props或者<strong>this.renderxxx()</strong>，都是需要bind this的。</p>
+<h3 id="29-padStart-6-‘’"><a href="#29-padStart-6-‘’" class="headerlink" title="29. padStart(6, ‘’)"></a>29. padStart(6, ‘’)</h3><p>Android对TypeScript<code>padStart(6, &#39;&#39;)</code>不支持，还是改用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(<span class="string">"0000"</span>+str).slice(<span class="number">-4</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="30-lineHeight"><a href="#30-lineHeight" class="headerlink" title="30. lineHeight"></a>30. lineHeight</h3><p>Android的lineHeight要求是Integer，不能是Double。IOS没问题。</p>
+<h3 id="31-StyleSheet-hairlineWidth"><a href="#31-StyleSheet-hairlineWidth" class="headerlink" title="31. StyleSheet.hairlineWidth"></a>31. StyleSheet.hairlineWidth</h3><p>这个在iPhone5上，不能和backgroundColor一起使用。所以当前View不设backgroundColor,父容器设置backgroundColor。</p>
+<h3 id="32-react-native-svg-ui-polish"><a href="#32-react-native-svg-ui-polish" class="headerlink" title="32. react-native-svg ui polish"></a>32. react-native-svg ui polish</h3><p>在Android平台，如果svg使用width: 12 * widthScale，那么可能出现icon的截边，所以使用固定宽度 6 来解决。</p>
+<h3 id="33-genymotion-修改时区"><a href="#33-genymotion-修改时区" class="headerlink" title="33. genymotion 修改时区"></a>33. genymotion 修改时区</h3><p>运行<code>adb shell</code>进入Android的shell环境。<br>查看当前时区 cat /data/property/persist.sys.timezone<br>修改当前时区 setprop persist.sys.timezone Asia/Shanghai</p>
+<h3 id="34-ScrollView-tricky"><a href="#34-ScrollView-tricky" class="headerlink" title="34. ScrollView tricky"></a>34. ScrollView tricky</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;styles.flexOne&#125;&gt;</div><div class="line">    &lt;ScrollView</div><div class="line">      style=&#123;styles.flexOne&#125;</div><div class="line">      showsVerticalScrollIndicator=&#123;false&#125;</div><div class="line">      scrollEventThrottle=&#123;16&#125;&gt;</div><div class="line">      &lt;View style=&#123;&#123; flex: 1, alignItems: 'center' &#125;&#125;&gt;</div><div class="line">        &#123;matchUp&#125;</div><div class="line">        &#123;answersBox&#125;</div><div class="line">      &lt;/View&gt;</div><div class="line">      &#123;this.renderFooter()&#125;</div><div class="line">    &lt;/ScrollView&gt;</div><div class="line">&lt;<span class="regexp">/View&gt;</span></div></pre></td></tr></table></figure>
+<p>注意这里不能设置contentContainerStyle的高度或者flex,这个是内容撑开的。但是这里奇怪的地方是ScrollView内部的第一View用的是flex:1,这个flex:1对应的是ScrollView的高度，不是contentContainerStyle的高度，有点像minHeight。 所以renderFooter（）就会在内容不够长的时候在底部。内容足够长的时候在可以滑动下面。</p>
+<h3 id="35-tips"><a href="#35-tips" class="headerlink" title="35. tips"></a>35. tips</h3><ul>
+<li><ol>
+<li>minHeight对于不同内容而保存相同布局有奇效</li>
+</ol>
+</li>
+<li><ol>
+<li>注意action要是绑定后的action，而不是原始的action.就是要有dispatch。</li>
+</ol>
+</li>
+<li><ol>
+<li>请求时主要refreshing字段的使用，变换authToken要强制刷新。</li>
+</ol>
+</li>
+</ul>
+<h3 id="36-flexWrap-‘wrap’-flexDirection-‘row’"><a href="#36-flexWrap-‘wrap’-flexDirection-‘row’" class="headerlink" title="36. flexWrap: ‘wrap’, flexDirection: ‘row’"></a>36. flexWrap: ‘wrap’, flexDirection: ‘row’</h3><p>我之前这么用, container有个<code>containerWidth</code>，item的<code>itemWidth</code>就是containerWidth / columns,看似没问题，但是在IphonePlus或者其它情况下，itemWidth的值四舍五入了，和加在一起大于contaienrWidth，那么就换行了。<br>解决方法：</p>
+<ul>
+<li>itemWidth = Math.floor(containerWidth / columns)</li>
+<li>itemWidth的值小于contaienrWidth，itemWidth = (containerWidth - 10) / columns, 然后container的style, justifyContent: ‘space-between’, alignItems: ‘center, 但是要注意不能太小，以致一行比原来可以多放一个item.</li>
+</ul>
+<p>推荐第一种方法</p>
+<h3 id="37-在reduce中使用state-mergeDeep"><a href="#37-在reduce中使用state-mergeDeep" class="headerlink" title="37. 在reduce中使用state.mergeDeep"></a>37. 在reduce中使用state.mergeDeep</h3><p>immutable mergeDeep(action.payload), 如果action.payload中有数组，那么是不会merge成功的(只有新的数组，没有旧的数组)，所以我直接返回了fromJS(action.payload),这个对参数有要求，就是要全面。</p>
+<h3 id="38-ToucchableOpacity-vs-TouchableWithoutFeedback"><a href="#38-ToucchableOpacity-vs-TouchableWithoutFeedback" class="headerlink" title="38. ToucchableOpacity vs TouchableWithoutFeedback"></a>38. ToucchableOpacity vs TouchableWithoutFeedback</h3><p>TouchableOpacity如果设置activityOpacity={1},那么表现和TouchableWithoutFeedback.</p>
+<h4 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h4><ul>
+<li>TouchableOpacity布局上更像是View，没有children也可以，TouchableWithoutFeedback必须要有个children，children不能为空。</li>
+<li>在容器flexWrap:’wrap’,TouchableWithoutFeedback中不能正常显示，使用TouchableOpacity能正常显示。所以TouchableOpacity更像View，而TouchableWithoutFeedback布局功能有所欠缺。</li>
+</ul>
+<h3 id="39-border-虚线"><a href="#39-border-虚线" class="headerlink" title="39. border 虚线"></a>39. border 虚线</h3><p>RN 支持borderStyle: ‘dotted’，所以不需要用图片来代替虚线了。</p>
+<h3 id="40-Text"><a href="#40-Text" class="headerlink" title="40. Text"></a>40. Text</h3><p>RN Text的默认字体大小是12.</p>
+<h3 id="41-TouchableOpacity-TouchableWithouFeedback的onPress回调函数"><a href="#41-TouchableOpacity-TouchableWithouFeedback的onPress回调函数" class="headerlink" title="41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数"></a>41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数</h3><p>我遇到一个错误，<code>Malformed call from JS: field size are different</code><br>原因是给react-native-navigation的navigator传错参数了。<br>它们的回调函数有参数event,比如我定义一个<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPressHandler =<span class="function">(<span class="params">title</span>)=&gt;</span>&#123;</div><div class="line">  <span class="keyword">this</span>.props.jump(<span class="string">'xxx.xx'</span>, &#123;title&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里的title应该是一个string，但是实参是一个event的对象。所以在闭包中，一定要注意默认参数，比如onPress的。</p>
+<h3 id="42-Trying-to-add-a-‘RCTRawText-text-gt-’-to-a-‘RCTView’"><a href="#42-Trying-to-add-a-‘RCTRawText-text-gt-’-to-a-‘RCTView’" class="headerlink" title="42. Trying to add a ‘RCTRawText [text: &gt;]’ to a ‘RCTView’"></a>42. Trying to add a ‘RCTRawText [text: &gt;]’ to a ‘RCTView’</h3><p>这个是因为在JSX语法中，多了一个’&gt;’,这个是写代码不小心造成的。JSX所有代码都要在标签里。Android会导致crash,iOS不会crash.改正习惯<code>&gt;</code>不能单独一行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//crash示例</span></div><div class="line">render()&#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;View</div><div class="line">      style=&#123;styles.container&#125;&gt;</div><div class="line">      &gt; //culprit</div><div class="line">      &lt;Text&gt;示例&lt;/Text&gt;</div><div class="line">    &lt;/View&gt;</div><div class="line">  )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="43-模块设计"><a href="#43-模块设计" class="headerlink" title="43. 模块设计"></a>43. 模块设计</h3><ul>
+<li>不用使用一个Page(Container)来共享逻辑，这让重构复杂。</li>
+<li>有时候我想用数据代替逻辑处理props，比如数据model中有个字段是type,那么使用这个model时就可以自处理，而不用把逻辑(用props传递函数)从外部传入。增加数据的自描述能力，功能函数尽量无状态。</li>
+<li>有顺序要求，使用Array，不用Object,因为Object.Keys()的顺序不是guaranntee。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/08/React-Native-Debug/" data-id="cjkw98eor000o8ji6eyh16q99" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debug/">debug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-native/">react-native</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/13/mac-apache2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          mac-apache2
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React-Native</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构/">架构</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache2/">apache2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hoc/">hoc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native/">react-native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native-tools/">react-native tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native-web/">react-native-web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原理/">原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原生模块/">原生模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/签名/">签名</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/JNI/" style="font-size: 10px;">JNI</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/apache2/" style="font-size: 10px;">apache2</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/debug/" style="font-size: 15px;">debug</a> <a href="/tags/emacs/" style="font-size: 10px;">emacs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go/" style="font-size: 10px;">go</a> <a href="/tags/hoc/" style="font-size: 10px;">hoc</a> <a href="/tags/ios/" style="font-size: 15px;">ios</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/mac/" style="font-size: 20px;">mac</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/react-native/" style="font-size: 20px;">react-native</a> <a href="/tags/react-native-tools/" style="font-size: 10px;">react-native tools</a> <a href="/tags/react-native-web/" style="font-size: 10px;">react-native-web</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 20px;">web</a> <a href="/tags/原理/" style="font-size: 10px;">原理</a> <a href="/tags/原生模块/" style="font-size: 10px;">原生模块</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/05/Android使用JNI/">Android使用JNI</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/flutter/">flutter</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/30/架构/">架构</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/30/beyond-compare/">beyond-compare</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/25/Charles使用/">Charles使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 qsl<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

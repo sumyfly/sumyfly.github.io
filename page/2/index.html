@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>QSL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="technology, web, js">
+<meta property="og:type" content="website">
+<meta property="og:title" content="QSL">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="QSL">
+<meta property="og:description" content="technology, web, js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="QSL">
+<meta name="twitter:description" content="technology, web, js">
+  
+    <link rel="alternate" href="/atom.xml" title="QSL" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">QSL</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Kotlin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/10/Kotlin/" class="article-date">
+  <time datetime="2018-07-10T15:45:17.000Z" itemprop="datePublished">2018-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/10/Kotlin/">Kotlin</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1"><a href="#1" class="headerlink" title="1. ? !! !"></a>1. ? !! !</h3><p>val str:String! = “”  //无法声明，临时变量，说明这是Kotlin调用Java代码产生的，如果要使用，最好用可空类型<br>val str:String? = “”  //可空类型<br>val str:String!! = “” //1.强制转换；2.不能为空</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/10/Kotlin/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/10/Kotlin/" data-id="cjkw98eoo000g8ji6l1qcjfzr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Android签名相关内容" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/13/Android签名相关内容/" class="article-date">
+  <time datetime="2018-04-13T07:37:27.000Z" itemprop="datePublished">2018-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/13/Android签名相关内容/">Android签名相关内容</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-查看签名"><a href="#1-查看签名" class="headerlink" title="1. 查看签名"></a>1. 查看签名</h3><ul>
+<li>提取签名<br><code>jar xf HelloWorld.apk META-INF/CERT.RSA</code></li>
+<li><p>打印签名<br><code>keytool -printcert -file CERT.RSA</code></p>
+</li>
+<li><p>打印公钥，签名用的公钥<br><code>keytool -printcert -file CERT.RSA -rfc</code>，或者导出到一个文件<code>keytool -printcert -file CERT.RSA -rfc &gt; my_pub.key</code></p>
+</li>
+</ul>
+<p>相同的签名的不同版本APK应用相同的md5，sha1,sha256指纹，代表同一个公钥签名。</p>
+<h3 id="2-查看public-key的指纹"><a href="#2-查看public-key的指纹" class="headerlink" title="2. 查看public key的指纹"></a>2. 查看public key的指纹</h3><blockquote>
+<p>指纹就是用散列算法计算公钥的文本，rfc格式(带有<code>-----BEGIN CERTIFICATE-----</code>和<code>-----END CERTIFICATE-----</code>)。</p>
+</blockquote>
+<p>使用上面步骤得到的my_pub.key，验证md5。实际工作中不需要，工具都帮我们做好了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">openssl x509 -noout -fingerprint -md5 -inform pem -<span class="keyword">in</span> my_pub.key</div><div class="line">openssl x509 -noout -fingerprint -SHA1 -inform pem -<span class="keyword">in</span> my_pub.key</div><div class="line">openssl x509 -noout -fingerprint -SHA256 -inform pem -<span class="keyword">in</span> my_pub.key</div></pre></td></tr></table></figure></p>
+<h3 id="3-查看keystore中的签名"><a href="#3-查看keystore中的签名" class="headerlink" title="3. 查看keystore中的签名"></a>3. 查看keystore中的签名</h3><blockquote>
+<p>keystore中有多个公钥秘钥对，一个对就是一个alias, 每个的访问密码不同。<br><code>keytool -list -keystore my.keystore -alias myAlias</code>输入库密码可以看到公钥的指纹。</p>
+</blockquote>
+<h3 id="4-给apk签名"><a href="#4-给apk签名" class="headerlink" title="4. 给apk签名"></a>4. 给apk签名</h3><p><code>jarsigner -verbose -keystore my.keystore -signedjar ma_app_signed.apk my.apk myAlias</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/13/Android签名相关内容/" data-id="cjkw98eoj00088ji67heqmten" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js原型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/12/js原型/" class="article-date">
+  <time datetime="2018-04-12T06:26:17.000Z" itemprop="datePublished">2018-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/12/js原型/">js原型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="1.构造函数"></a>1.构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Foo))&#123;</div><div class="line">    <span class="comment">//非当前实例，原因是没用new去调用</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Foo(a)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">this</span>.name = a</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo(<span class="string">'foo'</span>) <span class="comment">//这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都会check instance</span></div></pre></td></tr></table></figure>
+<p>我记得构造函数首字母要大写，但是发现现在不大写也可以，最好大写吧。<br>new 的作用：</p>
+<ul>
+<li>绑定了this</li>
+<li>返回一个对象</li>
+<li>增加一个<code>__proto__</code>的属性指向构造函数的<code>protoType</code></li>
+</ul>
+<h3 id="2-原型"><a href="#2-原型" class="headerlink" title="2.原型"></a>2.原型</h3><h4 id="2-1-继承"><a href="#2-1-继承" class="headerlink" title="2.1 继承"></a>2.1 继承</h4><p>js中的继承是原型链，就是<code>GrandFather grandFather&lt;-Father father&lt;-Son son</code>.它们之间靠<strong>proto</strong>联系在一起。就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">son.__proto__ === Son.ProtoType</div><div class="line">son.__proto__.__proto__ === Father.protoType</div><div class="line">son.__proto__.__proto__ .__proto__ === GrandFather.protoType</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line">由于js查找属性时，按照这个原型链去查，一直能查到祖父。</div><div class="line"></div><div class="line">#### 2.2 protoType `__proto__<span class="string">`</span></div><div class="line">- 相同点：</div><div class="line">protoType和__proto__对应的是同一个原型，**它是一个Object**。每个实例的__proto__都是构造函数用自己的protoType赋值的。</div><div class="line">- 不同点：</div><div class="line">不同点__proto__是实例调用的，protoType是构造函数调用的（注意：我没说是类，js本质上没类，只有对象和函数，每个实例都是构造函数构造出来的）。</div><div class="line"></div><div class="line">`<span class="string">``</span> js</div><div class="line"><span class="keyword">var</span> p =&#123; </div><div class="line">  <span class="attr">isHuman</span>: <span class="literal">false</span>,</div><div class="line">  <span class="attr">name</span>: <span class="string">'foo'</span>,</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Glass</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.glass = <span class="string">'glass'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = &#123;&#125;</div><div class="line"><span class="comment">// 不要直接给一个对象赋值__proto__,这个会导致性能问题，不是赋值的时候有问题，而是查找的时候有性能问题</span></div><div class="line">a.__proto__ = p </div><div class="line"><span class="comment">// 1. 可以用原型来做</span></div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> Glass()</div><div class="line">b.__proto__.__proto__ = p <span class="comment">// or Glass.protoType.__proto__ = p</span></div><div class="line"><span class="comment">// 2. 用Obejct.create()</span></div><div class="line"><span class="keyword">var</span> c = <span class="built_in">Object</span>.create(p) <span class="comment">// 这个没有影响任何构造函数</span></div></pre></td></tr></table></figure></p>
+<h4 id="2-3-实例的属性"><a href="#2-3-实例的属性" class="headerlink" title="2.3 实例的属性"></a>2.3 实例的属性</h4><p>js的属性分为自己的(<code>Object.getOwnerPropety()</code>)和继承的(<code>Object.getPrototypeOf()</code>)<br>循环遍历属性有几个特殊的地方：</p>
+<ul>
+<li><p>如果使用for<br>for会打印所有属性，包括自己的和继承的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用上面的b这个例子</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">in</span> b)&#123;</div><div class="line">  <span class="built_in">console</span>(v) <span class="comment">// isHuman, name, glass 都是可以打印出来的</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用Object.keys<br>Object.keys只会打印自己的属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.keys(b) <span class="comment">//只会打印 isHuman, name</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>我很少写原生的js了，大部分是用TS，写多了TS，这些都忘记了。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/12/js原型/" data-id="cjkw98ep2001j8ji668x9ffsp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web-js" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/11/web-js/" class="article-date">
+  <time datetime="2018-04-11T15:49:49.000Z" itemprop="datePublished">2018-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/11/web-js/">web-js</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-事件三个阶段"><a href="#1-事件三个阶段" class="headerlink" title="1.事件三个阶段"></a>1.事件三个阶段</h3><ul>
+<li>capture，从DOM tree到节点target</li>
+<li>target, 处理事件</li>
+<li>bubble，事件冒泡，如果不stopPropagation或stopImmediatePropagation,那么一直到DOM<blockquote>
+<p>preventDefaut()这里的Default会stopPropagation,不让冒泡。冒泡有时候很有用，如监听页面的点击，做分析报告。另一个好处是可以动态添加和移除节点，同时可以对它的事件监听。</p>
+</blockquote>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2018/04/11/web-js/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/11/web-js/" data-id="cjkw98epe00278ji6pslqna1m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-electron" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/10/electron/" class="article-date">
+  <time datetime="2018-04-10T03:27:55.000Z" itemprop="datePublished">2018-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/10/electron/">electron</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-Electron-vs-NW-js"><a href="#1-Electron-vs-NW-js" class="headerlink" title="1. Electron vs NW.js"></a>1. Electron vs NW.js</h3><h4 id="1-1-共同点"><a href="#1-1-共同点" class="headerlink" title="1.1 共同点"></a>1.1 共同点</h4><ul>
+<li>都是使用chromium作为渲染工具，开发跨平台的客户端软件。</li>
+<li>完成的软件结构都是有两部分，native和web。前者是调用本地文件接口，网络等，实现底层功能，如数据库连接；后者和普通web开发一样。</li>
+<li>编写语言都是js, html, css</li>
+</ul>
+<h4 id="1-2-不同点"><a href="#1-2-不同点" class="headerlink" title="1.2 不同点"></a>1.2 不同点</h4><ul>
+<li>Electron的启动文件是一个js文件,在里面load一个index.html；NW.js是一个index.html。这是设计上的区别，Electron实现是不改chromium+node；NW.js修改chromium，以支持node的接口。</li>
+<li>Electron的代码只可以混淆；NW.js可以改原生chromium的代码，安全性比Electron高。</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2018/04/10/electron/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/10/electron/" data-id="cjkw98eox00158ji6ckms599u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/09/ubuntu/" class="article-date">
+  <time datetime="2018-04-09T02:30:04.000Z" itemprop="datePublished">2018-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/09/ubuntu/">ubuntu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-mysql-server升级"><a href="#1-mysql-server升级" class="headerlink" title="1.mysql-server升级"></a>1.mysql-server升级</h3><p>我用系统升级的提示框升级了，看到了升级了mysql-server到5.7,然后apt-get autoremove时，发现mysql-server的配置错了，在<code>/etc/mysql/</code>下有一个<code>debian.cnf</code>的配置文件，这个是mysql的维护用户，可以用来做profile的。按照里面的配置去mysql的数据库更新下密码就正常了。</p>
+<blockquote>
+<p>注意mysql的密码插件的强度提示，可以手工降低后再修改密码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 首先登陆mysql命令行</span></div><div class="line">mysql -u root -p</div><div class="line"><span class="comment"># 输入密码登陆后执行以下两个命令</span></div><div class="line"><span class="built_in">set</span> global validate_password_policy=0;  </div><div class="line"><span class="comment"># 修改密码sys-debian-maint(maint就是maintenance缩写)</span></div><div class="line">GRANT ALL PRIVILEGES on *.* TO `debian-sys-maint`@`localhost` IDENTIFIED BY <span class="string">'your password'</span> WITH GRANT OPTION;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000000412194" target="_blank" rel="external">https://segmentfault.com/a/1190000000412194</a></li>
+<li><a href="https://www.jianshu.com/p/1ec04ecbb690" target="_blank" rel="external">https://www.jianshu.com/p/1ec04ecbb690</a></li>
+<li><a href="https://serverfault.com/questions/9948/what-is-the-debian-sys-maint-mysql-user-and-more?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa" target="_blank" rel="external">StackOverflow</a></li>
+</ul>
+<p>之后还是手工升级保险一点。<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/04/09/ubuntu/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/09/ubuntu/" data-id="cjkw98epb00218ji631qw06zt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cheatsheets-ai" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/07/cheatsheets-ai/" class="article-date">
+  <time datetime="2018-04-07T06:21:25.000Z" itemprop="datePublished">2018-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/07/cheatsheets-ai/">cheatsheets-ai</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-Keras"><a href="#1-Keras" class="headerlink" title="1.Keras"></a>1.Keras</h3><p><img src="/images/ai/keras-1.jpeg" alt="Keras"></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/04/07/cheatsheets-ai/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/07/cheatsheets-ai/" data-id="cjkw98eov000z8ji6rv6gjkza" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/">AI</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-typescript-debug" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/08/typescript-debug/" class="article-date">
+  <time datetime="2018-02-08T06:07:57.000Z" itemprop="datePublished">2018-02-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/08/typescript-debug/">typescript-debug</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-去掉转换后的exports"><a href="#1-去掉转换后的exports" class="headerlink" title="1. 去掉转换后的exports"></a>1. 去掉转换后的exports</h4><p>由于phantomjs发现不了exports，所以需要把转换后文件的第一行去掉。方法是在ts文件最上面加上<code>export = 0;</code>。<br>//issue: don’t add Object.defineProperty(exports, “__esModule”, { value: true });<br>//<a href="https://github.com/Microsoft/TypeScript/issues/14351" target="_blank" rel="external">https://github.com/Microsoft/TypeScript/issues/14351</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/08/typescript-debug/" data-id="cjkw98epa001x8ji6fyphdl6o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mac-emacs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/13/mac-emacs/" class="article-date">
+  <time datetime="2018-01-13T12:29:10.000Z" itemprop="datePublished">2018-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/13/mac-emacs/">mac-emacs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-安装emacs"><a href="#1-安装emacs" class="headerlink" title="1. 安装emacs"></a>1. 安装emacs</h3><p>使用brew<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install emacs --with-cocoa</div></pre></td></tr></table></figure></p>
+<h3 id="2-配置emacs"><a href="#2-配置emacs" class="headerlink" title="2. 配置emacs"></a>2. 配置emacs</h3><p>原来是用的<a href="https://github.com/bbatsov/prelude" target="_blank" rel="external">prelude</a>,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:</p>
+<ul>
+<li><a href="http://codingpy.com/article/emacs-the-best-python-editor/" target="_blank" rel="external">Emacs：最好的Python编辑器？</a><br>注意有几处不同，elpy的ipython配置现在是<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(setq python-shell-interpreter &quot;ipython&quot;</div><div class="line">      python-shell-interpreter-args &quot;-i --simple-prompt&quot;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2018/01/13/mac-emacs/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/13/mac-emacs/" data-id="cjkw98ep4001m8ji6p43i1ed8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emacs/">emacs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mac-node" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/12/mac-node/" class="article-date">
+  <time datetime="2018-01-12T07:58:34.000Z" itemprop="datePublished">2018-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/12/mac-node/">mac-node</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-nvm"><a href="#1-nvm" class="headerlink" title="1. nvm"></a>1. nvm</h3><p>nvm的目录是<code>~/.nvm</code></p>
+<p>如6.9.5的目录是<br>.nvm/versions/node/v6.9.5/lib/node_modules</p>
+<h3 id="2-yarn"><a href="#2-yarn" class="headerlink" title="2. yarn"></a>2. yarn</h3><p>npm模块的依赖，现在用<code>yarn</code>,它的缓存在~/.npm</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/01/12/mac-node/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/12/mac-node/" data-id="cjkw98ep5001o8ji6w8vaafy9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React-Native</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构/">架构</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache2/">apache2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hoc/">hoc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native/">react-native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native-tools/">react-native tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native-web/">react-native-web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原理/">原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原生模块/">原生模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/签名/">签名</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/JNI/" style="font-size: 10px;">JNI</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/apache2/" style="font-size: 10px;">apache2</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/debug/" style="font-size: 15px;">debug</a> <a href="/tags/emacs/" style="font-size: 10px;">emacs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go/" style="font-size: 10px;">go</a> <a href="/tags/hoc/" style="font-size: 10px;">hoc</a> <a href="/tags/ios/" style="font-size: 15px;">ios</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/mac/" style="font-size: 20px;">mac</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/react-native/" style="font-size: 20px;">react-native</a> <a href="/tags/react-native-tools/" style="font-size: 10px;">react-native tools</a> <a href="/tags/react-native-web/" style="font-size: 10px;">react-native-web</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 20px;">web</a> <a href="/tags/原理/" style="font-size: 10px;">原理</a> <a href="/tags/原生模块/" style="font-size: 10px;">原生模块</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/05/Android使用JNI/">Android使用JNI</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/flutter/">flutter</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/30/架构/">架构</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/30/beyond-compare/">beyond-compare</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/25/Charles使用/">Charles使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 qsl<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>web-debug.md | QSL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
+<meta name="keywords" content="web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web-debug.md">
+<meta property="og:url" content="http://yoursite.com/2017/08/14/web-debug-md/index.html">
+<meta property="og:site_name" content="QSL">
+<meta property="og:description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
+<meta property="og:image" content="http://yoursite.com/images/wechat_pay.png">
+<meta property="og:updated_time" content="2018-08-16T06:46:14.817Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web-debug.md">
+<meta name="twitter:description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
+<meta name="twitter:image" content="http://yoursite.com/images/wechat_pay.png">
+  
+    <link rel="alternate" href="/atom.xml" title="QSL" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">QSL</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-web-debug-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/14/web-debug-md/" class="article-date">
+  <time datetime="2017-08-14T10:53:44.000Z" itemprop="datePublished">2017-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      web-debug.md
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-字体居中"><a href="#1-字体居中" class="headerlink" title="1.字体居中"></a>1.字体居中</h3><p>我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？<br><a href="https://stackoverflow.com/questions/27431681/why-is-my-font-face-adding-space-at-the-baseline" target="_blank" rel="external">https://stackoverflow.com/questions/27431681/why-is-my-font-face-adding-space-at-the-baseline</a></p>
+<h3 id="2-mobile字体-mobile-web字体"><a href="#2-mobile字体-mobile-web字体" class="headerlink" title="2.mobile字体 mobile web字体"></a>2.mobile字体 mobile web字体</h3><p>mobile字体不一定能用于mobile web字体，不知道为什么。因为我用的一个字体可以用于react-native,但是不能用于mobile web，格式是ttf。</p>
+<h3 id="3-远程手机浏览器调试"><a href="#3-远程手机浏览器调试" class="headerlink" title="3.远程手机浏览器调试"></a>3.远程手机浏览器调试</h3><p>1.adb forward tcp:9224 localabstract:chrome_devtools_remote<br>然后localhost:9224</p>
+<p>2.chrome://inspect</p>
+<a id="more"></a>
+<h3 id="4-微信公众号支付"><a href="#4-微信公众号支付" class="headerlink" title="4.微信公众号支付"></a>4.微信公众号支付</h3><p>JSSDK和下单的appId要一样，chooseWXPay的签名，后台签名用timeStamp，前端用timestamp.url签名，不含#<br>如果微信支付提示{“errMsg”:”chooseWXPay:fail”}，一种可能是签名错误，一种可能是授权目录错误。<br><a href="http://tieba.baidu.com/p/3961646394" target="_blank" rel="external">http://tieba.baidu.com/p/3961646394</a><br><a href="https://example.com/weixin/pay#/home/xxx，支付授权目录要配置到home那一级，或者带个在#前加?来阻隔这个问题，这应该是微信的BUG。" target="_blank" rel="external">https://example.com/weixin/pay#/home/xxx，支付授权目录要配置到home那一级，或者带个在#前加?来阻隔这个问题，这应该是微信的BUG。</a></p>
+<blockquote>
+<p>我用的是hashHistory,所以要配置到/setting/:<br><a href="https://app-test.xxx.com/auth/webapp/index.html#/setting/" target="_blank" rel="external">https://app-test.xxx.com/auth/webapp/index.html#/setting/</a></p>
+<p>有时候微信里打开链接，会自己加上参数?from=singlemessage&amp;install=0,这个时候就可以用<br><a href="https://app-tesst.xxx.com/auth/webapp" target="_blank" rel="external">https://app-tesst.xxx.com/auth/webapp</a></p>
+<p>ios微信浏览器路径识别到<br><a href="https://app-test.xxx.com/auth/webapp/index.html#/" target="_blank" rel="external">https://app-test.xxx.com/auth/webapp/index.html#/</a></p>
+</blockquote>
+<p>最终配置了三个路径<br><img src="/images/wechat_pay.png" alt="微信授权目录配置"></p>
+<h3 id="5-Promise"><a href="#5-Promise" class="headerlink" title="5.Promise"></a>5.Promise</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> asyncFun()&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</div><div class="line">    <span class="keyword">if</span>(a)&#123;</div><div class="line">      resolve(n)</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      reject() <span class="comment">//在安卓微信浏览器中，reject(), reject(undefined)都将导致await 等待，直至超时。这个应该是bug;reject(123)参数不为undeefined就可以。</span></div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">  <span class="keyword">const</span> a = <span class="keyword">await</span> asyncFun() <span class="comment">// 如果是resolve, resolve的实参值赋给a,如果是reject,a为初始值</span></div><div class="line">&#125; <span class="keyword">catch</span>(e)&#123;</div><div class="line">  <span class="built_in">console</span>.log(e) <span class="comment">//e 就是reject的实参值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="6-dot"><a href="#6-dot" class="headerlink" title="6. dot"></a>6. dot</h3><p>Use <code>&amp;middot;</code> · for a dot or <code>&amp;bull;</code> • for a thicker, bulleted list style dot.</p>
+<h3 id="7-post"><a href="#7-post" class="headerlink" title="7. post"></a>7. post</h3><p>post 的body要进行JSON.stringify处理，   </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">transformRequestBody: <span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> data == <span class="string">'object'</span> ? <span class="built_in">JSON</span>.stringify(data) : data</div><div class="line">&#125;, <span class="comment">// change RequestBody before fetch</span></div></pre></td></tr></table></figure>
+<h3 id="8-Object-assign-参数有个数组"><a href="#8-Object-assign-参数有个数组" class="headerlink" title="8. Object.assign 参数有个数组"></a>8. Object.assign 参数有个数组</h3><p>Object.assign({}, res),如果res是个array,那么结果就是一个object，所以在Object.assign前，要确定是否需要一个array.</p>
+<h3 id="9-div的文本没有自动换行"><a href="#9-div的文本没有自动换行" class="headerlink" title="9. div的文本没有自动换行"></a>9. div的文本没有自动换行</h3><p>默认情况下，一个 DIV或者其他元素的文本，如果都是无文字分隔符，无空格，则不会自动换行，比如:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-test'</span>&gt;</span>012345555555555555555555555555555555555555555555555555555555<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!--加上下面的样式即可解决--&gt;</span></div><div class="line">.div-test &#123;</div><div class="line">  word-break: break-all;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a href="http://www.alloyteam.com/2016/05/css-word-for-word-breaker-do-you-really-understand/" target="_blank" rel="external">http://www.alloyteam.com/2016/05/css-word-for-word-breaker-do-you-really-understand/</a></p>
+<h3 id="10-文本空白符处理"><a href="#10-文本空白符处理" class="headerlink" title="10. 文本空白符处理"></a>10. 文本空白符处理</h3><p>使用<code>whiteSpace: &#39;pre-wrap&#39;</code>,但此时有个问题，<code>textIndent</code>无效。</p>
+<h3 id="11-置换元素"><a href="#11-置换元素" class="headerlink" title="11. 置换元素"></a>11. 置换元素</h3><blockquote>
+<p>CSS里，可替换元素（replaced element）的展现不是由CSS来控制的。这些元素是一类外观渲染独立于CSS的 外部对象。典型的可替换元素有<code>&lt;img&gt;</code>、 <code>&lt;object&gt;</code>、 <code>&lt;video&gt;</code> 和 表单元素，如<code>&lt;textarea&gt;</code>、 <code>&lt;input&gt;</code>。某些元素只在一些特殊情况下表现为可替换元素，例如 <code>&lt;audio&gt;</code> 和 <code>&lt;canvas&gt;</code> 。 通过 CSS content 属性来插入的对象 被称作 匿名可替换元素（anonymous replaced elements）。</p>
+</blockquote>
+<p><strong>canvas不是块级元素。</strong></p>
+<p>浏览器根据块级元素的标签和属性，来决定元素的具体显示内容。CSS在某些情况下会对可替换元素做特殊处理，比如计算外边距和一些auto值。<br>例如：浏览器根据<code>&lt;img&gt;</code>标签的src属性显示图片。根据标签的type属性决定显示输入框还是按钮。置换元素在其显示中生成了框，这也就是有的内联元素能够设置宽高的原因。这些置换元素往往没有实际内容，即是一个空元素。</p>
+<blockquote>
+<p>非置换元素,浏览器中的大多数元素都是不可置换元素，即其内容直接展示给浏览器。</p>
+</blockquote>
+<h3 id="12-块元素-内联元素"><a href="#12-块元素-内联元素" class="headerlink" title="12.块元素 内联元素"></a>12.块元素 内联元素</h3><h4 id="12-1块元素"><a href="#12-1块元素" class="headerlink" title="12.1块元素"></a>12.1块元素</h4><table>
+<thead>
+<tr>
+<th>标签名称</th>
+<th style="text-align:center">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>address</td>
+<td style="text-align:center">地址</td>
+<td></td>
+</tr>
+<tr>
+<td>blockquote</td>
+<td style="text-align:center">块引用</td>
+</tr>
+<tr>
+<td>center</td>
+<td style="text-align:center">举中对齐块</td>
+</tr>
+<tr>
+<td>dir</td>
+<td style="text-align:center">目录列表</td>
+</tr>
+<tr>
+<td>div</td>
+<td style="text-align:center">常用块级容易，也是css layout的主要标签</td>
+</tr>
+<tr>
+<td>dl</td>
+<td style="text-align:center">定义列表</td>
+</tr>
+<tr>
+<td>fieldset</td>
+<td style="text-align:center">form控制组</td>
+</tr>
+<tr>
+<td>form</td>
+<td style="text-align:center">交互表单</td>
+</tr>
+<tr>
+<td>h1</td>
+<td style="text-align:center">大标题</td>
+</tr>
+<tr>
+<td>h2</td>
+<td style="text-align:center">副标题</td>
+</tr>
+<tr>
+<td>h3</td>
+<td style="text-align:center">3级标题</td>
+</tr>
+<tr>
+<td>h4</td>
+<td style="text-align:center">4级标题</td>
+</tr>
+<tr>
+<td>h5</td>
+<td style="text-align:center">5级标题</td>
+</tr>
+<tr>
+<td>h6</td>
+<td style="text-align:center">6级标题</td>
+</tr>
+<tr>
+<td>hr</td>
+<td style="text-align:center">水平分隔线</td>
+</tr>
+<tr>
+<td>isindex</td>
+<td style="text-align:center">input prompt</td>
+</tr>
+<tr>
+<td>menu</td>
+<td style="text-align:center">菜单列表</td>
+</tr>
+<tr>
+<td>noframes</td>
+<td style="text-align:center">frames可选内容（对于不支持frame的浏览器显示此区块内容）</td>
+</tr>
+<tr>
+<td>noscript</td>
+<td style="text-align:center">可选脚本</td>
+<td>内容（对于不支持script的浏览器显示此内容）</td>
+</tr>
+<tr>
+<td>ol</td>
+<td style="text-align:center">排序列表</td>
+</tr>
+<tr>
+<td>p</td>
+<td style="text-align:center">段落</td>
+</tr>
+<tr>
+<td>pre</td>
+<td style="text-align:center">格式化文本</td>
+</tr>
+<tr>
+<td>table</td>
+<td style="text-align:center">表格</td>
+</tr>
+<tr>
+<td>ul</td>
+<td style="text-align:center">非排序列表</td>
+</tr>
+</tbody>
+</table>
+<h4 id="12-2-内联元素"><a href="#12-2-内联元素" class="headerlink" title="12.2 内联元素"></a>12.2 内联元素</h4><table>
+<thead>
+<tr>
+<th>标签名称</th>
+<th style="text-align:center">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td style="text-align:center">锚点</td>
+</tr>
+<tr>
+<td>abbr</td>
+<td style="text-align:center">缩写</td>
+</tr>
+<tr>
+<td>acronym</td>
+<td style="text-align:center">首字</td>
+</tr>
+<tr>
+<td>b</td>
+<td style="text-align:center">粗体（不推荐）</td>
+</tr>
+<tr>
+<td>bdo</td>
+<td style="text-align:center">bidi override</td>
+</tr>
+<tr>
+<td>big</td>
+<td style="text-align:center">大字体</td>
+</tr>
+<tr>
+<td>br</td>
+<td style="text-align:center">换行</td>
+</tr>
+<tr>
+<td>cite</td>
+<td style="text-align:center">引用</td>
+</tr>
+<tr>
+<td>code</td>
+<td style="text-align:center">计算机代码（在引用源码的时候需要）</td>
+</tr>
+<tr>
+<td>dfn</td>
+<td style="text-align:center">定义字段</td>
+</tr>
+<tr>
+<td>em</td>
+<td style="text-align:center">强调</td>
+</tr>
+<tr>
+<td>font</td>
+<td style="text-align:center">字体设定（不推荐）</td>
+</tr>
+<tr>
+<td>i</td>
+<td style="text-align:center">斜体</td>
+</tr>
+<tr>
+<td>img</td>
+<td style="text-align:center">图片</td>
+</tr>
+<tr>
+<td>input</td>
+<td style="text-align:center">输入框</td>
+</tr>
+<tr>
+<td>kbd</td>
+<td style="text-align:center">定义键盘文本</td>
+</tr>
+<tr>
+<td>label</td>
+<td style="text-align:center">表格标签</td>
+</tr>
+<tr>
+<td>q</td>
+<td style="text-align:center">短引用</td>
+</tr>
+<tr>
+<td>s</td>
+<td style="text-align:center">中划线（不推荐）</td>
+</tr>
+<tr>
+<td>samp</td>
+<td style="text-align:center">定义范例计算机代码</td>
+</tr>
+<tr>
+<td>select</td>
+<td style="text-align:center">项目选择</td>
+</tr>
+<tr>
+<td>small</td>
+<td style="text-align:center">小字体文本</td>
+</tr>
+<tr>
+<td>span</td>
+<td style="text-align:center">常用内联容器，定义文本内区块</td>
+</tr>
+<tr>
+<td>strike</td>
+<td style="text-align:center">中划线</td>
+</tr>
+<tr>
+<td>strong</td>
+<td style="text-align:center">粗体强调</td>
+</tr>
+<tr>
+<td>sub</td>
+<td style="text-align:center">下标</td>
+</tr>
+<tr>
+<td>sup</td>
+<td style="text-align:center">上标</td>
+</tr>
+<tr>
+<td>textarea</td>
+<td style="text-align:center">多行文本输入框</td>
+</tr>
+<tr>
+<td>tt</td>
+<td style="text-align:center">电传文本</td>
+</tr>
+<tr>
+<td>u</td>
+<td style="text-align:center">下划线</td>
+</tr>
+<tr>
+<td>var</td>
+<td style="text-align:center">定义变量</td>
+</tr>
+<tr>
+<td>textarea</td>
+<td style="text-align:center">多行的文本输入</td>
+</tr>
+<tr>
+<td>canvas</td>
+<td style="text-align:center">画布</td>
+</tr>
+<tr>
+<td>video</td>
+<td style="text-align:center">视频</td>
+</tr>
+<tr>
+<td>audio</td>
+<td style="text-align:center">音频</td>
+</tr>
+</tbody>
+</table>
+<h4 id="12-3块级元素和内联元素之间的转换："><a href="#12-3块级元素和内联元素之间的转换：" class="headerlink" title="12.3块级元素和内联元素之间的转换："></a>12.3块级元素和内联元素之间的转换：</h4><ul>
+<li><p>1.display<br>  块元素默认display:block;<br>  行内非替换元素(a,span)默认为display:inline;<br>  <strong>行内替换元素(input)默认为display:inline-block;</strong></p>
+<p>  a.display:none;不显示该元素，也不会保留该元素原先占有的文档流位置。<br>  b.display:block;转换为块级元素。<br>  c.display:inline;转换为行内元素。<br>  d.display:inline-block;转换为行内块级元素。</p>
+</li>
+<li><p>2.float<br>当把行内元素设置完float:left/right后，该行内元素的display属性会被赋予block值，且拥有浮动特性。行内元素去除了之间的莫名空白。</p>
+</li>
+<li><p>3.position<br>当为行内元素进行定位时，position:absolute与position:fixed.都会使得原先的行内元素变为块级元素。</p>
+</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/d69878549d92" target="_blank" rel="external">https://www.jianshu.com/p/d69878549d92</a></p>
+<h3 id="13-encodeURI和encodeURIComponent"><a href="#13-encodeURI和encodeURIComponent" class="headerlink" title="13. encodeURI和encodeURIComponent"></a>13. encodeURI和encodeURIComponent</h3><h4 id="13-1-相同点"><a href="#13-1-相同点" class="headerlink" title="13.1 相同点"></a>13.1 相同点</h4><p>都是编码URL，替换特殊字符为16进制数，如空格替换为%20,’/‘替换为%2F。</p>
+<h4 id="13-2-不同点"><a href="#13-2-不同点" class="headerlink" title="13.2 不同点"></a>13.2 不同点</h4><h5 id="13-2-1-编码范围不同"><a href="#13-2-1-编码范围不同" class="headerlink" title="13.2.1 编码范围不同"></a>13.2.1 编码范围不同</h5><p>encodeURL方法<strong>不会</strong>对下列字符编码 ASCII字母、数字、~!@#$&amp;<em>()=:/,;?+’<br>endoceURLComponent方法<strong>不会</strong>对下列字符编码 ASCII字母、数字、~!</em>()’<br>所以encodeURLComponent的编码范围更大，适合编码http url中的参数部分,因为:/都被编码了</p>
+<p><a href="https://www.cnblogs.com/season-huang/p/3439277.html" target="_blank" rel="external">https://www.cnblogs.com/season-huang/p/3439277.html</a></p>
+<h3 id="14"><a href="#14" class="headerlink" title="14."></a>14.<a></a></h3><p> a本身会触发一个链接，a的onclick会触发一个链接，onclick事件执行后会触发a本身的链接，为了阻止a本身链接的触发，需要对onclick事件的函数返回false。<br>return true：返回正常的处理结果。<br>return false：返回错误的处理结果;终止处理;阻止提交表单;阻止执行默认的行为。<br>return：把控制权返回给页面。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">若将html代码中的</div><div class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"linkPage"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/banner1.gif"</span> <span class="attr">id</span>=<span class="string">"adBanner"</span> <span class="attr">alt</span>=<span class="string">"ad banner"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">改为：</div><div class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/banner1.gif"</span> <span class="attr">id</span>=<span class="string">"adBanner"</span> <span class="attr">alt</span>=<span class="string">"ad banner"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>此时去掉js代码中的return false，也可以实现同样的效果。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/14/web-debug-md/" data-id="cjkw98epd00238ji6uxsh25ce" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/08/react-web/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          react-web
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/30/go入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">go入门</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React-Native</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构/">架构</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache2/">apache2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hoc/">hoc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native/">react-native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native-tools/">react-native tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native-web/">react-native-web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原理/">原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原生模块/">原生模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/签名/">签名</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/JNI/" style="font-size: 10px;">JNI</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/apache2/" style="font-size: 10px;">apache2</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/debug/" style="font-size: 15px;">debug</a> <a href="/tags/emacs/" style="font-size: 10px;">emacs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go/" style="font-size: 10px;">go</a> <a href="/tags/hoc/" style="font-size: 10px;">hoc</a> <a href="/tags/ios/" style="font-size: 15px;">ios</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/mac/" style="font-size: 20px;">mac</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/react-native/" style="font-size: 20px;">react-native</a> <a href="/tags/react-native-tools/" style="font-size: 10px;">react-native tools</a> <a href="/tags/react-native-web/" style="font-size: 10px;">react-native-web</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 20px;">web</a> <a href="/tags/原理/" style="font-size: 10px;">原理</a> <a href="/tags/原生模块/" style="font-size: 10px;">原生模块</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/签名/" style="font-size: 10px;">签名</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/05/Android使用JNI/">Android使用JNI</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/03/flutter/">flutter</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/30/架构/">架构</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/30/beyond-compare/">beyond-compare</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/25/Charles使用/">Charles使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 qsl<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
