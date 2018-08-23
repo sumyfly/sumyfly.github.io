@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/08/22/Openssl使用/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.查看private keyopenssl pkcs8  -in my_private_key -passin mypassworldopenssl pkcs12  -info -in my_private_key -passin mypassworld  注意不同的加密格式对应不同命令">
-<meta property="og:updated_time" content="2018-08-22T08:13:53.952Z">
+<meta property="og:updated_time" content="2018-08-23T06:53:43.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Openssl使用">
 <meta name="twitter:description" content="1.查看private keyopenssl pkcs8  -in my_private_key -passin mypassworldopenssl pkcs12  -info -in my_private_key -passin mypassworld  注意不同的加密格式对应不同命令">
@@ -354,6 +354,15 @@
 <p>注意不同的加密格式对应不同命令</p>
 </blockquote>
 <a id="more"></a>
+<h3 id="2-PEM"><a href="#2-PEM" class="headerlink" title="2. PEM"></a>2. PEM</h3><p>Your keys may already be in PEM format, but just named with .crt or .key.<br>If the file’s content begins with —–BEGIN and you can read it in a text editor:<br>The file uses base64, which is readable in ASCII, not binary format. The certificate is already in PEM format. Just change the extension to .pem.<br>If the file is in binary:<br>For the server.crt, you would use</p>
+<p>openssl x509 -inform DER -outform PEM -in server.crt -out server.crt.pem<br>For server.key, use openssl rsa in place of openssl x509.</p>
+<p>The server.key is likely your private key, and the .crt file is the returned, signed, x509 certificate.</p>
+<p>If this is for a Web server and you cannot specify loading a separate private and public key:</p>
+<p>You may need to concatenate the two files. For this use:</p>
+<p>cat server.crt server.key &gt; server.includesprivatekey.pem<br>I would recommend naming files with “includesprivatekey” to help you manage the permissions you keep with this file.</p>
+<p>TODO:<a href="https://stackoverflow.com/questions/991758/how-to-get-pem-file-from-key-and-crt-files" target="_blank" rel="external">https://stackoverflow.com/questions/991758/how-to-get-pem-file-from-key-and-crt-files</a></p>
+<p><a href="https://www.sslshopper.com/article-most-common-openssl-commands.html" target="_blank" rel="external">https://www.sslshopper.com/article-most-common-openssl-commands.html</a></p>
+
       
     </div>
 
@@ -480,7 +489,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -537,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看private-key"><span class="nav-number">1.</span> <span class="nav-text">1.查看private key</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看private-key"><span class="nav-number">1.</span> <span class="nav-text">1.查看private key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-PEM"><span class="nav-number">2.</span> <span class="nav-text">2. PEM</span></a></li></ol></div>
             
 
           </div>
