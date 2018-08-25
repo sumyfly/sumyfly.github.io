@@ -275,6 +275,168 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/React-Native集成module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/25/React-Native集成module/" itemprop="url">React-Native集成module</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-25T08:56:06+08:00">
+                2018-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React-Native/" itemprop="url" rel="index">
+                    <span itemprop="name">React-Native</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/25/React-Native集成module/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/25/React-Native集成module/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-集成react-native-maps"><a href="#1-集成react-native-maps" class="headerlink" title="1.集成react-native-maps"></a>1.集成react-native-maps</h3><p>集成谷歌地图，分两步，客户端集成与Google Api设置。难点是Google Service的版本统一，iOS集成，Google Api设置。</p>
+<ul>
+<li>Android的构建工具是gradle，所以集成还算方便，最多改下buildToolsVersion, targetVersion, Google Service使用一个全局变量来统一版本。</li>
+<li>iOS可以手动集成，也可以用cocoaPods，难点在于同时使用这两个。react-native-maps我是用pod，创建PodFile后运行<code>pod install</code>,使用.xcworkspace打开，pod所有的依赖都打包到一起。</li>
+<li>Google Map APi设置，需要分Android和iOS两个，开发环境也要分成2个，所以一共要4个。</li>
+</ul>
+<h3 id="1-集成react-native-google-signin"><a href="#1-集成react-native-google-signin" class="headerlink" title="1.集成react-native-google-signin"></a>1.集成react-native-google-signin</h3><p>一开始我看最新版本是需要Google Service15，我想兼容性好用Google Service的11.8.0版本。所以一开始用了它的0.11版本。</p>
+<ul>
+<li>Android上改了module的buildToolsVersion，把compileOnly,implementation改成compile.Java文件中@Override<br>Android需要下载Google-Service,这个是Firebase导出的，事实上我们用不到Firebase。Firebase-core是analytics的别名，它的大部分功能是用来统计数据的，比如ads,crashlytics,google analtytics。Firbase-auth是可以支持更多的登录，跟Google-signin不一样。</li>
+<li>iOS集成，我之前用cocoaPods安装了react-native-maps,一开始我手动集成react-native-google-signin，发现Arguments too long,按照FaceBook的说法是Header Search Paths里面的pod路径和手工路径重复了，可是我没有重复的;使用pod集成，找不到各种文件。</li>
+<li>Google Signin Api跟Map Api差不多，唯一不同的是需要Android的packageName和SHA1指纹，iOS需要bunldeId。</li>
+</ul>
+<p>如果再次引入其他包，可以主项目引入，然后加上Header Search Paths.iOS需要<strong>头文件和lib一起工作</strong>，如果主项目用到了头文件或者Framework用到了头文件，那么头文件路径需要设置（Framework可以到.framework文件夹，自定义头文件的需要到头文件文件夹路径）。</p>
+<p>解决方案: 使用了最新的1.0.0-rc3，然后iOS就可以了，Android把Google Service的版本降低了。下次集成先集成iOS，Android相对容易些。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/25/React-Native集成module/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/23/mongoDB使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1516,159 +1678,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/22/React-Native工具/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/22/React-Native工具/" itemprop="url">React-Native工具</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-22T23:02:18+08:00">
-                2018-07-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React-Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/07/22/React-Native工具/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/07/22/React-Native工具/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="1-调试工具"><a href="#1-调试工具" class="headerlink" title="1. 调试工具"></a>1. 调试工具</h3><h4 id="1-1-Facebook官方react-devtools"><a href="#1-1-Facebook官方react-devtools" class="headerlink" title="1.1 Facebook官方react-devtools"></a>1.1 Facebook官方react-devtools</h4><p>特点是命令行启动，不需要RN启动remote js debugging.只能看React布局，如同Chrome的React插件，不能看网络，不能看Redux。</p>
-<h4 id="1-2-Electron集成调试工具-React-Native-Debugger"><a href="#1-2-Electron集成调试工具-React-Native-Debugger" class="headerlink" title="1.2 Electron集成调试工具 React-Native-Debugger"></a>1.2 Electron集成调试工具 React-Native-Debugger</h4><p>特点是：独立的Electron程序，集成了react-devtools, Redux, chrome的调试。需要启动remote js debugging,而且要关掉默认的chrome的调试网页。<br>集成Redux调试工具时，需要添加增强代码。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> composeFuncs = [applyMiddleware(</div><div class="line">  sagaMiddleware,  </div><div class="line">  asyncInitialState.middleware(loadStore),</div><div class="line">)]</div><div class="line"></div><div class="line"><span class="keyword">if</span> (__DEV__) &#123;</div><div class="line">  <span class="comment">// integrate React Native Debugger</span></div><div class="line">  <span class="keyword">typeof</span> <span class="built_in">window</span> === <span class="string">'object'</span> &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; composeFuncs.push(</div><div class="line">    <span class="comment">// __REDUX_DEVTOOLS_EXTENSION__ this is React Native Debugger added</span></div><div class="line">    <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()</div><div class="line">  )</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>React的调试框中的$r，直接可以在Chrome的console中读到。</li>
-<li>CMD+D显示调试窗口后，启用Toggle Inspector可以在React中显示当前的View的信息。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/22/React-Native工具/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1718,7 +1727,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
