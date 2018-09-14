@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/08/React-Native-Debug/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
-<meta property="og:updated_time" content="2018-09-06T05:17:37.862Z">
+<meta property="og:updated_time" content="2018-09-14T03:45:26.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Native-Debug">
 <meta name="twitter:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
@@ -486,7 +486,7 @@
 <li>在容器flexWrap:’wrap’,TouchableWithoutFeedback中不能正常显示，使用TouchableOpacity能正常显示。所以TouchableOpacity更像View，而TouchableWithoutFeedback布局功能有所欠缺。</li>
 </ul>
 <h3 id="39-border-虚线"><a href="#39-border-虚线" class="headerlink" title="39. border 虚线"></a>39. border 虚线</h3><p>RN 支持borderStyle: ‘dotted’，所以不需要用图片来代替虚线了。</p>
-<h3 id="40-Text"><a href="#40-Text" class="headerlink" title="40. Text"></a>40. Text</h3><p>RN Text的默认字体大小是12.</p>
+<h3 id="40-Text"><a href="#40-Text" class="headerlink" title="40. Text"></a>40. Text</h3><p>RN Text的默认字体大小是14,ios上是14.TODO:android, 系统设置默认字体？</p>
 <h3 id="41-TouchableOpacity-TouchableWithouFeedback的onPress回调函数"><a href="#41-TouchableOpacity-TouchableWithouFeedback的onPress回调函数" class="headerlink" title="41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数"></a>41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数</h3><p>我遇到一个错误，<code>Malformed call from JS: field size are different</code><br>原因是给react-native-navigation的navigator传错参数了。<br>它们的回调函数有参数event,比如我定义一个<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPressHandler =<span class="function">(<span class="params">title</span>)=&gt;</span>&#123;</div><div class="line">  <span class="keyword">this</span>.props.jump(<span class="string">'xxx.xx'</span>, &#123;title&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这里的title应该是一个string，但是实参是一个event的对象。所以在闭包中，一定要注意默认参数，比如onPress的。</p>
 <h3 id="42-Trying-to-add-a-‘RCTRawText-text-gt-’-to-a-‘RCTView’"><a href="#42-Trying-to-add-a-‘RCTRawText-text-gt-’-to-a-‘RCTView’" class="headerlink" title="42. Trying to add a ‘RCTRawText [text: &gt;]’ to a ‘RCTView’"></a>42. Trying to add a ‘RCTRawText [text: &gt;]’ to a ‘RCTView’</h3><p>这个是因为在JSX语法中，多了一个’&gt;’,这个是写代码不小心造成的。JSX所有代码都要在标签里。Android会导致crash,iOS不会crash.改正习惯<code>&gt;</code>不能单独一行。</p>
