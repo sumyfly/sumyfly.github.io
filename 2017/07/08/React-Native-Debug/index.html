@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/08/React-Native-Debug/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
-<meta property="og:updated_time" content="2018-09-21T06:47:52.200Z">
+<meta property="og:updated_time" content="2018-09-21T06:58:13.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Native-Debug">
 <meta name="twitter:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
@@ -533,7 +533,10 @@
 <p>FormData 是XmlHttpRequest中新增的，File继承自Blob。Blob有两个属性:size和type。Blob.size (只读),Blob 对象中所包含数据的大小（字节）;Blob.type (只读),一个字符串，表明该Blob对象所包含数据的MIME类型,如果类型未知，则该值为空字符串。如果分块上传，使用有blob.slice(),那个用的Transfer-Encoding: chunked这个Header.</p>
 </blockquote>
 <p>较全:<a href="https://deliciousbrains.com/using-javascript-file-api-to-avoid-file-upload-limits/" target="_blank" rel="external">https://deliciousbrains.com/using-javascript-file-api-to-avoid-file-upload-limits/</a><br><a href="https://blog.csdn.net/foolish0421/article/details/73302336" target="_blank" rel="external">https://blog.csdn.net/foolish0421/article/details/73302336</a><br><a href="https://www.cnblogs.com/xuehaoyue/p/6639029.html" target="_blank" rel="external">https://www.cnblogs.com/xuehaoyue/p/6639029.html</a></p>
+<blockquote>
+<p>Fetch在Browser环境中不能设置ContentType:’multi/form-data’,会报没有bundary的错误。因为Fetch上传文件时会自动设置这个ContentType,还会加上bundary.</p>
 <h3 id="53-cocoaPosd"><a href="#53-cocoaPosd" class="headerlink" title="53. cocoaPosd"></a>53. cocoaPosd</h3><p>现在RN的第三方模块都开始支持cocoaPods,如果是数组target，需要在Podfile中写ruby.<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">targetArray = [<span class="string">'sample-develop'</span>, <span class="string">'sample-production'</span>]</div><div class="line">targetArray.each  <span class="keyword">do</span> <span class="params">|t|</span></div><div class="line">  target t <span class="keyword">do</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+</blockquote>
 <p>增加了新的pod要去PROJECT-&gt;Configurations-&gt;Debug/Release中把配置都设置为None,然后执行pod install,那么新的配置文件就设置好了。</p>
 <blockquote>
 <p>如果出现了pod的链接错误，去Link Binary With Libraries中删除无效的xx.a文件。</p>
