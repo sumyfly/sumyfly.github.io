@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. USB2.0标准USB2.0标准的子类。">
 <meta property="og:image" content="http://yoursite.com/images/usb/Usb2.0.png">
-<meta property="og:updated_time" content="2018-10-15T09:08:40.610Z">
+<meta property="og:updated_time" content="2018-10-15T09:14:00.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android使用USB">
 <meta name="twitter:description" content="1. USB2.0标准USB2.0标准的子类。">
@@ -405,7 +405,8 @@
 <li>CDC直接通讯</li>
 </ul>
 <p><a href="https://blog.csdn.net/sunjing_/article/details/51889801" target="_blank" rel="external">https://blog.csdn.net/sunjing_/article/details/51889801</a></p>
-<h3 id="5-Device-code"><a href="#5-Device-code" class="headerlink" title="5. Device code"></a>5. Device code</h3><p><a href="https://www.usb.org/defined-class-codes" target="_blank" rel="external">https://www.usb.org/defined-class-codes</a></p>
+<h3 id="5-Device-code"><a href="#5-Device-code" class="headerlink" title="5. Device code"></a>5. Device code</h3><p><code>device.getInterface(iInterface).getInterfaceClass()</code>可以获取class code,列表在下面:<br><a href="https://developer.android.com/reference/kotlin/android/hardware/usb/UsbConstants#USB_CLASS_APP_SPEC%3Akotlin.Int" target="_blank" rel="external">https://developer.android.com/reference/kotlin/android/hardware/usb/UsbConstants#USB_CLASS_APP_SPEC%3Akotlin.Int</a></p>
+<p><code>device.getInterface(iInterface).getInterfaceSubclass()</code>这个sub class，Android官网没有说明说明值，可以从下面usb.org官网找到，比如<code>07h</code>printer只有一个sub class <code>01h</code>.<br><a href="https://www.usb.org/defined-class-codes" target="_blank" rel="external">https://www.usb.org/defined-class-codes</a></p>
 
       
     </div>
