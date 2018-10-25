@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/10/24/React-Native启动顺序/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. React Naitve启动顺(Android) ReactActivity-&amp;gt;onCreate() MainApplication-&amp;gt;mReactNativeHost.getPackages() ScannerPackage-&amp;gt;Scanner.initScannerModule">
-<meta property="og:updated_time" content="2018-10-25T08:50:45.634Z">
+<meta property="og:updated_time" content="2018-10-25T09:03:29.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Native启动顺序">
 <meta name="twitter:description" content="1. React Naitve启动顺(Android) ReactActivity-&amp;gt;onCreate() MainApplication-&amp;gt;mReactNativeHost.getPackages() ScannerPackage-&amp;gt;Scanner.initScannerModule">
@@ -376,7 +376,7 @@
 <li>ReactActivity-&gt;onCreate()</li>
 <li>MainApplication-&gt;mReactNativeHost.getPackages()</li>
 <li>ScannerPackage-&gt;Scanner.initScannerModule<a id="more"></a>
-所以在ReactActivity-&gt;onCreate()中取不到ScannerModule.getInstance(),是异步加载Packages.</li>
+所以在ReactActivity-&gt;onCreate()中取不到ScannerModule.getInstance(),是在mCreateReactContextThread异步加载Packages.</li>
 </ol>
 <p><a href="https://www.jianshu.com/p/af4cb096785b" target="_blank" rel="external">https://www.jianshu.com/p/af4cb096785b</a><br>ReactActivity—&gt;<br>  ReactActivityDelegate—&gt;<br>         createRootView-&gt;<br>          getReactNativeHost-&gt;<br>          createReactInstanceManager-&gt;ReactInstanceManagerImpl<br>                  recreateReactContextInBackground-&gt;<br>                     1.构造ReactContext-&gt;<br>                     2.加载CoreModulesPackage-&gt;<br>                     3.加载用户自定义Packages-&gt;<br>                     4.构造CatalystInstanceImpl-&gt;<br>                     5.runJSBundle<br>          setContentView(mReactRootView)</p>
 
