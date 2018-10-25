@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,USB," />
+  <meta name="keywords" content="react-native,原理," />
 
 
 
@@ -93,19 +93,17 @@
 
 
 
-<meta name="description" content="1. USB2.0标准USB2.0标准的子类。">
-<meta name="keywords" content="Android,USB">
+<meta name="description" content="1. React Naitve启动顺(Android) ReactActivity-&amp;gt;onCreate() MainApplication-&amp;gt;mReactNativeHost.getPackages() ScannerPackage-&amp;gt;Scanner.initScannerModule">
+<meta name="keywords" content="react-native,原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android使用USB">
-<meta property="og:url" content="http://yoursite.com/2018/10/11/Android使用USB/index.html">
+<meta property="og:title" content="React-Native启动顺序">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/React-Native启动顺序/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1. USB2.0标准USB2.0标准的子类。">
-<meta property="og:image" content="http://yoursite.com/images/usb/Usb2.0.png">
-<meta property="og:updated_time" content="2018-10-15T09:14:00.803Z">
+<meta property="og:description" content="1. React Naitve启动顺(Android) ReactActivity-&amp;gt;onCreate() MainApplication-&amp;gt;mReactNativeHost.getPackages() ScannerPackage-&amp;gt;Scanner.initScannerModule">
+<meta property="og:updated_time" content="2018-10-25T08:50:45.634Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android使用USB">
-<meta name="twitter:description" content="1. USB2.0标准USB2.0标准的子类。">
-<meta name="twitter:image" content="http://yoursite.com/images/usb/Usb2.0.png">
+<meta name="twitter:title" content="React-Native启动顺序">
+<meta name="twitter:description" content="1. React Naitve启动顺(Android) ReactActivity-&amp;gt;onCreate() MainApplication-&amp;gt;mReactNativeHost.getPackages() ScannerPackage-&amp;gt;Scanner.initScannerModule">
 
 
 
@@ -133,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/11/Android使用USB/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/24/React-Native启动顺序/"/>
 
 
 
 
 
-  <title>Android使用USB | QSL</title>
+  <title>React-Native启动顺序 | QSL</title>
   
 
 
@@ -277,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/11/Android使用USB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/React-Native启动顺序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qsl">
@@ -294,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android使用USB</h1>
+          <h1 class="post-title" itemprop="name headline">React-Native启动顺序</h1>
         
 
         <div class="post-meta">
@@ -306,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T13:47:10+08:00">
-                2018-10-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-24T17:33:15+08:00">
+                2018-10-24
               </time>
             
 
@@ -329,8 +327,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/React-Native/" itemprop="url" rel="index">
+                    <span itemprop="name">React-Native</span>
                   </a>
                 </span>
 
@@ -347,9 +345,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/11/Android使用USB/#comments" itemprop="discussionUrl">
+                <a href="/2018/10/24/React-Native启动顺序/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/11/Android使用USB/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/10/24/React-Native启动顺序/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,39 +372,13 @@
       
 
       
-        <h3 id="1-USB2-0标准"><a href="#1-USB2-0标准" class="headerlink" title="1. USB2.0标准"></a>1. USB2.0标准</h3><p>USB2.0标准的子类。<br><img src="/images/usb/Usb2.0.png" alt="USB2.0"></p>
-<a id="more"></a>
-<h3 id="2-USB-驱动"><a href="#2-USB-驱动" class="headerlink" title="2. USB 驱动"></a>2. USB 驱动</h3><h4 id="2-1-Linux-分为内核驱动，libusb无驱驱动。"><a href="#2-1-Linux-分为内核驱动，libusb无驱驱动。" class="headerlink" title="2.1 Linux 分为内核驱动，libusb无驱驱动。"></a>2.1 Linux 分为内核驱动，libusb无驱驱动。</h4><p>内核驱动里面包含USB标准的一部分驱动，如HID。<br>无驱驱动意思是直接读取数据，处理数据，发送数据。<br>第三方驱动也是以模块的方式安装到模块(安装到内核)。</p>
-<h4 id="2-2-Windows-有内核驱动，第三方驱动。"><a href="#2-2-Windows-有内核驱动，第三方驱动。" class="headerlink" title="2.2 Windows 有内核驱动，第三方驱动。"></a>2.2 Windows 有内核驱动，第三方驱动。</h4><p>第三方驱动需要安装驱动软件，应该是安装到内核。<br>Windows的无驱驱动，跟Linux的概念不太一样，它的驱动是Windows操作系统自带的，如键盘，无驱摄像头。</p>
-<h3 id="3-USB-转-COM"><a href="#3-USB-转-COM" class="headerlink" title="3. USB 转 COM"></a>3. USB 转 COM</h3><h4 id="3-1-CDC-Communication-Device-Class"><a href="#3-1-CDC-Communication-Device-Class" class="headerlink" title="3.1 CDC - Communication Device Class"></a>3.1 CDC - Communication Device Class</h4><p>在USB标准协议中，有一类专用于通讯设备（主要包括电信通信设备和中速网络通信设备）的CDC协议，USB的CDC类是 USB通信设备类（Communication Device Class Specification ）的简称。可以通过 USB CDC 协议来将 USB 接口虚拟为其他通讯接口如串口，以太网接口，ISDN 接口等等。根据 CDC 协议所针对通信设备的不同，CDC 协议又被分成以下不同的模型：</p>
-<ul>
-<li>USB 传统电话业务（POTS ）模型， </li>
-<li>USB ISDN 模型</li>
-<li>USB网络模型。</li>
-</ul>
-<p>CDC类可以实现虚拟串口通讯协议，而且由于大部分的操作系统（Windows,Linux)都带有支持CDC类的设备驱动程序，可以自动识别CDC类的设备，这样不仅免去了写专用设备驱动的负担，同时简化了设备驱动的安装。</p>
-<p><a href="https://wenku.baidu.com/view/3e2b630002020740be1e9b0f.html" target="_blank" rel="external">https://wenku.baidu.com/view/3e2b630002020740be1e9b0f.html</a><br><a href="https://blog.csdn.net/king_jie0210/article/details/76713938" target="_blank" rel="external">https://blog.csdn.net/king_jie0210/article/details/76713938</a><br><a href="https://blog.csdn.net/weijory/article/details/75570597" target="_blank" rel="external">https://blog.csdn.net/weijory/article/details/75570597</a></p>
-<h4 id="3-2-相关USB转COM芯片"><a href="#3-2-相关USB转COM芯片" class="headerlink" title="3.2 相关USB转COM芯片"></a>3.2 相关USB转COM芯片</h4><ul>
-<li>CP21XX</li>
-<li>Ch34x</li>
-<li>Ftdi</li>
-<li>Prolific</li>
-</ul>
-<h3 id="4-Android-usb通信"><a href="#4-Android-usb通信" class="headerlink" title="4. Android usb通信"></a>4. Android usb通信</h3><h4 id="4-1-串口"><a href="#4-1-串口" class="headerlink" title="4.1 串口"></a>4.1 串口</h4><p>Android与串口设备通信的方案有四种：</p>
-<ul>
-<li>第一种是直接用SDK的BluetoothSocket类来进行蓝牙通信，外部设备再用蓝牙转串口进行控制。这种方式有较高延时，蓝牙模块需要供电，低带宽。</li>
-<li>第二种是使用USB转RS232方式（使用内核驱动和使用Android驱动两种方式），这种方式不需要硬件改动，不需要另外的供电，延时很小且有较高带宽。但是Android设备需要硬件上支持USB Host接口（一般Android平板支持，Android手机一般是没有的），另外可能需要root以改变/dev/ttyUSB0文件权限来加载一个内核模块。开发需要使用android_serialport_api。</li>
-<li>第三种是最容易的方案，直接使用串口进行连接，但是这种方式兼容性不好，只有少数设备支持，而且串口不支持流控制(由Android提供的USB Host API决定的。TODO: 串口在/dev/tty下，并不能遍历到/dev/bus/usb或/dev/usb，这里存疑。)。使用时也用android_serialport_api。</li>
-<li>第四种是将Android作为USB从机，外部设备作为USB主机与之通信，这种方式几乎与所有Android设备兼容（一般都有USB从口），无需root，低延迟，高带宽。</li>
-</ul>
-<p><a href="https://blog.csdn.net/sunjing_/article/details/51889801" target="_blank" rel="external">https://blog.csdn.net/sunjing_/article/details/51889801</a></p>
-<h4 id="4-1-USB直连"><a href="#4-1-USB直连" class="headerlink" title="4.1 USB直连"></a>4.1 USB直连</h4><ul>
-<li>HID，输入设备。</li>
-<li>CDC直接通讯</li>
-</ul>
-<p><a href="https://blog.csdn.net/sunjing_/article/details/51889801" target="_blank" rel="external">https://blog.csdn.net/sunjing_/article/details/51889801</a></p>
-<h3 id="5-Device-code"><a href="#5-Device-code" class="headerlink" title="5. Device code"></a>5. Device code</h3><p><code>device.getInterface(iInterface).getInterfaceClass()</code>可以获取class code,列表在下面:<br><a href="https://developer.android.com/reference/kotlin/android/hardware/usb/UsbConstants#USB_CLASS_APP_SPEC%3Akotlin.Int" target="_blank" rel="external">https://developer.android.com/reference/kotlin/android/hardware/usb/UsbConstants#USB_CLASS_APP_SPEC%3Akotlin.Int</a></p>
-<p><code>device.getInterface(iInterface).getInterfaceSubclass()</code>这个sub class，Android官网没有说明说明值，可以从下面usb.org官网找到，比如<code>07h</code>printer只有一个sub class <code>01h</code>.<br><a href="https://www.usb.org/defined-class-codes" target="_blank" rel="external">https://www.usb.org/defined-class-codes</a></p>
+        <h3 id="1-React-Naitve启动顺-Android"><a href="#1-React-Naitve启动顺-Android" class="headerlink" title="1. React Naitve启动顺(Android)"></a>1. React Naitve启动顺(Android)</h3><ol>
+<li>ReactActivity-&gt;onCreate()</li>
+<li>MainApplication-&gt;mReactNativeHost.getPackages()</li>
+<li>ScannerPackage-&gt;Scanner.initScannerModule<a id="more"></a>
+所以在ReactActivity-&gt;onCreate()中取不到ScannerModule.getInstance(),是异步加载Packages.</li>
+</ol>
+<p><a href="https://www.jianshu.com/p/af4cb096785b" target="_blank" rel="external">https://www.jianshu.com/p/af4cb096785b</a><br>ReactActivity—&gt;<br>  ReactActivityDelegate—&gt;<br>         createRootView-&gt;<br>          getReactNativeHost-&gt;<br>          createReactInstanceManager-&gt;ReactInstanceManagerImpl<br>                  recreateReactContextInBackground-&gt;<br>                     1.构造ReactContext-&gt;<br>                     2.加载CoreModulesPackage-&gt;<br>                     3.加载用户自定义Packages-&gt;<br>                     4.构造CatalystInstanceImpl-&gt;<br>                     5.runJSBundle<br>          setContentView(mReactRootView)</p>
 
       
     </div>
@@ -436,9 +408,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
+            <a href="/tags/react-native/" rel="tag"># react-native</a>
           
-            <a href="/tags/USB/" rel="tag"># USB</a>
+            <a href="/tags/原理/" rel="tag"># 原理</a>
           
         </div>
       
@@ -451,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/25/React-Native集成module/" rel="next" title="React-Native集成module">
-                <i class="fa fa-chevron-left"></i> React-Native集成module
+              <a href="/2018/10/11/Android使用USB/" rel="next" title="Android使用USB">
+                <i class="fa fa-chevron-left"></i> Android使用USB
               </a>
             
           </div>
@@ -460,10 +432,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/24/React-Native启动顺序/" rel="prev" title="React-Native启动顺序">
-                React-Native启动顺序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -599,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-USB2-0标准"><span class="nav-number">1.</span> <span class="nav-text">1. USB2.0标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-USB-驱动"><span class="nav-number">2.</span> <span class="nav-text">2. USB 驱动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Linux-分为内核驱动，libusb无驱驱动。"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Linux 分为内核驱动，libusb无驱驱动。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-Windows-有内核驱动，第三方驱动。"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Windows 有内核驱动，第三方驱动。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-USB-转-COM"><span class="nav-number">3.</span> <span class="nav-text">3. USB 转 COM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-CDC-Communication-Device-Class"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 CDC - Communication Device Class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-相关USB转COM芯片"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 相关USB转COM芯片</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Android-usb通信"><span class="nav-number">4.</span> <span class="nav-text">4. Android usb通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-串口"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 串口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-USB直连"><span class="nav-number">4.2.</span> <span class="nav-text">4.1 USB直连</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Device-code"><span class="nav-number">5.</span> <span class="nav-text">5. Device code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-React-Naitve启动顺-Android"><span class="nav-number">1.</span> <span class="nav-text">1. React Naitve启动顺(Android)</span></a></li></ol></div>
             
 
           </div>
@@ -742,9 +710,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/10/11/Android使用USB/';
-          this.page.identifier = '2018/10/11/Android使用USB/';
-          this.page.title = 'Android使用USB';
+          this.page.url = 'http://yoursite.com/2018/10/24/React-Native启动顺序/';
+          this.page.identifier = '2018/10/24/React-Native启动顺序/';
+          this.page.title = 'React-Native启动顺序';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://edwardqian.disqus.com/embed.js';
