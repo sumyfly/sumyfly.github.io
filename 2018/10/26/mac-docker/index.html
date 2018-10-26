@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/10/26/mac-docker/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 基本命令1234567891011121314151617181920212223# 查看运行的容器docker ps# 查看所有容器docker ps -a# 进入容器docker exec -it $container_id /bin/bash# 停用某个容器docker stop $container_id# 停用全部运行中的容器docker stop $(docker ps -q)#">
-<meta property="og:updated_time" content="2018-10-26T16:33:14.452Z">
+<meta property="og:updated_time" content="2018-10-26T16:45:27.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac-docker">
 <meta name="twitter:description" content="1. 基本命令1234567891011121314151617181920212223# 查看运行的容器docker ps# 查看所有容器docker ps -a# 进入容器docker exec -it $container_id /bin/bash# 停用某个容器docker stop $container_id# 停用全部运行中的容器docker stop $(docker ps -q)#">
@@ -375,7 +375,7 @@
 <p><a href="https://stackoverflow.com/questions/33715499/what-is-the-difference-between-docker-compose-up-and-docker-compose-start" target="_blank" rel="external">https://stackoverflow.com/questions/33715499/what-is-the-difference-between-docker-compose-up-and-docker-compose-start</a></p>
 <p>不过我执行<code>docker-compose down</code>后，默认就把容器给删除了，下次还是只能用<code>docker-compose up</code>.在<code>docker-compose up</code>后，运行<code>docker-compose stop</code>可以停用容器，之后可以用<code>docker-compose start</code>再次启用容器。</p>
 <blockquote>
-<p>docker-compose up会读取docker-compose.yaml，所以它会更新配置，它也会关闭正在运行的容器，创建新容器。而docker-compose start是启用已有容器，不会更新容器。</p>
+<p>docker-compose up会读取docker-compose.yaml，所以它会更新配置，它也会关闭正在运行的容器，创建新容器。而docker-compose start是启用已有容器，不会更新容器。<br><a href="https://www.cnblogs.com/ityouknow/p/8648467.html" target="_blank" rel="external">https://www.cnblogs.com/ityouknow/p/8648467.html</a></p>
 </blockquote>
 
       
