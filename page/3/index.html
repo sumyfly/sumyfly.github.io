@@ -275,6 +275,148 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/js原型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/12/js原型/" itemprop="url">js原型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T14:26:17+08:00">
+                2018-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/12/js原型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/12/js原型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="1.构造函数"></a>1.构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Foo))&#123;</div><div class="line">    <span class="comment">//非当前实例，原因是没用new去调用</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Foo(a)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">this</span>.name = a</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo(<span class="string">'foo'</span>) <span class="comment">//这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都会check instance</span></div></pre></td></tr></table></figure>
+<p>我记得构造函数首字母要大写，但是发现现在不大写也可以，最好大写吧。<br>new 的作用：</p>
+<ul>
+<li>绑定了this</li>
+<li>返回一个对象</li>
+<li>增加一个<code>__proto__</code>的属性指向构造函数的<code>protoType</code></li>
+</ul>
+<h3 id="2-原型"><a href="#2-原型" class="headerlink" title="2.原型"></a>2.原型</h3><h4 id="2-1-继承"><a href="#2-1-继承" class="headerlink" title="2.1 继承"></a>2.1 继承</h4><p>js中的继承是原型链，就是<code>GrandFather grandFather&lt;-Father father&lt;-Son son</code>.它们之间靠<strong>proto</strong>联系在一起。就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">son.__proto__ === Son.ProtoType</div><div class="line">son.__proto__.__proto__ === Father.protoType</div><div class="line">son.__proto__.__proto__ .__proto__ === GrandFather.protoType</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line">由于js查找属性时，按照这个原型链去查，一直能查到祖父。</div><div class="line"></div><div class="line">#### 2.2 protoType `__proto__<span class="string">`</span></div><div class="line">- 相同点：</div><div class="line">protoType和__proto__对应的是同一个原型，**它是一个Object**。每个实例的__proto__都是构造函数用自己的protoType赋值的。</div><div class="line">- 不同点：</div><div class="line">不同点__proto__是实例调用的，protoType是构造函数调用的（注意：我没说是类，js本质上没类，只有对象和函数，每个实例都是构造函数构造出来的）。</div><div class="line"></div><div class="line">`<span class="string">``</span> js</div><div class="line"><span class="keyword">var</span> p =&#123; </div><div class="line">  <span class="attr">isHuman</span>: <span class="literal">false</span>,</div><div class="line">  <span class="attr">name</span>: <span class="string">'foo'</span>,</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Glass</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.glass = <span class="string">'glass'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = &#123;&#125;</div><div class="line"><span class="comment">// 不要直接给一个对象赋值__proto__,这个会导致性能问题，不是赋值的时候有问题，而是查找的时候有性能问题</span></div><div class="line">a.__proto__ = p </div><div class="line"><span class="comment">// 1. 可以用原型来做</span></div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> Glass()</div><div class="line">b.__proto__.__proto__ = p <span class="comment">// or Glass.protoType.__proto__ = p</span></div><div class="line"><span class="comment">// 2. 用Obejct.create()</span></div><div class="line"><span class="keyword">var</span> c = <span class="built_in">Object</span>.create(p) <span class="comment">// 这个没有影响任何构造函数</span></div></pre></td></tr></table></figure></p>
+<h4 id="2-3-实例的属性"><a href="#2-3-实例的属性" class="headerlink" title="2.3 实例的属性"></a>2.3 实例的属性</h4><p>js的属性分为自己的(<code>Object.getOwnerPropety()</code>)和继承的(<code>Object.getPrototypeOf()</code>)<br>循环遍历属性有几个特殊的地方：</p>
+<ul>
+<li><p>如果使用for<br>for会打印所有属性，包括自己的和继承的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用上面的b这个例子</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">in</span> b)&#123;</div><div class="line">  <span class="built_in">console</span>(v) <span class="comment">// isHuman, name, glass 都是可以打印出来的</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用Object.keys<br>Object.keys只会打印自己的属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.keys(b) <span class="comment">//只会打印 isHuman, name</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>我很少写原生的js了，大部分是用TS，写多了TS，这些都忘记了。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/web-js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1486,130 +1628,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/29/git/" itemprop="url">git</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T16:52:21+08:00">
-                2017-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/12/29/git/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/29/git/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-rename-git-branch-locally-and-remotely"><a href="#1-rename-git-branch-locally-and-remotely" class="headerlink" title="1. rename git branch locally and remotely"></a>1. rename git branch locally and remotely</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git branch -m old_branch new_branch         <span class="comment"># Rename branch locally    </span></div><div class="line">git push origin :old_branch                 <span class="comment"># Delete the old branch    </span></div><div class="line">git push --<span class="built_in">set</span>-upstream origin new_branch   <span class="comment"># Push the new branch, set local branch to track the new remote</span></div></pre></td></tr></table></figure>
-<p><a href="https://gist.github.com/lttlrck/9628955" target="_blank" rel="external">git hub refference</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1659,7 +1677,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
