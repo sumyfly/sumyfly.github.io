@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/10/27/ios-storyboard/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. Storyboard的Entry Point选择一个ViewController,在Attributes Inspector中勾选Is Initial View Controller。 2. Storyboard的导航有两个导航Navigation Controller和Tab Bar Controller,这两个在Editor-Embed In-&amp;gt;Navigation Control">
-<meta property="og:updated_time" content="2018-10-27T13:25:17.342Z">
+<meta property="og:updated_time" content="2018-10-28T02:56:55.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios-storyboard">
 <meta name="twitter:description" content="1. Storyboard的Entry Point选择一个ViewController,在Attributes Inspector中勾选Is Initial View Controller。 2. Storyboard的导航有两个导航Navigation Controller和Tab Bar Controller,这两个在Editor-Embed In-&amp;gt;Navigation Control">
@@ -355,6 +355,7 @@
 <a id="more"></a>
 <h3 id="3-不用StoryBoard"><a href="#3-不用StoryBoard" class="headerlink" title="3.不用StoryBoard"></a>3.不用StoryBoard</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</div><div class="line">    // Override point for customization after application launch.</div><div class="line">    </div><div class="line">    // First ViewController to show</div><div class="line">    ViewController *firstVC = [[ViewController alloc] init];</div><div class="line">    </div><div class="line">    // Create a UINavigationController to navigate, this is root navigation controller</div><div class="line">    // Each page navigatted from it will have slef.navigationController</div><div class="line">    UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:firstVC];</div><div class="line"></div><div class="line">    // Set window, if we don&apos;t use StoryBoard, need create window by ourself.</div><div class="line">    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];</div><div class="line">    // Set window rootViewController, this is the entry point like StoryBoard</div><div class="line">    self.window.rootViewController = naviController;</div><div class="line">    </div><div class="line">    // Set window backgroundColor</div><div class="line">    self.window.backgroundColor = [UIColor whiteColor];</div><div class="line">    </div><div class="line">    // Show the window</div><div class="line">    [self.window makeKeyAndVisible];</div><div class="line"></div><div class="line">    return YES;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="https://stackoverflow.com/questions/7767049/self-navigationcontroller-is-null" target="_blank" rel="external">https://stackoverflow.com/questions/7767049/self-navigationcontroller-is-null</a></p>
+<h3 id="4-First-Responder"><a href="#4-First-Responder" class="headerlink" title="4. First Responder"></a>4. First Responder</h3><p>页面的第一个响应者，比如Button, Text</p>
 
       
     </div>
@@ -541,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Storyboard的Entry-Point"><span class="nav-number">1.</span> <span class="nav-text">1. Storyboard的Entry Point</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Storyboard的导航"><span class="nav-number">2.</span> <span class="nav-text">2. Storyboard的导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-不用StoryBoard"><span class="nav-number">3.</span> <span class="nav-text">3.不用StoryBoard</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Storyboard的Entry-Point"><span class="nav-number">1.</span> <span class="nav-text">1. Storyboard的Entry Point</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Storyboard的导航"><span class="nav-number">2.</span> <span class="nav-text">2. Storyboard的导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-不用StoryBoard"><span class="nav-number">3.</span> <span class="nav-text">3.不用StoryBoard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-First-Responder"><span class="nav-number">4.</span> <span class="nav-text">4. First Responder</span></a></li></ol></div>
             
 
           </div>
