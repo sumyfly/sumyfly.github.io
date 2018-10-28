@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/08/22/mac-ruby/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.rvm管理不同的ruby版本。12rvm list #列出不同的ruby版本rvm use 2.4.1 --default #使用ruby 2.4.1做为默认版本 2.gem管理ruby的库文件。123gem install cocoapods #安装cocoapods到全局环境gem environment # gem的环境，看gem的安装目录gem list --local #看gem中库">
-<meta property="og:updated_time" content="2018-08-22T08:54:13.243Z">
+<meta property="og:updated_time" content="2018-10-28T02:28:47.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac-ruby">
 <meta name="twitter:description" content="1.rvm管理不同的ruby版本。12rvm list #列出不同的ruby版本rvm use 2.4.1 --default #使用ruby 2.4.1做为默认版本 2.gem管理ruby的库文件。123gem install cocoapods #安装cocoapods到全局环境gem environment # gem的环境，看gem的安装目录gem list --local #看gem中库">
@@ -379,6 +379,12 @@
 <h3 id="3-bundler"><a href="#3-bundler" class="headerlink" title="3.bundler"></a>3.bundler</h3><p>管理gem的依赖关系，使用Gemfile和Gemfile.lock。<br>先在Gemfile中写好需要安装的gem的版本比如<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">source <span class="string">'https://rubygems.org'</span></div><div class="line">gem <span class="string">'cocoapods'</span>, <span class="string">'~&gt; 1.5'</span>, <span class="string">'&gt;= 1.5.3'</span></div></pre></td></tr></table></figure></p>
 <p>然后执行<code>bundler install</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundler install <span class="comment"># 从Gemfile.lock中安装gem</span></div></pre></td></tr></table></figure></p>
 <h3 id="3-cocoapods"><a href="#3-cocoapods" class="headerlink" title="3.cocoapods"></a>3.cocoapods</h3><p>这个是管理iOS的第三方依赖包的，管理文件是Podfile。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod install <span class="comment"># 安装第三方库，安装之后使用.xcworkspace打开项目。不要使用.xcodeproj</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>1.当执行 bundle install 后，默认是将gem安装到哪个目录下的呢？<br>默认 bundle install 就装在 ruby 所在的目录了, 例如 ~/.rvm/gems/ruby-2.1.5/gems/rspec-rails-3.2.1</p>
+<p>2.如果我把gemfile.lock 删除后，在执行bundle install 是不是会安装最新gem（gemfile未指定版本号）<br>删了 lock 后, bundle install 会先从本地已经安装的 gem 找本地最新版本来依赖.</p>
+<p>3.如果用gem install gem_name 安装相关gem后，bundle install 还会安装吗？<br>gem install 之后, bundle install 会复用, 不会重新安装.<br>以上所有行为都是默认情况下, 基本上都可以指派参数来调整缺省行为.</p>
+</blockquote>
+<p><a href="https://ruby-china.org/topics/24703?page=2" target="_blank" rel="external">https://ruby-china.org/topics/24703?page=2</a></p>
 
       
     </div>
