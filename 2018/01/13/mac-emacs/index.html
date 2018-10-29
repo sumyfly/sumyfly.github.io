@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/13/mac-emacs/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 安装emacs使用brew1brew install emacs --with-cocoa 2. 配置emacs原来是用的prelude,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:  Emacs：最好的Python编辑器？注意有几处不同，elpy的ipython配置现在是12(setq python-shell-interpreter &amp;quot;">
-<meta property="og:updated_time" content="2018-08-16T06:46:14.814Z">
+<meta property="og:updated_time" content="2018-10-29T16:20:14.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac-emacs">
 <meta name="twitter:description" content="1. 安装emacs使用brew1brew install emacs --with-cocoa 2. 配置emacs原来是用的prelude,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:  Emacs：最好的Python编辑器？注意有几处不同，elpy的ipython配置现在是12(setq python-shell-interpreter &amp;quot;">
@@ -377,6 +377,7 @@
 <h3 id="4-jupyter"><a href="#4-jupyter" class="headerlink" title="4. jupyter"></a>4. jupyter</h3><p>jupyter notebook 原来是ipython notebook，因为原来支持ipython,现在的支持语言多了，有了一个kernel的概念，用pip3下载，默认就是python3。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install jupyter</div></pre></td></tr></table></figure>
 <p>安装成功后配置，先配置jupyter server</p>
+<p>卸载<code>jupyter</code><br><a href="https://stackoverflow.com/questions/33052232/how-to-uninstall-jupyter" target="_blank" rel="external">https://stackoverflow.com/questions/33052232/how-to-uninstall-jupyter</a></p>
 <h4 id="4-1-jupyter-server-配置文件"><a href="#4-1-jupyter-server-配置文件" class="headerlink" title="4.1 jupyter server 配置文件"></a>4.1 jupyter server 配置文件</h4><p>先生成一个config.py文件，<code>jupyter notebook --generate-config</code>,在~/.jupyter下面就会有一个jupyter_notebook_config.py文件，修改其中的参数。</p>
 <h5 id="4-1-1-修改密码"><a href="#4-1-1-修改密码" class="headerlink" title="4.1.1. 修改密码"></a>4.1.1. 修改密码</h5><p><code>from notebook.auth import passwd; passwd()</code>,输入一个你想使用的密码，会产生一个长的字符串结果，拷贝这个字符串到c.NotebookApp.password的值中</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">c.NotebookApp.password=<span class="string">''</span> <span class="comment">#这个不是原始密码，而是靠notebo.auth.passwd生成的。</span></div><div class="line">c.NotebookApp.password_required = <span class="keyword">True</span></div></pre></td></tr></table></figure>
