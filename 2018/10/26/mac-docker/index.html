@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/10/26/mac-docker/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 基本命令1234567891011121314151617181920212223242526# 查看运行的容器docker ps# 查看所有容器docker ps -a# 进入容器docker exec -it $container_id /bin/bash# 停用某个容器docker stop $container_id# 停用全部运行中的容器docker stop $(docker p">
-<meta property="og:updated_time" content="2018-10-31T17:05:49.612Z">
+<meta property="og:updated_time" content="2018-10-31T17:39:32.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac-docker">
 <meta name="twitter:description" content="1. 基本命令1234567891011121314151617181920212223242526# 查看运行的容器docker ps# 查看所有容器docker ps -a# 进入容器docker exec -it $container_id /bin/bash# 停用某个容器docker stop $container_id# 停用全部运行中的容器docker stop $(docker p">
@@ -381,7 +381,7 @@
 <h5 id="4-5-1删除volume"><a href="#4-5-1删除volume" class="headerlink" title="4.5.1删除volume"></a>4.5.1删除volume</h5><p>我想要删除虚拟机中的/var/lib/docker/Data/xx中的某个目录。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看volume</span></div><div class="line">docker volume ls</div><div class="line"></div><div class="line"><span class="comment"># 删除volume</span></div><div class="line">docker volume rm <span class="variable">$volume_name</span></div><div class="line"></div><div class="line"><span class="comment"># 清理无用的volume</span></div><div class="line">docker volume prune <span class="comment"># 我清空了大约4.1G</span></div></pre></td></tr></table></figure></p>
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes</a></p>
 <blockquote>
-<p>查看mount映射信息,<code>docker inspect $container_id</code>，就可以发现volume的路径。</p>
+<p>查看mount映射信息,<code>docker inspect $container_id</code>，就可以发现volume的路径。<br>TODO:如果在<code>docker-compose.yml</code>中不指定ports,默认是不会导到宿主机器的，但是容器之间通讯是可以的。我的mysql连接不到，<code>lsof -i tcp:3306</code>，就是因为没有导出端口。</p>
 </blockquote>
 
       
