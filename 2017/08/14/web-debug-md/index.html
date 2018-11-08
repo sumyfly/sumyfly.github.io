@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
 <meta property="og:image" content="http://yoursite.com/images/wechat_pay.png">
-<meta property="og:updated_time" content="2018-08-31T08:45:51.473Z">
+<meta property="og:updated_time" content="2018-11-08T08:18:34.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web-debug.md">
 <meta name="twitter:description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
@@ -366,7 +366,7 @@
 <p>最终配置了三个路径<br><img src="/images/wechat_pay.png" alt="微信授权目录配置"></p>
 <h3 id="5-Promise"><a href="#5-Promise" class="headerlink" title="5.Promise"></a>5.Promise</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> asyncFun()&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</div><div class="line">    <span class="keyword">if</span>(a)&#123;</div><div class="line">      resolve(n)</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      reject() <span class="comment">//在安卓微信浏览器中，reject(), reject(undefined)都将导致await 等待，直至超时。这个应该是bug;reject(123)参数不为undeefined就可以。</span></div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">  <span class="keyword">const</span> a = <span class="keyword">await</span> asyncFun() <span class="comment">// 如果是resolve, resolve的实参值赋给a,如果是reject,a为初始值</span></div><div class="line">&#125; <span class="keyword">catch</span>(e)&#123;</div><div class="line">  <span class="built_in">console</span>.log(e) <span class="comment">//e 就是reject的实参值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>async 函数返回值是一个Promise，如果需要得到resolve的值，需要async await或者then。</p>
+<p>async 函数返回值是一个Promise，如果需要得到resolve的值，需要async await或者then。当 async 函数返回一个值时，Promise 的 resolve 方法会负责传递这个值；当 async 函数抛出异常时，Promise 的 reject 方法也会传递这个异常值。如果 async 函数没有返回值，它会返回 Promise.resolve(undefined)。</p>
 </blockquote>
 <h3 id="6-dot"><a href="#6-dot" class="headerlink" title="6. dot"></a>6. dot</h3><p>Use <code>&amp;middot;</code> · for a dot or <code>&amp;bull;</code> • for a thicker, bulleted list style dot.</p>
 <h3 id="7-post"><a href="#7-post" class="headerlink" title="7. post"></a>7. post</h3><p>post 的body要进行JSON.stringify处理，   </p>
