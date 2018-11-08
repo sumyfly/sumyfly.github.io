@@ -1029,6 +1029,7 @@
         
           
             <h4 id="1-去掉转换后的exports"><a href="#1-去掉转换后的exports" class="headerlink" title="1. 去掉转换后的exports"></a>1. 去掉转换后的exports</h4><p>由于phantomjs发现不了exports，所以需要把转换后文件的第一行去掉。方法是在ts文件最上面加上<code>export = 0;</code>。<br>//issue: don’t add Object.defineProperty(exports, “__esModule”, { value: true });<br>//<a href="https://github.com/Microsoft/TypeScript/issues/14351" target="_blank" rel="external">https://github.com/Microsoft/TypeScript/issues/14351</a></p>
+<h4 id="2-noEmit"><a href="#2-noEmit" class="headerlink" title="2. noEmit"></a>2. noEmit</h4><p><code>&quot;noEmit&quot;:true</code>这个配置就不会产生输出文件了。</p>
 
           
         
