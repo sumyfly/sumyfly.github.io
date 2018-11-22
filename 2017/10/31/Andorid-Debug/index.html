@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/31/Andorid-Debug/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.gc overhead limit exceededreact-native run-andorid 总是提示device not found, 但是adb devices 能发现模拟器。而且同时有gc overhead limit exceeded错误，并提醒gradle内存分配不够。我更新了genymotion，错误一样。后来按照提示在~/.gradle/gradle.properties">
-<meta property="og:updated_time" content="2018-10-10T08:19:13.523Z">
+<meta property="og:updated_time" content="2018-11-22T03:03:46.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Andorid-Debug">
 <meta name="twitter:description" content="1.gc overhead limit exceededreact-native run-andorid 总是提示device not found, 但是adb devices 能发现模拟器。而且同时有gc overhead limit exceeded错误，并提醒gradle内存分配不够。我更新了genymotion，错误一样。后来按照提示在~/.gradle/gradle.properties">
@@ -402,6 +402,7 @@
 <blockquote>
 <p>被@Text注解的方法不需要以’test’开头做前缀。</p>
 </blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查找Android编译时依赖</span></div><div class="line">./gradlew -q dependencies app:dependencies --configuration debugCompileClasspath</div><div class="line"></div><div class="line"><span class="comment"># 查找Android运行时依赖</span></div><div class="line">./gradlew -q dependencies app:dependencies --configuration debugRuntimeClasspath</div></pre></td></tr></table></figure>
 <h3 id="6-Androd-Studio-“no-module”错误"><a href="#6-Androd-Studio-“no-module”错误" class="headerlink" title="6 Androd Studio “no module”错误"></a>6 Androd Studio “no module”错误</h3><p>导入工程后，File -&gt; Sync Project With Gradle File。我发现了一个错误，testApplicationId不能与主ApplicationId一样。删掉这个就testApplicationId就可以了。<br><a href="https://blog.csdn.net/cjm2484836553/article/details/69334941" target="_blank" rel="external">https://blog.csdn.net/cjm2484836553/article/details/69334941</a></p>
 
       
