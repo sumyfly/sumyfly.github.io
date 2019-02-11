@@ -371,6 +371,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
 </code></pre><p>使用配置文件在后台运行shadowsocks服务<br>[root@localhost /]# ssserver -c /etc/shadowsocks.json -d start<br>备注：若无配置文件，在后台可以使用一下命令运行：<br>[root@localhost /]# ssserver -p 443 -k MyPass -m rc4-md5 -d start<br>停止服务<br>[root@localhost /]# ssserver -c /etc/shadowsocks.json -d stop</p>
 <h3 id="2-BBR"><a href="#2-BBR" class="headerlink" title="2. BBR"></a>2. BBR</h3><p>Google的TCP BBR拥塞控制算法解析，只能内核4.9以上支持。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#   查看内核版本，含有 4.9 就表示 OK 了</span></div><div class="line">uname -r</div></pre></td></tr></table></figure></p>
 <p><a href="https://www.cnblogs.com/Eason1024/p/8177665.html" target="_blank" rel="external">https://www.cnblogs.com/Eason1024/p/8177665.html</a><br><a href="https://blog.csdn.net/dog250/article/details/52830576" target="_blank" rel="external">https://blog.csdn.net/dog250/article/details/52830576</a></p>
+<h3 id="3-一键shadowsocks脚本"><a href="#3-一键shadowsocks脚本" class="headerlink" title="3. 一键shadowsocks脚本"></a>3. 一键shadowsocks脚本</h3><p>只支持debian和ubuntu<br><a href="https://www.tennfy.com/2136.html" target="_blank" rel="external">https://www.tennfy.com/2136.html</a></p>
 
           
         
