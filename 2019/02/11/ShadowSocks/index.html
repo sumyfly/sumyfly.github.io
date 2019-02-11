@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/02/11/ShadowSocks/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. ShadowSocksShadowSocks是Socks5代理。之前我在Bandwagon上有个OpenVZ的ShadowSocks代理，后来到期了，买了一个KVM的虚拟机，手工装了ShadowSocks.网上有一键安装ShadowSocks的脚本，但是不支持CentorOS,只支持Debian和Ubuntu。我想用BBR加速，自带的镜像只有CenterOS有BBR，所以就手动安装。难点是P">
-<meta property="og:updated_time" content="2019-02-11T13:06:37.750Z">
+<meta property="og:updated_time" content="2019-02-11T13:19:49.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ShadowSocks">
 <meta name="twitter:description" content="1. ShadowSocksShadowSocks是Socks5代理。之前我在Bandwagon上有个OpenVZ的ShadowSocks代理，后来到期了，买了一个KVM的虚拟机，手工装了ShadowSocks.网上有一键安装ShadowSocks的脚本，但是不支持CentorOS,只支持Debian和Ubuntu。我想用BBR加速，自带的镜像只有CenterOS有BBR，所以就手动安装。难点是P">
@@ -368,6 +368,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
 <h3 id="2-BBR"><a href="#2-BBR" class="headerlink" title="2. BBR"></a>2. BBR</h3><p>Google的TCP BBR拥塞控制算法解析，只能内核4.9以上支持。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#   查看内核版本，含有 4.9 就表示 OK 了</span></div><div class="line">uname -r</div></pre></td></tr></table></figure></p>
 <p><a href="https://www.cnblogs.com/Eason1024/p/8177665.html" target="_blank" rel="external">https://www.cnblogs.com/Eason1024/p/8177665.html</a><br><a href="https://blog.csdn.net/dog250/article/details/52830576" target="_blank" rel="external">https://blog.csdn.net/dog250/article/details/52830576</a></p>
 <h3 id="3-一键shadowsocks脚本"><a href="#3-一键shadowsocks脚本" class="headerlink" title="3. 一键shadowsocks脚本"></a>3. 一键shadowsocks脚本</h3><p>只支持debian和ubuntu<br><a href="https://www.tennfy.com/2136.html" target="_blank" rel="external">https://www.tennfy.com/2136.html</a></p>
+<h3 id="4-拷贝公钥给目标服务器"><a href="#4-拷贝公钥给目标服务器" class="headerlink" title="4. 拷贝公钥给目标服务器"></a>4. 拷贝公钥给目标服务器</h3><p>[root@localhost .ssh]# ssh-copy-id -i id_dsa.pub omd@192.168.25.110              【 使用ssh登录的默认端口22】<br>[root@localhost .ssh]# ssh-copy-id -i id_dsa.pub –p 666 omd@192.168.25.120   【使用ssh登录设置的端口666】<br><a href="https://www.cnblogs.com/ftl1012/p/ssh.html" target="_blank" rel="external">https://www.cnblogs.com/ftl1012/p/ssh.html</a></p>
 
       
     </div>
@@ -556,7 +557,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ShadowSocks"><span class="nav-number">1.</span> <span class="nav-text">1. ShadowSocks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-CenterOS升级python为2-7"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 CenterOS升级python为2.7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-安装ShadowSocks"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 安装ShadowSocks</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-BBR"><span class="nav-number">2.</span> <span class="nav-text">2. BBR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-一键shadowsocks脚本"><span class="nav-number">3.</span> <span class="nav-text">3. 一键shadowsocks脚本</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ShadowSocks"><span class="nav-number">1.</span> <span class="nav-text">1. ShadowSocks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-CenterOS升级python为2-7"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 CenterOS升级python为2.7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-安装ShadowSocks"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 安装ShadowSocks</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-BBR"><span class="nav-number">2.</span> <span class="nav-text">2. BBR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-一键shadowsocks脚本"><span class="nav-number">3.</span> <span class="nav-text">3. 一键shadowsocks脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-拷贝公钥给目标服务器"><span class="nav-number">4.</span> <span class="nav-text">4. 拷贝公钥给目标服务器</span></a></li></ol></div>
             
 
           </div>
