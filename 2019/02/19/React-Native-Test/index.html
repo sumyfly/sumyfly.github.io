@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,web," />
+  <meta name="keywords" content="debug,react-native," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="1.事件三个阶段 capture，从DOM tree到节点target target, 处理事件 bubble，事件冒泡，如果不stopPropagation或stopImmediatePropagation,那么一直到DOM preventDefaut()这里的Default会stopPropagation,不让冒泡。冒泡有时候很有用，如监听页面的点击，做分析报告。另一个好处是可以动态添加和">
-<meta name="keywords" content="javascript,web">
+<meta name="description" content="1. jest mock1.1 mock node_module中的moduel手动mock，放到mocks目录下面">
+<meta name="keywords" content="debug,react-native">
 <meta property="og:type" content="article">
-<meta property="og:title" content="web-js">
-<meta property="og:url" content="http://yoursite.com/2018/04/11/web-js/index.html">
+<meta property="og:title" content="React-Native-Test">
+<meta property="og:url" content="http://yoursite.com/2019/02/19/React-Native-Test/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1.事件三个阶段 capture，从DOM tree到节点target target, 处理事件 bubble，事件冒泡，如果不stopPropagation或stopImmediatePropagation,那么一直到DOM preventDefaut()这里的Default会stopPropagation,不让冒泡。冒泡有时候很有用，如监听页面的点击，做分析报告。另一个好处是可以动态添加和">
-<meta property="og:updated_time" content="2018-08-16T06:46:14.818Z">
+<meta property="og:description" content="1. jest mock1.1 mock node_module中的moduel手动mock，放到mocks目录下面">
+<meta property="og:updated_time" content="2019-02-19T08:57:44.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="web-js">
-<meta name="twitter:description" content="1.事件三个阶段 capture，从DOM tree到节点target target, 处理事件 bubble，事件冒泡，如果不stopPropagation或stopImmediatePropagation,那么一直到DOM preventDefaut()这里的Default会stopPropagation,不让冒泡。冒泡有时候很有用，如监听页面的点击，做分析报告。另一个好处是可以动态添加和">
+<meta name="twitter:title" content="React-Native-Test">
+<meta name="twitter:description" content="1. jest mock1.1 mock node_module中的moduel手动mock，放到mocks目录下面">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/11/web-js/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/19/React-Native-Test/"/>
 
 
 
 
 
-  <title>web-js | QSL</title>
+  <title>React-Native-Test | QSL</title>
   
 
 
@@ -275,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/web-js/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/React-Native-Test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qsl">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">web-js</h1>
+          <h1 class="post-title" itemprop="name headline">React-Native-Test</h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T23:49:49+08:00">
-                2018-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-19T16:46:47+08:00">
+                2019-02-19
               </time>
             
 
@@ -315,6 +315,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React-Native/" itemprop="url" rel="index">
+                    <span itemprop="name">React-Native</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -323,9 +345,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/11/web-js/#comments" itemprop="discussionUrl">
+                <a href="/2019/02/19/React-Native-Test/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/11/web-js/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2019/02/19/React-Native-Test/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -350,22 +372,14 @@
       
 
       
-        <h3 id="1-事件三个阶段"><a href="#1-事件三个阶段" class="headerlink" title="1.事件三个阶段"></a>1.事件三个阶段</h3><ul>
-<li>capture，从DOM tree到节点target</li>
-<li>target, 处理事件</li>
-<li>bubble，事件冒泡，如果不stopPropagation或stopImmediatePropagation,那么一直到DOM<blockquote>
-<p>preventDefaut()这里的Default会stopPropagation,不让冒泡。冒泡有时候很有用，如监听页面的点击，做分析报告。另一个好处是可以动态添加和移除节点，同时可以对它的事件监听。</p>
-</blockquote>
-</li>
-</ul>
+        <h3 id="1-jest-mock"><a href="#1-jest-mock" class="headerlink" title="1. jest mock"></a>1. jest mock</h3><h4 id="1-1-mock-node-module中的moduel"><a href="#1-1-mock-node-module中的moduel" class="headerlink" title="1.1 mock node_module中的moduel"></a>1.1 mock node_module中的moduel</h4><p>手动mock，放到<strong>mocks</strong>目录下面</p>
 <a id="more"></a>
-<h3 id="2-DOMContentLoaded"><a href="#2-DOMContentLoaded" class="headerlink" title="2.DOMContentLoaded"></a>2.DOMContentLoaded</h3><p>这个事件和<code>onload</code>的区别是：DOMContentLoaded只是document解析好了，onload是document, css, js都下载解析好了。注意同步js会暂停document的解析，原因是js可能动态添加节点。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"DOMContentLoaded"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"DOM fully loaded and parsed"</span>);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded#Related_Events" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded#Related_Events</a></p>
-<h3 id="3-onclick"><a href="#3-onclick" class="headerlink" title="3. onclick"></a>3. onclick</h3><p>三种方法:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">e</span>)</span>&#123;&#125;</div><div class="line"><span class="comment">// 1. jquery</span></div><div class="line">$(<span class="string">'#foo'</span>).click(handler)</div><div class="line"></div><div class="line"><span class="comment">// 2. onclick</span></div><div class="line">&lt;button onclick=<span class="string">"handler(this)"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">// 3. document.addEventListener</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'foo'</span>).addEventListener(<span class="string">'click'</span>, handler)</div></pre></td></tr></table></figure></p>
-<p>第二种方式只能增加一个handler,而第一种和第三种可以绑定多个handler,jquery还有缓存。addEventListener第三个参数<code>useCapture</code>是说事件是capture阶段还是bubble阶段。</p>
-<h3 id="4-preventDefault-stopPropagation"><a href="#4-preventDefault-stopPropagation" class="headerlink" title="4. preventDefault, stopPropagation"></a>4. preventDefault, stopPropagation</h3><h4 id="4-1-preventDefault"><a href="#4-1-preventDefault" class="headerlink" title="4.1 preventDefault"></a>4.1 preventDefault</h4><p>取消标签默认动作，如<code>&lt;input type=&quot;submit&quot;&gt;</code>的submit，<code>&lt;input type=&quot;checkbox&quot;&gt;</code>的toggling事件,如果取消这个Default的运行的话，继续冒泡,直到事件被处理或者到DOM tree。</p>
-<h4 id="4-2-stopPropagation"><a href="#4-2-stopPropagation" class="headerlink" title="4.2 stopPropagation"></a>4.2 stopPropagation</h4><p>stopPropagation、stopimmediatepropagation都是取消冒泡，不向DOM tree冒泡了。</p>
-<h4 id="4-3-React中的事件"><a href="#4-3-React中的事件" class="headerlink" title="4.3 React中的事件"></a>4.3 React中的事件</h4><p>React中的事件是虚拟事件，不同于DOM中的事件，所以不需要preventDefault和stopPropagation。React应该用的是全局监听，我的猜测？</p>
+<h4 id="1-2-mock源码中的module"><a href="#1-2-mock源码中的module" class="headerlink" title="1.2 mock源码中的module"></a>1.2 mock源码中的module</h4><h5 id="1-2-1-可以用require"><a href="#1-2-1-可以用require" class="headerlink" title="1.2.1 可以用require"></a>1.2.1 可以用require</h5><p>但是mock的结果按需要加上default这个key，也要修改源码</p>
+<h5 id="1-2-2-依旧import"><a href="#1-2-2-依旧import" class="headerlink" title="1.2.2 依旧import"></a>1.2.2 依旧import</h5><p>默认jest会加在babel-jest这个transform.但是RN 0.56版本没有使用babel-jest。所以mock不必提升到import之前，这个功能本来是babel-jest中的plugin “jest-hoist”带来的，所以现在要手工在.babelrc中加上这个插件。</p>
+<p>.babelrc文件如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;presets&quot;: [</div><div class="line">    &quot;module:metro-react-native-babel-preset&quot;</div><div class="line">  ],</div><div class="line">  &quot;plugins&quot;: [</div><div class="line">    &quot;jest-hoist&quot;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>package.json中jest相关配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&quot;jest&quot;: &#123;</div><div class="line">  &quot;preset&quot;: &quot;react-native&quot;,</div><div class="line">  &quot;moduleFileExtensions&quot;: [</div><div class="line">    &quot;ts&quot;,</div><div class="line">    &quot;tsx&quot;,</div><div class="line">    &quot;js&quot;</div><div class="line">  ],</div><div class="line">  &quot;transform&quot;: &#123;</div><div class="line">    &quot;^.+\\.(js)$&quot;: &quot;&lt;rootDir&gt;/node_modules/react-native/jest/preprocessor.js&quot;,</div><div class="line">    &quot;^.+\\.(ts|tsx)$&quot;: &quot;ts-jest&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;testPathIgnorePatterns&quot;: [</div><div class="line">    &quot;\\.snap$&quot;,</div><div class="line">    &quot;&lt;rootDir&gt;/node_modules/&quot;</div><div class="line">  ],</div><div class="line">  &quot;cacheDirectory&quot;: &quot;.jest/cache&quot;,</div><div class="line">  &quot;testMatch&quot;: [</div><div class="line">    &quot;&lt;rootDir&gt;/__tests__/(**/*|*.)(spec|test).js?(x)&quot;</div><div class="line">  ],</div><div class="line">  &quot;snapshotSerializers&quot;: [</div><div class="line">    &quot;enzyme-to-json/serializer&quot;</div><div class="line">  ],</div><div class="line">  &quot;setupFiles&quot;: [</div><div class="line">    &quot;&lt;rootDir&gt;/jest/setup.js&quot;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>setup.js, 不想要这个文件，也可以安装enzyme的官方文档下载一个moduel做setup.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; configure &#125; <span class="keyword">from</span> <span class="string">'enzyme'</span>;</div><div class="line"><span class="keyword">import</span> Adapter <span class="keyword">from</span> <span class="string">'enzyme-adapter-react-16'</span>;</div><div class="line"></div><div class="line">configure(&#123; <span class="attr">adapter</span>: <span class="keyword">new</span> Adapter() &#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="shallow-vs-render"><a href="#shallow-vs-render" class="headerlink" title="shallow vs render"></a>shallow vs render</h3><p>shallow只会渲染当前控件，不会渲染children.render会渲染children.TODO: check?</p>
 
       
     </div>
@@ -395,9 +409,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/debug/" rel="tag"># debug</a>
           
-            <a href="/tags/web/" rel="tag"># web</a>
+            <a href="/tags/react-native/" rel="tag"># react-native</a>
           
         </div>
       
@@ -410,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/10/electron/" rel="next" title="electron">
-                <i class="fa fa-chevron-left"></i> electron
+              <a href="/2019/02/13/bash/" rel="next" title="bash">
+                <i class="fa fa-chevron-left"></i> bash
               </a>
             
           </div>
@@ -419,10 +433,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/12/js原型/" rel="prev" title="js原型">
-                js原型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +568,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-事件三个阶段"><span class="nav-number">1.</span> <span class="nav-text">1.事件三个阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-DOMContentLoaded"><span class="nav-number">2.</span> <span class="nav-text">2.DOMContentLoaded</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-onclick"><span class="nav-number">3.</span> <span class="nav-text">3. onclick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-preventDefault-stopPropagation"><span class="nav-number">4.</span> <span class="nav-text">4. preventDefault, stopPropagation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-preventDefault"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 preventDefault</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-stopPropagation"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 stopPropagation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-React中的事件"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 React中的事件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-jest-mock"><span class="nav-number">1.</span> <span class="nav-text">1. jest mock</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-mock-node-module中的moduel"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 mock node_module中的moduel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-mock源码中的module"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 mock源码中的module</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-1-可以用require"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 可以用require</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-2-依旧import"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 依旧import</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shallow-vs-render"><span class="nav-number">2.</span> <span class="nav-text">shallow vs render</span></a></li></ol></div>
             
 
           </div>
@@ -701,9 +711,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/04/11/web-js/';
-          this.page.identifier = '2018/04/11/web-js/';
-          this.page.title = 'web-js';
+          this.page.url = 'http://yoursite.com/2019/02/19/React-Native-Test/';
+          this.page.identifier = '2019/02/19/React-Native-Test/';
+          this.page.title = 'React-Native-Test';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://edwardqian.disqus.com/embed.js';
