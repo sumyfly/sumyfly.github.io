@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/13/mac-python/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.Mac OS自带pythonMAC OS会自带python, 通常我们不需要使用和修改它，我们自己安装python,同时保留系统python。设置方法就是$PATH中/usr/local/bin/优先级高于/usr/bin/,优先使用local用户的pyton。  系统python路径/System/Library/Frameworks/Python.framework/Versions/2.">
-<meta property="og:updated_time" content="2019-02-28T10:01:05.598Z">
+<meta property="og:updated_time" content="2019-02-28T10:03:25.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac-python">
 <meta name="twitter:description" content="1.Mac OS自带pythonMAC OS会自带python, 通常我们不需要使用和修改它，我们自己安装python,同时保留系统python。设置方法就是$PATH中/usr/local/bin/优先级高于/usr/bin/,优先使用local用户的pyton。  系统python路径/System/Library/Frameworks/Python.framework/Versions/2.">
@@ -413,6 +413,9 @@
 <p><a href="https://blog.csdn.net/liberize/article/details/8882659" target="_blank" rel="external">https://blog.csdn.net/liberize/article/details/8882659</a><br><a href="https://www.cnblogs.com/ArsenalfanInECNU/p/5346751.html" target="_blank" rel="external">https://www.cnblogs.com/ArsenalfanInECNU/p/5346751.html</a></p>
 <h4 id="10-brew安装3-6-5"><a href="#10-brew安装3-6-5" class="headerlink" title="10. brew安装3.6.5"></a>10. brew安装3.6.5</h4><p>因为TensorFlow版本依赖的python问题，我要使用3.6.5。但是brew安装不了3.6.5,要使用特殊的Formula.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew unlink python <span class="comment"># ONLY if you have installed (with brew) another version of python 3</span></div><div class="line">brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb</div></pre></td></tr></table></figure></p>
 <p>这个CPU版本的TensorFlow,没有独显的Mac需要这个版本，不然有warning。<br><a href="https://github.com/lakshayg/tensorflow-build" target="_blank" rel="external">https://github.com/lakshayg/tensorflow-build</a></p>
+<blockquote>
+<p>不要直接使用brew upgrade,这个会升级所有的Formula,这个会导致一些版本依赖问题，会自动升级pyton.加上brew pin python保平安。<br><a href="https://www.jianshu.com/p/c2bdc1997a9d" target="_blank" rel="external">https://www.jianshu.com/p/c2bdc1997a9d</a></p>
+</blockquote>
 
       
     </div>
