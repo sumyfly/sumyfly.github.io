@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/08/React-Native-Debug/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
-<meta property="og:updated_time" content="2019-03-13T04:34:01.268Z">
+<meta property="og:updated_time" content="2019-03-13T06:40:23.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Native-Debug">
 <meta name="twitter:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
@@ -564,7 +564,7 @@
 <h3 id="56-chrome-copy"><a href="#56-chrome-copy" class="headerlink" title="56. chrome copy()"></a>56. chrome copy()</h3><p>copy(var1)可以复制变量到剪切板，很方便。不需要JSON.stringify转字符串。</p>
 <h3 id="57-Statusbar-设置了hidden但在安卓上有时候会显示"><a href="#57-Statusbar-设置了hidden但在安卓上有时候会显示" class="headerlink" title="57. Statusbar 设置了hidden但在安卓上有时候会显示"></a>57. Statusbar 设置了hidden但在安卓上有时候会显示</h3><p>原因是getCurrentActivity有时候会返回null.因为currentActivity只有在onHostResume和onNewIntent时候才设置，所以onCreat时没有设置，而React-Native在onCreate时候就开始js的渲染。解决方案是加个延时setTimeout，并没有一个好的方式，所以在gteCurrentActivity时候保证页面已经渲染了，或者加个判断。Cobrowse也会遇到这个问题，所以还是很普遍的。<br><a href="https://github.com/facebook/react-native/issues/18345" target="_blank" rel="external">https://github.com/facebook/react-native/issues/18345</a><br>onHostResume是ActivityEventListener的方法。onNewIntent是Activity的方法。</p>
 <h3 id="58-reducer和saga使用的是同一个action"><a href="#58-reducer和saga使用的是同一个action" class="headerlink" title="58. reducer和saga使用的是同一个action"></a>58. reducer和saga使用的是同一个action</h3><p>当reducer和saga监听了同一个action，先是reducer触发，然后是saga,注意一点：不要在reducer里面修改action的payload，不然saga就是接受到修改后的payload,引发bug。如果要有修改需求，可以用Object.assgin做浅复制或者深复制。</p>
-<h3 id="59-react中state现在不能修改了"><a href="#59-react中state现在不能修改了" class="headerlink" title="59. react中state现在不能修改了"></a>59. react中state现在不能修改了</h3><p>在16.0之前，state可以修改，但是有warning,16.0之后，state修改就会报错，说不能修改一个immutable或者freeze的object.</p>
+<h3 id="59-react中state现在不能修改了"><a href="#59-react中state现在不能修改了" class="headerlink" title="59. react中state现在不能修改了"></a>59. react中state现在不能修改了</h3><p>在16.0之前，state可以修改，但是有warning,16.0之后，state修改就会报错，说不能修改一个immutable或者freeze的object.具体表现是，primitive的类型可以修改(number, boolean)，object的类型不能修改(array)。</p>
 <p>之前我们为了减少render次数，只想做shallow comparison，用的是react-addons-update，这个可以修改引用。后来有了immutable,功能更加强大。<br><a href="https://reactjs.org/docs/update.html" target="_blank" rel="external">https://reactjs.org/docs/update.html</a><br><a href="https://immutable-js.github.io/immutable-js/docs/#/List" target="_blank" rel="external">https://immutable-js.github.io/immutable-js/docs/#/List</a></p>
 <p>但是我们会遇到一个复合类型的state，像{printers:[{name:’’, tags:[]}]},这种类型的state，不能在原来基础上修改，immutable是个好的方案，mergeDeep如果没改变，那么引用也不会改变。但是immutable每次都要重新有赋值操作。我在想如果使用lodash.cloneDeep是不是也可以呢？比immutable的劣势就是每次setState都会导致渲染。</p>
 <p>这里有两个问题：</p>
