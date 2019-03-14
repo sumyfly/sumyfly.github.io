@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/30/go入门/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.import _import 下划线（如：import  hello/imp）的作用：当导入一个包时，该包下的文件里所有init()函数都会被执行，然而，有些时候我们并不需要把整个包都导入进来，仅仅是是希望它执行init()函数而已。这个时候就可以使用 import  引用该包。即使用【import _ 包路径】只是引用该包，仅仅是为了调用init()函数，所以无法通过包名来调用包中的其他函数">
-<meta property="og:updated_time" content="2019-01-30T04:30:57.799Z">
+<meta property="og:updated_time" content="2019-03-14T17:54:11.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go入门">
 <meta name="twitter:description" content="1.import _import 下划线（如：import  hello/imp）的作用：当导入一个包时，该包下的文件里所有init()函数都会被执行，然而，有些时候我们并不需要把整个包都导入进来，仅仅是是希望它执行init()函数而已。这个时候就可以使用 import  引用该包。即使用【import _ 包路径】只是引用该包，仅仅是为了调用init()函数，所以无法通过包名来调用包中的其他函数">
@@ -380,6 +380,7 @@
 <h3 id="10-Install-go"><a href="#10-Install-go" class="headerlink" title="10 Install go"></a>10 Install go</h3><h4 id="10-1-使用brew"><a href="#10-1-使用brew" class="headerlink" title="10.1 使用brew"></a>10.1 使用brew</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">brew update</div><div class="line">brew install golang</div><div class="line"></div><div class="line"><span class="comment"># This is actually your .bashrc file</span></div><div class="line"><span class="built_in">export</span> GOPATH=<span class="variable">$HOME</span>/go-workspace <span class="comment"># don't forget to change your path correctly!</span></div><div class="line"><span class="built_in">export</span> GOROOT=/usr/<span class="built_in">local</span>/opt/go/libexec</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOPATH</span>/bin</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOROOT</span>/bin</div></pre></td></tr></table></figure>
 <blockquote>
 <p>$GOROOT是放标准库的，$GOPATH是放非标准库的。所以这两个目录不能一样，如果两个库中都有fmt，那么compiler不知道选择哪一个。</p>
+<p>还有就是go官方推荐使用一个gopath目录，然后使用vendor方式来管理各个项目的依赖。当然，这个有不同的实践，有些喜欢一个项目一个gopath，很少同一个项目使用多个gopath目录的。源代码是放在gopath的src目录下的。</p>
 </blockquote>
 <h4 id="10-2-下载tar"><a href="#10-2-下载tar" class="headerlink" title="10.2 下载tar"></a>10.2 下载tar</h4><blockquote>
 <p>注意下载正确的版本，linux和mac的编译版本不同，下载了错误的版本，会报<code>Exec format error</code>错误。<br><a href="https://golang.org/dl/" target="_blank" rel="external">https://golang.org/dl/</a></p>
