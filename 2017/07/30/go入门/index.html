@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/30/go入门/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.import _import 下划线（如：import  hello/imp）的作用：当导入一个包时，该包下的文件里所有init()函数都会被执行，然而，有些时候我们并不需要把整个包都导入进来，仅仅是是希望它执行init()函数而已。这个时候就可以使用 import  引用该包。即使用【import _ 包路径】只是引用该包，仅仅是为了调用init()函数，所以无法通过包名来调用包中的其他函数">
-<meta property="og:updated_time" content="2019-03-14T17:54:11.109Z">
+<meta property="og:updated_time" content="2019-03-14T18:00:39.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go入门">
 <meta name="twitter:description" content="1.import _import 下划线（如：import  hello/imp）的作用：当导入一个包时，该包下的文件里所有init()函数都会被执行，然而，有些时候我们并不需要把整个包都导入进来，仅仅是是希望它执行init()函数而已。这个时候就可以使用 import  引用该包。即使用【import _ 包路径】只是引用该包，仅仅是为了调用init()函数，所以无法通过包名来调用包中的其他函数">
@@ -371,7 +371,7 @@
 <h4 id="8-1-glide"><a href="#8-1-glide" class="headerlink" title="8.1 glide"></a>8.1 glide</h4><p>下载 <code>go get github.com/Masterminds/glide</code><br>安装 <code>go install github.com/Masterminds/glide</code><br>初始化 新建项目录，然后进去<code>glide init</code>,产生glide.yaml<br>使用 <code>glide get github.com/bitly/go-simplejson</code>,然后glide.yaml中package中有这条记录。<br>安装包 <code>glide install</code><br>更新 <code>glide update | up</code><br>列表 <code>glide list</code>， 这个命令我执行失败了。</p>
 <p><a href="https://github.com/Masterminds/glide" target="_blank" rel="external">https://github.com/Masterminds/glide</a></p>
 <h4 id="8-2-dep"><a href="#8-2-dep" class="headerlink" title="8.2 dep"></a>8.2 dep</h4><p>目前安装有点麻烦，我使用的是源码。要求go版本大于1.9。<br><a href="https://golang.github.io/dep/docs/installation.html" target="_blank" rel="external">https://golang.github.io/dep/docs/installation.html</a></p>
-<p>初始化 <code>dep init</code><br>安装 <code>dep ensure</code><br>安装新包 <code>dep ensure -add github.com/dropbox/godropbox/time2</code>,这里有个限制条件，必须此目录下面有go文件，不然安装不了。<br>查看安装信息 <code>dep status</code></p>
+<p>初始化 <code>dep init</code><br>安装 <code>dep ensure</code><br>安装新包 <code>dep ensure -add github.com/dropbox/godropbox/time2</code>,这里有个限制条件，必须此目录下面有go文件，不然安装不了。go get也是要求远程目录下有go文件。<br>查看安装信息 <code>dep status</code></p>
 <blockquote>
 <p>对比一下，dep更加易用，它使用分支。glide也推荐使用dep.</p>
 </blockquote>
