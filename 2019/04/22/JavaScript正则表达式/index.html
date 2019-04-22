@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/04/22/JavaScript正则表达式/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 正则表达式的修饰符1.1 /g/g修饰符代表全局匹配, 查找所有匹配而非在找到第一个匹配后停止。注意string.match和RegExp.exec的区别，前者的正则表达式不需要加上/g，而后者需要加上/g。  exec with a global regular expression is meant to be used in a loop, as it will still retri">
-<meta property="og:updated_time" content="2019-04-22T08:29:41.102Z">
+<meta property="og:updated_time" content="2019-04-22T08:37:40.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript正则表达式">
 <meta name="twitter:description" content="1. 正则表达式的修饰符1.1 /g/g修饰符代表全局匹配, 查找所有匹配而非在找到第一个匹配后停止。注意string.match和RegExp.exec的区别，前者的正则表达式不需要加上/g，而后者需要加上/g。  exec with a global regular expression is meant to be used in a loop, as it will still retri">
@@ -350,13 +350,14 @@
       
 
       
-        <h3 id="1-正则表达式的修饰符"><a href="#1-正则表达式的修饰符" class="headerlink" title="1. 正则表达式的修饰符"></a>1. 正则表达式的修饰符</h3><h4 id="1-1-g"><a href="#1-1-g" class="headerlink" title="1.1 /g"></a>1.1 /g</h4><p>/g修饰符代表全局匹配, 查找所有匹配而非在找到第一个匹配后停止。<br>注意string.match和RegExp.exec的区别，前者的正则表达式不需要加上/g，而后者需要加上/g。</p>
+        <h3 id="1-正则表达式的修饰符"><a href="#1-正则表达式的修饰符" class="headerlink" title="1. 正则表达式的修饰符"></a>1. 正则表达式的修饰符</h3><h4 id="1-1-g"><a href="#1-1-g" class="headerlink" title="1.1 /g"></a>1.1 /g</h4><p><strong>/g修饰符代表全局匹配, 查找所有匹配而非在找到第一个匹配后停止。</strong><br>注意string.match和RegExp.exec的区别，前者的正则表达式不需要加上/g，而后者需要加上/g。</p>
 <blockquote>
 <p>exec with a global regular expression is meant to be used in a loop, as it will still retrieve all matched subexpressions. So:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> re = <span class="regexp">/[^\/]+/g</span>;</div><div class="line"><span class="keyword">var</span> match;</div><div class="line"></div><div class="line"><span class="keyword">while</span> (match = re.exec(<span class="string">'/a/b/c/d'</span>)) &#123;</div><div class="line">    <span class="comment">// match is now the next match, in array form.</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// No more matches.</span></div></pre></td></tr></table></figure></p>
 </blockquote>
 <p>String.match does this for you and discards the captured groups.</p>
 <a id="more"></a>
 <p><a href="https://javascript.info/regexp-groups" target="_blank" rel="external">https://javascript.info/regexp-groups</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions</a><br><a href="https://stackoverflow.com/questions/9214754/what-is-the-difference-between-regexp-s-exec-function-and-string-s-match-fun" target="_blank" rel="external">https://stackoverflow.com/questions/9214754/what-is-the-difference-between-regexp-s-exec-function-and-string-s-match-fun</a></p>
+<h3 id="2-贪婪"><a href="#2-贪婪" class="headerlink" title="2. 贪婪"></a>2. 贪婪</h3><p>默认正则表达式是贪婪匹配，匹配优先量词后加上“?”，即变成属于非贪婪模式的量词。<br><a href="https://blog.csdn.net/lxcnn/article/details/4756030" target="_blank" rel="external">https://blog.csdn.net/lxcnn/article/details/4756030</a></p>
 
       
     </div>
@@ -545,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-正则表达式的修饰符"><span class="nav-number">1.</span> <span class="nav-text">1. 正则表达式的修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-g"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 /g</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-正则表达式的修饰符"><span class="nav-number">1.</span> <span class="nav-text">1. 正则表达式的修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-g"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 /g</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-贪婪"><span class="nav-number">2.</span> <span class="nav-text">2. 贪婪</span></a></li></ol></div>
             
 
           </div>
