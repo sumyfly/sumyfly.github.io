@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,web," />
+  <meta name="keywords" content="web,javascript," />
 
 
 
@@ -94,7 +94,7 @@
 
 
 <meta name="description" content="1.事件三个阶段 capture，从DOM tree到节点target target, 处理事件 bubble，事件冒泡，如果不stopPropagation或stopImmediatePropagation,那么一直到DOM preventDefaut()这里的Default会stopPropagation,不让冒泡。冒泡有时候很有用，如监听页面的点击，做分析报告。另一个好处是可以动态添加和">
-<meta name="keywords" content="javascript,web">
+<meta name="keywords" content="web,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web-js">
 <meta property="og:url" content="http://yoursite.com/2018/04/11/web-js/index.html">
@@ -361,7 +361,7 @@
 <a id="more"></a>
 <h3 id="2-DOMContentLoaded"><a href="#2-DOMContentLoaded" class="headerlink" title="2.DOMContentLoaded"></a>2.DOMContentLoaded</h3><p>这个事件和<code>onload</code>的区别是：DOMContentLoaded只是document解析好了，onload是document, css, js都下载解析好了。注意同步js会暂停document的解析，原因是js可能动态添加节点。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"DOMContentLoaded"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"DOM fully loaded and parsed"</span>);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded#Related_Events" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded#Related_Events</a></p>
-<h3 id="3-onclick"><a href="#3-onclick" class="headerlink" title="3. onclick"></a>3. onclick</h3><p>三种方法:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">e</span>)</span>&#123;&#125;</div><div class="line"><span class="comment">// 1. jquery</span></div><div class="line">$(<span class="string">'#foo'</span>).click(handler)</div><div class="line"></div><div class="line"><span class="comment">// 2. onclick</span></div><div class="line">&lt;button onclick=<span class="string">"handler(this)"</span>&gt;&lt;/button&gt;</div><div class="line"></div><div class="line"><span class="comment">// 3. document.addEventListener</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'foo'</span>).addEventListener(<span class="string">'click'</span>, handler)</div></pre></td></tr></table></figure></p>
+<h3 id="3-onclick"><a href="#3-onclick" class="headerlink" title="3. onclick"></a>3. onclick</h3><p>三种方法:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">e</span>)</span>&#123;&#125;</div><div class="line"><span class="comment">// 1. jquery</span></div><div class="line">$(<span class="string">'#foo'</span>).click(handler)</div><div class="line"></div><div class="line"><span class="comment">// 2. onclick</span></div><div class="line">&lt;button onclick=<span class="string">"handler(this)"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">// 3. document.addEventListener</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'foo'</span>).addEventListener(<span class="string">'click'</span>, handler)</div></pre></td></tr></table></figure></p>
 <p>第二种方式只能增加一个handler,而第一种和第三种可以绑定多个handler,jquery还有缓存。addEventListener第三个参数<code>useCapture</code>是说事件是capture阶段还是bubble阶段。</p>
 <h3 id="4-preventDefault-stopPropagation"><a href="#4-preventDefault-stopPropagation" class="headerlink" title="4. preventDefault, stopPropagation"></a>4. preventDefault, stopPropagation</h3><h4 id="4-1-preventDefault"><a href="#4-1-preventDefault" class="headerlink" title="4.1 preventDefault"></a>4.1 preventDefault</h4><p>取消标签默认动作，如<code>&lt;input type=&quot;submit&quot;&gt;</code>的submit，<code>&lt;input type=&quot;checkbox&quot;&gt;</code>的toggling事件,如果取消这个Default的运行的话，继续冒泡,直到事件被处理或者到DOM tree。</p>
 <h4 id="4-2-stopPropagation"><a href="#4-2-stopPropagation" class="headerlink" title="4.2 stopPropagation"></a>4.2 stopPropagation</h4><p>stopPropagation、stopimmediatepropagation都是取消冒泡，不向DOM tree冒泡了。</p>
@@ -404,9 +404,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
             <a href="/tags/web/" rel="tag"># web</a>
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -510,7 +510,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -532,7 +532,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
