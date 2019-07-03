@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/02/19/React-Native-Test/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. jest mock1.1 mock node_module 中的 moduel手动 mock，放到mocks目录下面">
-<meta property="og:updated_time" content="2019-07-03T08:58:55.803Z">
+<meta property="og:updated_time" content="2019-07-03T09:55:46.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Native-Test">
 <meta name="twitter:description" content="1. jest mock1.1 mock node_module 中的 moduel手动 mock，放到mocks目录下面">
@@ -377,7 +377,7 @@
 <h4 id="1-2-mock-源码中的-module"><a href="#1-2-mock-源码中的-module" class="headerlink" title="1.2 mock 源码中的 module"></a>1.2 mock 源码中的 module</h4><h5 id="1-2-1-可以用-require"><a href="#1-2-1-可以用-require" class="headerlink" title="1.2.1 可以用 require"></a>1.2.1 可以用 require</h5><p>但是 mock 的结果按需要加上 default 这个 key，也要修改源码</p>
 <h5 id="1-2-2-依旧-import"><a href="#1-2-2-依旧-import" class="headerlink" title="1.2.2 依旧 import"></a>1.2.2 依旧 import</h5><p>默认 jest 会加在 babel-jest 这个 transform.但是 RN 0.56 版本没有使用 babel-jest。所以 mock 不必提升到 import 之前，这个功能本来是 babel-jest 中的 plugin “jest-hoist”带来的，所以现在要手工在.babelrc 中加上这个插件。</p>
 <blockquote>
-<p>在加入这jest-hoist之前，node_modules中的模块只能用手动mock（创建<strong>mocks</strong>文件夹），加入jest-hoist后可以使用自动mock(jest.mock(‘xxx’))</p>
+<p>在加入这jest-hoist之前，node_modules中的模块只能用自动mock（创建<strong>mocks</strong>文件夹），加入jest-hoist后可以使用手动mock(jest.mock(‘xxx’))</p>
 </blockquote>
 <p>.babelrc 文件如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;presets&quot;: [</div><div class="line">    &quot;module:metro-react-native-babel-preset&quot;</div><div class="line">  ],</div><div class="line">  &quot;plugins&quot;: [</div><div class="line">    &quot;jest-hoist&quot;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
