@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/07/24/Redux-Debug/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. dispatch同一个action在极短的时间内2次如果reducer里面是用的return fromJS(action.payload),然后dispatch同一个action在极短的时间内2次，导致的结果就是第二次使用的immutable state是旧的，它没有被第一次的action所更改，这样的后果就是状态丢失了。JS执行时单线程，所以reudx这里并没有race condition">
-<meta property="og:updated_time" content="2018-08-18T16:13:09.894Z">
+<meta property="og:updated_time" content="2019-08-18T08:29:06.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redux-Debug">
 <meta name="twitter:description" content="1. dispatch同一个action在极短的时间内2次如果reducer里面是用的return fromJS(action.payload),然后dispatch同一个action在极短的时间内2次，导致的结果就是第二次使用的immutable state是旧的，它没有被第一次的action所更改，这样的后果就是状态丢失了。JS执行时单线程，所以reudx这里并没有race condition">
@@ -355,6 +355,7 @@
 <li>多个action修改不同部分</li>
 <li>多个修改合并到一个action<br>我先选择#2</li>
 </ol>
+<h3 id="2-yield-select-连续多个"><a href="#2-yield-select-连续多个" class="headerlink" title="2. yield select 连续多个"></a>2. yield select 连续多个</h3><p>好像如果有一个循环，大约100多次，在循环体里面yield select(selctor), 那么可能导致saga不工作，但是redux还是工作的。</p>
 <a id="more"></a>
       
     </div>
@@ -539,7 +540,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dispatch同一个action在极短的时间内2次"><span class="nav-number">1.</span> <span class="nav-text">1. dispatch同一个action在极短的时间内2次</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dispatch同一个action在极短的时间内2次"><span class="nav-number">1.</span> <span class="nav-text">1. dispatch同一个action在极短的时间内2次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-yield-select-连续多个"><span class="nav-number">2.</span> <span class="nav-text">2. yield select 连续多个</span></a></li></ol></div>
             
 
           </div>
