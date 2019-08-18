@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/08/23/mongoDB使用/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="下面的所述的是针对mongoDB4版本。 1.配置文件Mac下在的tar文件，默认自带ssl，但是4.0版本默认不支持Openss 1.0版本，为了使用Openssl1.0版本所以配置文件中需要去掉SSL高版本的支持(disabledProtocols)，">
-<meta property="og:updated_time" content="2018-08-23T06:53:08.312Z">
+<meta property="og:updated_time" content="2019-08-18T10:51:37.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongoDB使用">
 <meta name="twitter:description" content="下面的所述的是针对mongoDB4版本。 1.配置文件Mac下在的tar文件，默认自带ssl，但是4.0版本默认不支持Openss 1.0版本，为了使用Openssl1.0版本所以配置文件中需要去掉SSL高版本的支持(disabledProtocols)，">
@@ -366,6 +366,7 @@
 <h4 id="2-4-配置文件中加上auth"><a href="#2-4-配置文件中加上auth" class="headerlink" title="2.4 配置文件中加上auth"></a>2.4 配置文件中加上auth</h4><p>在mongod.conf中加上security.authorization: “enabled”</p>
 <h4 id="2-5-带用户名密码登录"><a href="#2-5-带用户名密码登录" class="headerlink" title="2.5 带用户名密码登录"></a>2.5 带用户名密码登录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo -u <span class="string">"myUserAdmin"</span> -p <span class="string">"abc123"</span> --authenticationDatabase <span class="string">"admin"</span></div></pre></td></tr></table></figure>
 <p>现在就没那个警告了：Access control is not enabled for the database.</p>
+<h3 id="3-mongd-–fork-启动失败"><a href="#3-mongd-–fork-启动失败" class="headerlink" title="3. mongd –fork 启动失败"></a>3. mongd –fork 启动失败</h3><p>必须要指定log的文件， mongod –fork –logpath /var/log/mongodb.log这个如果不行，就把log的目录改到user的目录下。记得把之前版本的log删掉，我没删就好像出现了兼容问题。</p>
 
       
     </div>
@@ -550,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-配置文件"><span class="nav-number">1.</span> <span class="nav-text">1.配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动mogoDB"><span class="nav-number">2.</span> <span class="nav-text">2. 启动mogoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-第一次启动mongDB，不带登录"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 第一次启动mongDB，不带登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-登录之后加上用户"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 登录之后加上用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-关闭mongoDB"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 关闭mongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-配置文件中加上auth"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 配置文件中加上auth</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-带用户名密码登录"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 带用户名密码登录</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-配置文件"><span class="nav-number">1.</span> <span class="nav-text">1.配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动mogoDB"><span class="nav-number">2.</span> <span class="nav-text">2. 启动mogoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-第一次启动mongDB，不带登录"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 第一次启动mongDB，不带登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-登录之后加上用户"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 登录之后加上用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-关闭mongoDB"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 关闭mongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-配置文件中加上auth"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 配置文件中加上auth</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-带用户名密码登录"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 带用户名密码登录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-mongd-–fork-启动失败"><span class="nav-number">3.</span> <span class="nav-text">3. mongd –fork 启动失败</span></a></li></ol></div>
             
 
           </div>
