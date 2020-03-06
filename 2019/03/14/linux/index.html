@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/03/14/linux/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. ^M不可见字符vim中输入CTRL+V CTRL+M, 而不是上箭号+M。https://blog.csdn.net/kkwant/article/details/81501241">
-<meta property="og:updated_time" content="2019-03-14T15:29:58.672Z">
+<meta property="og:updated_time" content="2020-03-06T09:25:23.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux">
 <meta name="twitter:description" content="1. ^M不可见字符vim中输入CTRL+V CTRL+M, 而不是上箭号+M。https://blog.csdn.net/kkwant/article/details/81501241">
@@ -351,6 +351,10 @@
 
       
         <h3 id="1-M不可见字符"><a href="#1-M不可见字符" class="headerlink" title="1. ^M不可见字符"></a>1. ^M不可见字符</h3><p>vim中输入CTRL+V CTRL+M, 而不是上箭号+M。<br><a href="https://blog.csdn.net/kkwant/article/details/81501241" target="_blank" rel="external">https://blog.csdn.net/kkwant/article/details/81501241</a><br><a id="more"></a></p>
+<h3 id="2-启动本地TCP服务器"><a href="#2-启动本地TCP服务器" class="headerlink" title="2. 启动本地TCP服务器"></a>2. 启动本地TCP服务器</h3><h4 id="2-1-nc"><a href="#2-1-nc" class="headerlink" title="2.1 nc"></a>2.1 nc</h4><p>Server listens on port 8000:</p>
+<p>$ nc -l 8000<br>Client connects to port 8000:</p>
+<p>$ nc localhost 8000 </p>
+<h4 id="2-2-socat"><a href="#2-2-socat" class="headerlink" title="2.2 socat"></a>2.2 socat</h4><p>socat TCP-LISTEN:6142,fork stdout</p>
 
       
     </div>
@@ -541,7 +545,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-M不可见字符"><span class="nav-number">1.</span> <span class="nav-text">1. ^M不可见字符</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-M不可见字符"><span class="nav-number">1.</span> <span class="nav-text">1. ^M不可见字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动本地TCP服务器"><span class="nav-number">2.</span> <span class="nav-text">2. 启动本地TCP服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-nc"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 nc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-socat"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 socat</span></a></li></ol></li></ol></div>
             
 
           </div>
