@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="react-native,原理," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -93,17 +93,16 @@
 
 
 
-<meta name="description" content="1.RN的通讯原理">
-<meta name="keywords" content="react-native,原理">
+<meta name="description" content="1. 名称解释可以用WireShark通过分析Tcp报来得知，工具显示得很清楚。 1.1 10个控制标志位 Flag下面的含义只针对其标志位为1的情况，比如SYN=1才代表握手阶段。FIN=1代表挥手阶段。  SYN 表示新建连接 ACK 表示响应如果发送数据为空的话，可以发送同一个Seq的多个ACK，这个可以用来保活和窗口协商。这个单个ACK只能TCP协议实现发送，应用层只能发[ACK+PSH]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-native通讯原理">
-<meta property="og:url" content="http://yoursite.com/2017/12/14/react-native通讯原理/index.html">
+<meta property="og:title" content="TCP.md">
+<meta property="og:url" content="http://yoursite.com/2020/03/13/TCP-md/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1.RN的通讯原理">
-<meta property="og:updated_time" content="2019-12-11T03:45:49.441Z">
+<meta property="og:description" content="1. 名称解释可以用WireShark通过分析Tcp报来得知，工具显示得很清楚。 1.1 10个控制标志位 Flag下面的含义只针对其标志位为1的情况，比如SYN=1才代表握手阶段。FIN=1代表挥手阶段。  SYN 表示新建连接 ACK 表示响应如果发送数据为空的话，可以发送同一个Seq的多个ACK，这个可以用来保活和窗口协商。这个单个ACK只能TCP协议实现发送，应用层只能发[ACK+PSH]">
+<meta property="og:updated_time" content="2020-03-13T07:16:37.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-native通讯原理">
-<meta name="twitter:description" content="1.RN的通讯原理">
+<meta name="twitter:title" content="TCP.md">
+<meta name="twitter:description" content="1. 名称解释可以用WireShark通过分析Tcp报来得知，工具显示得很清楚。 1.1 10个控制标志位 Flag下面的含义只针对其标志位为1的情况，比如SYN=1才代表握手阶段。FIN=1代表挥手阶段。  SYN 表示新建连接 ACK 表示响应如果发送数据为空的话，可以发送同一个Seq的多个ACK，这个可以用来保活和窗口协商。这个单个ACK只能TCP协议实现发送，应用层只能发[ACK+PSH]">
 
 
 
@@ -131,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/14/react-native通讯原理/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/13/TCP-md/"/>
 
 
 
 
 
-  <title>react-native通讯原理 | QSL</title>
+  <title>TCP.md | QSL</title>
   
 
 
@@ -275,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/react-native通讯原理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/TCP-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qsl">
@@ -292,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">react-native通讯原理</h1>
+          <h1 class="post-title" itemprop="name headline">TCP.md</h1>
         
 
         <div class="post-meta">
@@ -304,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T23:05:21+08:00">
-                2017-12-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T11:30:48+08:00">
+                2020-03-13
               </time>
             
 
@@ -327,8 +326,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React-Native</span>
+                  <a href="/categories/Networking/" itemprop="url" rel="index">
+                    <span itemprop="name">Networking</span>
                   </a>
                 </span>
 
@@ -345,9 +344,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/14/react-native通讯原理/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/13/TCP-md/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/14/react-native通讯原理/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/13/TCP-md/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -372,23 +371,29 @@
       
 
       
-        <h3 id="1-RN的通讯原理"><a href="#1-RN的通讯原理" class="headerlink" title="1.RN的通讯原理"></a>1.RN的通讯原理</h3><a id="more"></a>
-<h4 id="1-1-Native调用JS"><a href="#1-1-Native调用JS" class="headerlink" title="1.1 Native调用JS"></a>1.1 Native调用JS</h4><p>在RN里，封装了底层细节，外部暴露出的是通过RCTCxxBridge方法enqueueJSCall:method:args:completion调用。该方法实现如下:callFunction方法先执行js端方法callFunctionReturnFlushedQueue(在MessageQueue.js文件中),返回js端消息队列，然后native解析队列，即调用callNativeModules，这个过程在下文JS调用Native有分析。<br>总体来说还是使用JSCHelpers中封装的C++方法<code>evaluateScript(JSContextRef, JSStringRef, JSStringRef)</code>，在常驻线程来执行js语句，返回结果给native解析。</p>
-<h4 id="1-2-JS调用Native"><a href="#1-2-JS调用Native" class="headerlink" title="1.2 JS调用Native"></a>1.2 JS调用Native</h4><p>​js端也有 有BatchedBridge概念，node_modules/react-native/Libraries/BatchedBridge/BatchedBridge.js中，const BatchedBridge = new MessageQueue();，BatchedBridge对象实际上是MessageQueue的实例，转到当前目录下的MessageQueue.js文件。js需要调用native方法的时候，调用<code>enqueueNativeCall</code>函数，比如js端执行方法：enqueueNativeCall向_queue依次插入<code>moduleID methodID params ,flushedQueue</code>方法会把当前的_callID插入到_queue最后，<strong>紧接着判断相邻两次flushQueue时间超过MIN_TIME_BETWEEN_FLUSHES_MS即5ms，或者当前没有正在处理的方法，则执行全局nativeFlushQueueImmediate函数</strong>。nativeFlushQueueImmediate函数传入_queue参数，它在native端之前通过installNativeHook注入了。<br>js端调用后native端收到函数回调，最终对应执行JSCExecutor类的nativeFlushQueueImmediate方法，该方法最终调用到JsToNativeBridge的callNativeModules方法，callNativeModules解析出js透传的参数_queue，然后动态调用方法。</p>
-<p>js只是把消息加入了队列，js什么时候去让native去取js的消息队列处理？</p>
+        <h3 id="1-名称解释"><a href="#1-名称解释" class="headerlink" title="1. 名称解释"></a>1. 名称解释</h3><p>可以用WireShark通过分析Tcp报来得知，工具显示得很清楚。</p>
+<h4 id="1-1-10个控制标志位-Flag"><a href="#1-1-10个控制标志位-Flag" class="headerlink" title="1.1 10个控制标志位 Flag"></a>1.1 10个控制标志位 Flag</h4><p>下面的含义只针对其标志位为1的情况，比如SYN=1才代表握手阶段。FIN=1代表挥手阶段。</p>
 <ul>
-<li><p>js端超时机制<br>需要注意的是，远程调试模式并没有超时机制，global.nativeFlushQueueImmediate始终是 undefined的。每次消息入队的时候，会检查距离上次队列清空完成是否超过5ms，超过则调用nativeFlushQueueImmediate 清空队列，native注册回调被调用，否则立即入队，由于js是单线程的，5ms内也不会积压很多消息，所以不用担心处理效率问题。</p>
+<li>SYN 表示新建连接</li>
+<li>ACK 表示响应<br>如果发送数据为空的话，可以发送同一个Seq的多个ACK，这个可以用来保活和窗口协商。这个单个ACK只能TCP协议实现发送，应用层只能发[ACK+PSH]</li>
+<li>FIN (Finish)表示关闭连接</li>
+<li>PSH (Push)表示传输数据</li>
+<li><p>RST (Reset)表示连接重置<br>这个RST的原因是因为close连接时，本地接受缓冲区还有数据。避免RST的方法就是调用close的之前，调用shutdown。netty称之为优雅关闭。</p>
 </li>
-<li><p>native主动调用<br>native调用js方法，native调用enqueueJSCall:method:args:completion方法会取到js消息队列，</p>
+<li><p>Nonce</p>
 </li>
+<li>CWR</li>
+<li>ECN-Echo</li>
+<li>Urgent</li>
 </ul>
-<p>综上所述，js调用native实际上是有两种机制的:</p>
-<ol>
-<li>native向jscontext的 global注入全局对象，同时注册相应的回调，如nativeFlushQueueImmediate，js函数被调用，对应native回调被响应</li>
-<li>js组成消息队列，native调用flushedQueue主动去取<br>第一种是JSPatch所采用的，不过它注册的回调是一个block, 第二种机制是RN采用的，最复杂的，对于模块，需要两端维护一份配置表，但是最高效的，js方需要执行native方法，仅需传递moduleId methodId arguments必要参数给native，而方法真正执行是在native方异步执行的，返回结果异步返回给js方，如果换成方式1，native方法在jscontext同步执行，明显影响效率，而且 当短时间内有很多条消息，JS并不会去频繁调用native，会在5ms内去累积消息，然后发送给native。</li>
-</ol>
-<p><a href="https://www.jianshu.com/p/f49b798299b6" target="_blank" rel="external">https://www.jianshu.com/p/f49b798299b6</a></p>
-
+<blockquote>
+<p>Flags 一共16位，目前只用到9位，剩下的7位是保留位。</p>
+</blockquote>
+<h4 id="1-2-Tcp传输数据中的字段"><a href="#1-2-Tcp传输数据中的字段" class="headerlink" title="1.2 Tcp传输数据中的字段"></a>1.2 Tcp传输数据中的字段</h4><p>Seq(Sequence number): 本次发送得顺序号<br>Ack(Acknowledgment number): 确认号，其值 = <code>对方的seq</code> + <code>对方的Tcp Segement size</code>, 其含义代表我收到你seq号的数据了，长度是多少。<br>Next sequence number: 这个是期待对方返回的Ack值，这个不是在TCP协议内。</p>
+<blockquote>
+<p>注意ACK是标志位, Ack是确认号。大小写不一样，含义也不同。</p>
+</blockquote>
+<a id="more"></a>
       
     </div>
 
@@ -415,14 +420,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/react-native/" rel="tag"># react-native</a>
-          
-            <a href="/tags/原理/" rel="tag"># 原理</a>
-          
-        </div>
-      
 
       
       
@@ -432,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/13/mac-python/" rel="next" title="mac-python">
-                <i class="fa fa-chevron-left"></i> mac-python
+              <a href="/2020/03/06/iOS/" rel="next" title="iOS">
+                <i class="fa fa-chevron-left"></i> iOS
               </a>
             
           </div>
@@ -441,10 +438,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/19/React-Native-Web-Debug/" rel="prev" title="React-Native-Web-Debug">
-                React-Native-Web-Debug <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-RN的通讯原理"><span class="nav-number">1.</span> <span class="nav-text">1.RN的通讯原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-Native调用JS"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Native调用JS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-JS调用Native"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 JS调用Native</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-名称解释"><span class="nav-number">1.</span> <span class="nav-text">1. 名称解释</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-10个控制标志位-Flag"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 10个控制标志位 Flag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-Tcp传输数据中的字段"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Tcp传输数据中的字段</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -723,9 +716,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/12/14/react-native通讯原理/';
-          this.page.identifier = '2017/12/14/react-native通讯原理/';
-          this.page.title = 'react-native通讯原理';
+          this.page.url = 'http://yoursite.com/2020/03/13/TCP-md/';
+          this.page.identifier = '2020/03/13/TCP-md/';
+          this.page.title = 'TCP.md';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://edwardqian.disqus.com/embed.js';

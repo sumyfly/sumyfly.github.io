@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="WebSocket技术主要是为了解决Ajax和Comet里XMLHttpRequest附带的缺陷所引起的问题。一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所欲的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。由于是建立在HTTP基础上的协议，因此连接的发起方仍然是客户端，但是连接一旦建立通信后，无论是客户端还是服务器端，">
+<meta name="description" content="1. WebSocket介绍WebSocket技术主要是为了解决Ajax和Comet里XMLHttpRequest附带的缺陷所引起的问题。一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所欲的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。由于是建立在HTTP基础上的协议，因此连接的发起方仍然是客户端，但是连接一旦建立通信后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="websocket">
 <meta property="og:url" content="http://yoursite.com/2020/02/18/websocket/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="WebSocket技术主要是为了解决Ajax和Comet里XMLHttpRequest附带的缺陷所引起的问题。一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所欲的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。由于是建立在HTTP基础上的协议，因此连接的发起方仍然是客户端，但是连接一旦建立通信后，无论是客户端还是服务器端，">
-<meta property="og:updated_time" content="2020-02-17T16:03:13.860Z">
+<meta property="og:description" content="1. WebSocket介绍WebSocket技术主要是为了解决Ajax和Comet里XMLHttpRequest附带的缺陷所引起的问题。一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所欲的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。由于是建立在HTTP基础上的协议，因此连接的发起方仍然是客户端，但是连接一旦建立通信后">
+<meta property="og:updated_time" content="2020-03-13T03:32:11.640Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="websocket">
-<meta name="twitter:description" content="WebSocket技术主要是为了解决Ajax和Comet里XMLHttpRequest附带的缺陷所引起的问题。一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所欲的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。由于是建立在HTTP基础上的协议，因此连接的发起方仍然是客户端，但是连接一旦建立通信后，无论是客户端还是服务器端，">
+<meta name="twitter:description" content="1. WebSocket介绍WebSocket技术主要是为了解决Ajax和Comet里XMLHttpRequest附带的缺陷所引起的问题。一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所欲的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。由于是建立在HTTP基础上的协议，因此连接的发起方仍然是客户端，但是连接一旦建立通信后">
 
 
 
@@ -314,6 +314,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Networking/" itemprop="url" rel="index">
+                    <span itemprop="name">Networking</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -349,7 +371,7 @@
       
 
       
-        <p>WebSocket技术主要是为了解决Ajax和Comet里XMLHttpRequest附带的缺陷所引起的问题。<br>一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所欲的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。<br>由于是建立在HTTP基础上的协议，因此连接的发起方仍然是客户端，但是连接一旦建立通信后，无论是客户端还是服务器端，都可以直接向对方发送报文。</p>
+        <h3 id="1-WebSocket介绍"><a href="#1-WebSocket介绍" class="headerlink" title="1. WebSocket介绍"></a>1. WebSocket介绍</h3><p>WebSocket技术主要是为了解决Ajax和Comet里XMLHttpRequest附带的缺陷所引起的问题。<br>一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所欲的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。<br>由于是建立在HTTP基础上的协议，因此连接的发起方仍然是客户端，但是连接一旦建立通信后，无论是客户端还是服务器端，都可以直接向对方发送报文。</p>
 <p>WebSocket协议的主要特点：</p>
 <ul>
 <li>服务器端推送功能</li>
@@ -358,6 +380,17 @@
 <a id="more"></a>
 <p>为实现WebSocket通信，在HTTP连接建立之后，需要完成一次“握手”步骤，需要用到HTTP的Upgrade首部字段，告知服务器通信协议发生改变，以达到握手的目的。（握手响应状态码：101）<br>成功握手确立WebSocket连接之后，通信时不再使用HTTP的数据帧，而采用WebSocket独立的数据帧。<br>WebSocket的URL格式<br>ws://example.com/<br>WebSocket协议支持全双工通信，因此服务器端不必等待请求，可直接发送数据。<br>JavaScript可调用“The WebSocket API”内提供的WebSocket程序接口，以实现WebSocket协议下的全双工通信。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">调用WebSocket API，每<span class="number">50</span>ms发送一次数据</div><div class="line"><span class="keyword">var</span> socket = <span class="keyword">new</span> WebSocket (<span class="string">'ws://game.example.com:12010/updates'</span>)</div><div class="line">socket.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(socket.bufferedAmout == <span class="number">0</span>)</div><div class="line">      socket.send(getUpdateData())</div><div class="line">  &#125;,<span class="number">50</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>WebSocket不需要使用http header了，TODO: 但是如何标定数据长度呢?</p>
+<h3 id="2-WebSocket如何保持长链接"><a href="#2-WebSocket如何保持长链接" class="headerlink" title="2. WebSocket如何保持长链接"></a>2. WebSocket如何保持长链接</h3><h4 id="2-1-心跳机制"><a href="#2-1-心跳机制" class="headerlink" title="2.1 心跳机制"></a>2.1 心跳机制</h4><p>Ping/Pong Frame (RFC6455 - The WebSocket Protocol)。这种 Frame 是一种特殊的数据包，它只包含一些元数据而不需要真正的 Data Payload，可以在不影响 Application 的情况下维持住中间网络的连接状态。</p>
+<h4 id="2-2-重连机制"><a href="#2-2-重连机制" class="headerlink" title="2.2 重连机制"></a>2.2 重连机制</h4><p>TODO: 实验部分，先链接，然后物理断开链接，抓包。</p>
+<h3 id="3-握手"><a href="#3-握手" class="headerlink" title="3. 握手"></a>3. 握手</h3><blockquote>
+<blockquote>
+<p>localhost</p>
+</blockquote>
+</blockquote>
+<p>GET / HTTP/1.1<br>Connection: Upgrade<br>Host: localhost:3000<br>Sec-WebSocket-Key: wVCXyrMuAjIS21Rknz8NCA==<br>Sec-WebSocket-Version: 13<br>Upgrade: websocket</p>
+<h3 id="4-消息类型"><a href="#4-消息类型" class="headerlink" title="4. 消息类型"></a>4. 消息类型</h3><p>当客户端和服务端都发送了他们的握手协议，并且当握手已经成功，那么数据传输就开始了。这是一个双方都可以独立发送任意数据的双向通信渠道。<br>在握手成功以后，客户端和服务端传输的数据来回传输的数据单位，我们在规范中称为消息（messages）。在传输中，一条消息有一个或者多个帧组成。WebSocket中的消息不需要对应特定网络层中的帧，一条零散的消息可能由中间人合并或者拆分成网络层的帧。<br>帧有关联的类型。同一条消息的每一帧都包含相同类型的数据。通常来说，它可以是文本数据（UTF-8编码）、二进制数据（留给应用解析的数据）和控制帧数据（不是用来传输数据，而是用来作为协议层的特定符号，如关闭连接帧）。当前版本的协议定义了6中控制帧类型并且预留了10个保留类型。</p>
+
       
     </div>
 
@@ -459,8 +492,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -475,7 +517,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -486,7 +528,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -522,6 +564,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-WebSocket介绍"><span class="nav-number">1.</span> <span class="nav-text">1. WebSocket介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-WebSocket如何保持长链接"><span class="nav-number">2.</span> <span class="nav-text">2. WebSocket如何保持长链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-心跳机制"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 心跳机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-重连机制"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 重连机制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-握手"><span class="nav-number">3.</span> <span class="nav-text">3. 握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-消息类型"><span class="nav-number">4.</span> <span class="nav-text">4. 消息类型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
