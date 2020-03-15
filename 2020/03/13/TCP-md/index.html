@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2020/03/13/TCP-md/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 名称解释可以用WireShark通过分析Tcp报来得知，工具显示得很清楚。 1.1 10个控制标志位 Flag下面的含义只针对其标志位为1的情况，比如SYN=1才代表握手阶段。FIN=1代表挥手阶段。  SYN 表示新建连接 ACK 表示响应如果发送数据为空的话，可以发送同一个Seq的多个ACK，这个可以用来保活和窗口协商。这个单个ACK只能TCP协议实现发送，应用层只能发[ACK+PSH]">
-<meta property="og:updated_time" content="2020-03-13T07:16:37.353Z">
+<meta property="og:updated_time" content="2020-03-15T16:40:36.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP.md">
 <meta name="twitter:description" content="1. 名称解释可以用WireShark通过分析Tcp报来得知，工具显示得很清楚。 1.1 10个控制标志位 Flag下面的含义只针对其标志位为1的情况，比如SYN=1才代表握手阶段。FIN=1代表挥手阶段。  SYN 表示新建连接 ACK 表示响应如果发送数据为空的话，可以发送同一个Seq的多个ACK，这个可以用来保活和窗口协商。这个单个ACK只能TCP协议实现发送，应用层只能发[ACK+PSH]">
@@ -394,6 +394,8 @@
 <p>注意ACK是标志位, Ack是确认号。大小写不一样，含义也不同。</p>
 </blockquote>
 <a id="more"></a>
+<p>TODO: TCP Server在等待关闭确认时，如果又接到握手信息，那么就会取消关闭，复用当前链接。</p>
+
       
     </div>
 
