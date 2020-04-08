@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/08/React-Native-Debug/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
-<meta property="og:updated_time" content="2020-04-08T15:38:49.044Z">
+<meta property="og:updated_time" content="2020-04-08T15:49:36.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Native-Debug">
 <meta name="twitter:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
@@ -586,8 +586,7 @@
 <h3 id="67-NaN-Infinity"><a href="#67-NaN-Infinity" class="headerlink" title="67. NaN, Infinity"></a>67. NaN, Infinity</h3><p>NaN, Infinity这些JS类型如果传到Native moduel,会导致App crash, 原因是Native无法处理这些类型。</p>
 <p>null可以传到Native，Native module可以处理Double类型，但是不能直接getDouble，这样也会报错。要先判断类型，使用readableMap.getType(key)。</p>
 <p>undefined的值，在Native直接是key不存在。</p>
-<h3 id="68-Saga的call-调用instance的方法"><a href="#68-Saga的call-调用instance的方法" class="headerlink" title="68. Saga的call 调用instance的方法"></a>68. Saga的call 调用instance的方法</h3><p>Saga的call调用instance方法，如果instance方法中用到了this.value，那么需要传递context，就是绑定this.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">yield</span> call([loggly, loggly.push], logData) <span class="comment">// loggly.push中有用到this.属性值，所以需要传递context,不然this指向的值不对。</span></div></pre></td></tr></table></figure></p>
-<p>可以这样吗？ yield call(loggly.push.bind(loggly), logData)</p>
+<h3 id="68-Saga的call-调用instance的方法"><a href="#68-Saga的call-调用instance的方法" class="headerlink" title="68. Saga的call 调用instance的方法"></a>68. Saga的call 调用instance的方法</h3><p>Saga的call调用instance方法，如果instance方法中用到了this.value，那么需要传递context，就是绑定this.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">yield</span> call([loggly, loggly.push], logData) <span class="comment">// loggly.push中有用到this.属性值，所以需要传递context,不然this指向的值不对。</span></div><div class="line"><span class="keyword">yield</span> call(loggly.push.bind(loggly), logData) <span class="comment">// 这样也是可以的，但是传递context更好。bind会返回新函数。</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
