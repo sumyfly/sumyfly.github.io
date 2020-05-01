@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/08/React-Native-Debug/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
-<meta property="og:updated_time" content="2020-04-21T03:28:56.501Z">
+<meta property="og:updated_time" content="2020-05-01T09:26:41.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Native-Debug">
 <meta name="twitter:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
@@ -591,6 +591,10 @@
 <p>之后就可以拔掉USB线进行调试了，如果遇到unauthorized问题，去真机Settings页面，再点下系统版本，打开developer功能。</p>
 <p>在Android中找到src/main/java/MainApplication（Android 主入口文件）类名，找到 onCreate方法,代码附上：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line"> <span class="keyword">super</span>.onCreate();</div><div class="line"> <span class="comment">//SoLoader.init(this, /* native exopackage */ false);</span></div><div class="line"> </div><div class="line"> SharedPreferences mPreferences =  PreferenceManager.getDefaultSharedPreferences(getApplicationContext());</div><div class="line"> mPreferences.edit().putString(<span class="string">"debug_http_host"</span>,<span class="string">"localhost:8081"</span>).commit();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>有时候遇到device offliene, 去开发者选项中把Usb Debug选项打开再关闭下，也能解决网络Debug中的offline问题。</li>
+<li>adb kill-server 有时候也有用。</li>
+</ul>
 <p><a href="https://blog.csdn.net/captive_rainbow_/article/details/81012704" target="_blank" rel="external">https://blog.csdn.net/captive_rainbow_/article/details/81012704</a><br><a href="https://www.jb51.net/article/119804.htm" target="_blank" rel="external">https://www.jb51.net/article/119804.htm</a></p>
 
       
