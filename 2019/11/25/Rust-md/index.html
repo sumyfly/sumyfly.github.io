@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/11/25/Rust-md/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. rustup123rustup default nightly # use nightly versionrustup default stable # use stable versionrustup update # update rust version">
-<meta property="og:updated_time" content="2019-11-25T02:33:06.436Z">
+<meta property="og:updated_time" content="2020-05-03T08:28:48.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rust.md">
 <meta name="twitter:description" content="1. rustup123rustup default nightly # use nightly versionrustup default stable # use stable versionrustup update # update rust version">
@@ -351,6 +351,9 @@
       
         <h3 id="1-rustup"><a href="#1-rustup" class="headerlink" title="1. rustup"></a>1. rustup</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rustup default nightly <span class="comment"># use nightly version</span></div><div class="line">rustup default stable <span class="comment"># use stable version</span></div><div class="line">rustup update <span class="comment"># update rust version</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
+<h3 id="2-cargo-build-时-Blocking-waiting-for-file-lock-on-build-directory"><a href="#2-cargo-build-时-Blocking-waiting-for-file-lock-on-build-directory" class="headerlink" title="2. cargo build 时 Blocking waiting for file lock on build directory"></a>2. cargo build 时 Blocking waiting for file lock on build directory</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pkill rls</div><div class="line">rm -rf ~/.cargo/registry/index/*</div></pre></td></tr></table></figure>
+<p><a href="https://stackoverflow.com/questions/47565203/cargo-build-hangs-with-blocking-waiting-for-file-lock-on-the-registry-index-a?rq=1" target="_blank" rel="external">https://stackoverflow.com/questions/47565203/cargo-build-hangs-with-blocking-waiting-for-file-lock-on-the-registry-index-a?rq=1</a></p>
+
       
     </div>
 
@@ -534,7 +537,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-rustup"><span class="nav-number">1.</span> <span class="nav-text">1. rustup</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-rustup"><span class="nav-number">1.</span> <span class="nav-text">1. rustup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-cargo-build-时-Blocking-waiting-for-file-lock-on-build-directory"><span class="nav-number">2.</span> <span class="nav-text">2. cargo build 时 Blocking waiting for file lock on build directory</span></a></li></ol></div>
             
 
           </div>

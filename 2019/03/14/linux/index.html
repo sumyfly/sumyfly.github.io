@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/03/14/linux/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. ^M不可见字符vim中输入CTRL+V CTRL+M, 而不是上箭号+M。https://blog.csdn.net/kkwant/article/details/81501241">
-<meta property="og:updated_time" content="2020-03-06T09:25:23.586Z">
+<meta property="og:updated_time" content="2020-05-03T11:05:52.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux">
 <meta name="twitter:description" content="1. ^M不可见字符vim中输入CTRL+V CTRL+M, 而不是上箭号+M。https://blog.csdn.net/kkwant/article/details/81501241">
@@ -355,6 +355,8 @@
 <p>$ nc -l 8000<br>Client connects to port 8000:</p>
 <p>$ nc localhost 8000 </p>
 <h4 id="2-2-socat"><a href="#2-2-socat" class="headerlink" title="2.2 socat"></a>2.2 socat</h4><p>socat TCP-LISTEN:6142,fork stdout</p>
+<h3 id="3-pkg-config"><a href="#3-pkg-config" class="headerlink" title="3. pkg-config"></a>3. pkg-config</h3><p>pkg-config一个帮助编译时指定编译依赖路径的工具，它可以避免硬编码参数。<br>pkg-config必须有一个.pc结尾的配置文件，读取这个文件产生指定值。<br>pkg-config如果需要指定用户的目录，需要导出PKG_CONFIG_PATH环境变量。这个变量会在pkg-config的默认搜索路径前生效。查看pkg-config的默认搜索路径<code>pkg-config --variable pc_path pkg-config</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pkg-config --libs libsodium //查找sodium的lib位置。</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -545,7 +547,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-M不可见字符"><span class="nav-number">1.</span> <span class="nav-text">1. ^M不可见字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动本地TCP服务器"><span class="nav-number">2.</span> <span class="nav-text">2. 启动本地TCP服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-nc"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 nc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-socat"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 socat</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-M不可见字符"><span class="nav-number">1.</span> <span class="nav-text">1. ^M不可见字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动本地TCP服务器"><span class="nav-number">2.</span> <span class="nav-text">2. 启动本地TCP服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-nc"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 nc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-socat"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 socat</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-pkg-config"><span class="nav-number">3.</span> <span class="nav-text">3. pkg-config</span></a></li></ol></div>
             
 
           </div>
