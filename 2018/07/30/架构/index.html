@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.MVC, MVP, MVVM这些都是架构的演变，按照MVC-&amp;gt;MVP-&amp;gt;MVVM,变化方向是让View能适应不断的变化，而Model尽量保持不变。  业务在Model中。由于网站的三层设计和这个有点混淆，网站三层设计UI、BLL、DAO，对应关系是UI(View+Controller), BLL+DAO(Model)。在DDD的设计中，核心业务也是在Model中，下面的DAO是支撑">
 <meta property="og:image" content="http://yoursite.com/images/architecture/mvc.jpg">
-<meta property="og:updated_time" content="2018-08-18T16:28:27.623Z">
+<meta property="og:updated_time" content="2020-05-08T03:19:52.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="架构">
 <meta name="twitter:description" content="1.MVC, MVP, MVVM这些都是架构的演变，按照MVC-&amp;gt;MVP-&amp;gt;MVVM,变化方向是让View能适应不断的变化，而Model尽量保持不变。  业务在Model中。由于网站的三层设计和这个有点混淆，网站三层设计UI、BLL、DAO，对应关系是UI(View+Controller), BLL+DAO(Model)。在DDD的设计中，核心业务也是在Model中，下面的DAO是支撑">
@@ -386,7 +386,7 @@
 </blockquote>
 <p><a href="https://blog.csdn.net/lmj623565791/article/details/46596109" target="_blank" rel="external">https://blog.csdn.net/lmj623565791/article/details/46596109</a><br><a href="https://www.cnblogs.com/xishuai/p/microservices-and-service-mesh.html" target="_blank" rel="external">https://www.cnblogs.com/xishuai/p/microservices-and-service-mesh.html</a><br><a id="more"></a></p>
 <h3 id="2-React"><a href="#2-React" class="headerlink" title="2.React"></a>2.React</h3><p>React使用了单向绑定，一是让React能专注于View，二是JS的单线程机制，不太适合大而全的功能（ViewModel本身也需要设计），而是可插拔的机制。所以React出来之后，有人设计出Flux的单向更新机制，再之后的Redux。</p>
-<p>React,RN的架构应该是什么样的呢？MVC or MVVM。因为y用了Redux,所以倾向于MVVM。View更新由Redux的connect来更新:props-&gt;render(),但是交互一块，没有绑定，使用action来更新Redux?所以我觉得Mobx的试用场景可能就包括业务太多，ViewModel太大而不适合放到一个Redux的根中。</p>
+<p>React,RN的架构应该是什么样的呢？MVC or MVVM。因为用了Redux,所以倾向于MVVM。View更新由Redux的connect来更新:props-&gt;render(),但是交互一块，没有绑定，使用action-&gt;reducer/saga来更新Redux。所以我觉得Mobx的适用场景可能就包括业务太多，ViewModel太大而不适合放到一个Redux的根中。</p>
 <p>TODO:<br><a href="https://segmentfault.com/q/1010000007039430" target="_blank" rel="external">https://segmentfault.com/q/1010000007039430</a><br><a href="https://www.jianshu.com/p/dd61bff449a8" target="_blank" rel="external">https://www.jianshu.com/p/dd61bff449a8</a><br><a href="https://blog.csdn.net/yisuowushinian/article/details/79045058" target="_blank" rel="external">https://blog.csdn.net/yisuowushinian/article/details/79045058</a><br><a href="https://www.cnblogs.com/vpersie2008/p/5771041.html" target="_blank" rel="external">https://www.cnblogs.com/vpersie2008/p/5771041.html</a></p>
 <h3 id="2-DDD"><a href="#2-DDD" class="headerlink" title="2.DDD"></a>2.DDD</h3><p>业务逻辑也可以写在应用层，但就不是领域驱动了，而是脚本驱动。</p>
 <p>领域建模，切记不要以人为中心，要区分什么是系统的使用者，什么是模型中业务逻辑的参与者；如果认为某某行为是某个人做的，就把这个行为设计到人这个模型上，那就犯了以人为中心的错误了；在模型中，我们应该表达的是消息被创建并发送出去了，然后人只是这个消息模型的一部分，就是作为发送者，同样，消息接受者也是消息的一部分；实际上，消息是一个聚合根，聚合根的最根本意义是封装业务规则，那么消息的业务规则是什么呢？就是，一个消息必须至少要有一个发送者，以及接受者信息，还要有消息的标题内容等；不然这个就不是消息了；另外，发送消息显然是应用层的一个职责；那么应用层代表什么，就是代表系统；所以，我们要明白人与系统的关系；人使用系统，系统提供外部功能，系统内部有领域模型；<br>领域建模只对我们所关心的信息和业务规则进行建模。你既然设计了消息这个模型，就要充分考虑清楚这个模型的业务规则是什么；这个就是DDD一直强调的聚合根要有true invariants，也就是把真正的<strong>不变性封装到模型中</strong>；</p>
