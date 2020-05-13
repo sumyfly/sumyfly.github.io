@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/11/25/Rust-md/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. rustup123rustup default nightly # use nightly versionrustup default stable # use stable versionrustup update # update rust version">
-<meta property="og:updated_time" content="2020-05-03T08:28:48.293Z">
+<meta property="og:updated_time" content="2020-05-13T14:07:10.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rust.md">
 <meta name="twitter:description" content="1. rustup123rustup default nightly # use nightly versionrustup default stable # use stable versionrustup update # update rust version">
@@ -353,6 +353,8 @@
 <a id="more"></a>
 <h3 id="2-cargo-build-时-Blocking-waiting-for-file-lock-on-build-directory"><a href="#2-cargo-build-时-Blocking-waiting-for-file-lock-on-build-directory" class="headerlink" title="2. cargo build 时 Blocking waiting for file lock on build directory"></a>2. cargo build 时 Blocking waiting for file lock on build directory</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pkill rls</div><div class="line">rm -rf ~/.cargo/registry/index/*</div></pre></td></tr></table></figure>
 <p><a href="https://stackoverflow.com/questions/47565203/cargo-build-hangs-with-blocking-waiting-for-file-lock-on-the-registry-index-a?rq=1" target="_blank" rel="external">https://stackoverflow.com/questions/47565203/cargo-build-hangs-with-blocking-waiting-for-file-lock-on-the-registry-index-a?rq=1</a></p>
+<h3 id="3-vs-code-debug-rust"><a href="#3-vs-code-debug-rust" class="headerlink" title="3. vs code debug rust"></a>3. vs code debug rust</h3><p>安装CodeLLDB、Rust(rls)插件，然后配置launch.json。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  "type": "lldb",</div><div class="line">  "request": "launch",</div><div class="line">  "name": "Debug executable 'sslocal'",</div><div class="line">  "cargo": &#123;</div><div class="line">    "args": ["build", "--bin=sslocal", "--package=shadowsocks-rust"],</div><div class="line">    "filter": &#123;</div><div class="line">      "name": "sslocal",</div><div class="line">      "kind": "bin"</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  "args": ["-c", "$&#123;workspaceFolder&#125;/config.json"],</div><div class="line">  "cwd": "$&#123;workspaceFolder&#125;",</div><div class="line">  "env": &#123; "RUST_BACKTRACE": "full" &#125;,</div><div class="line">  "stopOnEntry": false,</div><div class="line">  "sourceLanguages": ["rust"],</div><div class="line">  "sourceMap": &#123;</div><div class="line">    // 这个配置可以debug std lib</div><div class="line">    "/rustc/8d69840ab92ea7f4d323420088dd8c9775f180cd": "$&#123;env:HOME&#125;/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust"</div><div class="line">  &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p><a href="https://jason-williams.co.uk/debugging-rust-in-vscode" target="_blank" rel="external">https://jason-williams.co.uk/debugging-rust-in-vscode</a></p>
 
       
     </div>
@@ -537,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-rustup"><span class="nav-number">1.</span> <span class="nav-text">1. rustup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-cargo-build-时-Blocking-waiting-for-file-lock-on-build-directory"><span class="nav-number">2.</span> <span class="nav-text">2. cargo build 时 Blocking waiting for file lock on build directory</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-rustup"><span class="nav-number">1.</span> <span class="nav-text">1. rustup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-cargo-build-时-Blocking-waiting-for-file-lock-on-build-directory"><span class="nav-number">2.</span> <span class="nav-text">2. cargo build 时 Blocking waiting for file lock on build directory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-vs-code-debug-rust"><span class="nav-number">3.</span> <span class="nav-text">3. vs code debug rust</span></a></li></ol></div>
             
 
           </div>
