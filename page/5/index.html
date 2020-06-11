@@ -478,6 +478,7 @@
       
         
           <h3 id="1-安装emacs"><a href="#1-安装emacs" class="headerlink" title="1. 安装emacs"></a>1. 安装emacs</h3><p>使用brew<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install emacs --with-cocoa</div></pre></td></tr></table></figure></p>
+<p>C-h t # 打开tutorial</p>
 <h3 id="2-配置emacs"><a href="#2-配置emacs" class="headerlink" title="2. 配置emacs"></a>2. 配置emacs</h3><p>原来是用的<a href="https://github.com/bbatsov/prelude" target="_blank" rel="external">prelude</a>,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:</p>
 <ul>
 <li><a href="http://codingpy.com/article/emacs-the-best-python-editor/" target="_blank" rel="external">Emacs：最好的Python编辑器？</a><br>注意有几处不同，elpy的ipython配置现在是<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(setq python-shell-interpreter &quot;ipython&quot;</div><div class="line">      python-shell-interpreter-args &quot;-i --simple-prompt&quot;)</div></pre></td></tr></table></figure>
