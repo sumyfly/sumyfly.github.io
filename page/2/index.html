@@ -378,7 +378,7 @@
           <h3 id="1-jest-mock"><a href="#1-jest-mock" class="headerlink" title="1. jest mock"></a>1. jest mock</h3><h4 id="1-1-mock-node-module-中的-moduel"><a href="#1-1-mock-node-module-中的-moduel" class="headerlink" title="1.1 mock node_module 中的 moduel"></a>1.1 mock node_module 中的 moduel</h4><p>手动 mock，放到<strong>mocks</strong>目录下面</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/19/React-Native-Test/#далее" rel="contents">
+            <a class="btn" href="/2019/02/19/React-Native-Test/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -504,8 +504,20 @@
         
           
             <h3 id="1-tr"><a href="#1-tr" class="headerlink" title="1. tr"></a>1. tr</h3><p>echo $PATH | tr ‘:’ ‘\n’</p>
-<h3 id="2-xargs"><a href="#2-xargs" class="headerlink" title="2. xargs"></a>2. xargs</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f | xargs -I&#123;&#125; md5sum &#123;&#125; <span class="comment"># &#123;&#125; 是用来代替管道之前标准输出内容的。</span></div></pre></td></tr></table></figure>
-<p>加 -I 参数 需要事先指定替换字符</p>
+<h3 id="2-xargs"><a href="#2-xargs" class="headerlink" title="2. xargs"></a>2. xargs</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f | xargs -I&#123;&#125; md5sum &#123;&#125; <span class="comment"># &#123;&#125; 是用来代替管道之前标准输出内容的。</span></div><div class="line">cat ~/.zshrc | xargs -n 3</div></pre></td></tr></table></figure>
+<p>加 -I 参数 需要事先指定替换字符<br>args:xargs的默认命令是echo，空格是默认定界符。  默认替换符号是{}<br>-I {}批定了替换字符串，表示文件内容，能循环按要求替换相应的参数  使用-I指定一个替换字符串{}，这个字符串在xargs扩展时会被替换掉，<br>当-I与xargs结合使用，每一个参数命令都会被执行一次：<br>-n num 后面加次数，表示命令在执行的时候一次用的argument的个数，默认是用所有的<br>-d 自定义定界符 </p>
+<h3 id="3-IFS"><a href="#3-IFS" class="headerlink" title="3. IFS"></a>3. IFS</h3><p>IFS（internal field separator）界定符，默认有三种：空格、制表符、换行符。Bash默认只要找到其中一种，就分隔字符，如果要指定使用如下方式：</p>
+<ul>
+<li>指定只用换行: IFS=$(‘\n’)</li>
+<li>指定空格: IFS=’ ‘ </li>
+<li>指定<code>,</code>: IFS=’,’，这个在处理csv文件中有帮助。</li>
+</ul>
+<h3 id="4-重定向"><a href="#4-重定向" class="headerlink" title="4. 重定向"></a>4. 重定向</h3><p>Linux系统预留可三个文件描述符：0、1和2，他们的意义如下所示：<br>0——标准输入（stdin）<br>1——标准输出（stdout）<br>2——标准错误（stderr）</p>
+<p>2&gt;/dev/null<br>意思就是把错误输出到“黑洞”</p>
+<blockquote>
+<p>/dev/null 2&gt;&amp;1<br>默认情况是1，也就是等同于1&gt;/dev/null 2&gt;&amp;1。意思就是把标准输出重定向到“黑洞”，还把错误输出2重定向到标准输出1，也就是标准输出和错误输出都进了“黑洞”</p>
+</blockquote>
+<p>2&gt;&amp;1 &gt;/dev/null<br>意思就是把错误输出2重定向到标准出书1，也就是屏幕，标准输出进了“黑洞”，也就是标准输出进了黑洞，错误输出打印到屏幕。</p>
 
           
         
@@ -772,7 +784,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
 <h4 id="1-2-toggle-terminal"><a href="#1-2-toggle-terminal" class="headerlink" title="1.2 toggle terminal"></a>1.2 toggle terminal</h4><p>Alt + F12<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/17/Android-Studio/#далее" rel="contents">
+            <a class="btn" href="/2018/12/17/Android-Studio/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1025,7 +1037,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
 <h3 id="2-Storyboard的导航"><a href="#2-Storyboard的导航" class="headerlink" title="2. Storyboard的导航"></a>2. Storyboard的导航</h3><p>有两个导航<code>Navigation Controller</code>和<code>Tab Bar Controller</code>,这两个在Editor-Embed In-&gt;Navigation Controller/Tab Bar Controller.加上去之后，根组件就会变成这两个。<code>self.navigationController</code>才会有值，不然是nil。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/27/ios-storyboard/#далее" rel="contents">
+            <a class="btn" href="/2018/10/27/ios-storyboard/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1152,7 +1164,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
           <h3 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 运行镜像</span></div><div class="line">docker run -t -i ubuntu:14.04 /bin/bash </div><div class="line"></div><div class="line"><span class="comment"># 查看运行的容器</span></div><div class="line">docker ps</div><div class="line"></div><div class="line"><span class="comment"># 查看所有容器</span></div><div class="line">docker ps -a</div><div class="line"></div><div class="line"><span class="comment"># 进入容器</span></div><div class="line">docker <span class="built_in">exec</span> -it <span class="variable">$container_id</span> /bin/bash</div><div class="line"></div><div class="line"><span class="comment"># 停用某个容器</span></div><div class="line">docker stop <span class="variable">$container_id</span></div><div class="line"></div><div class="line"><span class="comment"># 停用全部运行中的容器</span></div><div class="line">docker stop $(docker ps -q)</div><div class="line"></div><div class="line"><span class="comment"># 杀死所有running状态的容器</span></div><div class="line">docker <span class="built_in">kill</span> $(docker ps -q)</div><div class="line"></div><div class="line"><span class="comment"># 查看镜像，不包含中间镜像</span></div><div class="line">docker images</div><div class="line"></div><div class="line"><span class="comment"># 查看所有镜像,其中包含中间镜像</span></div><div class="line">docker images -a</div><div class="line"></div><div class="line"><span class="comment"># 进入正在运行的容器</span></div><div class="line">docker <span class="built_in">exec</span> -it <span class="variable">$container_id</span> /bin/bash</div><div class="line"></div><div class="line"><span class="comment"># 给iamge改名</span></div><div class="line">docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/26/mac-docker/#далее" rel="contents">
+            <a class="btn" href="/2018/10/26/mac-docker/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1304,7 +1316,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
 <li>ScannerPackage-&gt;Scanner.initScannerModule
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/24/React-Native启动顺序/#далее" rel="contents">
+            <a class="btn" href="/2018/10/24/React-Native启动顺序/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1453,7 +1465,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
           <h3 id="1-USB2-0标准"><a href="#1-USB2-0标准" class="headerlink" title="1. USB2.0标准"></a>1. USB2.0标准</h3><p>USB2.0标准的子类。<br><img src="/images/usb/Usb2.0.png" alt="USB2.0"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/10/11/Android使用USB/#далее" rel="contents">
+            <a class="btn" href="/2018/10/11/Android使用USB/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1616,7 +1628,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
 <p>配置中，Android使用了webClientId，iOS使用了iOSClientId和webClientId.<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; GoogleSignin, GoogleSigninButton &#125; <span class="keyword">from</span> <span class="string">'react-native-google-signin'</span></div><div class="line"></div><div class="line">  <span class="keyword">if</span> (IsAndroid) &#123;</div><div class="line">      GoogleSignin.configure(&#123;</div><div class="line">        <span class="comment">// scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile </span></div><div class="line">        webClientId: androidWebClientId,</div><div class="line">        offlineAccess: <span class="literal">false</span>,<span class="comment">// if you want to access Google API on behalf of the user FROM YOUR SERVER</span></div><div class="line">        forceConsentPrompt: <span class="literal">true</span> <span class="comment">// [Android] if you want to show the authorization prompt at each login</span></div><div class="line">      &#125;)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      GoogleSignin.configure(&#123;</div><div class="line">        iosClientId: iosClientId, <span class="comment">// only for iOS</span></div><div class="line">        webClientId: iOSWebClientId, <span class="comment">// required, shoudle use same project name as iosClientId</span></div><div class="line">        offlineAccess: <span class="literal">false</span>,<span class="comment">// if you want to access Google API on behalf of the user FROM YOUR SERVER</span></div><div class="line">      &#125;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/25/React-Native集成module/#далее" rel="contents">
+            <a class="btn" href="/2018/08/25/React-Native集成module/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
