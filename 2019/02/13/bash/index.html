@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="1. trecho $PATH | tr ‘:’ ‘\n’">
+<meta name="description" content="1. trecho $PATH | tr ‘:’ ‘\n’ 2. xargs1find . -type f | xargs -I&amp;#123;&amp;#125; md5sum &amp;#123;&amp;#125; # &amp;#123;&amp;#125; 是用来代替管道之前标准输出内容的。 加 -I 参数 需要事先指定替换字符">
 <meta name="keywords" content="Linux,bash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bash">
 <meta property="og:url" content="http://yoursite.com/2019/02/13/bash/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1. trecho $PATH | tr ‘:’ ‘\n’">
-<meta property="og:updated_time" content="2019-02-13T07:50:10.725Z">
+<meta property="og:description" content="1. trecho $PATH | tr ‘:’ ‘\n’ 2. xargs1find . -type f | xargs -I&amp;#123;&amp;#125; md5sum &amp;#123;&amp;#125; # &amp;#123;&amp;#125; 是用来代替管道之前标准输出内容的。 加 -I 参数 需要事先指定替换字符">
+<meta property="og:updated_time" content="2020-06-13T06:07:48.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash">
-<meta name="twitter:description" content="1. trecho $PATH | tr ‘:’ ‘\n’">
+<meta name="twitter:description" content="1. trecho $PATH | tr ‘:’ ‘\n’ 2. xargs1find . -type f | xargs -I&amp;#123;&amp;#125; md5sum &amp;#123;&amp;#125; # &amp;#123;&amp;#125; 是用来代替管道之前标准输出内容的。 加 -I 参数 需要事先指定替换字符">
 
 
 
@@ -351,6 +351,8 @@
 
       
         <h3 id="1-tr"><a href="#1-tr" class="headerlink" title="1. tr"></a>1. tr</h3><p>echo $PATH | tr ‘:’ ‘\n’</p>
+<h3 id="2-xargs"><a href="#2-xargs" class="headerlink" title="2. xargs"></a>2. xargs</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f | xargs -I&#123;&#125; md5sum &#123;&#125; <span class="comment"># &#123;&#125; 是用来代替管道之前标准输出内容的。</span></div></pre></td></tr></table></figure>
+<p>加 -I 参数 需要事先指定替换字符</p>
 
       
     </div>
@@ -543,7 +545,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-tr"><span class="nav-number">1.</span> <span class="nav-text">1. tr</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-tr"><span class="nav-number">1.</span> <span class="nav-text">1. tr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-xargs"><span class="nav-number">2.</span> <span class="nav-text">2. xargs</span></a></li></ol></div>
             
 
           </div>
