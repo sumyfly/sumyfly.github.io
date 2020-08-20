@@ -6,10 +6,10 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -19,8 +19,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -38,7 +38,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -72,21 +72,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
 
 
 
@@ -99,6 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/07/24/Redux-Debug/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. dispatch 同一个 action 在极短的时间内 2 次如果 reducer 里面是用的return fromJS(action.payload),然后 dispatch 同一个 action 在极短的时间内 2 次，导致的结果就是第二次使用的 immutable state 是旧的，它没有被第一次的 action 所更改，这样的后果就是状态丢失了。JS 执行时单线程，所以 reudx">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-12-04T05:06:07.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redux-Debug">
@@ -130,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/24/Redux-Debug/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/24/Redux-Debug/">
 
 
 
@@ -179,7 +180,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">QSL</span>
         <span class="logo-line-after"><i></i></span>
@@ -209,7 +210,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -219,7 +220,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -229,7 +230,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -239,7 +240,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -278,7 +279,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -323,8 +324,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/07/24/Redux-Debug/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/07/24/Redux-Debug/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/24/Redux-Debug/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -364,12 +364,12 @@
 <li>redux-persist-immutable 可以持久化 redux 中 Immutable 类型的数据，如 Map,List,transform 用的是 redux-persist-transform-immutable。</li>
 <li>redux-persist-transform-immutable，这个库很简单，就是做 Immutable 的序列化，反序列化,它包装成一个 redux-persist 的 transform。</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transit = <span class="built_in">require</span>(<span class="string">"transit-immutable-js"</span>);</div><div class="line"><span class="keyword">var</span> reduxPersist = <span class="built_in">require</span>(<span class="string">"redux-persist"</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">config</span>) </span>&#123;</div><div class="line">  config = config || &#123;&#125;;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> transitInstance = transit;</div><div class="line">  <span class="keyword">if</span> (config.records) &#123;</div><div class="line">    transitInstance = transit.withRecords(config.records);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> reduxPersist.createTransform(</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">state</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> transitInstance.toJSON(state);</div><div class="line">    &#125;,</div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">raw</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> transitInstance.fromJSON(raw);</div><div class="line">    &#125;,</div><div class="line">    config</div><div class="line">  );</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> transit = <span class="built_in">require</span>(<span class="string">"transit-immutable-js"</span>);</span><br><span class="line"><span class="keyword">var</span> reduxPersist = <span class="built_in">require</span>(<span class="string">"redux-persist"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">config</span>) </span>&#123;</span><br><span class="line">  config = config || &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> transitInstance = transit;</span><br><span class="line">  <span class="keyword">if</span> (config.records) &#123;</span><br><span class="line">    transitInstance = transit.withRecords(config.records);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> reduxPersist.createTransform(</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> transitInstance.toJSON(state);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">raw</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> transitInstance.fromJSON(raw);</span><br><span class="line">    &#125;,</span><br><span class="line">    config</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>transit-immutable-js 这个是序列化，反序列化 Immutable 类型的工具库，依赖 transit-js</li>
 <li>transit-js</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">writer.marshal = <span class="function"><span class="keyword">function</span>(<span class="params">em, obj, asMapKey, cache</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (em.transform !== <span class="literal">null</span>) &#123;</div><div class="line">    obj = em.transform(obj);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> h =</div><div class="line">      em.handler(obj) || <span class="comment">//obj 是undefiend, 但是在handler逻辑中，handlers.constructor用的是 x == null，所以undefined通过了条件返回了null。</span></div><div class="line">      (em.handlerForForeign ? em.handlerForForeign(obj, em.handlers) : <span class="literal">null</span>),</div><div class="line">    tag = h ? h.tag(obj) : <span class="literal">null</span>, <span class="comment">// h 是NilHandler， 它的tag是'_'</span></div><div class="line">    rep = h ? h.rep(obj) : <span class="literal">null</span>;</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (h != <span class="literal">null</span> &amp;&amp; tag != <span class="literal">null</span>) &#123;</div><div class="line">    <span class="keyword">switch</span> (tag) &#123;</div><div class="line">      <span class="keyword">case</span> <span class="string">"_"</span>: <span class="comment">// 因为tag == '_', 所以进来这个case分支</span></div><div class="line">        <span class="keyword">return</span> em.emitNil(asMapKey, cache); <span class="comment">// 这里就是NilHandler</span></div><div class="line">        <span class="keyword">break</span>;</div><div class="line">      <span class="comment">// more...</span></div><div class="line">      <span class="keyword">default</span>:</div><div class="line">        <span class="keyword">return</span> writer.emitEncoded(em, h, tag, rep, obj, asMapKey, cache);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">writer.JSONMarshaller.prototype.handler = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> h = <span class="keyword">this</span>.handlers.get(handlers.constructor(obj)); <span class="comment">// handlers.constructor 传undefined返回一个null, 然后以null为key，this.handlers.get(null)获取到NilHandler</span></div><div class="line">  <span class="comment">// more...</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">handlers.constructor = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (x == <span class="literal">null</span>) &#123;</div><div class="line">    <span class="comment">// 这里x是undefined， 通过条件后返回了null</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">  &#125; </div><div class="line">  <span class="comment">// more...</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">handlers.defaultHandlers = <span class="function"><span class="keyword">function</span>(<span class="params">hs</span>) </span>&#123;</div><div class="line">  hs.set(<span class="literal">null</span>, <span class="keyword">new</span> handlers.NilHandler()); <span class="comment">// null 为key, NilHandler 是value</span></div><div class="line">  hs.set(<span class="built_in">String</span>, <span class="keyword">new</span> handlers.StringHandler());</div><div class="line">  <span class="comment">// more...</span></div><div class="line">  <span class="keyword">return</span> hs;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">writer.JSONMarshaller.prototype.emitNil = <span class="function"><span class="keyword">function</span>(<span class="params">asMapKey, cache</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (asMapKey) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.emitString(d.ESC, <span class="string">"_"</span>, <span class="string">""</span>, asMapKey, cache);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">null</span>; <span class="comment">// 这就是最终返回了null</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * @constructor</div><div class="line"> */</div><div class="line">handlers.NilHandler = <span class="function"><span class="keyword">function</span> <span class="title">Transit$NilHandler</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">handlers.NilHandler.prototype.tag = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">"_"</span>;</div><div class="line">&#125;;</div><div class="line">handlers.NilHandler.prototype.rep = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">&#125;;</div><div class="line">handlers.NilHandler.prototype.stringRep = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">"null"</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">writer.marshal = <span class="function"><span class="keyword">function</span>(<span class="params">em, obj, asMapKey, cache</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (em.transform !== <span class="literal">null</span>) &#123;</span><br><span class="line">    obj = em.transform(obj);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> h =</span><br><span class="line">      em.handler(obj) || <span class="comment">//obj 是undefiend, 但是在handler逻辑中，handlers.constructor用的是 x == null，所以undefined通过了条件返回了null。</span></span><br><span class="line">      (em.handlerForForeign ? em.handlerForForeign(obj, em.handlers) : <span class="literal">null</span>),</span><br><span class="line">    tag = h ? h.tag(obj) : <span class="literal">null</span>, <span class="comment">// h 是NilHandler， 它的tag是'_'</span></span><br><span class="line">    rep = h ? h.rep(obj) : <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (h != <span class="literal">null</span> &amp;&amp; tag != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">switch</span> (tag) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"_"</span>: <span class="comment">// 因为tag == '_', 所以进来这个case分支</span></span><br><span class="line">        <span class="keyword">return</span> em.emitNil(asMapKey, cache); <span class="comment">// 这里就是NilHandler</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="comment">// more...</span></span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> writer.emitEncoded(em, h, tag, rep, obj, asMapKey, cache);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">writer.JSONMarshaller.prototype.handler = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> h = <span class="keyword">this</span>.handlers.get(handlers.constructor(obj)); <span class="comment">// handlers.constructor 传undefined返回一个null, 然后以null为key，this.handlers.get(null)获取到NilHandler</span></span><br><span class="line">  <span class="comment">// more...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">handlers.constructor = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (x == <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="comment">// 这里x是undefined， 通过条件后返回了null</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="comment">// more...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">handlers.defaultHandlers = <span class="function"><span class="keyword">function</span>(<span class="params">hs</span>) </span>&#123;</span><br><span class="line">  hs.set(<span class="literal">null</span>, <span class="keyword">new</span> handlers.NilHandler()); <span class="comment">// null 为key, NilHandler 是value</span></span><br><span class="line">  hs.set(<span class="built_in">String</span>, <span class="keyword">new</span> handlers.StringHandler());</span><br><span class="line">  <span class="comment">// more...</span></span><br><span class="line">  <span class="keyword">return</span> hs;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">writer.JSONMarshaller.prototype.emitNil = <span class="function"><span class="keyword">function</span>(<span class="params">asMapKey, cache</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (asMapKey) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.emitString(d.ESC, <span class="string">"_"</span>, <span class="string">""</span>, asMapKey, cache);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>; <span class="comment">// 这就是最终返回了null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@constructor</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">handlers.NilHandler = <span class="function"><span class="keyword">function</span> <span class="title">Transit$NilHandler</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">handlers.NilHandler.prototype.tag = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"_"</span>;</span><br><span class="line">&#125;;</span><br><span class="line">handlers.NilHandler.prototype.rep = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line">handlers.NilHandler.prototype.stringRep = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"null"</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -473,7 +473,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -484,9 +484,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="qsl" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
           <p class="site-author-name" itemprop="name">qsl</p>
            
               <p class="site-description motion-element" itemprop="description">technology, web, js</p>
@@ -497,7 +495,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -574,7 +572,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2020</span>

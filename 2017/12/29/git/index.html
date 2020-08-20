@@ -6,10 +6,10 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -19,8 +19,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -38,7 +38,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -72,21 +72,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="git," />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="git,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
 
 
 
@@ -100,6 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/29/git/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. rename git branch locally and remotely123git branch -m old_branch new_branch         # Rename branch locally    git push origin :old_branch                 # Delete the old branch    git push --set">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-03-27T17:28:21.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git">
@@ -131,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/29/git/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/29/git/">
 
 
 
@@ -180,7 +181,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">QSL</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +211,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -220,7 +221,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -230,7 +231,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -240,7 +241,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -279,7 +280,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -324,8 +325,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/12/29/git/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/29/git/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/29/git/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -350,13 +350,15 @@
       
 
       
-        <h3 id="1-rename-git-branch-locally-and-remotely"><a href="#1-rename-git-branch-locally-and-remotely" class="headerlink" title="1. rename git branch locally and remotely"></a>1. rename git branch locally and remotely</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git branch -m old_branch new_branch         <span class="comment"># Rename branch locally    </span></div><div class="line">git push origin :old_branch                 <span class="comment"># Delete the old branch    </span></div><div class="line">git push --<span class="built_in">set</span>-upstream origin new_branch   <span class="comment"># Push the new branch, set local branch to track the new remote</span></div></pre></td></tr></table></figure>
-<p><a href="https://gist.github.com/lttlrck/9628955" target="_blank" rel="external">git hub refference</a></p>
+        <h3 id="1-rename-git-branch-locally-and-remotely"><a href="#1-rename-git-branch-locally-and-remotely" class="headerlink" title="1. rename git branch locally and remotely"></a>1. rename git branch locally and remotely</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -m old_branch new_branch         <span class="comment"># Rename branch locally    </span></span><br><span class="line">git push origin :old_branch                 <span class="comment"># Delete the old branch    </span></span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin new_branch   <span class="comment"># Push the new branch, set local branch to track the new remote</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://gist.github.com/lttlrck/9628955" target="_blank" rel="noopener">git hub refference</a></p>
 <h3 id="2-github-PR的mergefangs"><a href="#2-github-PR的mergefangs" class="headerlink" title="2. github PR的mergefangs"></a>2. github PR的mergefangs</h3><h4 id="2-1-Create-a-merge-commit"><a href="#2-1-Create-a-merge-commit" class="headerlink" title="2.1 Create a merge commit"></a>2.1 Create a merge commit</h4><p>All commits from this branch will be added to the base branch via a merge commit.<br>创建一个专门用于合并的commit,保留原始的commit id.</p>
 <h4 id="2-2-Squash-and-merge"><a href="#2-2-Squash-and-merge" class="headerlink" title="2.2 Squash and merge"></a>2.2 Squash and merge</h4><p>The 1 commit from this branch will be added to the base branch.<br>创建一个commit,包含所有的changes，但是commit id丢失了。</p>
 <h4 id="2-3-Rebase-and-merge"><a href="#2-3-Rebase-and-merge" class="headerlink" title="2.3 Rebase and merge"></a>2.3 Rebase and merge</h4><p>The 1 commit from this branch will be rebased and added to the base branch.<br>这里的1 commit我不是很理解，其实是整体一组commits。它们的修改时间（Date)没有变化，但是提交时间(commite Date)时间统一变为rebase命令的执行时间。<br>重新Rebase对象的分支，然后所有的commit id和commit Date变了，changes,commit message，Date没变。</p>
 <blockquote>
 <p>git 做diff时，是按照一个起始点，然后把所以changes显示出来。如果是三方合并，它们是从共同起始点开始，看相同的行有没有修改。所以如果从master到development或者相反的方向，<strong>不要</strong>使用rebase,也不要使用Squash,因为它们会修改<strong>commit的id</strong>，导致merge的时候出现冲突。</p>
+</blockquote>
+<blockquote>
 <p>默认commit的时候，Date和commit Date是一样的，但是rebase之后commit Date的时间变成了rebase执行时的时间。</p>
 </blockquote>
 <p>怎么选项merge方式：</p>
@@ -475,7 +477,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -486,9 +488,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="qsl" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
           <p class="site-author-name" itemprop="name">qsl</p>
            
               <p class="site-description motion-element" itemprop="description">technology, web, js</p>
@@ -499,7 +499,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -576,7 +576,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2020</span>

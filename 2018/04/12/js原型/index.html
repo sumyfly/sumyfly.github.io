@@ -6,10 +6,10 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -19,8 +19,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -38,7 +38,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -72,21 +72,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="javascript," />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="javascript,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
 
 
 
@@ -100,6 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/12/js原型/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.构造函数12345678function Foo(a)&amp;#123;  if(!(this instanceof Foo))&amp;#123;    //非当前实例，原因是没用new去调用    return new Foo(a)  &amp;#125;  this.name = a&amp;#125;var foo = new Foo(&apos;foo&apos;) //这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-08-16T06:46:14.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js原型">
@@ -131,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/12/js原型/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/12/js原型/">
 
 
 
@@ -180,7 +181,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">QSL</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +211,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -220,7 +221,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -230,7 +231,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -240,7 +241,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -279,7 +280,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -324,8 +325,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/04/12/js原型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/12/js原型/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/12/js原型/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -350,21 +350,21 @@
       
 
       
-        <h3 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="1.构造函数"></a>1.构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Foo))&#123;</div><div class="line">    <span class="comment">//非当前实例，原因是没用new去调用</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Foo(a)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">this</span>.name = a</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo(<span class="string">'foo'</span>) <span class="comment">//这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都会check instance</span></div></pre></td></tr></table></figure>
+        <h3 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="1.构造函数"></a>1.构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Foo))&#123;</span><br><span class="line">    <span class="comment">//非当前实例，原因是没用new去调用</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Foo(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.name = a</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo(<span class="string">'foo'</span>) <span class="comment">//这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都会check instance</span></span><br></pre></td></tr></table></figure>
 <p>我记得构造函数首字母要大写，但是发现现在不大写也可以，最好大写吧。<br>new 的作用：</p>
 <ul>
 <li>绑定了this</li>
 <li>返回一个对象</li>
 <li>增加一个<code>__proto__</code>的属性指向构造函数的<code>protoType</code></li>
 </ul>
-<h3 id="2-原型"><a href="#2-原型" class="headerlink" title="2.原型"></a>2.原型</h3><h4 id="2-1-继承"><a href="#2-1-继承" class="headerlink" title="2.1 继承"></a>2.1 继承</h4><p>js中的继承是原型链，就是<code>GrandFather grandFather&lt;-Father father&lt;-Son son</code>.它们之间靠<strong>proto</strong>联系在一起。就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">son.__proto__ === Son.ProtoType</div><div class="line">son.__proto__.__proto__ === Father.protoType</div><div class="line">son.__proto__.__proto__ .__proto__ === GrandFather.protoType</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line">由于js查找属性时，按照这个原型链去查，一直能查到祖父。</div><div class="line"></div><div class="line">#### 2.2 protoType `__proto__<span class="string">`</span></div><div class="line">- 相同点：</div><div class="line">protoType和__proto__对应的是同一个原型，**它是一个Object**。每个实例的__proto__都是构造函数用自己的protoType赋值的。</div><div class="line">- 不同点：</div><div class="line">不同点__proto__是实例调用的，protoType是构造函数调用的（注意：我没说是类，js本质上没类，只有对象和函数，每个实例都是构造函数构造出来的）。</div><div class="line"></div><div class="line">`<span class="string">``</span> js</div><div class="line"><span class="keyword">var</span> p =&#123; </div><div class="line">  <span class="attr">isHuman</span>: <span class="literal">false</span>,</div><div class="line">  <span class="attr">name</span>: <span class="string">'foo'</span>,</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Glass</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.glass = <span class="string">'glass'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = &#123;&#125;</div><div class="line"><span class="comment">// 不要直接给一个对象赋值__proto__,这个会导致性能问题，不是赋值的时候有问题，而是查找的时候有性能问题</span></div><div class="line">a.__proto__ = p </div><div class="line"><span class="comment">// 1. 可以用原型来做</span></div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> Glass()</div><div class="line">b.__proto__.__proto__ = p <span class="comment">// or Glass.protoType.__proto__ = p</span></div><div class="line"><span class="comment">// 2. 用Obejct.create()</span></div><div class="line"><span class="keyword">var</span> c = <span class="built_in">Object</span>.create(p) <span class="comment">// 这个没有影响任何构造函数</span></div></pre></td></tr></table></figure></p>
+<h3 id="2-原型"><a href="#2-原型" class="headerlink" title="2.原型"></a>2.原型</h3><h4 id="2-1-继承"><a href="#2-1-继承" class="headerlink" title="2.1 继承"></a>2.1 继承</h4><p>js中的继承是原型链，就是<code>GrandFather grandFather&lt;-Father father&lt;-Son son</code>.它们之间靠<strong>proto</strong>联系在一起。就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">son.__proto__ === Son.ProtoType</span><br><span class="line">son.__proto__.__proto__ === Father.protoType</span><br><span class="line">son.__proto__.__proto__ .__proto__ === GrandFather.protoType</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">由于js查找属性时，按照这个原型链去查，一直能查到祖父。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#### 2.2 protoType `</span>__proto__<span class="string">`</span></span><br><span class="line"><span class="string">- 相同点：</span></span><br><span class="line"><span class="string">protoType和__proto__对应的是同一个原型，**它是一个Object**。每个实例的__proto__都是构造函数用自己的protoType赋值的。</span></span><br><span class="line"><span class="string">- 不同点：</span></span><br><span class="line"><span class="string">不同点__proto__是实例调用的，protoType是构造函数调用的（注意：我没说是类，js本质上没类，只有对象和函数，每个实例都是构造函数构造出来的）。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span> js</span><br><span class="line"><span class="keyword">var</span> p =&#123; </span><br><span class="line">  isHuman: <span class="literal">false</span>,</span><br><span class="line">  name: <span class="string">'foo'</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Glass</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.glass = <span class="string">'glass'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"><span class="comment">// 不要直接给一个对象赋值__proto__,这个会导致性能问题，不是赋值的时候有问题，而是查找的时候有性能问题</span></span><br><span class="line">a.__proto__ = p </span><br><span class="line"><span class="comment">// 1. 可以用原型来做</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> Glass()</span><br><span class="line">b.__proto__.__proto__ = p <span class="comment">// or Glass.protoType.__proto__ = p</span></span><br><span class="line"><span class="comment">// 2. 用Obejct.create()</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="built_in">Object</span>.create(p) <span class="comment">// 这个没有影响任何构造函数</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="2-3-实例的属性"><a href="#2-3-实例的属性" class="headerlink" title="2.3 实例的属性"></a>2.3 实例的属性</h4><p>js的属性分为自己的(<code>Object.getOwnerPropety()</code>)和继承的(<code>Object.getPrototypeOf()</code>)<br>循环遍历属性有几个特殊的地方：</p>
 <ul>
 <li><p>如果使用for<br>for会打印所有属性，包括自己的和继承的。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用上面的b这个例子</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">in</span> b)&#123;</div><div class="line">  <span class="built_in">console</span>(v) <span class="comment">// isHuman, name, glass 都是可以打印出来的</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用上面的b这个例子</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">in</span> b)&#123;</span><br><span class="line">  <span class="built_in">console</span>(v) <span class="comment">// isHuman, name, glass 都是可以打印出来的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用Object.keys<br>Object.keys只会打印自己的属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.keys(b) <span class="comment">//只会打印 isHuman, name</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(b) <span class="comment">//只会打印 isHuman, name</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
@@ -479,7 +479,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -490,9 +490,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="qsl" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
           <p class="site-author-name" itemprop="name">qsl</p>
            
               <p class="site-description motion-element" itemprop="description">technology, web, js</p>
@@ -503,7 +501,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -580,7 +578,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2020</span>

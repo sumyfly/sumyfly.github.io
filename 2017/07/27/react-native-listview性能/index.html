@@ -6,10 +6,10 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -19,8 +19,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -38,7 +38,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -72,21 +72,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="react-native,性能," />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="react-native,性能,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
 
 
 
@@ -100,6 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/27/react-native-listview性能/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="React-Native ListView性能优化方案1.使用react-native-sglistview、react-native-gifted-listview2.设置removeClippedSubviews 为true，子类需要添加样式overflow:’hidden’3.设置拖动速率 decelerationRate4.dataSource里的数组个数做限制，做分页处理，10~15一页">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-08-16T06:46:14.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-native-preformace">
@@ -131,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/27/react-native-listview性能/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/27/react-native-listview性能/">
 
 
 
@@ -180,7 +181,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">QSL</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +211,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -220,7 +221,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -230,7 +231,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -240,7 +241,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -279,7 +280,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -315,7 +316,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -346,8 +347,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/07/27/react-native-listview性能/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/27/react-native-listview性能/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/27/react-native-listview性能/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,31 +379,31 @@
 </ol>
 <p>React Native 虽然一直标榜媲美Native的体验，但实际使用下来，其渲染性还是非常低效，基于ScrollView和ListView两大容器，在渲染上，相当于web端的table布局，需要等整个大table渲染完成才显示页面，也就是说，当容器内有大量的子元素，其白屏时间会非常长。</p>
 <p>如何让React Native做到像web端边渲染边加载？可以采用异步渲染的方式，使用requestAnimationFrame 或 setTimeout 定时将单个组件push进ScrollView容器。</p>
-<p>基于这个原理，写了个逐层渲染的组件： react-progressive[<a href="https://github.com/hugohua/react-progressive" target="_blank" rel="external">https://github.com/hugohua/react-progressive</a>]</p>
-<ol>
+<p>基于这个原理，写了个逐层渲染的组件： react-progressive[<a href="https://github.com/hugohua/react-progressive]" target="_blank" rel="noopener">https://github.com/hugohua/react-progressive]</a></p>
+<ol start="2">
 <li>实现shouldComponentUpdate方法</li>
 </ol>
 <p>如上第一点，逐层渲染提升打开时间，但是也会导致component重复渲染，也就是执行了大量无用的diff算法。虽然React里引以为傲的diff算法非常高效，但是执行数量达到一定程度后，也会带来非常大的影响。那么可使用 shouldComponentUpdate 来控制component的渲染次数。</p>
 <p>如何做？</p>
 <p>如果确定该组件渲染完后无需再次更新，即这个组件是一个静态组件，那么可以直接return false。<br>shouldComponentUpdate(){<br>    return false<br>如果组件比较复杂，自己对RN的更新机制不太熟，可以直接Minxi一下React提供的 PureRenderMixin 组件<br>mixins: [React.addons.PureRenderMixin]<br>手动实现或使用第三方组件库，比如 Immutable-js<br>说白了，就是要确定组件内的不可变数据，让其不再执行diff及render。</p>
-<ol>
+<ol start="3">
 <li>使用setNativeProps方法</li>
 </ol>
 <p>setNativeProps 方法可以理解为web的直接修改dom。使用该方法修改 View 、 Text 等 RN自带的组件 ，则不会触发组件的 componentWillReceiveProps 、 shouldComponentUpdate 、 componentWillUpdate 等组件生命周期中的方法。</p>
 <p>建议频繁更新的操作，如slider、tabs切换等拖曳操作时，使用 setNativeProps 来更新属性，会获得意想不到的性能体验。</p>
 <p>代码片段：</p>
 <p>me.refs.tabView.setNativeProps({<br>                style : {<br>                    height : 0,<br>                    opacity : 0<br>                }<br>            });<br>性能分析工具： React.addons.Perf</p>
-<ol>
+<ol start="4">
 <li>不要使用阴影效果</li>
 </ol>
 <p>React Native 里面的 shadow 相关的样式，是非常耗性能的css属性。这在web上，以前android 2.0年代，也是一样耗性能的css属性之一。如果需要使用阴影效果，建议使用图片来代替反而性能更好一些。</p>
-<ol>
+<ol start="5">
 <li>最小化DOM</li>
 </ol>
 <p>React Native里虚拟dom结构越复杂，则越低效。感觉RN的渲染性能，和以前android2.x时代没多大区别，如果层级结构大于5级，则要考虑下优化了。这没啥技巧，纯靠经验及硬实力。</p>
 <p>6.组件粒度化</p>
 <p>如何更好的划分组件粒度，这需要合理的对组件进行更细粒度的划分，区分出静态组件及动态组件。</p>
-<p>7.bind和()=&gt;{}<br>最好不要使用lambda函数，因为它每次都是产生一个新的函数，可能引起控件不必要的渲染。所以用一个函数wrap那些按需求变化的功能函数，保持这个wrapper不变。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(props)&#123;</div><div class="line">    <span class="comment">//...</span></div><div class="line">    <span class="keyword">this</span>.wrapperFunc = <span class="keyword">this</span>.wrapperFunc.bind(<span class="keyword">this</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">wrapperFunc()&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.state.xx = <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">this</span>.fun1()</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">this</span>.fun2(p1,p2)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;Componet fun=&#123;<span class="keyword">this</span>.wrapperFunc&#125;&gt;</div></pre></td></tr></table></figure></p>
+<p>7.bind和()=&gt;{}<br>最好不要使用lambda函数，因为它每次都是产生一个新的函数，可能引起控件不必要的渲染。所以用一个函数wrap那些按需求变化的功能函数，保持这个wrapper不变。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">this</span>.wrapperFunc = <span class="keyword">this</span>.wrapperFunc.bind(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">wrapperFunc()&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.state.xx = <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.fun1()</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fun2(p1,p2)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;Componet fun=&#123;<span class="keyword">this</span>.wrapperFunc&#125;&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -515,7 +515,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -526,9 +526,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="qsl" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
           <p class="site-author-name" itemprop="name">qsl</p>
            
               <p class="site-description motion-element" itemprop="description">technology, web, js</p>
@@ -539,7 +537,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -596,7 +594,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native-ListView性能"><span class="nav-number">1.</span> <span class="nav-text">React-Native ListView性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化方案"><span class="nav-number">1.0.1.</span> <span class="nav-text">优化方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化建议"><span class="nav-number">1.0.2.</span> <span class="nav-text">优化建议</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native-ListView性能"><span class="nav-number">1.</span> <span class="nav-text">React-Native ListView性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化方案"><span class="nav-number">1.0.1.</span> <span class="nav-text">优化方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化建议"><span class="nav-number">1.0.2.</span> <span class="nav-text">优化建议</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -616,7 +614,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2020</span>
