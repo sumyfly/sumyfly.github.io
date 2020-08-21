@@ -353,9 +353,21 @@
 
       
         
-          
-            
-          
+          <h3 id="1-协程"><a href="#1-协程" class="headerlink" title="1. 协程"></a>1. 协程</h3><p>协程就是轻量级线程，或者称绿色线程，跟线程相似可以并发执行，不同点是：</p>
+<ul>
+<li>线程由操作系统调度，协程由协程调度器调度。</li>
+<li>线程有单独的线程栈，协程按照语言设计: Golang有协程栈，支持动态扩展协程栈大小；Tokio没有协程栈，使用的是状态机和闭包保存状态（Kotlin类似?）。<blockquote>
+<p>协程最重要的地方就是它们可以挂起和恢复，所以表现出并发的能力，它是由调度器提供的。</p>
+</blockquote>
+</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/20/Kotlin-Coroutine/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
