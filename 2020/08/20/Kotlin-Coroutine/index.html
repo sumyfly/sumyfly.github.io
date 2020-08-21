@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 协程协程就是轻量级线程，或者称绿色线程，跟线程相似可以并发执行，不同点是：  线程由操作系统调度，协程由协程调度器调度。 线程有单独的线程栈，协程按照语言设计: Golang有协程栈，支持动态扩展协程栈大小；Tokio没有协程栈，使用的是状态机和闭包保存状态（Kotlin类似?）。 协程最重要的地方就是它们可以挂起和恢复，所以表现出并发的能力，它是由调度器提供的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-20T17:20:32.975Z">
+<meta property="og:updated_time" content="2020-08-21T03:25:57.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kotlin-Coroutine">
 <meta name="twitter:description" content="1. 协程协程就是轻量级线程，或者称绿色线程，跟线程相似可以并发执行，不同点是：  线程由操作系统调度，协程由协程调度器调度。 线程有单独的线程栈，协程按照语言设计: Golang有协程栈，支持动态扩展协程栈大小；Tokio没有协程栈，使用的是状态机和闭包保存状态（Kotlin类似?）。 协程最重要的地方就是它们可以挂起和恢复，所以表现出并发的能力，它是由调度器提供的。">
@@ -415,6 +415,7 @@
 <p>suspend函数 可以返回结果<br>launch 可以返回结果<br>async 返回Deferred,在上面调用.await可以取得结果<br>suspendCoroutine 可以返结果<br>coroutineScope 可以返回结果</p>
 <h3 id="6-suspend-gt-resume"><a href="#6-suspend-gt-resume" class="headerlink" title="6. suspend-&gt;resume"></a>6. suspend-&gt;resume</h3><p>协程的挂起由调度器控制，它可以在满足唤醒条件后被resume。<br>调度器内部使用了状态机来控制状态。<br>挂起函数会在当前协程作用域挂起，直至其恢复，在其恢复之前切换到其它协程运行，所以看起来就像是同步等待行为。</p>
 <h3 id="7-调度器"><a href="#7-调度器" class="headerlink" title="7. 调度器"></a>7. 调度器</h3><p>协程的调度器是全局的吗，还是每个线程一个调度器？看资料说是一个线程一个。那么调度器看起来应该是以最外层的协程作用域为单位。那么Dispatchers.IO怎么说？</p>
+<p>1）launch默认在调用的协程上下文中执行，即runBlocking所在的主线程。<br>2）Dispatchers.Unconfined在调用线程启动以一个协程，挂起之后再次恢复执行在默认的执行者kotlinxcoroutines.DefaultExecutor线程中执行。<br>3）Dispatchers.Default默认调度器，开启新线程执行协程。<br>4）Dispatchers.IO创建在IO线程执行。<br>5）newSingleThreadContext创建一个独立的线程执行。</p>
 
       
     </div>
