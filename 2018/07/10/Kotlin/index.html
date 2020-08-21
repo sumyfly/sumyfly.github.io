@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. ? !! !val str:String! = “”  //无法声明，临时变量，说明这是Kotlin调用Java代码产生的，如果要使用，最好用可空类型val str:String? = “”  //可空类型val str:String!! = “” //1.强制转换；2.不能为空">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-21T03:59:08.522Z">
+<meta property="og:updated_time" content="2020-08-21T04:01:07.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kotlin">
 <meta name="twitter:description" content="1. ? !! !val str:String! = “”  //无法声明，临时变量，说明这是Kotlin调用Java代码产生的，如果要使用，最好用可空类型val str:String? = “”  //可空类型val str:String!! = “” //1.强制转换；2.不能为空">
@@ -359,6 +359,8 @@
 <p><a href="https://stackoverflow.com/questions/46674787/instanceclass-java-vs-instance-javaclass#:~:text=javaClass%20does%20not%20denote%20the,reference%20and%20denotes%20the%20type" target="_blank" rel="noopener">https://stackoverflow.com/questions/46674787/instanceclass-java-vs-instance-javaclass#:~:text=javaClass%20does%20not%20denote%20the,reference%20and%20denotes%20the%20type</a>.</p>
 <h3 id="3-return-label"><a href="#3-return-label" class="headerlink" title="3. return@label"></a>3. return@label</h3><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">(ints: <span class="type">List</span>&lt;<span class="type">Int</span>&gt;)</span></span> &#123;</span><br><span class="line">    ints.forEach &#123;</span><br><span class="line">        <span class="keyword">if</span> (it == <span class="number">0</span>) <span class="keyword">return</span><span class="symbol">@forEach</span> <span class="comment">// implicit label for lambda passed to forEach</span></span><br><span class="line">        print(it)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><a href="https://stackoverflow.com/questions/40160489/kotlin-whats-does-return-mean" target="_blank" rel="noopener">https://stackoverflow.com/questions/40160489/kotlin-whats-does-return-mean</a></p>
+<p>Non-local returns<br>In Kotlin, we can only use a normal, unqualified return to exit a named function or an anonymous function. This means that to exit a lambda, we have to use a label, and a bare return is forbidden inside a lambda, because a lambda cannot make the enclosing function return:</p>
+<p><a href="https://kotlinlang.org/docs/reference/inline-functions.html#non-local-returns" target="_blank" rel="noopener">https://kotlinlang.org/docs/reference/inline-functions.html#non-local-returns</a></p>
 
       
     </div>
