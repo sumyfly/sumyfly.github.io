@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. ? !! !val str:String! = “”  //无法声明，临时变量，说明这是Kotlin调用Java代码产生的，如果要使用，最好用可空类型val str:String? = “”  //可空类型val str:String!! = “” //1.强制转换；2.不能为空">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-21T03:12:46.682Z">
+<meta property="og:updated_time" content="2020-08-21T03:59:08.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kotlin">
 <meta name="twitter:description" content="1. ? !! !val str:String! = “”  //无法声明，临时变量，说明这是Kotlin调用Java代码产生的，如果要使用，最好用可空类型val str:String? = “”  //可空类型val str:String!! = “” //1.强制转换；2.不能为空">
@@ -357,6 +357,8 @@
 <p>In fact, the latter is more precise, because the actual value that foo evaluates to can be an instance of not Foo itself but one of its subtypes (and it’s exactly what’s denoted by the covariant out Foo).</p>
 <p>As @marstran correctly noted in the comment on the question, .javaClass once was considered to be deprecated (see the Kotlin 1.1 RC announcement) because it can break type safety (see below), but it was afterwards left as-is because it was widely used and replacing it with the alternative of ::class.java would require adding explicit unchecked casts in the code.</p>
 <p><a href="https://stackoverflow.com/questions/46674787/instanceclass-java-vs-instance-javaclass#:~:text=javaClass%20does%20not%20denote%20the,reference%20and%20denotes%20the%20type" target="_blank" rel="noopener">https://stackoverflow.com/questions/46674787/instanceclass-java-vs-instance-javaclass#:~:text=javaClass%20does%20not%20denote%20the,reference%20and%20denotes%20the%20type</a>.</p>
+<h3 id="3-return-label"><a href="#3-return-label" class="headerlink" title="3. return@label"></a>3. return@label</h3><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">(ints: <span class="type">List</span>&lt;<span class="type">Int</span>&gt;)</span></span> &#123;</span><br><span class="line">    ints.forEach &#123;</span><br><span class="line">        <span class="keyword">if</span> (it == <span class="number">0</span>) <span class="keyword">return</span><span class="symbol">@forEach</span> <span class="comment">// implicit label for lambda passed to forEach</span></span><br><span class="line">        print(it)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://stackoverflow.com/questions/40160489/kotlin-whats-does-return-mean" target="_blank" rel="noopener">https://stackoverflow.com/questions/40160489/kotlin-whats-does-return-mean</a></p>
 
       
     </div>
@@ -539,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1. ? !! !</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-javaClass-vs-class-java"><span class="nav-number">2.</span> <span class="nav-text">2. .javaClass vs ::class.java</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1. ? !! !</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-javaClass-vs-class-java"><span class="nav-number">2.</span> <span class="nav-text">2. .javaClass vs ::class.java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-return-label"><span class="nav-number">3.</span> <span class="nav-text">3. return@label</span></a></li></ol></div>
             
 
           </div>
