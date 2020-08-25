@@ -353,16 +353,16 @@
 
       
         
-          <h3 id="1-dalvik"><a href="#1-dalvik" class="headerlink" title="1. dalvik"></a>1. dalvik</h3><p>smali/baksmali is an assembler/disassembler for the dex format used by dalvik, Android’s Java VM implementation.<br>smali 芬兰语中的编译<br>baksmali 芬兰语中的反编译<br>dex 文件是组装 smali 后文件格式</p>
-<h3 id="2-apk-反编译"><a href="#2-apk-反编译" class="headerlink" title="2. apk 反编译"></a>2. apk 反编译</h3><h4 id="2-1-apk-dex-gt-Jar-gt-Java"><a href="#2-1-apk-dex-gt-Jar-gt-Java" class="headerlink" title="2.1 apk/dex -&gt; Jar -&gt; Java"></a>2.1 apk/dex -&gt; Jar -&gt; Java</h4><ul>
-<li>apktool 可以把 apk 中的 AndroidManifest.xml 和资源文件取出。apktool 是对 apk 进行解包和重新打包时使用的更通用的工具。它实际上在引擎盖下使用 smali/baksmali 来组装/反汇编 dex 文件。它还将二进制资源和二进制 xml 文件解压回标准文本格式等。</li>
-<li>dex2JAR 可以把 apk/dex 反编译成 Jar(baksmali -&gt; smali -&gt; classcode)</li>
-<li>jd-gui/jd-core 可以把 JAR 反编译成 Java</li>
+          <h3 id="1-dalvik"><a href="#1-dalvik" class="headerlink" title="1. dalvik"></a>1. dalvik</h3><p>smali/baksmali is an assembler/disassembler for the dex format used by dalvik, Android’s Java VM implementation.<br>smali 芬兰语中的编译<br>baksmali 芬兰语中的反编译<br>dex文件是组装smali后文件格式</p>
+<h3 id="2-apk反编译"><a href="#2-apk反编译" class="headerlink" title="2. apk反编译"></a>2. apk反编译</h3><h4 id="2-1-apk-dex-gt-Jar-gt-Java"><a href="#2-1-apk-dex-gt-Jar-gt-Java" class="headerlink" title="2.1 apk/dex -&gt; Jar -&gt; Java"></a>2.1 apk/dex -&gt; Jar -&gt; Java</h4><ul>
+<li>apktool可以把apk中的AndroidManifest.xml和资源文件取出，dex被反编译成smali代码。apktool是对apk进行解包和重新打包时使用的更通用的工具。它实际上在引擎盖下使用smali/baksmali来组装/反汇编dex文件。它还将二进制资源和二进制xml文件解压回标准文本格式等。</li>
+<li>dex2JAR 可以把apk/dex反编译成Jar(baksmali -&gt; smali -&gt; classcode)</li>
+<li>jd-gui/jd-core可以把JAR反编译成Java</li>
 </ul>
 <blockquote>
-<p>jad 不同于 jd-core，jd-core 是使用 Java 实现的，jad 是使用 C++实现的。jad 是反编译 classcode 文件，反编译效果好于 jd-core，但是不支持 JAR，只针对 class 文件。</p>
+<p>jad不同于jd-core，jd-core是使用Java实现的，jad是使用C++实现的。jad是反编译classcode文件，反编译效果好于jd-core，但是不支持JAR，只针对class文件。</p>
 </blockquote>
-<h4 id="2-2-apk-dex-gt-Java"><a href="#2-2-apk-dex-gt-Java" class="headerlink" title="2.2 apk/dex -&gt; Java"></a>2.2 apk/dex -&gt; Java</h4><p>jadx 可以直接反编译 apk/dex 到 Java 文件和资源文件，jadx-GUI 可以可视化操作。</p>
+<h4 id="2-2-apk-dex-gt-Java"><a href="#2-2-apk-dex-gt-Java" class="headerlink" title="2.2 apk/dex -&gt; Java"></a>2.2 apk/dex -&gt; Java</h4><p>jadx可以直接反编译apk/dex到Java文件和资源文件，jadx-GUI可以可视化操作。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/08/25/Android打包/#more" rel="contents">
