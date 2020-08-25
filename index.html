@@ -354,15 +354,11 @@
       
         
           <h3 id="1-dalvik"><a href="#1-dalvik" class="headerlink" title="1. dalvik"></a>1. dalvik</h3><p>smali/baksmali is an assembler/disassembler for the dex format used by dalvik, Android’s Java VM implementation.<br>smali 芬兰语中的编译<br>baksmali 芬兰语中的反编译<br>dex文件是组装smali后文件格式</p>
-<h3 id="2-apk反编译"><a href="#2-apk反编译" class="headerlink" title="2. apk反编译"></a>2. apk反编译</h3><h4 id="2-1-apk-dex-gt-Jar-gt-Java"><a href="#2-1-apk-dex-gt-Jar-gt-Java" class="headerlink" title="2.1 apk/dex -&gt; Jar -&gt; Java"></a>2.1 apk/dex -&gt; Jar -&gt; Java</h4><ul>
-<li>apktool可以把apk中的AndroidManifest.xml和资源文件取出，dex被反编译成smali代码。apktool是对apk进行解包和重新打包时使用的更通用的工具。它实际上在引擎盖下使用smali/baksmali来组装/反汇编dex文件。它还将二进制资源和二进制xml文件解压回标准文本格式等。</li>
-<li>dex2JAR 可以把apk/dex反编译成Jar(baksmali -&gt; smali -&gt; classcode)</li>
-<li>jd-gui/jd-core可以把JAR反编译成Java</li>
-</ul>
-<blockquote>
-<p>jad不同于jd-core，jd-core是使用Java实现的，jad是使用C++实现的。jad是反编译classcode文件，反编译效果好于jd-core，但是不支持JAR，只针对class文件。</p>
-</blockquote>
-<h4 id="2-2-apk-dex-gt-Java"><a href="#2-2-apk-dex-gt-Java" class="headerlink" title="2.2 apk/dex -&gt; Java"></a>2.2 apk/dex -&gt; Java</h4><p>jadx可以直接反编译apk/dex到Java文件和资源文件，jadx-GUI可以可视化操作。</p>
+<p>Android Dalvik虚拟机<br>Java虚拟机运行的是Java字节码，Dalvik虚拟机运行的是Dalvik字节码<br>Dalvik虚拟机通过解释DEX来执行这些字节码</p>
+<p>Dalvik可执行文件体积更小<br>dx工具负责将Java字节码转换位Dalvik字节码</p>
+<p>Java虚拟机与Dalvik虚拟机架构不同<br>Java虚拟机基于栈架构，Dalvik虚拟机基于寄存器架构</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ javac -<span class="built_in">source</span> 1.6 -target 1.6 Hello.java</span><br><span class="line">$ dx --dex --output=Hello.dex Hello.class</span><br><span class="line">$ javap -c -classpath . Hello <span class="comment"># 查看Java字节码</span></span><br><span class="line">$ dexdump -d Hello.dex <span class="comment"># 查看Dalvik字节码</span></span><br></pre></td></tr></table></figure>
+<p>dx和dexdump在/sdk/build_tools/android目录下<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/08/25/Android打包/#more" rel="contents">
@@ -372,7 +368,7 @@
           <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     <div>
       
