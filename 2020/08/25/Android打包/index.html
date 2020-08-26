@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. dalviksmali/baksmali is an assembler/disassembler for the dex format used by dalvik, Android’s Java VM implementation.smali 芬兰语中的编译baksmali 芬兰语中的反编译dex文件是组装smali后文件格式: dx工具会把class转为smali，dexdump查看d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-25T11:35:33.716Z">
+<meta property="og:updated_time" content="2020-08-26T03:27:57.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android打包">
 <meta name="twitter:description" content="1. dalviksmali/baksmali is an assembler/disassembler for the dex format used by dalvik, Android’s Java VM implementation.smali 芬兰语中的编译baksmali 芬兰语中的反编译dex文件是组装smali后文件格式: dx工具会把class转为smali，dexdump查看d">
@@ -358,11 +358,11 @@
 <p>dx和dexdump在/sdk/build_tools/android目录下<br><a id="more"></a></p>
 <h3 id="2-apk反编译"><a href="#2-apk反编译" class="headerlink" title="2. apk反编译"></a>2. apk反编译</h3><h4 id="2-1-apk-dex-gt-Jar-gt-Java"><a href="#2-1-apk-dex-gt-Jar-gt-Java" class="headerlink" title="2.1 apk/dex -&gt; Jar -&gt; Java"></a>2.1 apk/dex -&gt; Jar -&gt; Java</h4><ul>
 <li>apktool可以把apk中的AndroidManifest.xml和资源文件取出，dex被反编译成smali代码。apktool是对apk进行解包和重新打包时使用的更通用的工具。它实际上在引擎盖下使用smali/baksmali来组装/反汇编dex文件。它还将二进制资源和二进制xml文件解压回标准文本格式等。</li>
-<li>dex2JAR 可以把apk/dex反编译成Jar(baksmali -&gt; smali -&gt; classcode)</li>
+<li>dex2JAR 可以把apk/dex反编译成Jar(baksmali -&gt; smali -&gt; class)</li>
 <li>jd-gui/jd-core可以把JAR反编译成Java</li>
 </ul>
 <blockquote>
-<p>jad不同于jd-core，jd-core是使用Java实现的，jad是使用C++实现的。jad是反编译classcode文件，反编译效果好于jd-core，但是不支持JAR，只针对class文件。</p>
+<p>jad不同于jd-core，jd-core是使用Java实现的，jad是使用C++实现的。jad是反编译class文件，反编译效果好于jd-core，但是不支持JAR，只针对class文件。</p>
 </blockquote>
 <h4 id="2-2-apk-dex-gt-Java"><a href="#2-2-apk-dex-gt-Java" class="headerlink" title="2.2 apk/dex -&gt; Java"></a>2.2 apk/dex -&gt; Java</h4><p>jadx可以直接反编译apk/dex到Java文件和资源文件，jadx-GUI可以可视化操作。</p>
 <h3 id="3-JDE"><a href="#3-JDE" class="headerlink" title="3. JDE"></a>3. JDE</h3><p>可以反编译，可以debug，收费软件。</p>
