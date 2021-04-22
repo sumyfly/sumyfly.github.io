@@ -1575,7 +1575,7 @@
 <h4 id="2-2-Squash-and-merge"><a href="#2-2-Squash-and-merge" class="headerlink" title="2.2 Squash and merge"></a>2.2 Squash and merge</h4><p>The 1 commit from this branch will be added to the base branch.<br>创建一个commit,包含所有的changes，但是commit id丢失了。</p>
 <h4 id="2-3-Rebase-and-merge"><a href="#2-3-Rebase-and-merge" class="headerlink" title="2.3 Rebase and merge"></a>2.3 Rebase and merge</h4><p>The 1 commit from this branch will be rebased and added to the base branch.<br>这里的1 commit我不是很理解，其实是整体一组commits。它们的修改时间（Date)没有变化，但是提交时间(commite Date)时间统一变为rebase命令的执行时间。<br>重新Rebase对象的分支，然后所有的commit id和commit Date变了，changes,commit message，Date没变。</p>
 <blockquote>
-<p>git 做diff时，是按照一个起始点，然后把所以changes显示出来。如果是三方合并，它们是从共同起始点开始，看相同的行有没有修改。所以如果从master到development或者相反的方向，<strong>不要</strong>使用rebase,也不要使用Squash,因为它们会修改<strong>commit的id</strong>，导致merge的时候出现冲突。</p>
+<p>git 做diff时，是按照一个起始点，然后把所有changes显示出来。如果是三方合并，它们是从共同起始点开始，看相同的行有没有修改。所以如果从master到development或者相反的方向，<strong>不要</strong>使用rebase,也不要使用Squash,因为它们会修改<strong>commit的id</strong>，导致merge的时候出现冲突。</p>
 </blockquote>
 <blockquote>
 <p>默认commit的时候，Date和commit Date是一样的，但是rebase之后commit Date的时间变成了rebase执行时的时间。</p>
