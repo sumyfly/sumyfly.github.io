@@ -737,7 +737,10 @@
 <p>Dalvik可执行文件体积更小<br>dx工具负责将Java字节码转换位Dalvik字节码</p>
 <p>Java虚拟机与Dalvik虚拟机架构不同<br>Java虚拟机基于栈架构，Dalvik虚拟机基于寄存器架构</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ javac -<span class="built_in">source</span> 1.6 -target 1.6 Hello.java</span><br><span class="line">$ dx --dex --output=Hello.dex Hello.class</span><br><span class="line">$ javap -c -classpath . Hello <span class="comment"># 查看Java字节码</span></span><br><span class="line">$ dexdump -d Hello.dex <span class="comment"># 查看Dalvik字节码</span></span><br></pre></td></tr></table></figure>
-<p>dx和dexdump在/sdk/build_tools/android目录下<br>
+<p>dx和dexdump在/sdk/build_tools/android目录下</p>
+<blockquote>
+<p>2014年6月25日，Android L 正式亮相于召开的谷歌I/O大会，Android L 改动幅度较大，谷歌将直接删除Dalvik，代替它的是传闻已久的ART。</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/08/25/Android打包/#more" rel="contents">
@@ -747,7 +750,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     <div>
       

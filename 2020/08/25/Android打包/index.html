@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. dalviksmali/baksmali is an assembler/disassembler for the dex format used by dalvik, Android’s Java VM implementation.smali 芬兰语中的编译baksmali 芬兰语中的反编译dex文件是组装smali后文件格式: dx工具会把class转为smali，dexdump查看d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.039Z">
+<meta property="og:updated_time" content="2021-06-03T04:06:56.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android打包">
 <meta name="twitter:description" content="1. dalviksmali/baksmali is an assembler/disassembler for the dex format used by dalvik, Android’s Java VM implementation.smali 芬兰语中的编译baksmali 芬兰语中的反编译dex文件是组装smali后文件格式: dx工具会把class转为smali，dexdump查看d">
@@ -355,7 +355,11 @@
 <p>Dalvik可执行文件体积更小<br>dx工具负责将Java字节码转换位Dalvik字节码</p>
 <p>Java虚拟机与Dalvik虚拟机架构不同<br>Java虚拟机基于栈架构，Dalvik虚拟机基于寄存器架构</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ javac -<span class="built_in">source</span> 1.6 -target 1.6 Hello.java</span><br><span class="line">$ dx --dex --output=Hello.dex Hello.class</span><br><span class="line">$ javap -c -classpath . Hello <span class="comment"># 查看Java字节码</span></span><br><span class="line">$ dexdump -d Hello.dex <span class="comment"># 查看Dalvik字节码</span></span><br></pre></td></tr></table></figure>
-<p>dx和dexdump在/sdk/build_tools/android目录下<br><a id="more"></a></p>
+<p>dx和dexdump在/sdk/build_tools/android目录下</p>
+<blockquote>
+<p>2014年6月25日，Android L 正式亮相于召开的谷歌I/O大会，Android L 改动幅度较大，谷歌将直接删除Dalvik，代替它的是传闻已久的ART。</p>
+</blockquote>
+<a id="more"></a>
 <h3 id="2-apk反编译"><a href="#2-apk反编译" class="headerlink" title="2. apk反编译"></a>2. apk反编译</h3><h4 id="2-1-apk-dex-gt-Jar-gt-Java"><a href="#2-1-apk-dex-gt-Jar-gt-Java" class="headerlink" title="2.1 apk/dex -&gt; Jar -&gt; Java"></a>2.1 apk/dex -&gt; Jar -&gt; Java</h4><ul>
 <li>apktool可以把apk中的AndroidManifest.xml和资源文件取出，dex被反编译成smali代码。apktool是对apk进行解包和重新打包时使用的更通用的工具。它实际上在引擎盖下使用smali/baksmali来组装/反汇编dex文件。它还将二进制资源和二进制xml文件解压回标准文本格式等。</li>
 <li>dex2JAR 可以把apk/dex反编译成Jar(baksmali -&gt; smali -&gt; class)</li>
@@ -365,7 +369,15 @@
 <p>jad不同于jd-core，jd-core是使用Java实现的，jad是使用C++实现的。jad是反编译class文件，反编译效果好于jd-core，但是不支持JAR，只针对class文件。</p>
 </blockquote>
 <h4 id="2-2-apk-dex-gt-Java"><a href="#2-2-apk-dex-gt-Java" class="headerlink" title="2.2 apk/dex -&gt; Java"></a>2.2 apk/dex -&gt; Java</h4><p>jadx可以直接反编译apk/dex到Java文件和资源文件，jadx-GUI可以可视化操作。</p>
-<h3 id="3-JDE"><a href="#3-JDE" class="headerlink" title="3. JDE"></a>3. JDE</h3><p>可以反编译，可以debug，收费软件。</p>
+<h4 id="2-3-JDE"><a href="#2-3-JDE" class="headerlink" title="2.3. JDE"></a>2.3. JDE</h4><p>可以反编译，可以debug，收费软件。</p>
+<h3 id="3-vsersionCode-versionName"><a href="#3-vsersionCode-versionName" class="headerlink" title="3. vsersionCode, versionName"></a>3. vsersionCode, versionName</h3><ul>
+<li><p>versionCode：对消费者不可见的版本号，用于我们自己判断新旧版本，一般更新一次版本 versionCode 会增加。应用市场是按照versionCode来判断版本的，Android操作系统也是用versionCode来判断覆盖安装的，所以Instant App的versionCode要小于Installed App的versionCode, 就是保证它能覆盖安装。</p>
+</li>
+<li><p>versionName：展示给消费者的版本号，代表应用程序的版本信息。这个只是用来展示，安装时不看这个versionName.</p>
+</li>
+</ul>
+<p>App安装时看applicationId, applicationId如果已经存在，再检查签名是否一样，如果一样可以覆盖安装(versionCode &gt;= 当前app的versionCode)。</p>
+<h3 id="4-applicationId-vs-Package"><a href="#4-applicationId-vs-Package" class="headerlink" title="4. applicationId vs Package"></a>4. applicationId vs Package</h3><p><a href="https://zhuanlan.zhihu.com/p/25621771" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/25621771</a></p>
 
       
     </div>
@@ -554,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dalvik"><span class="nav-number">1.</span> <span class="nav-text">1. dalvik</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-apk反编译"><span class="nav-number">2.</span> <span class="nav-text">2. apk反编译</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-apk-dex-gt-Jar-gt-Java"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 apk/dex -&gt; Jar -&gt; Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-apk-dex-gt-Java"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 apk/dex -&gt; Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-JDE"><span class="nav-number">3.</span> <span class="nav-text">3. JDE</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dalvik"><span class="nav-number">1.</span> <span class="nav-text">1. dalvik</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-apk反编译"><span class="nav-number">2.</span> <span class="nav-text">2. apk反编译</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-apk-dex-gt-Jar-gt-Java"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 apk/dex -&gt; Jar -&gt; Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-apk-dex-gt-Java"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 apk/dex -&gt; Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-JDE"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. JDE</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-vsersionCode-versionName"><span class="nav-number">3.</span> <span class="nav-text">3. vsersionCode, versionName</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-applicationId-vs-Package"><span class="nav-number">4.</span> <span class="nav-text">4. applicationId vs Package</span></a></li></ol></div>
             
 
           </div>
