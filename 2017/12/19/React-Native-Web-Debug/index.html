@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1.Imagereact-native-web中把Image转为了div,使用了bacground-image:url(‘xxxx’),还有background-size:’contain’ or ‘cover’ 2.mobile safari remote debug这个时候是无痕模式，没有WebSQL写入权限，可以用cookie。 3. zIndex导致的穿透错误设置了zIndex，导致一个T">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.048Z">
+<meta property="og:updated_time" content="2021-06-27T14:25:38.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Native-Web-Debug">
 <meta name="twitter:description" content="1.Imagereact-native-web中把Image转为了div,使用了bacground-image:url(‘xxxx’),还有background-size:’contain’ or ‘cover’ 2.mobile safari remote debug这个时候是无痕模式，没有WebSQL写入权限，可以用cookie。 3. zIndex导致的穿透错误设置了zIndex，导致一个T">
@@ -376,7 +376,7 @@
 <h3 id="2-mobile-safari-remote-debug"><a href="#2-mobile-safari-remote-debug" class="headerlink" title="2.mobile safari remote debug"></a>2.mobile safari remote debug</h3><p>这个时候是无痕模式，没有WebSQL写入权限，可以用cookie。</p>
 <h3 id="3-zIndex导致的穿透"><a href="#3-zIndex导致的穿透" class="headerlink" title="3. zIndex导致的穿透"></a>3. zIndex导致的穿透</h3><p>错误设置了zIndex，导致一个Tag显示在Modal层之上。一开始我怀疑是Modal层的问题，比如overflow或者position,backgroundColor，验证不是之后。因为Dom树，React的渲染树没有问题。后来才发现Tag多了一个zIndex:5，不知道谁加的，显然这个是不必要的。所以去除后，bug修复。zIndex可以穿透position: fixed的Modal层，所以和mobile app不一样，mobile app上Modal层是独立原生的，靠zIndex穿透不了。</p>
 <h3 id="4-微信浏览器缓存"><a href="#4-微信浏览器缓存" class="headerlink" title="4. 微信浏览器缓存"></a>4. 微信浏览器缓存</h3><p>nginx的缓存设置成{expires -1},意思是永不缓存。</p>
-<h3 id="5-div下的View"><a href="#5-div下的View" class="headerlink" title="5. div下的View"></a>5. div下的View</h3><p>比如我用的<code>react-moda</code>,在其children中设置<code>flex:1</code>,chrome没有问题，ios 11也么有问题，ios就有问题。原因是设置<code>flex:1</code>的元素其父容器没有设置width和height。解决方案就是不用flex,用固定width和height。但是我不明白的就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//View 没有任何style。children都设置了width和height</span></span><br><span class="line">&lt;View&gt;&#123;children&#125;&lt;<span class="regexp">/View&gt; </span></span><br><span class="line"><span class="regexp">/</span><span class="comment">/**********</span></span><br><span class="line"><span class="comment">&#123;children&#125; //children都设置了width和height</span></span><br><span class="line"><span class="comment">//有什么区别?</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="5-div下的View"><a href="#5-div下的View" class="headerlink" title="5. div下的View"></a>5. div下的View</h3><p>比如我用的<code>react-moda</code>,在其children中设置<code>flex:1</code>,chrome没有问题，iOS 11也么有问题，ios就有问题。原因是设置<code>flex:1</code>的元素其父容器没有设置width和height。解决方案就是不用flex,用固定width和height。但是我不明白的就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//View 没有任何style。children都设置了width和height</span></span><br><span class="line">&lt;View&gt;&#123;children&#125;&lt;<span class="regexp">/View&gt; </span></span><br><span class="line"><span class="regexp">/</span><span class="comment">/**********</span></span><br><span class="line"><span class="comment">&#123;children&#125; //children都设置了width和height</span></span><br><span class="line"><span class="comment">//有什么区别?</span></span><br></pre></td></tr></table></figure></p>
 <p>有的时候，没有显示内容，解决方案有下面:</p>
 <ul>
 <li>设置固定width,height</li>
@@ -539,7 +539,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

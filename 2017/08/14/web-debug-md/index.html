@@ -102,7 +102,7 @@
 <meta property="og:description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/wechat_pay.png">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.065Z">
+<meta property="og:updated_time" content="2021-06-27T14:25:38.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web-debug.md">
 <meta name="twitter:description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
@@ -657,7 +657,7 @@
 <p><a href="https://www.jianshu.com/p/d69878549d92" target="_blank" rel="noopener">https://www.jianshu.com/p/d69878549d92</a></p>
 <h3 id="13-encodeURI和encodeURIComponent"><a href="#13-encodeURI和encodeURIComponent" class="headerlink" title="13. encodeURI和encodeURIComponent"></a>13. encodeURI和encodeURIComponent</h3><h4 id="13-1-相同点"><a href="#13-1-相同点" class="headerlink" title="13.1 相同点"></a>13.1 相同点</h4><p>都是编码URL，替换特殊字符为16进制数，如空格替换为%20,’/‘替换为%2F。</p>
 <h4 id="13-2-不同点"><a href="#13-2-不同点" class="headerlink" title="13.2 不同点"></a>13.2 不同点</h4><h5 id="13-2-1-编码范围不同"><a href="#13-2-1-编码范围不同" class="headerlink" title="13.2.1 编码范围不同"></a>13.2.1 编码范围不同</h5><p>encodeURL方法<strong>不会</strong>对下列字符编码 ASCII字母、数字、~!@#$&amp;<em>()=:/,;?+’<br>endoceURLComponent方法<strong>不会</strong>对下列字符编码 ASCII字母、数字、~!</em>()’<br>所以encodeURLComponent的编码范围更大，适合编码http url中的参数部分,因为:/都被编码了</p>
-<p><a href="https://www.cnblogs.com/season-huang/p/3439277.html" target="_blank" rel="noopener">https://www.cnblogs.com/season-huang/p/3439277.html</a><br><a href="https://www.cnblogs.com/hushuai-ios/p/5500162.html" target="_blank" rel="noopener">https://www.cnblogs.com/hushuai-ios/p/5500162.html</a></p>
+<p><a href="https://www.cnblogs.com/season-huang/p/3439277.html" target="_blank" rel="noopener">https://www.cnblogs.com/season-huang/p/3439277.html</a><br><a href="https://www.cnblogs.com/hushuai-iOS/p/5500162.html" target="_blank" rel="noopener">https://www.cnblogs.com/hushuai-iOS/p/5500162.html</a></p>
 <h3 id="14"><a href="#14" class="headerlink" title="14."></a>14.<a></a></h3><p> a本身会触发一个链接，a的onclick会触发一个链接，onclick事件执行后会触发a本身的链接，为了阻止a本身链接的触发，需要对onclick事件的函数返回false。<br>return true：返回正常的处理结果。<br>return false：返回错误的处理结果;终止处理;阻止提交表单;阻止执行默认的行为。<br>return：把控制权返回给页面。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">若将html代码中的</span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"linkPage"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/banner1.gif"</span> <span class="attr">id</span>=<span class="string">"adBanner"</span> <span class="attr">alt</span>=<span class="string">"ad banner"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">改为：</span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/banner1.gif"</span> <span class="attr">id</span>=<span class="string">"adBanner"</span> <span class="attr">alt</span>=<span class="string">"ad banner"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>此时去掉js代码中的return false，也可以实现同样的效果。</p>
 
@@ -813,7 +813,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

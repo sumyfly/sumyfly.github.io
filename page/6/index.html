@@ -667,7 +667,7 @@
 <h3 id="2-mobile-safari-remote-debug"><a href="#2-mobile-safari-remote-debug" class="headerlink" title="2.mobile safari remote debug"></a>2.mobile safari remote debug</h3><p>这个时候是无痕模式，没有WebSQL写入权限，可以用cookie。</p>
 <h3 id="3-zIndex导致的穿透"><a href="#3-zIndex导致的穿透" class="headerlink" title="3. zIndex导致的穿透"></a>3. zIndex导致的穿透</h3><p>错误设置了zIndex，导致一个Tag显示在Modal层之上。一开始我怀疑是Modal层的问题，比如overflow或者position,backgroundColor，验证不是之后。因为Dom树，React的渲染树没有问题。后来才发现Tag多了一个zIndex:5，不知道谁加的，显然这个是不必要的。所以去除后，bug修复。zIndex可以穿透position: fixed的Modal层，所以和mobile app不一样，mobile app上Modal层是独立原生的，靠zIndex穿透不了。</p>
 <h3 id="4-微信浏览器缓存"><a href="#4-微信浏览器缓存" class="headerlink" title="4. 微信浏览器缓存"></a>4. 微信浏览器缓存</h3><p>nginx的缓存设置成{expires -1},意思是永不缓存。</p>
-<h3 id="5-div下的View"><a href="#5-div下的View" class="headerlink" title="5. div下的View"></a>5. div下的View</h3><p>比如我用的<code>react-moda</code>,在其children中设置<code>flex:1</code>,chrome没有问题，ios 11也么有问题，ios就有问题。原因是设置<code>flex:1</code>的元素其父容器没有设置width和height。解决方案就是不用flex,用固定width和height。但是我不明白的就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//View 没有任何style。children都设置了width和height</span></span><br><span class="line">&lt;View&gt;&#123;children&#125;&lt;<span class="regexp">/View&gt; </span></span><br><span class="line"><span class="regexp">/</span><span class="comment">/**********</span></span><br><span class="line"><span class="comment">&#123;children&#125; //children都设置了width和height</span></span><br><span class="line"><span class="comment">//有什么区别?</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="5-div下的View"><a href="#5-div下的View" class="headerlink" title="5. div下的View"></a>5. div下的View</h3><p>比如我用的<code>react-moda</code>,在其children中设置<code>flex:1</code>,chrome没有问题，iOS 11也么有问题，ios就有问题。原因是设置<code>flex:1</code>的元素其父容器没有设置width和height。解决方案就是不用flex,用固定width和height。但是我不明白的就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//View 没有任何style。children都设置了width和height</span></span><br><span class="line">&lt;View&gt;&#123;children&#125;&lt;<span class="regexp">/View&gt; </span></span><br><span class="line"><span class="regexp">/</span><span class="comment">/**********</span></span><br><span class="line"><span class="comment">&#123;children&#125; //children都设置了width和height</span></span><br><span class="line"><span class="comment">//有什么区别?</span></span><br></pre></td></tr></table></figure></p>
 <p>有的时候，没有显示内容，解决方案有下面:</p>
 <ul>
 <li>设置固定width,height</li>
@@ -1166,7 +1166,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/18/ios开发签名相关内容/" itemprop="url">ios开发签名相关内容</a></h1>
+                <a class="post-title-link" href="/2017/10/18/ios开发签名相关内容/" itemprop="url">iOS开发签名相关内容</a></h1>
         
 
         <div class="post-meta">
@@ -1226,7 +1226,7 @@
         
           <h3 id="1-XCode的工程相关名词解释"><a href="#1-XCode的工程相关名词解释" class="headerlink" title="1. XCode的工程相关名词解释"></a>1. XCode的工程相关名词解释</h3><h4 id="1-1-workspace"><a href="#1-1-workspace" class="headerlink" title="1.1 workspace"></a>1.1 workspace</h4><p>这个是放所有文件的地方，里面有多个project</p>
 <h4 id="1-2-project"><a href="#1-2-project" class="headerlink" title="1.2 project"></a>1.2 project</h4><p>管理一个项目的地方，里面有多个scheme</p>
-<h4 id="1-3-scheme"><a href="#1-3-scheme" class="headerlink" title="1.3 scheme"></a>1.3 scheme</h4><p>管理一个target,生成一个产品（APP)</p>
+<h4 id="1-3-scheme"><a href="#1-3-scheme" class="headerlink" title="1.3 scheme"></a>1.3 scheme</h4><p>管理一个target,生成一个产品（APP)，勾选Share之后才能共享给他人使用。</p>
 <h4 id="1-4-target"><a href="#1-4-target" class="headerlink" title="1.4 target"></a>1.4 target</h4><p>一个管理编译设置和文件引用的配置（.plist文件)，继承project的设置，可以根据需要改写</p>
 <h4 id="1-5-provisioning-profiles"><a href="#1-5-provisioning-profiles" class="headerlink" title="1.5 provisioning profiles"></a>1.5 provisioning profiles</h4><p>该文件将App ID、开发者证书、设备绑定到一块儿，在开发者中心配置好后可以添加到Xcode上，也可以直接在Xcode上连接开发者中心生成，真机调试时需要在PP文件中添加真机的UDID。</p>
 <h4 id="1-6-开发环境-生产环境"><a href="#1-6-开发环境-生产环境" class="headerlink" title="1.6 开发环境 生产环境"></a>1.6 开发环境 生产环境</h4><p>默认xcode带有debug和release Configurations(Project-&gt;Info),最大区别就是宏Build Settings-&gt;Preprocessor Macros DEBUG=1 为DEBUG，即开发环境,否则是生产环境。其它configuration都是duplicate自这两个，还是看这个宏。</p>
@@ -1719,7 +1719,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
