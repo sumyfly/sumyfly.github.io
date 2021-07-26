@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="在Mac上使用apche21.基本命令Mac上自带apache2，它的安装目录是/etc/apach2， 文档目录在/Library/WebServer/Documents/ 123456#启动apche2 由于80端口需要管理者权限sudo apachectl start#关闭sudo apachectl stop#重启sudo apachectl restart">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.059Z">
+<meta property="og:updated_time" content="2021-07-26T15:38:02.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac-apache2">
 <meta name="twitter:description" content="在Mac上使用apche21.基本命令Mac上自带apache2，它的安装目录是/etc/apach2， 文档目录在/Library/WebServer/Documents/ 123456#启动apche2 由于80端口需要管理者权限sudo apachectl start#关闭sudo apachectl stop#重启sudo apachectl restart">
@@ -354,7 +354,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#启动apche2 由于80端口需要管理者权限</span></span><br><span class="line">sudo apachectl start</span><br><span class="line"><span class="comment">#关闭</span></span><br><span class="line">sudo apachectl stop</span><br><span class="line"><span class="comment">#重启</span></span><br><span class="line">sudo apachectl restart</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="2-设置用户配置"><a href="#2-设置用户配置" class="headerlink" title="2.设置用户配置"></a>2.设置用户配置</h3><h4 id="2-1-一般配置"><a href="#2-1-一般配置" class="headerlink" title="2.1 一般配置"></a>2.1 一般配置</h4><p><a href="https://medium.com/@JohnFoderaro/how-to-set-up-apache-in-macos-sierra-10-12-bca5a5dfffba" target="_blank" rel="noopener">https://medium.com/@JohnFoderaro/how-to-set-up-apache-in-macos-sierra-10-12-bca5a5dfffba</a><br>路径是<a href="http://localhost/~xxx.qian/smile-web-app/,为什么有~" target="_blank" rel="noopener">http://localhost/~xxx.qian/smile-web-app/,为什么有~</a>?</p>
-<h4 id="2-2-支持gzip"><a href="#2-2-支持gzip" class="headerlink" title="2.2 支持gzip"></a>2.2 支持gzip</h4><p><a href="https://www.garron.me/en/linux/enable-gzip-mod_deflate-compression-apache.html" target="_blank" rel="noopener">https://www.garron.me/en/linux/enable-gzip-mod_deflate-compression-apache.html</a></p>
+<h4 id="2-2-支持gzip"><a href="#2-2-支持gzip" class="headerlink" title="2.2 支持gzip"></a>2.2 支持gzip</h4><h3 id="3-brew安装"><a href="#3-brew安装" class="headerlink" title="3. brew安装"></a>3. brew安装</h3><p>因为Mac自带的apache,php模块不是最新的，所以我们可以用brew来安装自己想要的版本，但是这样安装过后我们的配置文件目录就变了。</p>
+<h4 id="3-1-系统自带apache的配置目录："><a href="#3-1-系统自带apache的配置目录：" class="headerlink" title="3.1 系统自带apache的配置目录："></a>3.1 系统自带apache的配置目录：</h4><p>/etc/apache2/</p>
+<h4 id="3-2-brew安装的apache的配置文件目录："><a href="#3-2-brew安装的apache的配置文件目录：" class="headerlink" title="3.2 brew安装的apache的配置文件目录："></a>3.2 brew安装的apache的配置文件目录：</h4><p>默认使用下面路径<br>/usr/local/etc/httpd/</p>
+<p>下面的路径是Cellar中自带的，但是默认不会起效。<br>/usr/local/Cellar/httpd/2.4.46_2/</p>
 
       
     </div>
@@ -547,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在Mac上使用apche2"><span class="nav-number">1.</span> <span class="nav-text">在Mac上使用apche2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本命令"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-设置用户配置"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.设置用户配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-一般配置"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">2.1 一般配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-支持gzip"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">2.2 支持gzip</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在Mac上使用apche2"><span class="nav-number">1.</span> <span class="nav-text">在Mac上使用apche2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本命令"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-设置用户配置"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.设置用户配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-一般配置"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">2.1 一般配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-支持gzip"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">2.2 支持gzip</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-brew安装"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. brew安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-系统自带apache的配置目录："><span class="nav-number">1.0.3.1.</span> <span class="nav-text">3.1 系统自带apache的配置目录：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-brew安装的apache的配置文件目录："><span class="nav-number">1.0.3.2.</span> <span class="nav-text">3.2 brew安装的apache的配置文件目录：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

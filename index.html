@@ -370,10 +370,10 @@
 <ul>
 <li><p>fastlane的Apple认证依赖的是session，而session依赖的是cookie(为了保持向前兼容性)，保存位置在（$HOME/spaceship/$APPLE_ID/cookie)。上面的1.2，1.3是用session的方式，都是使用了cookie。而1.1是用的JWT，不使用cookie. </p>
 </li>
-<li><p>用户名密码是保存在Keychain中，它是以’deliver’开头，后面接一个邮箱名，所以它只能被Fastlane使用。证书也是保存在Keychain中。</p>
+<li><p>用户名密码是保存在Keychain中，它是以’deliver’开头，后面接一个邮箱名，所以它只能被Fastlane使用。证书也是保存在Keychain中。插一句，Chrome保存的用户名密码不在Keychain中，Safari保存的用户名密码在Keychain中。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fastlane从keychain中取出密码</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'security'</span> <span class="comment"># import keychain manage module</span></span><br><span class="line">Security::InternetPassword.find(<span class="symbol">server:</span> <span class="string">'deliver.</span></span><br><span class="line"><span class="string">user@example.com'</span>) <span class="comment"># 取出密码</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>Chrome保存的用户名密码不在Keychain中，Safari保存的用户名密码在Keychain中。</p>
 <p>所以说，API Key用的是JWT，不需要登录信息和session。而1.2,1.3的方式都需要登录（登录账号信息在Keychain中），1.2在session无效期间需要2FA。1.1和1.3不需要2FA。</p>
           <!--noindex-->
           <div class="post-button text-center">
