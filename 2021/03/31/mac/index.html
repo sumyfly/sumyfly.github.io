@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 目录变成黄色那是因为目录权限变为任何人都可以读写，去掉这个权限使用chmod go-w $directory_name1ls | xargs chmod -R go-w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-31T03:08:15.220Z">
+<meta property="og:updated_time" content="2021-08-03T06:34:48.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac">
 <meta name="twitter:description" content="1. 目录变成黄色那是因为目录权限变为任何人都可以读写，去掉这个权限使用chmod go-w $directory_name1ls | xargs chmod -R go-w">
@@ -352,6 +352,8 @@
       
         <h3 id="1-目录变成黄色"><a href="#1-目录变成黄色" class="headerlink" title="1. 目录变成黄色"></a>1. 目录变成黄色</h3><p>那是因为目录权限变为任何人都可以读写，去掉这个权限使用<code>chmod go-w $directory_name</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | xargs chmod -R go-w</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
+<h4 id="2-safely-remove"><a href="#2-safely-remove" class="headerlink" title="2. safely remove"></a>2. safely remove</h4><p>防止误删除，所以把rm的操作变成移动到Trash的操作，使用一个小工具<code>rmtrash</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除文件 </span></span><br><span class="line">rm xxx</span><br><span class="line"><span class="comment"># 删除文件夹，主要不需要 -R</span></span><br><span class="line">rm xxx</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://www.nightproductions.net/cli.htm" target="_blank" rel="noopener">http://www.nightproductions.net/cli.htm</a></p>
 
       
     </div>
@@ -540,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-目录变成黄色"><span class="nav-number">1.</span> <span class="nav-text">1. 目录变成黄色</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-目录变成黄色"><span class="nav-number">1.</span> <span class="nav-text">1. 目录变成黄色</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-safely-remove"><span class="nav-number">1.1.</span> <span class="nav-text">2. safely remove</span></a></li></ol></li></ol></div>
             
 
           </div>
