@@ -93,16 +93,17 @@
 
 
 
-<meta name="description" content="technology, web, js">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QSL">
-<meta property="og:url" content="http://yoursite.com/archives/2018/02/index.html">
+<meta name="description" content="1. zlib, gzipzlib是压缩算法，这个分gunzip和inflate, inflateraw。一般用zlib的默认算法是inflate， python里面的zlib使用的也是inflate。 gzip是文件格式。 2. windowBitszip里面有个参数windowBits, The wbits argument controls the size of the history b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="压缩.md">
+<meta property="og:url" content="http://yoursite.com/2021/08/25/压缩-md/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="technology, web, js">
+<meta property="og:description" content="1. zlib, gzipzlib是压缩算法，这个分gunzip和inflate, inflateraw。一般用zlib的默认算法是inflate， python里面的zlib使用的也是inflate。 gzip是文件格式。 2. windowBitszip里面有个参数windowBits, The wbits argument controls the size of the history b">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-08-25T11:43:36.713Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QSL">
-<meta name="twitter:description" content="technology, web, js">
+<meta name="twitter:title" content="压缩.md">
+<meta name="twitter:description" content="1. zlib, gzipzlib是压缩算法，这个分gunzip和inflate, inflateraw。一般用zlib的默认算法是inflate， python里面的zlib使用的也是inflate。 gzip是文件格式。 2. windowBitszip里面有个参数windowBits, The wbits argument controls the size of the history b">
 
 
 
@@ -130,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/02/">
+  <link rel="canonical" href="http://yoursite.com/2021/08/25/压缩-md/">
 
 
 
 
 
-  <title>归档 | QSL</title>
+  <title>压缩.md | QSL</title>
   
 
 
@@ -170,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,63 +265,161 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-       
-        
-      好! 目前共计 67 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/08/25/压缩-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">压缩.md</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-08-25T19:28:34+08:00">
+                2021-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/08/25/压缩-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/25/压缩-md/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <h3 id="1-zlib-gzip"><a href="#1-zlib-gzip" class="headerlink" title="1. zlib, gzip"></a>1. zlib, gzip</h3><p>zlib是压缩算法，这个分gunzip和inflate, inflateraw。一般用zlib的默认算法是inflate， python里面的zlib使用的也是inflate。</p>
+<p>gzip是文件格式。</p>
+<h3 id="2-windowBits"><a href="#2-windowBits" class="headerlink" title="2. windowBits"></a>2. windowBits</h3><p>zip里面有个参数windowBits, The wbits argument controls the size of the history buffer (or the “window size”) used when compressing data, and whether a header and trailer is included in the output. It can take several ranges of values. The default is 15.</p>
+<p>+9 到 +15：窗口大小以 2 为底的对数。即这些值对应着 512 到 32768 的窗口大小。更大的值会提供更好的压缩，同时内存开销也会更大。压缩输出会包含 zlib 特定格式的头部和尾部。</p>
+<p>−9 到 −15：绝对值为窗口大小以 2 为底的对数。压缩输出仅包含压缩数据，没有头部和尾部。</p>
+<p>+25 到 +31 = 16 + (9 到 15)：后 4 个比特位为窗口大小以 2 为底的对数。压缩输出包含一个基本的 gzip 头部，并以校验和为尾部。</p>
+<blockquote>
+<p>所以如果windowBits为负数，那么就是代表没有头和尾。这个可以让压缩文件结果变小。</p>
+</blockquote>
+<p>node里面不能设置为负数，用inflateRaw也不行。最后使用了<code>ZlibSync</code>和<code>pako</code>.</p>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/08/25/crypto/" rel="next" title="crypto">
+                <i class="fa fa-chevron-left"></i> crypto
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
         </div>
       
-      
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/08/typescript-debug/" itemprop="url">
-              
-                <span itemprop="name">typescript-debug</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-08T14:07:57+08:00" content="2018-02-08">
-          02-08
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -328,6 +427,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -347,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
           <p class="site-author-name" itemprop="name">qsl</p>
@@ -408,6 +527,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-zlib-gzip"><span class="nav-number">1.</span> <span class="nav-text">1. zlib, gzip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-windowBits"><span class="nav-number">2.</span> <span class="nav-text">2. windowBits</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -521,11 +656,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
@@ -544,6 +677,18 @@
       <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2021/08/25/压缩-md/';
+          this.page.identifier = '2021/08/25/压缩-md/';
+          this.page.title = '压缩.md';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://edwardqian.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
