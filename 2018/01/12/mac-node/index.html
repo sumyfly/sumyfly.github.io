@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. nvmnvm的目录是~/.nvm 1nvm alias default 8.11.3 #使用node 8.11.3作为默认版本 1.1 特定node的目录比如node 6.9.5的目录是.nvm/versions/node/v6.9.5/lib/node_modules 2. yarnnpm模块的依赖，现在用yarn,它的缓存在~/.npm。  注意在安装nvm的情况下，不要再安装node了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-08-27T06:21:24.679Z">
+<meta property="og:updated_time" content="2021-08-27T06:39:04.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac-node">
 <meta name="twitter:description" content="1. nvmnvm的目录是~/.nvm 1nvm alias default 8.11.3 #使用node 8.11.3作为默认版本 1.1 特定node的目录比如node 6.9.5的目录是.nvm/versions/node/v6.9.5/lib/node_modules 2. yarnnpm模块的依赖，现在用yarn,它的缓存在~/.npm。  注意在安装nvm的情况下，不要再安装node了">
@@ -392,6 +392,8 @@
 </li>
 </ol>
 <p>总的来说就是语言层面提供的类型系统不完整。</p>
+<h3 id="5-VS-Code-Debug"><a href="#5-VS-Code-Debug" class="headerlink" title="5. VS Code Debug"></a>5. VS Code Debug</h3><p>如果遇到要从stdin接受数据，那么需要修改console.<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">  <span class="attr">"configurations"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"node"</span>,</span><br><span class="line">      <span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"Launch Program"</span>,</span><br><span class="line">      <span class="attr">"runtimeArgs"</span>: [<span class="string">"-r"</span>, <span class="string">"ts-node/register"</span>],</span><br><span class="line">      <span class="attr">"args"</span>: [<span class="string">"$&#123;workspaceFolder&#125;/index.ts"</span>],</span><br><span class="line">      <span class="attr">"console"</span>: <span class="string">"integratedTerminal"</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>ref: <a href="https://github.com/Microsoft/vscode/issues/47860" target="_blank" rel="noopener">https://github.com/Microsoft/vscode/issues/47860</a></p>
 
       
     </div>
@@ -582,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-nvm"><span class="nav-number">1.</span> <span class="nav-text">1. nvm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-特定node的目录"><span class="nav-number">2.</span> <span class="nav-text">1.1 特定node的目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-yarn"><span class="nav-number">3.</span> <span class="nav-text">2. yarn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-nvm-alias-default-v8-16-2"><span class="nav-number">4.</span> <span class="nav-text">3. nvm alias default v8.16.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-node写server的不便"><span class="nav-number">5.</span> <span class="nav-text">4. node写server的不便</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-nvm"><span class="nav-number">1.</span> <span class="nav-text">1. nvm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-特定node的目录"><span class="nav-number">2.</span> <span class="nav-text">1.1 特定node的目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-yarn"><span class="nav-number">3.</span> <span class="nav-text">2. yarn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-nvm-alias-default-v8-16-2"><span class="nav-number">4.</span> <span class="nav-text">3. nvm alias default v8.16.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-node写server的不便"><span class="nav-number">5.</span> <span class="nav-text">4. node写server的不便</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-VS-Code-Debug"><span class="nav-number">6.</span> <span class="nav-text">5. VS Code Debug</span></a></li></ol></div>
             
 
           </div>
