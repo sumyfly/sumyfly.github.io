@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 目录变成黄色那是因为目录权限变为任何人都可以读写，去掉这个权限使用chmod go-w $directory_name1ls | xargs chmod -R go-w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-08-30T08:08:35.568Z">
+<meta property="og:updated_time" content="2021-08-30T08:15:35.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac">
 <meta name="twitter:description" content="1. 目录变成黄色那是因为目录权限变为任何人都可以读写，去掉这个权限使用chmod go-w $directory_name1ls | xargs chmod -R go-w">
@@ -358,7 +358,7 @@
 <li>打开终端：cd 到 libVideoPlayerLib.a 所在的文件夹test下 .</li>
 <li>查看 libVideoPlayerLib.a 包含几种架构 arch 。 （file 命令）</li>
 <li>分离出一种架构的.a。（lipo **.a -thin armv7 -output armv7.a）</li>
-<li>抽离.a文件的object文件.o。(ar -x armv7.a)</li>
+<li>抽离.a文件的object文件.o。(ar -x armv7.a), 抽出目标文件，是link的反向操作。</li>
 <li>将.o 转换为 .m。(nm <strong><strong>.o &gt; </strong></strong>.m)</li>
 </ol>
 <p>TODO: nm 怎么查找源码符号？看文档需要symbol文件，但是假如没有symbol文件，Firebase Crashylytic是怎么知道源码是哪一行的？</p>
