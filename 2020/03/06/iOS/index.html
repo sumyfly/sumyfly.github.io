@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 布局方式iOS有三种基本的界面布局的方法，分别是手写UI，xib和storyboard。手写UI是最早进行UI界面布局的方法，优点是灵活自由，缺点是需要写大段的代码进行布局。xib也是比较早出现的UI布局的方式，优点是不需要手写代码，但是每个界面对应一个xib，管理起来复杂。而storyboard则是在iOS5以后出现的，是苹果官方主推的一个代替xib的策略，不仅能将xib汇总统一管理，还可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-07-27T03:44:37.067Z">
+<meta property="og:updated_time" content="2021-09-10T16:39:15.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS">
 <meta name="twitter:description" content="1. 布局方式iOS有三种基本的界面布局的方法，分别是手写UI，xib和storyboard。手写UI是最早进行UI界面布局的方法，优点是灵活自由，缺点是需要写大段的代码进行布局。xib也是比较早出现的UI布局的方式，优点是不需要手写代码，但是每个界面对应一个xib，管理起来复杂。而storyboard则是在iOS5以后出现的，是苹果官方主推的一个代替xib的策略，不仅能将xib汇总统一管理，还可">
@@ -372,6 +372,17 @@
 </blockquote>
 <h4 id="3-删除证书"><a href="#3-删除证书" class="headerlink" title="3. 删除证书"></a>3. 删除证书</h4><p>如果在开发者中心移除一个证书，本地机器里面也要移除对应的证书，不然会显示”untitled”。本地移除证书去keychain Access.app-&gt;登录-&gt;我的证书，找到证书，删除它。</p>
 <h4 id="4-命令行启动模拟器"><a href="#4-命令行启动模拟器" class="headerlink" title="4. 命令行启动模拟器"></a>4. 命令行启动模拟器</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list devices</span></span><br><span class="line">xcrun simctl list</span><br><span class="line"><span class="comment"># launch specific simulator</span></span><br><span class="line">open -a Simulator --args -CurrentDeviceUDID <span class="variable">$&#123;device_udid&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-静态库、动态库"><a href="#5-静态库、动态库" class="headerlink" title="5. 静态库、动态库"></a>5. 静态库、动态库</h3><p>静态库是静态链接，编译时确定外部函数地址；动态库是动态链接，是运行时确定外部函数地址。静态库优势是依赖库包含在本运行程序中，兼容性好，劣势是运行程序体积增大。动态库是可以在内存中共享一份依赖库，运行程序体积小，但是容易出现dll地狱。<br>iOS因为安全考虑，对动态库使用有所限制，默认只有系统库可以动态链接，后来放开扩展程序(App Extension)也可以使用，但是限制在同一个App中。</p>
+<p>Swift中为什么需要使用动态库，是因为swift运行时不稳定，所以需要每个App中包含独立的运行时，那么这个运行时就是动态链接。所以swift的项目必须要Podfile文件中设置use_frameworks!. 如果之后iOS能包含一个ABI稳定的swift运行时，那么swift写的程序就不需要打包一个内嵌的运行时了。<br>Framework包含了compiled binary code + public head files.<br>Dynamic Framework不代表Dynamic Linked Framework.<br><a href="https://blog.csdn.net/diaoju3333/article/details/101992628" target="_blank" rel="noopener">https://blog.csdn.net/diaoju3333/article/details/101992628</a></p>
+<h3 id="6-ipa文件"><a href="#6-ipa文件" class="headerlink" title="6. ipa文件"></a>6. ipa文件</h3><p>如果是开发证书签名的包，provision profile里面有devices的UDID,可以本地安装。但是生产证书签名的包，只能在appstore里面安装。<br>如何查看provision profile:</p>
+<ul>
+<li>mv a.ipa a.zip</li>
+<li>unzip a.zip</li>
+<li>cd Payload</li>
+<li>cd xx.app</li>
+<li>security -D -i xxx.mobileprovision<br>如果是开发证书签名的ipa包，里面会有devices的UDID。</li>
+</ul>
+
       
     </div>
 
@@ -553,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-布局方式"><span class="nav-number">1.</span> <span class="nav-text">1. 布局方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-Constraints，Layout，Draw调用顺序"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Constraints，Layout，Draw调用顺序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-更新机制"><span class="nav-number">2.</span> <span class="nav-text">2.更新机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Update-Cycle"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Update Cycle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-自动刷新触发器"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 自动刷新触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-删除证书"><span class="nav-number">2.3.</span> <span class="nav-text">3. 删除证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-命令行启动模拟器"><span class="nav-number">2.4.</span> <span class="nav-text">4. 命令行启动模拟器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-布局方式"><span class="nav-number">1.</span> <span class="nav-text">1. 布局方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-Constraints，Layout，Draw调用顺序"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Constraints，Layout，Draw调用顺序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-更新机制"><span class="nav-number">2.</span> <span class="nav-text">2.更新机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Update-Cycle"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Update Cycle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-自动刷新触发器"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 自动刷新触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-删除证书"><span class="nav-number">2.3.</span> <span class="nav-text">3. 删除证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-命令行启动模拟器"><span class="nav-number">2.4.</span> <span class="nav-text">4. 命令行启动模拟器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-静态库、动态库"><span class="nav-number">3.</span> <span class="nav-text">5. 静态库、动态库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-ipa文件"><span class="nav-number">4.</span> <span class="nav-text">6. ipa文件</span></a></li></ol></div>
             
 
           </div>
