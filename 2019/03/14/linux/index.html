@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. ^M不可见字符vim中输入CTRL+V CTRL+M, 而不是上箭号+M。https://blog.csdn.net/kkwant/article/details/81501241">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-10-26T07:25:26.167Z">
+<meta property="og:updated_time" content="2021-10-26T07:41:23.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux">
 <meta name="twitter:description" content="1. ^M不可见字符vim中输入CTRL+V CTRL+M, 而不是上箭号+M。https://blog.csdn.net/kkwant/article/details/81501241">
@@ -367,6 +367,8 @@
 <blockquote>
 <p>bundle exec fastlane或者 fastlane都是使用了环境变量http_proxy,https_proxy，符合上面的第一种情况。所以如果fastlane遇到代理问题，可以从代理日志文件或者抓包工具中找到有问题的URL，加入到PAC名单中。</p>
 </blockquote>
+<p>代理分为Http代理，socket5代理，这个在配置可能只对对应的协议生效。所以配置代理时需要知道自己使用了何种协议。</p>
+<p>PAC是服务端的配置，也可以本地读取。一个PAC文件包含一个JavaScript形式的函数“FindProxyForURL(url, host)”。这个函数返回一个包含一个或多个访问规则的字符串。用户代理根据这些规则适用一个特定的代理器或者直接访问。 当一个代理服务器无法响应的时候，多个访问规则提供了其他的后备访问方法。 浏览器在访问其他页面以前，首先访问这个PAC文件。PAC文件中的URL可能是手工配置的，也可能是通过网页的网络代理自发现协议（Web Proxy Autodiscovery Protocol）自动配置的。</p>
 <h1 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h1><p>git 走代理的设置文件。<br>~/.gitconfig文件。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">alias</span>]</span><br><span class="line">        st = status</span><br><span class="line">        co = checkout</span><br><span class="line">        ci = commit</span><br><span class="line">        br = branch</span><br><span class="line">        tip = <span class="built_in">log</span> -1</span><br><span class="line">[http]</span><br><span class="line">	postBuffer = 524288000</span><br><span class="line">	proxy = socks5://127.0.0.1:1080</span><br><span class="line">[https]</span><br><span class="line">	proxy = socks5://127.0.0.1:1080</span><br><span class="line"><span class="comment">#[http "http://github.com"]</span></span><br><span class="line"><span class="comment">#	proxy = http://127.0.0.1:7890</span></span><br></pre></td></tr></table></figure></p>
 
       
