@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. CI绕过2fa,2sv 2-factor authentication (2FA) :可以选一个可信设备，也可以选手机号。现在的AppleId如果涉及到开发，都是必须要启用2fa的。fastlane的工作机制是基于session，而session是通过cookie来标识的，所以如果遇到session过期，session不支持，那么首先考虑的就是新建一个session，而新建session的方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-06-29T07:35:38.222Z">
+<meta property="og:updated_time" content="2021-10-26T07:29:33.107Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fastlane">
 <meta name="twitter:description" content="1. CI绕过2fa,2sv 2-factor authentication (2FA) :可以选一个可信设备，也可以选手机号。现在的AppleId如果涉及到开发，都是必须要启用2fa的。fastlane的工作机制是基于session，而session是通过cookie来标识的，所以如果遇到session过期，session不支持，那么首先考虑的就是新建一个session，而新建session的方">
@@ -352,6 +352,7 @@
         <h3 id="1-CI绕过2fa-2sv"><a href="#1-CI绕过2fa-2sv" class="headerlink" title="1. CI绕过2fa,2sv"></a>1. CI绕过2fa,2sv</h3><p> 2-factor authentication (2FA) :可以选一个可信设备，也可以选手机号。现在的AppleId如果涉及到开发，都是必须要启用2fa的。fastlane的工作机制是基于session，而session是通过cookie来标识的，所以如果遇到session过期，session不支持，那么首先考虑的就是新建一个session，而新建session的方法是通过刷新cookie。</p>
 <p>legacy 2-step verification (2SV)：选一个手机号。</p>
 <p><a href="https://docs.fastlane.tools/best-practices/continuous-integration/#integrations" target="_blank" rel="noopener">fastlane CI</a>上面说有三种方法：</p>
+<a id="more"></a>
 <h4 id="1-1-API-Key"><a href="#1-1-API-Key" class="headerlink" title="1.1 API Key"></a>1.1 API Key</h4><p>这个是推荐方法，是从Apple Developer Center导出一个文件，作为Apple Store Connect API。缺点是不支持某些操作，比如下载dSYM文件，期待以后的版本能支持。<br>App Store Connect API是基于Http的连接，使用JWT认证。</p>
 <h4 id="1-2-Two-step-or-two-factor-authentication"><a href="#1-2-Two-step-or-two-factor-authentication" class="headerlink" title="1.2  Two-step or two-factor authentication"></a>1.2  Two-step or two-factor authentication</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane spaceauth -u user@email.com</span><br></pre></td></tr></table></figure>
 <p>生成session后，可以把这个字符串保存到<code>FASTLANE_SESSION</code>中。</p>
@@ -371,14 +372,14 @@
 </li>
 </ul>
 <p>所以说，API Key用的是JWT，不需要登录信息和session。而1.2,1.3的方式都需要登录（登录账号信息在Keychain中），1.2在session无效期间需要2FA。1.1和1.3不需要2FA。</p>
-<a id="more"></a>
+<!-- more -->
 <h3 id="2-spaceship刷新session"><a href="#2-spaceship刷新session" class="headerlink" title="2. spaceship刷新session"></a>2. spaceship刷新session</h3><p>先用<code>fastlane spaceship</code>,然后输入appleId，如果有2FA,输入短信验证码。之后在目录<code>~/.fastlane/spaceship/${appleId}/</code>下面有<code>cookie</code>文件，这个文件的有效期是一个月，所以到了时间要手工地刷新。刷新的方式就是重新运行<code>fastlane spaceship</code>。</p>
 <h3 id="3-download-dsyms"><a href="#3-download-dsyms" class="headerlink" title="3. download_dsyms"></a>3. download_dsyms</h3><p>需要mkdir downloads</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane run download_dsyms username:qianshenglong@hotmail.com app_identifier:com.storehub.beep team_id:X78BF7H5HG version:1.7.1 build_number:5 output_directory:downloads</span><br></pre></td></tr></table></figure>
 <p>如果碰到需要2FA输入验证码，输入一次，但是通常情况下CI下是无法输入的，所以一定会失败，这种情况下需要去运行<code>fastlane spaceship</code>，刷新下token。</p>
 <h3 id="4-Certificate"><a href="#4-Certificate" class="headerlink" title="4. Certificate"></a>4. Certificate</h3><p>创建开发或发布证书，首先登录账号，然后新建证书。</p>
 <p>XCode-&gt;Perferences-&gt;Accounts-&gt;Select One Team-&gt;Manage Certificaates-&gt;Left Button + Plus Button-&gt;Apple Development or Distribution </p>
-
+<h3 id="5-fastlane打开debug日志"><a href="#5-fastlane打开debug日志" class="headerlink" title="5. fastlane打开debug日志"></a>5. fastlane打开debug日志</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane debug:<span class="literal">true</span> --env PRO // --env PRO 读取.env.PRO文件。debug:<span class="literal">true</span>打开debug日志。</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -560,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CI绕过2fa-2sv"><span class="nav-number">1.</span> <span class="nav-text">1. CI绕过2fa,2sv</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-API-Key"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 API Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-Two-step-or-two-factor-authentication"><span class="nav-number">1.2.</span> <span class="nav-text">1.2  Two-step or two-factor authentication</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-Application-specific-passwords"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Application-specific passwords</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-spaceship刷新session"><span class="nav-number">2.</span> <span class="nav-text">2. spaceship刷新session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-download-dsyms"><span class="nav-number">3.</span> <span class="nav-text">3. download_dsyms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Certificate"><span class="nav-number">4.</span> <span class="nav-text">4. Certificate</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CI绕过2fa-2sv"><span class="nav-number">1.</span> <span class="nav-text">1. CI绕过2fa,2sv</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-API-Key"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 API Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-Two-step-or-two-factor-authentication"><span class="nav-number">1.2.</span> <span class="nav-text">1.2  Two-step or two-factor authentication</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-Application-specific-passwords"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Application-specific passwords</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-spaceship刷新session"><span class="nav-number">2.</span> <span class="nav-text">2. spaceship刷新session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-download-dsyms"><span class="nav-number">3.</span> <span class="nav-text">3. download_dsyms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Certificate"><span class="nav-number">4.</span> <span class="nav-text">4. Certificate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-fastlane打开debug日志"><span class="nav-number">5.</span> <span class="nav-text">5. fastlane打开debug日志</span></a></li></ol></div>
             
 
           </div>

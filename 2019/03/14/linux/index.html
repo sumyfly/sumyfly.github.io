@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. ^M不可见字符vim中输入CTRL+V CTRL+M, 而不是上箭号+M。https://blog.csdn.net/kkwant/article/details/81501241">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.058Z">
+<meta property="og:updated_time" content="2021-10-26T07:25:26.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux">
 <meta name="twitter:description" content="1. ^M不可见字符vim中输入CTRL+V CTRL+M, 而不是上箭号+M。https://blog.csdn.net/kkwant/article/details/81501241">
@@ -355,8 +355,19 @@
 <p>$ nc -l 8000<br>Client connects to port 8000:</p>
 <p>$ nc localhost 8000 </p>
 <h4 id="2-2-socat"><a href="#2-2-socat" class="headerlink" title="2.2 socat"></a>2.2 socat</h4><p>socat TCP-LISTEN:6142,fork stdout</p>
-<h3 id="3-pkg-config"><a href="#3-pkg-config" class="headerlink" title="3. pkg-config"></a>3. pkg-config</h3><p>pkg-config一个帮助编译时指定编译依赖路径的工具，它可以避免硬编码参数。<br>pkg-config必须有一个.pc结尾的配置文件，读取这个文件产生指定值。<br>pkg-config如果需要指定用户的目录，需要导出PKG_CONFIG_PATH环境变量。这个变量会在pkg-config的默认搜索路径前生效。查看pkg-config的默认搜索路径<code>pkg-config --variable pc_path pkg-config</code>.</p>
+<h3 id="3-pkg-config"><a href="#3-pkg-config" class="headerlink" title="3. pkg-config"></a>3. pkg-config</h3><p>pkg-config一个帮助编译时指定编译依赖路径的工具，它可以避免硬编码参数。<br>pkg-config必须有一个.pc结尾的配置文件，读取这个文件产生指定值。<br>pkg-config如果需要指定用户的目录，需要导出PKG_CONFIG_PATH环境变量，这个变量会在pkg-config的默认搜索路径前生效。<br>查看pkg-config的默认搜索路径<code>pkg-config --variable pc_path pkg-config</code>.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg-config --libs libsodium //查找sodium的lib位置。</span><br></pre></td></tr></table></figure>
+<h3 id="4-git-代理"><a href="#4-git-代理" class="headerlink" title="4. git 代理"></a>4. git 代理</h3><h1 id="set-proxy-for-command"><a href="#set-proxy-for-command" class="headerlink" title="set proxy for command"></a>set proxy for command</h1><p>export http_proxy=<a href="http://127.0.0.1:7890" target="_blank" rel="noopener">http://127.0.0.1:7890</a><br>export https_proxy=<a href="http://127.0.0.1:7890" target="_blank" rel="noopener">http://127.0.0.1:7890</a><br>这里是对所有的command shell执行有影响，如果command使用了这个http_proxy的环境变量，就会失效。如果没有使用这个环境变量，不生效。</p>
+<p>所以代理分3种情况：</p>
+<ol>
+<li>如果软件使用了环境变量http_proxy，可以使用环境变量http_proxy来设置代理.</li>
+<li>如果软件使用了自定义的代理配置文件或命令，如git，那么使用git的配置来设置代理。</li>
+<li>如果软件既没有使用环境变量，又没有自定义的配置文件或命令，那么使用系统的代理，如Mac OS的http、https、socks代理, pac代理。TODO：我发现尽管开了pac代理，但是某些软件不会正常走代理，具体什么原因还不知道。</li>
+</ol>
+<blockquote>
+<p>bundle exec fastlane或者 fastlane都是使用了环境变量http_proxy,https_proxy，符合上面的第一种情况。所以如果fastlane遇到代理问题，可以从代理日志文件或者抓包工具中找到有问题的URL，加入到PAC名单中。</p>
+</blockquote>
+<h1 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h1><p>git 走代理的设置文件。<br>~/.gitconfig文件。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">alias</span>]</span><br><span class="line">        st = status</span><br><span class="line">        co = checkout</span><br><span class="line">        ci = commit</span><br><span class="line">        br = branch</span><br><span class="line">        tip = <span class="built_in">log</span> -1</span><br><span class="line">[http]</span><br><span class="line">	postBuffer = 524288000</span><br><span class="line">	proxy = socks5://127.0.0.1:1080</span><br><span class="line">[https]</span><br><span class="line">	proxy = socks5://127.0.0.1:1080</span><br><span class="line"><span class="comment">#[http "http://github.com"]</span></span><br><span class="line"><span class="comment">#	proxy = http://127.0.0.1:7890</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -545,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-M不可见字符"><span class="nav-number">1.</span> <span class="nav-text">1. ^M不可见字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动本地TCP服务器"><span class="nav-number">2.</span> <span class="nav-text">2. 启动本地TCP服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-nc"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 nc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-socat"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 socat</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-pkg-config"><span class="nav-number">3.</span> <span class="nav-text">3. pkg-config</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-M不可见字符"><span class="nav-number">1.</span> <span class="nav-text">1. ^M不可见字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动本地TCP服务器"><span class="nav-number">2.</span> <span class="nav-text">2. 启动本地TCP服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-nc"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 nc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-socat"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 socat</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-pkg-config"><span class="nav-number">3.</span> <span class="nav-text">3. pkg-config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-git-代理"><span class="nav-number">4.</span> <span class="nav-text">4. git 代理</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#set-proxy-for-command"><span class="nav-number"></span> <span class="nav-text">set proxy for command</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-config"><span class="nav-number"></span> <span class="nav-text">git config</span></a></li></div>
             
 
           </div>
