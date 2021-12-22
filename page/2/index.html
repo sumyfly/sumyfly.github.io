@@ -276,6 +276,175 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/TCP-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/13/TCP-md/" itemprop="url">TCP.md</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T11:30:48+08:00">
+                2020-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Networking/" itemprop="url" rel="index">
+                    <span itemprop="name">Networking</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/13/TCP-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/13/TCP-md/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-名称解释"><a href="#1-名称解释" class="headerlink" title="1. 名称解释"></a>1. 名称解释</h3><p>可以用WireShark通过分析Tcp报来得知，工具显示得很清楚。</p>
+<h4 id="1-1-10个控制标志位-Flag"><a href="#1-1-10个控制标志位-Flag" class="headerlink" title="1.1 10个控制标志位 Flag"></a>1.1 10个控制标志位 Flag</h4><p>下面的含义只针对其标志位为1的情况，比如SYN=1才代表握手阶段。FIN=1代表挥手阶段。</p>
+<ul>
+<li>SYN 表示新建连接</li>
+<li>ACK 表示响应<br>如果发送数据为空的话，可以发送同一个Seq的多个ACK，这个可以用来保活和窗口协商。这个单个ACK只能TCP协议实现发送，应用层只能发[ACK+PSH]</li>
+<li>FIN (Finish)表示关闭连接</li>
+<li>PSH (Push)表示传输数据</li>
+<li><p>RST (Reset)表示连接重置<br>这个RST的原因是因为close连接时，本地接受缓冲区还有数据。避免RST的方法就是调用close的之前，调用shutdown。netty称之为优雅关闭。</p>
+</li>
+<li><p>Nonce</p>
+</li>
+<li>CWR</li>
+<li>ECN-Echo</li>
+<li>Urgent</li>
+</ul>
+<blockquote>
+<p>Flags 一共16位，目前只用到9位，剩下的7位是保留位。</p>
+</blockquote>
+<h4 id="1-2-Tcp传输数据中的字段"><a href="#1-2-Tcp传输数据中的字段" class="headerlink" title="1.2 Tcp传输数据中的字段"></a>1.2 Tcp传输数据中的字段</h4><p>Seq(Sequence number): 本次发送得顺序号<br>Ack(Acknowledgment number): 确认号，其值 = <code>对方的seq</code> + <code>对方的Tcp Segement size</code>, 其含义代表我收到你seq号的数据了，长度是多少。<br>Next sequence number: 这个是期待对方返回的Ack值，这个不是在TCP协议内。</p>
+<blockquote>
+<p>注意ACK是标志位, Ack是确认号。大小写不一样，含义也不同。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/13/TCP-md/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/iOS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1451,147 +1620,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/13/bash/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/13/bash/" itemprop="url">bash</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-13T15:49:47+08:00">
-                2019-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/13/bash/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/13/bash/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-tr"><a href="#1-tr" class="headerlink" title="1. tr"></a>1. tr</h3><p>echo $PATH | tr ‘:’ ‘\n’</p>
-<h3 id="2-xargs"><a href="#2-xargs" class="headerlink" title="2. xargs"></a>2. xargs</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find . -<span class="built_in">type</span> f | xargs -I&#123;&#125; md5sum &#123;&#125; <span class="comment"># &#123;&#125; 是用来代替管道之前标准输出内容的。</span></span><br><span class="line">cat ~/.zshrc | xargs -n 3</span><br></pre></td></tr></table></figure>
-<p>加 -I 参数 需要事先指定替换字符<br>args:xargs的默认命令是echo，空格是默认定界符。  默认替换符号是{}<br>-I {}批定了替换字符串，表示文件内容，能循环按要求替换相应的参数  使用-I指定一个替换字符串{}，这个字符串在xargs扩展时会被替换掉，<br>当-I与xargs结合使用，每一个参数命令都会被执行一次：<br>-n num 后面加次数，表示命令在执行的时候一次用的argument的个数，默认是用所有的<br>-d 自定义定界符 </p>
-<h3 id="3-IFS"><a href="#3-IFS" class="headerlink" title="3. IFS"></a>3. IFS</h3><p>IFS（internal field separator）界定符，默认有三种：空格、制表符、换行符。Bash默认只要找到其中一种，就分隔字符，如果要指定使用如下方式：</p>
-<ul>
-<li>指定只用换行: IFS=$(‘\n’)</li>
-<li>指定空格: IFS=’ ‘ </li>
-<li>指定<code>,</code>: IFS=’,’，这个在处理csv文件中有帮助。</li>
-</ul>
-<h3 id="4-重定向"><a href="#4-重定向" class="headerlink" title="4. 重定向"></a>4. 重定向</h3><p>Linux系统预留可三个文件描述符：0、1和2，他们的意义如下所示：<br>0——标准输入（stdin）<br>1——标准输出（stdout）<br>2——标准错误（stderr）</p>
-<p>2&gt;/dev/null<br>意思就是把错误输出到“黑洞”</p>
-<blockquote>
-<p>/dev/null 2&gt;&amp;1<br>默认情况是1，也就是等同于1&gt;/dev/null 2&gt;&amp;1。意思就是把标准输出重定向到“黑洞”，还把错误输出2重定向到标准输出1，也就是标准输出和错误输出都进了“黑洞”</p>
-</blockquote>
-<p>2&gt;&amp;1 &gt;/dev/null<br>意思就是把错误输出2重定向到标准出书1，也就是屏幕，标准输出进了“黑洞”，也就是标准输出进了黑洞，错误输出打印到屏幕。</p>
-<p>重定向的符号有两个：&gt;或&gt;&gt;，两者的区别是：前者会先清空文件，然后再写入内容，后者会将重定向的内容追加到现有文件的尾部。</p>
-<h3 id="5-后台运行"><a href="#5-后台运行" class="headerlink" title="5. 后台运行"></a>5. 后台运行</h3><p>ctrl + z 挂起程序，可以用bg恢复放入后台，恢复完之后可以用fg把后台任务召回前台。jobs可以查看后台任务，前面的+号代表默认后台任务，-号代表下一个默认任务。<br>ctrl + c 中断程序，不能恢复了。</p>
-<p>默认情况下，当你在终端会话shell中运行脚本时，交互式shell会挂起，直到脚本运行完。可以在命令名后加一个&amp;符号来让脚本或命令以后台模式运行。当你在后台模式运行命令或脚本时，交互式shell会返回，允许你继续输入其他命令。任何通过这种方法运行的后台进程仍会绑定到该终端会话。如果退出了终端会话，后台进程也会退出。</p>
-<p>可以用nohup命令阻止这种情况发生。该命令会拦截任何发给某个命令来停止其运行的信号 (比如当你退出终端会话时)。这样就可以让脚本继续在后台运行，即便是你已经退出了终端会话。 当你将进程置入后台时，仍然可以控制它的运行。jobs命令可以查看该shell会话启动的进程。</p>
-<p>只要知道后台进程的作业号，就可以用kill命令向该进程发送Linux信号，或者用fg命令将该进程带回到该shell会话的前台。你可以用Ctrl+Z组合键挂起正在运行的前台进程，然后用bg命令将 其置入后台模式。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1639,7 +1667,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
