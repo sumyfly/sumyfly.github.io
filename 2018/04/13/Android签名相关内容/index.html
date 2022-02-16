@@ -1,142 +1,51 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="Android,签名,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1. 查看签名 提取签名jar xf HelloWorld.apk META-INF/CERT.RSA 打印签名keytool -printcert -file CERT.RSA  打印公钥，签名用的公钥keytool -printcert -file CERT.RSA -rfc，或者导出到一个文件keytool -printcert -file CERT.RSA -rfc &amp;gt; my_pub">
-<meta name="keywords" content="Android,签名">
+  <meta name="description" content="1. 查看签名 提取签名jar xf HelloWorld.apk META-INF&#x2F;CERT.RSA  打印签名keytool -printcert -file CERT.RSA  打印公钥，签名用的公钥keytool -printcert -file CERT.RSA -rfc，或者导出到一个文件keytool -printcert -file CERT.RSA -rfc &gt; my_pu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android签名相关内容">
-<meta property="og:url" content="http://yoursite.com/2018/04/13/Android签名相关内容/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/Android%E7%AD%BE%E5%90%8D%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1. 查看签名 提取签名jar xf HelloWorld.apk META-INF/CERT.RSA 打印签名keytool -printcert -file CERT.RSA  打印公钥，签名用的公钥keytool -printcert -file CERT.RSA -rfc，或者导出到一个文件keytool -printcert -file CERT.RSA -rfc &amp;gt; my_pub">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.039Z">
+<meta property="og:description" content="1. 查看签名 提取签名jar xf HelloWorld.apk META-INF&#x2F;CERT.RSA  打印签名keytool -printcert -file CERT.RSA  打印公钥，签名用的公钥keytool -printcert -file CERT.RSA -rfc，或者导出到一个文件keytool -printcert -file CERT.RSA -rfc &gt; my_pu">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-04-13T07:37:27.000Z">
+<meta property="article:modified_time" content="2021-01-14T06:26:09.039Z">
+<meta property="article:author" content="qsl">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="签名">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android签名相关内容">
-<meta name="twitter:description" content="1. 查看签名 提取签名jar xf HelloWorld.apk META-INF/CERT.RSA 打印签名keytool -printcert -file CERT.RSA  打印公钥，签名用的公钥keytool -printcert -file CERT.RSA -rfc，或者导出到一个文件keytool -printcert -file CERT.RSA -rfc &amp;gt; my_pub">
+
+<link rel="canonical" href="http://yoursite.com/2018/04/13/Android%E7%AD%BE%E5%90%8D%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/04/13/Android签名相关内容/">
-
-
-
-
 
   <title>Android签名相关内容 | QSL</title>
   
@@ -144,236 +53,162 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/Android签名相关内容/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/Android%E7%AD%BE%E5%90%8D%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Android签名相关内容</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Android签名相关内容
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T15:37:27+08:00">
-                2018-04-13
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2018-04-13 15:37:27" itemprop="dateCreated datePublished" datetime="2018-04-13T15:37:27+08:00">2018-04-13</time>
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/04/13/Android签名相关内容/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/13/Android签名相关内容/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h3 id="1-查看签名"><a href="#1-查看签名" class="headerlink" title="1. 查看签名"></a>1. 查看签名</h3><ul>
-<li>提取签名<br><code>jar xf HelloWorld.apk META-INF/CERT.RSA</code></li>
+<li><p>提取签名<br><code>jar xf HelloWorld.apk META-INF/CERT.RSA</code></p>
+</li>
 <li><p>打印签名<br><code>keytool -printcert -file CERT.RSA</code></p>
 </li>
 <li><p>打印公钥，签名用的公钥<br><code>keytool -printcert -file CERT.RSA -rfc</code>，或者导出到一个文件<code>keytool -printcert -file CERT.RSA -rfc &gt; my_pub.key</code></p>
@@ -383,373 +218,203 @@
 <h3 id="2-查看public-key的指纹"><a href="#2-查看public-key的指纹" class="headerlink" title="2. 查看public key的指纹"></a>2. 查看public key的指纹</h3><blockquote>
 <p>指纹就是用散列算法计算公钥的文本，rfc格式(带有<code>-----BEGIN CERTIFICATE-----</code>和<code>-----END CERTIFICATE-----</code>)。</p>
 </blockquote>
-<p>使用上面步骤得到的my_pub.key，验证md5。实际工作中不需要，工具都帮我们做好了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -noout -fingerprint -md5 -inform pem -<span class="keyword">in</span> my_pub.key</span><br><span class="line">openssl x509 -noout -fingerprint -SHA1 -inform pem -<span class="keyword">in</span> my_pub.key</span><br><span class="line">openssl x509 -noout -fingerprint -SHA256 -inform pem -<span class="keyword">in</span> my_pub.key</span><br></pre></td></tr></table></figure></p>
+<p>使用上面步骤得到的my_pub.key，验证md5。实际工作中不需要，工具都帮我们做好了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -noout -fingerprint -md5 -inform pem -<span class="keyword">in</span> my_pub.key</span><br><span class="line">openssl x509 -noout -fingerprint -SHA1 -inform pem -<span class="keyword">in</span> my_pub.key</span><br><span class="line">openssl x509 -noout -fingerprint -SHA256 -inform pem -<span class="keyword">in</span> my_pub.key</span><br></pre></td></tr></table></figure>
+
 <h3 id="3-查看keystore中的签名"><a href="#3-查看keystore中的签名" class="headerlink" title="3. 查看keystore中的签名"></a>3. 查看keystore中的签名</h3><blockquote>
 <p>keystore中有多个公钥秘钥对，一个对就是一个alias, 每个的访问密码不同。<br><code>keytool -list -keystore my.keystore -alias myAlias</code>输入库密码可以看到公钥的指纹。</p>
 </blockquote>
 <h3 id="4-给apk签名"><a href="#4-给apk签名" class="headerlink" title="4. 给apk签名"></a>4. 给apk签名</h3><p><code>jarsigner -verbose -keystore my.keystore -signedjar ma_app_signed.apk my.apk myAlias</code></p>
 <h3 id="5-Android-Studio-Debug签名"><a href="#5-Android-Studio-Debug签名" class="headerlink" title="5. Android Studio Debug签名"></a>5. Android Studio Debug签名</h3><p>默认Android Stuido Debug时会自动签名(这个是IDE生成的，gradle命令行不会自动生成签名)，用的keystore是没有密码的，但是有时候我们调试第三方登录，需要固定的签名，所以就自己生成签名，覆盖默认的Debug的签名。</p>
-<h4 id="5-1-生成Debug签名"><a href="#5-1-生成Debug签名" class="headerlink" title="5.1 生成Debug签名"></a>5.1 生成Debug签名</h4><p><code>$ keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname &quot;C=US, O=Android, CN=Android Debug&quot;</code><br><a href="https://gist.github.com/henriquemenezes/70feb8fff20a19a65346e48786bedb8f" target="_blank" rel="noopener">https://gist.github.com/henriquemenezes/70feb8fff20a19a65346e48786bedb8f</a></p>
-<a id="more"></a>
-<h4 id="5-2-设置keystore-properties"><a href="#5-2-设置keystore-properties" class="headerlink" title="5.2 设置keystore.properties"></a>5.2 设置keystore.properties</h4><p>keystore.properties<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">storePassword=myStorePassword</span><br><span class="line">keyPassword=mykeyPassword</span><br><span class="line">keyAlias=myKeyAlias</span><br><span class="line">storeFile=myStoreFileLocation</span><br></pre></td></tr></table></figure></p>
-<h4 id="5-3-设置app-build-gradle"><a href="#5-3-设置app-build-gradle" class="headerlink" title="5.3 设置app/build.gradle"></a>5.3 设置app/build.gradle</h4><p>模块的build.gradle<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在模块的 build.gradle 文件中，于 android &#123;&#125; 块的前面添加用于加载 keystore.properties 文件的代码。</span></span><br><span class="line"><span class="keyword">def</span> keystorePropertiesFile = rootProject.file(<span class="string">"keystore.properties"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Initialize a new Properties() object called keystoreProperties.</span></span><br><span class="line"><span class="keyword">def</span> keystoreProperties = <span class="keyword">new</span> Properties()</span><br><span class="line"></span><br><span class="line"><span class="comment">// Load your keystore.properties file into the keystoreProperties object.</span></span><br><span class="line">keystoreProperties.load(<span class="keyword">new</span> FileInputStream(keystorePropertiesFile))</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">   signingConfigs &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            keyAlias keystoreProperties[<span class="string">'keyAlias'</span>]</span><br><span class="line">            keyPassword keystoreProperties[<span class="string">'keyPassword'</span>]</span><br><span class="line">            storeFile file(keystoreProperties[<span class="string">'storeFile'</span>])</span><br><span class="line">            storePassword keystoreProperties[<span class="string">'storePassword'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        release &#123;</span><br><span class="line">            keyAlias keystoreProperties[<span class="string">'keyAlias'</span>]</span><br><span class="line">            keyPassword keystoreProperties[<span class="string">'keyPassword'</span>]</span><br><span class="line">            storeFile file(keystoreProperties[<span class="string">'storeFile'</span>])</span><br><span class="line">            storePassword keystoreProperties[<span class="string">'storePassword'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样设置后，debug签名就更换成我们设置的签名了。但是<code>./graldew assembleRelease</code>还是要设置buildTypes才能使用release签名。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        minifyEnabled enableProguardInReleaseBuilds</span><br><span class="line">        proguardFiles getDefaultProguardFile(<span class="string">"proguard-android.txt"</span>), <span class="string">"proguard-rules.pro"</span></span><br><span class="line">        signingConfig signingConfigs.release</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://developer.android.com/studio/publish/app-signing" target="_blank" rel="noopener">https://developer.android.com/studio/publish/app-signing</a><br><a href="https://blog.csdn.net/zouchengxufei/article/details/48747803" target="_blank" rel="noopener">https://blog.csdn.net/zouchengxufei/article/details/48747803</a><br><a href="https://www.cnblogs.com/littleatp/p/5922362.html" target="_blank" rel="noopener">https://www.cnblogs.com/littleatp/p/5922362.html</a></p>
+<h4 id="5-1-生成Debug签名"><a href="#5-1-生成Debug签名" class="headerlink" title="5.1 生成Debug签名"></a>5.1 生成Debug签名</h4><p><code>$ keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname &quot;C=US, O=Android, CN=Android Debug&quot; </code><br><a target="_blank" rel="noopener" href="https://gist.github.com/henriquemenezes/70feb8fff20a19a65346e48786bedb8f">https://gist.github.com/henriquemenezes/70feb8fff20a19a65346e48786bedb8f</a></p>
+<span id="more"></span>
+
+<h4 id="5-2-设置keystore-properties"><a href="#5-2-设置keystore-properties" class="headerlink" title="5.2 设置keystore.properties"></a>5.2 设置keystore.properties</h4><p>keystore.properties</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">storePassword=myStorePassword</span><br><span class="line">keyPassword=mykeyPassword</span><br><span class="line">keyAlias=myKeyAlias</span><br><span class="line">storeFile=myStoreFileLocation</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-3-设置app-build-gradle"><a href="#5-3-设置app-build-gradle" class="headerlink" title="5.3 设置app/build.gradle"></a>5.3 设置app/build.gradle</h4><p>模块的build.gradle</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在模块的 build.gradle 文件中，于 android &#123;&#125; 块的前面添加用于加载 keystore.properties 文件的代码。</span></span><br><span class="line"><span class="keyword">def</span> keystorePropertiesFile = rootProject.file(<span class="string">&quot;keystore.properties&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Initialize a new Properties() object called keystoreProperties.</span></span><br><span class="line"><span class="keyword">def</span> keystoreProperties = <span class="keyword">new</span> Properties()</span><br><span class="line"></span><br><span class="line"><span class="comment">// Load your keystore.properties file into the keystoreProperties object.</span></span><br><span class="line">keystoreProperties.load(<span class="keyword">new</span> FileInputStream(keystorePropertiesFile))</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">   signingConfigs &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            keyAlias keystoreProperties[<span class="string">&#x27;keyAlias&#x27;</span>]</span><br><span class="line">            keyPassword keystoreProperties[<span class="string">&#x27;keyPassword&#x27;</span>]</span><br><span class="line">            storeFile file(keystoreProperties[<span class="string">&#x27;storeFile&#x27;</span>])</span><br><span class="line">            storePassword keystoreProperties[<span class="string">&#x27;storePassword&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        release &#123;</span><br><span class="line">            keyAlias keystoreProperties[<span class="string">&#x27;keyAlias&#x27;</span>]</span><br><span class="line">            keyPassword keystoreProperties[<span class="string">&#x27;keyPassword&#x27;</span>]</span><br><span class="line">            storeFile file(keystoreProperties[<span class="string">&#x27;storeFile&#x27;</span>])</span><br><span class="line">            storePassword keystoreProperties[<span class="string">&#x27;storePassword&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>这样设置后，debug签名就更换成我们设置的签名了。但是<code>./graldew assembleRelease</code>还是要设置buildTypes才能使用release签名。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        minifyEnabled enableProguardInReleaseBuilds</span><br><span class="line">        proguardFiles getDefaultProguardFile(<span class="string">&quot;proguard-android.txt&quot;</span>), <span class="string">&quot;proguard-rules.pro&quot;</span></span><br><span class="line">        signingConfig signingConfigs.release</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/publish/app-signing">https://developer.android.com/studio/publish/app-signing</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/zouchengxufei/article/details/48747803">https://blog.csdn.net/zouchengxufei/article/details/48747803</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/littleatp/p/5922362.html">https://www.cnblogs.com/littleatp/p/5922362.html</a></p>
 <h3 id="6-获取私钥"><a href="#6-获取私钥" class="headerlink" title="6.获取私钥"></a>6.获取私钥</h3><p>jks文件中的私钥不能直接得到，需要通过openssl将jks文件转换成pfx格式后再进行提取。<br>执行如下命令将server.jks文件转换成server.pfx文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">keytool -v -importkeystore -srckeystore server.jks -srcstoretype jks -srcstorepass 123456 -destkeystore server.p12 -deststoretype pkcs12 -deststorepass 123456 -destkeypass abc123</span><br><span class="line"></span><br><span class="line">openssl pkcs12 -<span class="keyword">in</span> server.pfx -nocerts -nodes -out server.key</span><br></pre></td></tr></table></figure>
-<p><a href="https://jingyan.baidu.com/article/066074d61de50cc3c21cb0ba.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/066074d61de50cc3c21cb0ba.html</a></p>
-<h3 id="7-多个alias"><a href="#7-多个alias" class="headerlink" title="7.多个alias"></a>7.多个alias</h3><p><a href="https://www.cnblogs.com/whatlonelytear/p/7654689.html" target="_blank" rel="noopener">https://www.cnblogs.com/whatlonelytear/p/7654689.html</a></p>
 
-      
+<p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/066074d61de50cc3c21cb0ba.html">https://jingyan.baidu.com/article/066074d61de50cc3c21cb0ba.html</a></p>
+<h3 id="7-多个alias"><a href="#7-多个alias" class="headerlink" title="7.多个alias"></a>7.多个alias</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/whatlonelytear/p/7654689.html">https://www.cnblogs.com/whatlonelytear/p/7654689.html</a></p>
+
     </div>
 
-    <div>
-      
-        
+    
+    
+    
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Android/" rel="tag"># Android</a>
-          
-            <a href="/tags/签名/" rel="tag"># 签名</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/04/12/js原型/" rel="next" title="js原型">
-                <i class="fa fa-chevron-left"></i> js原型
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+              <a href="/tags/%E7%AD%BE%E5%90%8D/" rel="tag"># 签名</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/10/Kotlin/" rel="prev" title="Kotlin">
-                Kotlin <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/04/12/js%E5%8E%9F%E5%9E%8B/" rel="prev" title="js原型">
+      <i class="fa fa-chevron-left"></i> js原型
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/07/10/Kotlin/" rel="next" title="Kotlin">
+      Kotlin <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看签名"><span class="nav-number">1.</span> <span class="nav-text">1. 查看签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-查看public-key的指纹"><span class="nav-number">2.</span> <span class="nav-text">2. 查看public key的指纹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-查看keystore中的签名"><span class="nav-number">3.</span> <span class="nav-text">3. 查看keystore中的签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-给apk签名"><span class="nav-number">4.</span> <span class="nav-text">4. 给apk签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Android-Studio-Debug签名"><span class="nav-number">5.</span> <span class="nav-text">5. Android Studio Debug签名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-生成Debug签名"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 生成Debug签名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-设置keystore-properties"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 设置keystore.properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-设置app-build-gradle"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 设置app/build.gradle</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-获取私钥"><span class="nav-number">6.</span> <span class="nav-text">6.获取私钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-多个alias"><span class="nav-number">7.</span> <span class="nav-text">7.多个alias</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%9F%A5%E7%9C%8B%E7%AD%BE%E5%90%8D"><span class="nav-number">1.</span> <span class="nav-text">1. 查看签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9F%A5%E7%9C%8Bpublic-key%E7%9A%84%E6%8C%87%E7%BA%B9"><span class="nav-number">2.</span> <span class="nav-text">2. 查看public key的指纹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%9F%A5%E7%9C%8Bkeystore%E4%B8%AD%E7%9A%84%E7%AD%BE%E5%90%8D"><span class="nav-number">3.</span> <span class="nav-text">3. 查看keystore中的签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%BB%99apk%E7%AD%BE%E5%90%8D"><span class="nav-number">4.</span> <span class="nav-text">4. 给apk签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Android-Studio-Debug%E7%AD%BE%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text">5. Android Studio Debug签名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-%E7%94%9F%E6%88%90Debug%E7%AD%BE%E5%90%8D"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 生成Debug签名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-%E8%AE%BE%E7%BD%AEkeystore-properties"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 设置keystore.properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-%E8%AE%BE%E7%BD%AEapp-build-gradle"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 设置app&#x2F;build.gradle</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E8%8E%B7%E5%8F%96%E7%A7%81%E9%92%A5"><span class="nav-number">6.</span> <span class="nav-text">6.获取私钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%A4%9A%E4%B8%AAalias"><span class="nav-number">7.</span> <span class="nav-text">7.多个alias</span></a></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/04/13/Android签名相关内容/';
-          this.page.identifier = '2018/04/13/Android签名相关内容/';
-          this.page.title = 'Android签名相关内容';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -763,19 +428,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 

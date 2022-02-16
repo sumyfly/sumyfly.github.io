@@ -1,142 +1,51 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="mac,docker,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1. 基本命令1234567891011121314151617181920212223242526272829303132# 运行镜像docker run -t -i ubuntu:14.04 /bin/bash # 查看运行的容器docker ps# 查看所有容器docker ps -a# 进入容器docker exec -it $container_id /bin/bash# 停用某个容器d">
-<meta name="keywords" content="mac,docker">
+  <meta name="description" content="1. 基本命令1234567891011121314151617181920212223242526272829303132# 运行镜像docker run -t -i ubuntu:14.04 &#x2F;bin&#x2F;bash # 查看运行的容器docker ps# 查看所有容器docker ps -a# 进入容器docker exec -it $container_id &#x2F;bin&#x2F;bash# 停用某个容器d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mac-docker">
 <meta property="og:url" content="http://yoursite.com/2018/10/26/mac-docker/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1. 基本命令1234567891011121314151617181920212223242526272829303132# 运行镜像docker run -t -i ubuntu:14.04 /bin/bash # 查看运行的容器docker ps# 查看所有容器docker ps -a# 进入容器docker exec -it $container_id /bin/bash# 停用某个容器d">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.059Z">
+<meta property="og:description" content="1. 基本命令1234567891011121314151617181920212223242526272829303132# 运行镜像docker run -t -i ubuntu:14.04 &#x2F;bin&#x2F;bash # 查看运行的容器docker ps# 查看所有容器docker ps -a# 进入容器docker exec -it $container_id &#x2F;bin&#x2F;bash# 停用某个容器d">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-10-26T10:08:37.000Z">
+<meta property="article:modified_time" content="2021-01-14T06:26:09.059Z">
+<meta property="article:author" content="qsl">
+<meta property="article:tag" content="mac">
+<meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac-docker">
-<meta name="twitter:description" content="1. 基本命令1234567891011121314151617181920212223242526272829303132# 运行镜像docker run -t -i ubuntu:14.04 /bin/bash # 查看运行的容器docker ps# 查看所有容器docker ps -a# 进入容器docker exec -it $container_id /bin/bash# 停用某个容器d">
+
+<link rel="canonical" href="http://yoursite.com/2018/10/26/mac-docker/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/10/26/mac-docker/">
-
-
-
-
 
   <title>mac-docker | QSL</title>
   
@@ -144,224 +53,175 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/26/mac-docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">mac-docker</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          mac-docker
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T18:08:37+08:00">
-                2018-10-26
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <time title="Created: 2018-10-26 18:08:37" itemprop="dateCreated datePublished" datetime="2018-10-26T18:08:37+08:00">2018-10-26</time>
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/10/26/mac-docker/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/26/mac-docker/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
+        <h3 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行镜像</span></span><br><span class="line">docker run -t -i ubuntu:14.04 /bin/bash </span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看运行的容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it <span class="variable">$container_id</span> /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停用某个容器</span></span><br><span class="line">docker stop <span class="variable">$container_id</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 停用全部运行中的容器</span></span><br><span class="line">docker stop $(docker ps -q)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死所有running状态的容器</span></span><br><span class="line">docker <span class="built_in">kill</span> $(docker ps -q)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看镜像，不包含中间镜像</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有镜像,其中包含中间镜像</span></span><br><span class="line">docker images -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入正在运行的容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it <span class="variable">$container_id</span> /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 给iamge改名</span></span><br><span class="line">docker tag IMAGEID(镜像<span class="built_in">id</span>) REPOSITORY:TAG（仓库：标签）</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
-      
-        <h3 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行镜像</span></span><br><span class="line">docker run -t -i ubuntu:14.04 /bin/bash </span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看运行的容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it <span class="variable">$container_id</span> /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停用某个容器</span></span><br><span class="line">docker stop <span class="variable">$container_id</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 停用全部运行中的容器</span></span><br><span class="line">docker stop $(docker ps -q)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死所有running状态的容器</span></span><br><span class="line">docker <span class="built_in">kill</span> $(docker ps -q)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看镜像，不包含中间镜像</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有镜像,其中包含中间镜像</span></span><br><span class="line">docker images -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入正在运行的容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it <span class="variable">$container_id</span> /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 给iamge改名</span></span><br><span class="line">docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="2-删除容器"><a href="#2-删除容器" class="headerlink" title="2. 删除容器"></a>2. 删除容器</h3><h4 id="2-1-删除容器"><a href="#2-1-删除容器" class="headerlink" title="2.1 删除容器"></a>2.1 删除容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm <span class="variable">$container_id</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-2-删除全部容器"><a href="#2-2-删除全部容器" class="headerlink" title="2.2 删除全部容器"></a>2.2 删除全部容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -aq)</span><br></pre></td></tr></table></figure>
-<h4 id="2-3-删除停止的容器"><a href="#2-3-删除停止的容器" class="headerlink" title="2.3 删除停止的容器"></a>2.3 删除停止的容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps --all -q -f status=exited)</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">docker rm `docker ps -a | grep Exited | awk <span class="string">'&#123;print $1&#125;'</span>`</span><br></pre></td></tr></table></figure>
-<h4 id="2-4-停用并删除所有容器"><a href="#2-4-停用并删除所有容器" class="headerlink" title="2.4 停用并删除所有容器"></a>2.4 停用并删除所有容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -q) &amp; docker rm $(docker ps -aq)</span><br></pre></td></tr></table></figure>
-<h3 id="3-删除镜像"><a href="#3-删除镜像" class="headerlink" title="3. 删除镜像"></a>3. 删除镜像</h3><h4 id="3-1-删除镜像，先要删除对应容器"><a href="#3-1-删除镜像，先要删除对应容器" class="headerlink" title="3.1 删除镜像，先要删除对应容器"></a>3.1 删除镜像，先要删除对应容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a <span class="comment"># 查看所有container</span></span><br><span class="line">docker rm <span class="variable">$container_id</span> <span class="comment"># 删除容器 </span></span><br><span class="line">docker rmi <span class="variable">$image_id</span></span><br><span class="line"><span class="comment"># 或者先用docker rmi imageid进行删除，会报错被哪个容器引用，然后使用docker rm container_id删除掉该容器即可</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-删除容器"><a href="#2-删除容器" class="headerlink" title="2. 删除容器"></a>2. 删除容器</h3><h4 id="2-1-删除容器"><a href="#2-1-删除容器" class="headerlink" title="2.1 删除容器"></a>2.1 删除容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> <span class="variable">$container_id</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-删除全部容器"><a href="#2-2-删除全部容器" class="headerlink" title="2.2 删除全部容器"></a>2.2 删除全部容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> $(docker ps -aq)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-删除停止的容器"><a href="#2-3-删除停止的容器" class="headerlink" title="2.3 删除停止的容器"></a>2.3 删除停止的容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> $(docker ps --all -q -f status=exited)</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">docker <span class="built_in">rm</span> `docker ps -a | grep Exited | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>` </span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-停用并删除所有容器"><a href="#2-4-停用并删除所有容器" class="headerlink" title="2.4 停用并删除所有容器"></a>2.4 停用并删除所有容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -q) &amp; docker <span class="built_in">rm</span> $(docker ps -aq)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-删除镜像"><a href="#3-删除镜像" class="headerlink" title="3. 删除镜像"></a>3. 删除镜像</h3><h4 id="3-1-删除镜像，先要删除对应容器"><a href="#3-1-删除镜像，先要删除对应容器" class="headerlink" title="3.1 删除镜像，先要删除对应容器"></a>3.1 删除镜像，先要删除对应容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a <span class="comment"># 查看所有container</span></span><br><span class="line">docker <span class="built_in">rm</span> <span class="variable">$container_id</span> <span class="comment"># 删除容器 </span></span><br><span class="line">docker rmi <span class="variable">$image_id</span></span><br><span class="line"><span class="comment"># 或者先用docker rmi imageid进行删除，会报错被哪个容器引用，然后使用docker rm container_id删除掉该容器即可</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="3-2-删除所有镜像"><a href="#3-2-删除所有镜像" class="headerlink" title="3.2 删除所有镜像"></a>3.2 删除所有镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>
-<h4 id="3-3-删除没有使用的镜像"><a href="#3-3-删除没有使用的镜像" class="headerlink" title="3.3 删除没有使用的镜像"></a>3.3 删除没有使用的镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -q --filter <span class="string">"dangling=true"</span> | xargs -t --no-run-if-empty docker rmi</span><br></pre></td></tr></table></figure>
-<h4 id="3-4-删除名称或标签为none的镜像"><a href="#3-4-删除名称或标签为none的镜像" class="headerlink" title="3.4 删除名称或标签为none的镜像"></a>3.4 删除名称或标签为none的镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f  `docker images | grep <span class="string">'&lt;none&gt;'</span> | awk <span class="string">'&#123;print $3&#125;'</span>`</span><br></pre></td></tr></table></figure>
-<h4 id="3-5-删除test-开头的镜像："><a href="#3-5-删除test-开头的镜像：" class="headerlink" title="3.5 删除test_开头的镜像："></a>3.5 删除<code>test_</code>开头的镜像：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images --format <span class="string">"&#123;&#123;.Repository&#125;&#125;"</span> |grep <span class="string">"^test_*"</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="3-6-删除所有-’untagged-dangling-’-状态的镜像"><a href="#3-6-删除所有-’untagged-dangling-’-状态的镜像" class="headerlink" title="3.6 删除所有\’untagged/dangling\’ ()状态的镜像"></a>3.6 删除所有\’untagged/dangling\’ ()状态的镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q -f dangling=<span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-删除没有使用的镜像"><a href="#3-3-删除没有使用的镜像" class="headerlink" title="3.3 删除没有使用的镜像"></a>3.3 删除没有使用的镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -q --filter <span class="string">&quot;dangling=true&quot;</span> | xargs -t --no-run-if-empty docker rmi</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-删除名称或标签为none的镜像"><a href="#3-4-删除名称或标签为none的镜像" class="headerlink" title="3.4 删除名称或标签为none的镜像"></a>3.4 删除名称或标签为none的镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f  `docker images | grep <span class="string">&#x27;&lt;none&gt;&#x27;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>`</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5-删除test-开头的镜像："><a href="#3-5-删除test-开头的镜像：" class="headerlink" title="3.5 删除test_开头的镜像："></a>3.5 删除<code>test_</code>开头的镜像：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images --format <span class="string">&quot;&#123;&#123;.Repository&#125;&#125;&quot;</span> |grep <span class="string">&quot;^test_*&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-6-删除所有-39-untagged-dangling-39-状态的镜像"><a href="#3-6-删除所有-39-untagged-dangling-39-状态的镜像" class="headerlink" title="3.6 删除所有&#39;untagged/dangling&#39; ()状态的镜像"></a>3.6 删除所有&#39;untagged/dangling&#39; ()状态的镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q -f dangling=<span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
 <h3 id="4-docker-compose"><a href="#4-docker-compose" class="headerlink" title="4. docker-compose"></a>4. docker-compose</h3><p>docker-compose up启动的容器会自动在后面加上<code>_1</code>，这个是为了scale。因为docker-compose是编排工具，不是只管理单个镜像。</p>
 <h4 id="4-1-docker-compose-yaml"><a href="#4-1-docker-compose-yaml" class="headerlink" title="4.1 docker-compose.yaml"></a>4.1 docker-compose.yaml</h4><p>valumes: $PWD:/app<br>就是把本地目录mount到容器中，相当于虚拟机的共享目录。</p>
 <p>In order to map the volume to the host filesystem, you need to specify which path on the host should be mapped to the volume. You can do this in the docker-compose file using the volumes parameter. (Note: you can create volumes using docker-compose without declaring them in the Dockerfile.)</p>
@@ -371,371 +231,194 @@
 <li><p>docker-compose up<br>Builds, (re)creates, starts, and attaches to containers for a service.<br>Linked services will be started, unless they are already running.<br>By default, docker-compose up will aggregate the output of each container and, when it exits, all containers will be stopped. Running docker-compose up -d, will start the containers in the background and leave them running.<br>By default, if there are existing containers for a service, docker-compose up will stop and recreate them (preserving mounted volumes with volumes-from), so that changes in docker-compose.yml are picked up. If you do not want containers stopped and recreated, use <code>docker-compose up --no-recreate</code>. This will still start any stopped containers, if needed.</p>
 </li>
 </ul>
-<p>Source: <a href="https://docs.docker.com/v1.5/compose/cli/" target="_blank" rel="noopener">https://docs.docker.com/v1.5/compose/cli/</a></p>
-<p><a href="https://stackoverflow.com/questions/33715499/what-is-the-difference-between-docker-compose-up-and-docker-compose-start" target="_blank" rel="noopener">https://stackoverflow.com/questions/33715499/what-is-the-difference-between-docker-compose-up-and-docker-compose-start</a></p>
+<p>Source: <a target="_blank" rel="noopener" href="https://docs.docker.com/v1.5/compose/cli/">https://docs.docker.com/v1.5/compose/cli/</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33715499/what-is-the-difference-between-docker-compose-up-and-docker-compose-start">https://stackoverflow.com/questions/33715499/what-is-the-difference-between-docker-compose-up-and-docker-compose-start</a></p>
 <p>不过我执行<code>docker-compose down</code>后，默认就把容器给删除了，下次还是只能用<code>docker-compose up</code>.在<code>docker-compose up</code>后，运行<code>docker-compose stop</code>可以停用容器，之后可以用<code>docker-compose start</code>再次启用容器。</p>
 <blockquote>
-<p>docker-compose up会读取docker-compose.yaml，所以它会更新配置，它也会关闭正在运行的容器，创建新容器。而docker-compose start是启用已有容器，不会更新容器。<br><a href="https://www.cnblogs.com/ityouknow/p/8648467.html" target="_blank" rel="noopener">https://www.cnblogs.com/ityouknow/p/8648467.html</a></p>
+<p>docker-compose up会读取docker-compose.yaml，所以它会更新配置，它也会关闭正在运行的容器，创建新容器。而docker-compose start是启用已有容器，不会更新容器。<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ityouknow/p/8648467.html">https://www.cnblogs.com/ityouknow/p/8648467.html</a></p>
 </blockquote>
 <h3 id="5-docker-for-mac"><a href="#5-docker-for-mac" class="headerlink" title="5 docker for mac"></a>5 docker for mac</h3><p>docker for mac是用了mac Os 中的hyperkit功能，不是使用vitural box.但是在做volumes时，映射到是虚拟机的/var/lib/docker/Data/xx目录，不是mac os的目录。如果是service中的volumes是可以用本地目录的。</p>
-<h4 id="5-1删除volume"><a href="#5-1删除volume" class="headerlink" title="5.1删除volume"></a>5.1删除volume</h4><p>我想要删除虚拟机中的/var/lib/docker/Data/xx中的某个目录。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看volume</span></span><br><span class="line">docker volume ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除volume</span></span><br><span class="line">docker volume rm <span class="variable">$volume_name</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理无用的volume</span></span><br><span class="line">docker volume prune <span class="comment"># 我清空了大约4.1G</span></span><br></pre></td></tr></table></figure></p>
-<p><a href="https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes</a></p>
+<h4 id="5-1删除volume"><a href="#5-1删除volume" class="headerlink" title="5.1删除volume"></a>5.1删除volume</h4><p>我想要删除虚拟机中的/var/lib/docker/Data/xx中的某个目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看volume</span></span><br><span class="line">docker volume <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除volume</span></span><br><span class="line">docker volume <span class="built_in">rm</span> <span class="variable">$volume_name</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理无用的volume</span></span><br><span class="line">docker volume prune <span class="comment"># 我清空了大约4.1G</span></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes">https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes</a></p>
 <blockquote>
 <p>查看mount映射信息,<code>docker inspect $container_id</code>，就可以发现volume的路径。<br>TODO:如果在<code>docker-compose.yml</code>中不指定ports,默认是不会导到宿主机器的，但是容器之间通讯是可以的。我的mysql连接不到，<code>lsof -i tcp:3306</code>，就是因为没有导出端口。</p>
 </blockquote>
-<h5 id="5-2-关闭docker-daemon"><a href="#5-2-关闭docker-daemon" class="headerlink" title="5.2 关闭docker daemon"></a>5.2 关闭docker daemon</h5><p>由于mac的docker是一个GUI程序，而且没有关闭按钮。所以可以从命令行关闭app.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭docker</span></span><br><span class="line">osascript -e <span class="string">'quit app "Docker"'</span></span><br><span class="line"><span class="comment"># 启动docker</span></span><br><span class="line">open -a Docker</span><br></pre></td></tr></table></figure></p>
-<p>refs:<br><a href="https://danielkorn.io/post/restart-docker-mac/" target="_blank" rel="noopener">https://danielkorn.io/post/restart-docker-mac/</a></p>
+<h5 id="5-2-关闭docker-daemon"><a href="#5-2-关闭docker-daemon" class="headerlink" title="5.2 关闭docker daemon"></a>5.2 关闭docker daemon</h5><p>由于mac的docker是一个GUI程序，而且没有关闭按钮。所以可以从命令行关闭app.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭docker</span></span><br><span class="line">osascript -e <span class="string">&#x27;quit app &quot;Docker&quot;&#x27;</span></span><br><span class="line"><span class="comment"># 启动docker</span></span><br><span class="line">open -a Docker</span><br></pre></td></tr></table></figure>
+<p>refs:<br><a target="_blank" rel="noopener" href="https://danielkorn.io/post/restart-docker-mac/">https://danielkorn.io/post/restart-docker-mac/</a></p>
 
-      
     </div>
 
-    <div>
-      
-        
+    
+    
+    
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/mac/" rel="tag"># mac</a>
-          
-            <a href="/tags/docker/" rel="tag"># docker</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/10/24/React-Native启动顺序/" rel="next" title="React-Native启动顺序">
-                <i class="fa fa-chevron-left"></i> React-Native启动顺序
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mac/" rel="tag"># mac</a>
+              <a href="/tags/docker/" rel="tag"># docker</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/27/iOS-storyboard/" rel="prev" title="iOS-storyboard">
-                iOS-storyboard <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/10/24/React-Native%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F/" rel="prev" title="React-Native启动顺序">
+      <i class="fa fa-chevron-left"></i> React-Native启动顺序
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/10/27/iOS-storyboard/" rel="next" title="iOS-storyboard">
+      iOS-storyboard <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本命令"><span class="nav-number">1.</span> <span class="nav-text">1. 基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-删除容器"><span class="nav-number">2.</span> <span class="nav-text">2. 删除容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-删除容器"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 删除容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-删除全部容器"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 删除全部容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-删除停止的容器"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 删除停止的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-停用并删除所有容器"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 停用并删除所有容器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-删除镜像"><span class="nav-number">3.</span> <span class="nav-text">3. 删除镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-删除镜像，先要删除对应容器"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 删除镜像，先要删除对应容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-删除所有镜像"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 删除所有镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-删除没有使用的镜像"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 删除没有使用的镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-删除名称或标签为none的镜像"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 删除名称或标签为none的镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-删除test-开头的镜像："><span class="nav-number">3.5.</span> <span class="nav-text">3.5 删除test_开头的镜像：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-6-删除所有-’untagged-dangling-’-状态的镜像"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 删除所有\’untagged/dangling\’ ()状态的镜像</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-docker-compose"><span class="nav-number">4.</span> <span class="nav-text">4. docker-compose</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-docker-compose-yaml"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 docker-compose.yaml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-docker-compose-up-vs-docker-compose-start"><span class="nav-number">4.2.</span> <span class="nav-text">4.3 docker-compose up vs docker-compose start</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-docker-for-mac"><span class="nav-number">5.</span> <span class="nav-text">5 docker for mac</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1删除volume"><span class="nav-number">5.1.</span> <span class="nav-text">5.1删除volume</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-关闭docker-daemon"><span class="nav-number">5.1.1.</span> <span class="nav-text">5.2 关闭docker daemon</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">1. 基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">2. 删除容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 删除容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E5%88%A0%E9%99%A4%E5%85%A8%E9%83%A8%E5%AE%B9%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 删除全部容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-%E5%88%A0%E9%99%A4%E5%81%9C%E6%AD%A2%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 删除停止的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-%E5%81%9C%E7%94%A8%E5%B9%B6%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E5%AE%B9%E5%99%A8"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 停用并删除所有容器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F"><span class="nav-number">3.</span> <span class="nav-text">3. 删除镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F%EF%BC%8C%E5%85%88%E8%A6%81%E5%88%A0%E9%99%A4%E5%AF%B9%E5%BA%94%E5%AE%B9%E5%99%A8"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 删除镜像，先要删除对应容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E9%95%9C%E5%83%8F"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 删除所有镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-%E5%88%A0%E9%99%A4%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8%E7%9A%84%E9%95%9C%E5%83%8F"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 删除没有使用的镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-%E5%88%A0%E9%99%A4%E5%90%8D%E7%A7%B0%E6%88%96%E6%A0%87%E7%AD%BE%E4%B8%BAnone%E7%9A%84%E9%95%9C%E5%83%8F"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 删除名称或标签为none的镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-%E5%88%A0%E9%99%A4test-%E5%BC%80%E5%A4%B4%E7%9A%84%E9%95%9C%E5%83%8F%EF%BC%9A"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 删除test_开头的镜像：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-6-%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89-39-untagged-dangling-39-%E7%8A%B6%E6%80%81%E7%9A%84%E9%95%9C%E5%83%8F"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 删除所有&#39;untagged&#x2F;dangling&#39; ()状态的镜像</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-docker-compose"><span class="nav-number">4.</span> <span class="nav-text">4. docker-compose</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-docker-compose-yaml"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 docker-compose.yaml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-docker-compose-up-vs-docker-compose-start"><span class="nav-number">4.2.</span> <span class="nav-text">4.3 docker-compose up vs docker-compose start</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-docker-for-mac"><span class="nav-number">5.</span> <span class="nav-text">5 docker for mac</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1%E5%88%A0%E9%99%A4volume"><span class="nav-number">5.1.</span> <span class="nav-text">5.1删除volume</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-%E5%85%B3%E9%97%ADdocker-daemon"><span class="nav-number">5.1.1.</span> <span class="nav-text">5.2 关闭docker daemon</span></a></li></ol></li></ol></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/10/26/mac-docker/';
-          this.page.identifier = '2018/10/26/mac-docker/';
-          this.page.title = 'mac-docker';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -749,19 +432,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 

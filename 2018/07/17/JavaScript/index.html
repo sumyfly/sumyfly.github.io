@@ -1,141 +1,49 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1.循环123456789101112131415161718192021222324// 1. for 普通循环for(let i= 0; i &amp;lt; length; i++)&amp;#123;&amp;#125;// 可以有brek, continue// 缺点: 这个最慢// 2. forEachArray.forEach// 缺点: 只对数组有效,不能break,continue// 3. for o">
+  <meta name="description" content="1.循环123456789101112131415161718192021222324&#x2F;&#x2F; 1. for 普通循环for(let i&#x3D; 0; i &lt; length; i++)&amp;#123;&amp;#125;&#x2F;&#x2F; 可以有brek, continue&#x2F;&#x2F; 缺点: 这个最慢&#x2F;&#x2F; 2. forEachArray.forEach&#x2F;&#x2F; 缺点: 只对数组有效,不能break,continue&#x2F;&#x2F; 3. for o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript">
 <meta property="og:url" content="http://yoursite.com/2018/07/17/JavaScript/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1.循环123456789101112131415161718192021222324// 1. for 普通循环for(let i= 0; i &amp;lt; length; i++)&amp;#123;&amp;#125;// 可以有brek, continue// 缺点: 这个最慢// 2. forEachArray.forEach// 缺点: 只对数组有效,不能break,continue// 3. for o">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.040Z">
+<meta property="og:description" content="1.循环123456789101112131415161718192021222324&#x2F;&#x2F; 1. for 普通循环for(let i&#x3D; 0; i &lt; length; i++)&amp;#123;&amp;#125;&#x2F;&#x2F; 可以有brek, continue&#x2F;&#x2F; 缺点: 这个最慢&#x2F;&#x2F; 2. forEachArray.forEach&#x2F;&#x2F; 缺点: 只对数组有效,不能break,continue&#x2F;&#x2F; 3. for o">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-07-17T08:27:17.000Z">
+<meta property="article:modified_time" content="2021-01-14T06:26:09.040Z">
+<meta property="article:author" content="qsl">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript">
-<meta name="twitter:description" content="1.循环123456789101112131415161718192021222324// 1. for 普通循环for(let i= 0; i &amp;lt; length; i++)&amp;#123;&amp;#125;// 可以有brek, continue// 缺点: 这个最慢// 2. forEachArray.forEach// 缺点: 只对数组有效,不能break,continue// 3. for o">
+
+<link rel="canonical" href="http://yoursite.com/2018/07/17/JavaScript/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/07/17/JavaScript/">
-
-
-
-
 
   <title>JavaScript | QSL</title>
   
@@ -143,214 +51,154 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">JavaScript</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-17T16:27:17+08:00">
-                2018-07-17
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <time title="Created: 2018-07-17 16:27:17" itemprop="dateCreated datePublished" datetime="2018-07-17T16:27:17+08:00">2018-07-17</time>
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/07/17/JavaScript/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/17/JavaScript/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
+        <h3 id="1-循环"><a href="#1-循环" class="headerlink" title="1.循环"></a>1.循环</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. for 普通循环</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i= <span class="number">0</span>; i &lt; length; i++)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以有brek, continue</span></span><br><span class="line"><span class="comment">// 缺点: 这个最慢</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. forEach</span></span><br><span class="line"><span class="title class_">Array</span>.<span class="property">forEach</span></span><br><span class="line"><span class="comment">// 缺点: 只对数组有效,不能break,continue</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. for of, 最新添加的功能，推荐使用</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> o <span class="keyword">of</span> arr)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 效率比较高</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. for in, 这个是用来遍历属性的，不推荐遍历数组。这个会把原型的属性也遍历。</span></span><br><span class="line"><span class="comment">// <span class="doctag">TODO:</span> check? 应该还是可遍历属性。</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> p <span class="keyword">in</span> objectA)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt; <span class="variable constant_">JS</span>其实没有数组，都是对象。</span><br></pre></td></tr></table></figure>
+<p>所以，应该优先使用for of,其次for 普通的循环。</p>
+<span id="more"></span>
 
-      
-        <h3 id="1-循环"><a href="#1-循环" class="headerlink" title="1.循环"></a>1.循环</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. for 普通循环</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i= <span class="number">0</span>; i &lt; length; i++)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以有brek, continue</span></span><br><span class="line"><span class="comment">// 缺点: 这个最慢</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. forEach</span></span><br><span class="line"><span class="built_in">Array</span>.forEach</span><br><span class="line"><span class="comment">// 缺点: 只对数组有效,不能break,continue</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. for of, 最新添加的功能，推荐使用</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> o <span class="keyword">of</span> arr)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 效率比较高</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. for in, 这个是用来遍历属性的，不推荐遍历数组。这个会把原型的属性也遍历。</span></span><br><span class="line"><span class="comment">// <span class="doctag">TODO:</span> check? 应该还是可遍历属性。</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> p <span class="keyword">in</span> objectA)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt; JS其实没有数组，都是对象。</span><br></pre></td></tr></table></figure>
-<p>所以，应该优先使用for of,其次for 普通的循环。<br><a id="more"></a></p>
 <h3 id="2-slice-splice"><a href="#2-slice-splice" class="headerlink" title="2. slice splice"></a>2. slice splice</h3><ul>
 <li>slice 从数组返回选定的元素,比如浅拷贝slice(0),返回的也是一个数组。<blockquote>
 <p>arrayObject.slice(start,end)</p>
@@ -361,15 +209,20 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="2-Array-操作的坑"><a href="#2-Array-操作的坑" class="headerlink" title="2. Array 操作的坑"></a>2. Array 操作的坑</h3><h4 id="2-1-push-不需要重新赋值，不能使用返回值赋值"><a href="#2-1-push-不需要重新赋值，不能使用返回值赋值" class="headerlink" title="2.1 push 不需要重新赋值，不能使用返回值赋值"></a>2.1 push 不需要重新赋值，不能使用返回值赋值</h4><p>js 的push 注意返回值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c = arr.push(<span class="number">3</span>) <span class="comment">// 这里push返回的不是数组，是传的参数，这个不是链式调用</span></span><br><span class="line"><span class="comment">//正确的调用</span></span><br><span class="line"><span class="comment">// arr.push(3)</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="2-2-concat-需要重新赋值，必须使用返回值赋值"><a href="#2-2-concat-需要重新赋值，必须使用返回值赋值" class="headerlink" title="2.2 concat 需要重新赋值，必须使用返回值赋值"></a>2.2 concat 需要重新赋值，必须使用返回值赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">const</span> b = [<span class="number">1</span>, <span class="number">2</span>].concat([<span class="number">3</span>, <span class="number">4</span>]) </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a: '</span>, a) <span class="comment">// [1, 2]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'b: '</span>, b) <span class="comment">// [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-4-splice-不需要重新赋值，不能使用返回值赋值"><a href="#2-4-splice-不需要重新赋值，不能使用返回值赋值" class="headerlink" title="2.4 splice 不需要重新赋值，不能使用返回值赋值"></a>2.4 splice 不需要重新赋值，不能使用返回值赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> b = arr.splice(<span class="number">1</span>,<span class="number">1</span>,<span class="number">3</span>) <span class="comment">// 错误, arr.splice(1,1,3) 返回的[2], 原位置的值</span></span><br><span class="line"><span class="comment">// 应该是</span></span><br><span class="line"><span class="comment">// arr.splice(1,1,3)</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [1, 3]</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-5-slice-需要重新赋值，必须使用返回值赋值"><a href="#2-5-slice-需要重新赋值，必须使用返回值赋值" class="headerlink" title="2.5 slice 需要重新赋值，必须使用返回值赋值"></a>2.5 slice 需要重新赋值，必须使用返回值赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> b = arr.slice(<span class="number">1</span>,<span class="number">2</span>) </span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [1, 2] </span></span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// [2]</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Array-操作的坑"><a href="#2-Array-操作的坑" class="headerlink" title="2. Array 操作的坑"></a>2. Array 操作的坑</h3><h4 id="2-1-push-不需要重新赋值，不能使用返回值赋值"><a href="#2-1-push-不需要重新赋值，不能使用返回值赋值" class="headerlink" title="2.1 push 不需要重新赋值，不能使用返回值赋值"></a>2.1 push 不需要重新赋值，不能使用返回值赋值</h4><p>js 的push 注意返回值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c = arr.<span class="title function_">push</span>(<span class="number">3</span>) <span class="comment">// 这里push返回的不是数组，是传的参数，这个不是链式调用</span></span><br><span class="line"><span class="comment">//正确的调用</span></span><br><span class="line"><span class="comment">// arr.push(3)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr) <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-concat-需要重新赋值，必须使用返回值赋值"><a href="#2-2-concat-需要重新赋值，必须使用返回值赋值" class="headerlink" title="2.2 concat 需要重新赋值，必须使用返回值赋值"></a>2.2 concat 需要重新赋值，必须使用返回值赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">const</span> b = [<span class="number">1</span>, <span class="number">2</span>].<span class="title function_">concat</span>([<span class="number">3</span>, <span class="number">4</span>]) </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;a: &#x27;</span>, a) <span class="comment">// [1, 2]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;b: &#x27;</span>, b) <span class="comment">// [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-splice-不需要重新赋值，不能使用返回值赋值"><a href="#2-4-splice-不需要重新赋值，不能使用返回值赋值" class="headerlink" title="2.4 splice 不需要重新赋值，不能使用返回值赋值"></a>2.4 splice 不需要重新赋值，不能使用返回值赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> b = arr.<span class="title function_">splice</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">3</span>) <span class="comment">// 错误, arr.splice(1,1,3) 返回的[2], 原位置的值</span></span><br><span class="line"><span class="comment">// 应该是</span></span><br><span class="line"><span class="comment">// arr.splice(1,1,3)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr) <span class="comment">// [1, 3]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-5-slice-需要重新赋值，必须使用返回值赋值"><a href="#2-5-slice-需要重新赋值，必须使用返回值赋值" class="headerlink" title="2.5 slice 需要重新赋值，必须使用返回值赋值"></a>2.5 slice 需要重新赋值，必须使用返回值赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> b = arr.<span class="title function_">slice</span>(<span class="number">1</span>,<span class="number">2</span>) </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr) <span class="comment">// [1, 2] </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b) <span class="comment">// [2]</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>slice不修改原数组，splice修改原数组。还有一个区别，第二个参数：slice是下标，可以越界（因为它不包含），splice是长度，不可以越界。</p>
 </blockquote>
 <h3 id="3-null-vs-undefined"><a href="#3-null-vs-undefined" class="headerlink" title="3.null vs undefined"></a>3.null vs undefined</h3><p>null, undefined都是primitive type.但是有个错误，typeof null === ‘object’。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span> <span class="comment">// true</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span> ==== <span class="literal">null</span></span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+
 <ol>
 <li>null表示一个属性定义了，但是有目的的设为null;undefined表示这个属性没有。</li>
 <li>一般初始化时设为null,然后判断时直接用=== null判断有没有设置值。</li>
@@ -378,12 +231,15 @@
 </blockquote>
 </li>
 </ol>
-<p><a href="https://stackoverflow.com/questions/6604749/what-reason-is-there-to-use-null-instead-of-undefined-in-javascript" target="_blank" rel="noopener">https://stackoverflow.com/questions/6604749/what-reason-is-there-to-use-null-instead-of-undefined-in-javascript</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/6604749/what-reason-is-there-to-use-null-instead-of-undefined-in-javascript">https://stackoverflow.com/questions/6604749/what-reason-is-there-to-use-null-instead-of-undefined-in-javascript</a></p>
 <p>Summary<br>null is an assigned value. It means nothing.<br>undefined typically means a variable has been declared but not defined yet.<br>null and undefined are falsy values.<br>null and undefined are both primitives. However an error shows that typeof null = object.<br>null !== undefined but null == undefined.</p>
-<p><a href="https://codeburst.io/javascript-null-vs-undefined-20f955215a2" target="_blank" rel="noopener">https://codeburst.io/javascript-null-vs-undefined-20f955215a2</a></p>
-<h3 id="4-三目运算赋初始值"><a href="#4-三目运算赋初始值" class="headerlink" title="4. 三目运算赋初始值"></a>4. 三目运算赋初始值</h3><p>我经常这么用<code>const a = b ? b : defaultValue</code>,这个其实不是很好的习惯。记住这里b的运算时及时布尔值，而可能我们需要的是undefined这种情况，像0,null,false这中我们给了值，但是是falsy的值，我们如果用了默认defaultValue,就会产生预料之外的情况，就可能有bug.<br>我后来觉得三目运算赋值比<code>&amp;&amp;</code>赋值好些,<code>&amp;&amp;</code>返回的可能是第一个值，更加难以觉察到bug。比如<code>const a = b &amp;&amp; String(b)</code>, 当b为0时，其实我希望是’0’，而这行代码返回0，就是bug。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// !! 和 Boolean功能一样，但是React中用Boolean好一些，因为在jsx中用!!0会有bug.</span></span><br><span class="line"><span class="comment">// 下面都是primitive value</span></span><br><span class="line">!!<span class="number">0</span> <span class="comment">// false</span></span><br><span class="line">!!<span class="literal">null</span> <span class="comment">// false</span></span><br><span class="line">!!<span class="literal">undefined</span> <span class="comment">// false</span></span><br><span class="line">!!<span class="string">''</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// []是个object,所以空数组也是true</span></span><br><span class="line">!![] <span class="comment">// true</span></span><br><span class="line">!!&#123;&#125; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象的比较是比较引用，如果要deep compare要专门的库函数，如lodash.isEqual</span></span><br><span class="line">a = &#123;&#125;</span><br><span class="line">b = &#123;&#125;</span><br><span class="line">c = a</span><br><span class="line"></span><br><span class="line">a == b <span class="comment">// false</span></span><br><span class="line">a === b <span class="comment">//false</span></span><br><span class="line">a == c <span class="comment">// true</span></span><br><span class="line">a === c <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 容易出错的判断</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">-1</span>) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">0</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">1</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-immutable-List"><a href="#5-immutable-List" class="headerlink" title="5. immutable List"></a>5. immutable List</h3><p>Immutable.List和原生的数组是有区别，前者可以链式调用。而且splice还<strong>不修改</strong>原List,因为不可变的特性！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = List.of(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>)</span><br><span class="line"><span class="keyword">const</span> r = list.splice(<span class="number">1</span>, <span class="number">1</span>, <span class="string">'f'</span>).splice(<span class="number">2</span>, <span class="number">1</span>, <span class="string">'g'</span>)</span><br><span class="line"><span class="built_in">console</span>.warn(<span class="string">'result'</span>, r.toJS(), list.toJS())</span><br><span class="line"><span class="comment">// result [ 'a', 'f', 'g', 'd' ] [ 'a', 'b', 'c', 'd' ]</span></span><br></pre></td></tr></table></figure></p>
+<p><a target="_blank" rel="noopener" href="https://codeburst.io/javascript-null-vs-undefined-20f955215a2">https://codeburst.io/javascript-null-vs-undefined-20f955215a2</a></p>
+<h3 id="4-三目运算赋初始值"><a href="#4-三目运算赋初始值" class="headerlink" title="4. 三目运算赋初始值"></a>4. 三目运算赋初始值</h3><p>我经常这么用<code> const a = b ? b : defaultValue</code>,这个其实不是很好的习惯。记住这里b的运算时及时布尔值，而可能我们需要的是undefined这种情况，像0,null,false这中我们给了值，但是是falsy的值，我们如果用了默认defaultValue,就会产生预料之外的情况，就可能有bug.<br>我后来觉得三目运算赋值比<code>&amp;&amp;</code>赋值好些,<code>&amp;&amp;</code>返回的可能是第一个值，更加难以觉察到bug。比如<code>const a = b &amp;&amp; String(b)</code>, 当b为0时，其实我希望是’0’，而这行代码返回0，就是bug。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// !! 和 Boolean功能一样，但是React中用Boolean好一些，因为在jsx中用!!0会有bug.</span></span><br><span class="line"><span class="comment">// 下面都是primitive value</span></span><br><span class="line">!!<span class="number">0</span> <span class="comment">// false</span></span><br><span class="line">!!<span class="literal">null</span> <span class="comment">// false</span></span><br><span class="line">!!<span class="literal">undefined</span> <span class="comment">// false</span></span><br><span class="line">!!<span class="string">&#x27;&#x27;</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// []是个object,所以空数组也是true</span></span><br><span class="line">!![] <span class="comment">// true</span></span><br><span class="line">!!&#123;&#125; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象的比较是比较引用，如果要deep compare要专门的库函数，如lodash.isEqual</span></span><br><span class="line">a = &#123;&#125;</span><br><span class="line">b = &#123;&#125;</span><br><span class="line">c = a</span><br><span class="line"></span><br><span class="line">a == b <span class="comment">// false</span></span><br><span class="line">a === b <span class="comment">//false</span></span><br><span class="line">a == c <span class="comment">// true</span></span><br><span class="line">a === c <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 容易出错的判断</span></span><br><span class="line"><span class="title class_">Boolean</span>(-<span class="number">1</span>) <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Boolean</span>(<span class="number">0</span>) <span class="comment">// false</span></span><br><span class="line"><span class="title class_">Boolean</span>(<span class="number">1</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-immutable-List"><a href="#5-immutable-List" class="headerlink" title="5. immutable List"></a>5. immutable List</h3><p>Immutable.List和原生的数组是有区别，前者可以链式调用。而且splice还<strong>不修改</strong>原List,因为不可变的特性！</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = <span class="title class_">List</span>.<span class="title function_">of</span>(<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> r = list.<span class="title function_">splice</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="string">&#x27;f&#x27;</span>).<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">1</span>, <span class="string">&#x27;g&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&#x27;result&#x27;</span>, r.<span class="title function_">toJS</span>(), list.<span class="title function_">toJS</span>())</span><br><span class="line"><span class="comment">// result [ &#x27;a&#x27;, &#x27;f&#x27;, &#x27;g&#x27;, &#x27;d&#x27; ] [ &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27; ]</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="6-Object-values的key排序问题"><a href="#6-Object-values的key排序问题" class="headerlink" title="6. Object.values的key排序问题"></a>6. Object.values的key排序问题</h3><p>一般来说HashpMap的遍历的顺序都是不确定的，但是JavaScript的顺序是确定的。如果是数字key那么就是按数字大小排序；如果是string，那么按照加入object的顺序排序；如果是Symbols,也是按照加入object的顺序排序。</p>
 <p>Own Property Keys:</p>
 <ul>
@@ -395,351 +251,176 @@
 </li>
 <li>Used by: Object.assign(), Object.defineProperties(), Object.getOwnPropertyNames(), Object.getOwnPropertySymbols(), Reflect.ownKeys()</li>
 </ul>
-<p><a href="https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key/31102605#31102605" target="_blank" rel="noopener">https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key/31102605#31102605</a><br><a href="https://exploringjs.com/es6/ch_oop-besides-classes.html#_traversal-order-of-properties" target="_blank" rel="noopener">https://exploringjs.com/es6/ch_oop-besides-classes.html#_traversal-order-of-properties</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key/31102605#31102605">https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key/31102605#31102605</a><br><a target="_blank" rel="noopener" href="https://exploringjs.com/es6/ch_oop-besides-classes.html#_traversal-order-of-properties">https://exploringjs.com/es6/ch_oop-besides-classes.html#_traversal-order-of-properties</a></p>
 <h3 id="7-Array"><a href="#7-Array" class="headerlink" title="7. Array"></a>7. Array</h3><p>JavaScript的数组其实是个Object，它的key是数字值的string。JS只有6种类型，其中5中基本类型（boolean, number, string,null, undefined）和 object。<br>但是typeof null == ‘object’。这是一个坑。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// 'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">// 'undefined'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = []</span><br><span class="line">a[<span class="number">10000</span>] = <span class="number">1</span></span><br><span class="line">a.lenght <span class="comment">// 10001 这个数组浪费太多了，所以应该用map。</span></span><br></pre></td></tr></table></figure>
-      
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// &#x27;object&#x27;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">// &#x27;undefined&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = []</span><br><span class="line">a[<span class="number">10000</span>] = <span class="number">1</span></span><br><span class="line">a.<span class="property">lenght</span> <span class="comment">// 10001 这个数组浪费太多了，所以应该用map。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
-    <div>
-      
+    
+    
+    
+
+      <footer class="post-footer">
+
         
 
-      
-    </div>
 
-    <div>
-      
         
-
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/07/12/Android-Kotlin/" rel="prev" title="Android-Kotlin">
+      <i class="fa fa-chevron-left"></i> Android-Kotlin
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/07/22/React-Native%E5%B7%A5%E5%85%B7/" rel="next" title="React-Native工具">
+      React-Native工具 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/07/12/Android-Kotlin/" rel="next" title="Android-Kotlin">
-                <i class="fa fa-chevron-left"></i> Android-Kotlin
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/22/React-Native工具/" rel="prev" title="React-Native工具">
-                React-Native工具 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-循环"><span class="nav-number">1.</span> <span class="nav-text">1.循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-slice-splice"><span class="nav-number">2.</span> <span class="nav-text">2. slice splice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Array-操作的坑"><span class="nav-number">3.</span> <span class="nav-text">2. Array 操作的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-push-不需要重新赋值，不能使用返回值赋值"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 push 不需要重新赋值，不能使用返回值赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-concat-需要重新赋值，必须使用返回值赋值"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 concat 需要重新赋值，必须使用返回值赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-splice-不需要重新赋值，不能使用返回值赋值"><span class="nav-number">3.3.</span> <span class="nav-text">2.4 splice 不需要重新赋值，不能使用返回值赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-slice-需要重新赋值，必须使用返回值赋值"><span class="nav-number">3.4.</span> <span class="nav-text">2.5 slice 需要重新赋值，必须使用返回值赋值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-null-vs-undefined"><span class="nav-number">4.</span> <span class="nav-text">3.null vs undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-三目运算赋初始值"><span class="nav-number">5.</span> <span class="nav-text">4. 三目运算赋初始值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-immutable-List"><span class="nav-number">6.</span> <span class="nav-text">5. immutable List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Object-values的key排序问题"><span class="nav-number">7.</span> <span class="nav-text">6. Object.values的key排序问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Array"><span class="nav-number">8.</span> <span class="nav-text">7. Array</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.</span> <span class="nav-text">1.循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-slice-splice"><span class="nav-number">2.</span> <span class="nav-text">2. slice splice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Array-%E6%93%8D%E4%BD%9C%E7%9A%84%E5%9D%91"><span class="nav-number">3.</span> <span class="nav-text">2. Array 操作的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-push-%E4%B8%8D%E9%9C%80%E8%A6%81%E9%87%8D%E6%96%B0%E8%B5%8B%E5%80%BC%EF%BC%8C%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E8%BF%94%E5%9B%9E%E5%80%BC%E8%B5%8B%E5%80%BC"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 push 不需要重新赋值，不能使用返回值赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-concat-%E9%9C%80%E8%A6%81%E9%87%8D%E6%96%B0%E8%B5%8B%E5%80%BC%EF%BC%8C%E5%BF%85%E9%A1%BB%E4%BD%BF%E7%94%A8%E8%BF%94%E5%9B%9E%E5%80%BC%E8%B5%8B%E5%80%BC"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 concat 需要重新赋值，必须使用返回值赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-splice-%E4%B8%8D%E9%9C%80%E8%A6%81%E9%87%8D%E6%96%B0%E8%B5%8B%E5%80%BC%EF%BC%8C%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E8%BF%94%E5%9B%9E%E5%80%BC%E8%B5%8B%E5%80%BC"><span class="nav-number">3.3.</span> <span class="nav-text">2.4 splice 不需要重新赋值，不能使用返回值赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-slice-%E9%9C%80%E8%A6%81%E9%87%8D%E6%96%B0%E8%B5%8B%E5%80%BC%EF%BC%8C%E5%BF%85%E9%A1%BB%E4%BD%BF%E7%94%A8%E8%BF%94%E5%9B%9E%E5%80%BC%E8%B5%8B%E5%80%BC"><span class="nav-number">3.4.</span> <span class="nav-text">2.5 slice 需要重新赋值，必须使用返回值赋值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-null-vs-undefined"><span class="nav-number">4.</span> <span class="nav-text">3.null vs undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E8%B5%8B%E5%88%9D%E5%A7%8B%E5%80%BC"><span class="nav-number">5.</span> <span class="nav-text">4. 三目运算赋初始值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-immutable-List"><span class="nav-number">6.</span> <span class="nav-text">5. immutable List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Object-values%E7%9A%84key%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">6. Object.values的key排序问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Array"><span class="nav-number">8.</span> <span class="nav-text">7. Array</span></a></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/07/17/JavaScript/';
-          this.page.identifier = '2018/07/17/JavaScript/';
-          this.page.title = 'JavaScript';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -753,19 +434,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 

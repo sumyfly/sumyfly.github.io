@@ -1,142 +1,51 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="mac,emacs,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1. 安装emacs使用brew1brew install emacs --with-cocoa C-h t # 打开tutorial 2. 配置emacs原来是用的prelude,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:  Emacs：最好的Python编辑器？注意有几处不同，elpy的ipython配置现在是12(setq python-shell">
-<meta name="keywords" content="mac,emacs">
+  <meta name="description" content="1. 安装emacs使用brew 1brew install emacs --with-cocoa  C-h t # 打开tutorial 2. 配置emacs原来是用的prelude,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:  Emacs：最好的Python编辑器？注意有几处不同，elpy的ipython配置现在是12(setq python-she">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mac-emacs">
 <meta property="og:url" content="http://yoursite.com/2018/01/13/mac-emacs/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1. 安装emacs使用brew1brew install emacs --with-cocoa C-h t # 打开tutorial 2. 配置emacs原来是用的prelude,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:  Emacs：最好的Python编辑器？注意有几处不同，elpy的ipython配置现在是12(setq python-shell">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.060Z">
+<meta property="og:description" content="1. 安装emacs使用brew 1brew install emacs --with-cocoa  C-h t # 打开tutorial 2. 配置emacs原来是用的prelude,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:  Emacs：最好的Python编辑器？注意有几处不同，elpy的ipython配置现在是12(setq python-she">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-01-13T12:29:10.000Z">
+<meta property="article:modified_time" content="2021-01-14T06:26:09.060Z">
+<meta property="article:author" content="qsl">
+<meta property="article:tag" content="mac">
+<meta property="article:tag" content="emacs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac-emacs">
-<meta name="twitter:description" content="1. 安装emacs使用brew1brew install emacs --with-cocoa C-h t # 打开tutorial 2. 配置emacs原来是用的prelude,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:  Emacs：最好的Python编辑器？注意有几处不同，elpy的ipython配置现在是12(setq python-shell">
+
+<link rel="canonical" href="http://yoursite.com/2018/01/13/mac-emacs/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/01/13/mac-emacs/">
-
-
-
-
 
   <title>mac-emacs | QSL</title>
   
@@ -144,220 +53,160 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/mac-emacs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">mac-emacs</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          mac-emacs
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-13T20:29:10+08:00">
-                2018-01-13
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <time title="Created: 2018-01-13 20:29:10" itemprop="dateCreated datePublished" datetime="2018-01-13T20:29:10+08:00">2018-01-13</time>
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/01/13/mac-emacs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/13/mac-emacs/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
+        <h3 id="1-安装emacs"><a href="#1-安装emacs" class="headerlink" title="1. 安装emacs"></a>1. 安装emacs</h3><p>使用brew</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install emacs --with-cocoa</span><br></pre></td></tr></table></figure>
 
-      
-        <h3 id="1-安装emacs"><a href="#1-安装emacs" class="headerlink" title="1. 安装emacs"></a>1. 安装emacs</h3><p>使用brew<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install emacs --with-cocoa</span><br></pre></td></tr></table></figure></p>
 <p>C-h t # 打开tutorial</p>
-<h3 id="2-配置emacs"><a href="#2-配置emacs" class="headerlink" title="2. 配置emacs"></a>2. 配置emacs</h3><p>原来是用的<a href="https://github.com/bbatsov/prelude" target="_blank" rel="noopener">prelude</a>,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:</p>
+<h3 id="2-配置emacs"><a href="#2-配置emacs" class="headerlink" title="2. 配置emacs"></a>2. 配置emacs</h3><p>原来是用的<a target="_blank" rel="noopener" href="https://github.com/bbatsov/prelude">prelude</a>,后来发现太重，反应有点慢。因为我主要是为了python，所以重新配置。参考了几篇文章:</p>
 <ul>
-<li><a href="http://codingpy.com/article/emacs-the-best-python-editor/" target="_blank" rel="noopener">Emacs：最好的Python编辑器？</a><br>注意有几处不同，elpy的ipython配置现在是<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(setq python-shell-interpreter &quot;ipython&quot;</span><br><span class="line">      python-shell-interpreter-args &quot;-i --simple-prompt&quot;)</span><br></pre></td></tr></table></figure>
-</li>
+<li><a target="_blank" rel="noopener" href="http://codingpy.com/article/emacs-the-best-python-editor/">Emacs：最好的Python编辑器？</a><br>注意有几处不同，elpy的ipython配置现在是<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(setq python-shell-interpreter &quot;ipython&quot;</span><br><span class="line">      python-shell-interpreter-args &quot;-i --simple-prompt&quot;)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
+
 <h3 id="2-1-elpy"><a href="#2-1-elpy" class="headerlink" title="2.1 elpy"></a>2.1 elpy</h3><ul>
 <li>看elpy的配置，M-x elpy-config，查看python的版本，package的情况。</li>
 <li>激活virtualenv, M-x pyvenv-activate, 输入你的virtualenv目录即可，不需要到它的bin目录</li>
@@ -368,8 +217,10 @@
 <li><p>备份文件（Backup files）<br>备份文件是在第一次保存的时候，如果保存的文件已经存在，Emacs会自动将当前已经存在的文件重命名作为备份文件，并将当前buffer的内容写入同名的文件中来替代原来的文件。而备份文件使用的是一个“～”作为后缀(如：file-name~)。</p>
 </li>
 </ul>
-<p><a href="https://www.emacswiki.org/emacs/AutoSave" target="_blank" rel="noopener">https://www.emacswiki.org/emacs/AutoSave</a><br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">defconst</span> emacs-tmp-dir (<span class="name">expand-file-name</span> (<span class="name">format</span> <span class="string">"emacs%d"</span> (<span class="name">user-uid</span>)) temporary-file-directory))</span><br><span class="line">(<span class="name">setq</span> backup-directory-alist</span><br><span class="line">    `((<span class="string">".*"</span> . ,emacs-tmp-dir)))</span><br><span class="line">(<span class="name">setq</span> auto-save-file-name-transforms</span><br><span class="line">    `((<span class="string">".*"</span> ,emacs-tmp-dir <span class="literal">t</span>)))</span><br><span class="line">(<span class="name">setq</span> auto-save-list-file-prefix</span><br><span class="line">    emacs-tmp-dir)</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://blog.useasp.net/archive/2014/07/18/emacs-temporary-files-and-backup-files-for-edited-file.aspx" target="_blank" rel="noopener">Emacs的临时文件和备份文件</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.emacswiki.org/emacs/AutoSave">https://www.emacswiki.org/emacs/AutoSave</a></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">defconst</span> emacs-tmp-dir (<span class="name">expand-file-name</span> (<span class="name">format</span> <span class="string">&quot;emacs%d&quot;</span> (<span class="name">user-uid</span>)) temporary-file-directory))</span><br><span class="line">(<span class="name">setq</span> backup-directory-alist</span><br><span class="line">    `((<span class="string">&quot;.*&quot;</span> . ,emacs-tmp-dir)))</span><br><span class="line">(<span class="name">setq</span> auto-save-file-name-transforms</span><br><span class="line">    `((<span class="string">&quot;.*&quot;</span> ,emacs-tmp-dir <span class="literal">t</span>)))</span><br><span class="line">(<span class="name">setq</span> auto-save-list-file-prefix</span><br><span class="line">    emacs-tmp-dir)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://blog.useasp.net/archive/2014/07/18/emacs-temporary-files-and-backup-files-for-edited-file.aspx">Emacs的临时文件和备份文件</a></p>
 <h4 id="3-emacs-快捷键"><a href="#3-emacs-快捷键" class="headerlink" title="3 emacs 快捷键"></a>3 emacs 快捷键</h4><h5 id="3-1-C-j-执行lisp"><a href="#3-1-C-j-执行lisp" class="headerlink" title="3.1 C-j 执行lisp"></a>3.1 C-j 执行lisp</h5><p>打开一个emacs的缓冲区，如默认的临时缓冲区scratch,输入lisp命令 (xxx),在末尾 C-j就会执行。</p>
 <h5 id="3-2-C-c-C-c"><a href="#3-2-C-c-C-c" class="headerlink" title="3.2 C-c C-c"></a>3.2 C-c C-c</h5><p>执行python</p>
 <h5 id="3-3-C-c-v"><a href="#3-3-C-c-v" class="headerlink" title="3.3 C-c ! v"></a>3.3 C-c ! v</h5><p>in python-file buffer and see that flake8 imported from virtualenv</p>
@@ -377,18 +228,22 @@
 <h5 id="3-5-矩形操作"><a href="#3-5-矩形操作" class="headerlink" title="3.5 矩形操作"></a>3.5 矩形操作</h5><p>开头都是C-x r,先选中起点,C-@,然后移动光标到对角线。<br>C-x r r 复制一个矩形块<br>C-x r k 剪切一个矩形块<br>C-x r y 粘贴一个矩形块<br>C-x r o 插入一个矩形块<br>C-x r c 清除一个矩形块，使其变成空白<br>C-x r t 在选定的区域的所有列前插入光标，输入字符</p>
 <h3 id="4-jupyter"><a href="#4-jupyter" class="headerlink" title="4. jupyter"></a>4. jupyter</h3><p>jupyter notebook 原来是ipython notebook，因为原来支持ipython,现在的支持语言多了，有了一个kernel的概念，用pip3下载，默认就是python3。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyter</span><br></pre></td></tr></table></figure>
+
 <p>安装成功后配置，先配置jupyter server</p>
-<p>卸载<code>jupyter</code><br><a href="https://stackoverflow.com/questions/33052232/how-to-uninstall-jupyter" target="_blank" rel="noopener">https://stackoverflow.com/questions/33052232/how-to-uninstall-jupyter</a></p>
+<p>卸载<code>jupyter</code><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33052232/how-to-uninstall-jupyter">https://stackoverflow.com/questions/33052232/how-to-uninstall-jupyter</a></p>
 <h4 id="4-1-jupyter-server-配置文件"><a href="#4-1-jupyter-server-配置文件" class="headerlink" title="4.1 jupyter server 配置文件"></a>4.1 jupyter server 配置文件</h4><p>先生成一个config.py文件，<code>jupyter notebook --generate-config</code>,在~/.jupyter下面就会有一个jupyter_notebook_config.py文件，修改其中的参数。</p>
 <h5 id="4-1-1-修改密码"><a href="#4-1-1-修改密码" class="headerlink" title="4.1.1. 修改密码"></a>4.1.1. 修改密码</h5><p><code>from notebook.auth import passwd; passwd()</code>,输入一个你想使用的密码，会产生一个长的字符串结果，拷贝这个字符串到c.NotebookApp.password的值中</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.password=<span class="string">''</span> <span class="comment">#这个不是原始密码，而是靠notebo.auth.passwd生成的。</span></span><br><span class="line">c.NotebookApp.password_required = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.password=<span class="string">&#x27;&#x27;</span> <span class="comment">#这个不是原始密码，而是靠notebo.auth.passwd生成的。</span></span><br><span class="line">c.NotebookApp.password_required = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
 <h5 id="4-1-2-配置端口"><a href="#4-1-2-配置端口" class="headerlink" title="4.1.2 配置端口"></a>4.1.2 配置端口</h5><p>c.NotebookApp.port = 7812</p>
 <h5 id="4-1-3-ssh"><a href="#4-1-3-ssh" class="headerlink" title="4.1.3 ssh"></a>4.1.3 ssh</h5><ul>
-<li>生成秘钥<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 修改jupyter_notebook_config.py</span><br><span class="line">``` python</span><br><span class="line">c.NotebookApp.certfile = u<span class="string">'/absolute/path/to/your/certificate/mycert.pem'</span></span><br><span class="line">c.NotebookApp.keyfile = u<span class="string">'/absolute/path/to/your/certificate/mykey.key'</span></span><br><span class="line"><span class="comment"># Set ip to '*' to bind on all interfaces (ips) for the public server</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">'*'</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>生成秘钥<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>我没有使用ssh，因为emacs连接时失败了，所以我关掉了。</p>
-<p><a href="http://blog.csdn.net/jerr__y/article/details/53248570" target="_blank" rel="noopener">ipython notebook使用教程</a></p>
+<ul>
+<li>修改jupyter_notebook_config.py<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.certfile = <span class="string">u&#x27;/absolute/path/to/your/certificate/mycert.pem&#x27;</span></span><br><span class="line">c.NotebookApp.keyfile = <span class="string">u&#x27;/absolute/path/to/your/certificate/mykey.key&#x27;</span></span><br><span class="line"><span class="comment"># Set ip to &#x27;*&#x27; to bind on all interfaces (ips) for the public server</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">&#x27;*&#x27;</span></span><br></pre></td></tr></table></figure>
+我没有使用ssh，因为emacs连接时失败了，所以我关掉了。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://blog.csdn.net/jerr__y/article/details/53248570">ipython notebook使用教程</a></p>
 <h3 id="5-emacs-intergrate-jupyter"><a href="#5-emacs-intergrate-jupyter" class="headerlink" title="5. emacs intergrate jupyter"></a>5. emacs intergrate jupyter</h3><p>记得使用顺序</p>
 <ol>
 <li>M-x ein: notebooklist-login,输入port,password，成功后进入第二步。</li>
@@ -405,358 +260,179 @@
 <li>ptyon -m ipdb test.py 或者 python -m pdb test.py</li>
 <li>在ipdb的buffer中操作，设置断点需要插入代码(<code>import ipdb; ipdb.set_trace()</code>)，调试完再删除。</li>
 </ul>
-<p><a href="http://wenshanren.org/?p=348，参考这个。" target="_blank" rel="noopener">http://wenshanren.org/?p=348，参考这个。</a><br><a href="http://wikemacs.org/wiki/Python" target="_blank" rel="noopener">http://wikemacs.org/wiki/Python</a></p>
+<p><a target="_blank" rel="noopener" href="http://wenshanren.org/?p=348%EF%BC%8C%E5%8F%82%E8%80%83%E8%BF%99%E4%B8%AA%E3%80%82">http://wenshanren.org/?p=348，参考这个。</a><br><a target="_blank" rel="noopener" href="http://wikemacs.org/wiki/Python">http://wikemacs.org/wiki/Python</a></p>
 
-      
     </div>
 
-    <div>
-      
-        
+    
+    
+    
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/mac/" rel="tag"># mac</a>
-          
-            <a href="/tags/emacs/" rel="tag"># emacs</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/01/12/mac-node/" rel="next" title="mac-node">
-                <i class="fa fa-chevron-left"></i> mac-node
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mac/" rel="tag"># mac</a>
+              <a href="/tags/emacs/" rel="tag"># emacs</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/08/typescript-debug/" rel="prev" title="typescript-debug">
-                typescript-debug <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/01/12/mac-node/" rel="prev" title="mac-node">
+      <i class="fa fa-chevron-left"></i> mac-node
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/02/08/typescript-debug/" rel="next" title="typescript-debug">
+      typescript-debug <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装emacs"><span class="nav-number">1.</span> <span class="nav-text">1. 安装emacs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置emacs"><span class="nav-number">2.</span> <span class="nav-text">2. 配置emacs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-elpy"><span class="nav-number">3.</span> <span class="nav-text">2.1 elpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-emacs-临时文件和备份文件"><span class="nav-number">4.</span> <span class="nav-text">2.2 emacs 临时文件和备份文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-emacs-快捷键"><span class="nav-number">4.1.</span> <span class="nav-text">3 emacs 快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-C-j-执行lisp"><span class="nav-number">4.1.1.</span> <span class="nav-text">3.1 C-j 执行lisp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-C-c-C-c"><span class="nav-number">4.1.2.</span> <span class="nav-text">3.2 C-c C-c</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-C-c-v"><span class="nav-number">4.1.3.</span> <span class="nav-text">3.3 C-c ! v</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-剪切，复制，粘贴"><span class="nav-number">4.1.4.</span> <span class="nav-text">3.4 剪切，复制，粘贴</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-5-矩形操作"><span class="nav-number">4.1.5.</span> <span class="nav-text">3.5 矩形操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-jupyter"><span class="nav-number">5.</span> <span class="nav-text">4. jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-jupyter-server-配置文件"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 jupyter server 配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-1-修改密码"><span class="nav-number">5.1.1.</span> <span class="nav-text">4.1.1. 修改密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-2-配置端口"><span class="nav-number">5.1.2.</span> <span class="nav-text">4.1.2 配置端口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-3-ssh"><span class="nav-number">5.1.3.</span> <span class="nav-text">4.1.3 ssh</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-emacs-intergrate-jupyter"><span class="nav-number">6.</span> <span class="nav-text">5. emacs intergrate jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-ein的快捷键"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 ein的快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-1-保存notebook"><span class="nav-number">6.1.1.</span> <span class="nav-text">5.1.1 保存notebook</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-2-重命名notebook"><span class="nav-number">6.1.2.</span> <span class="nav-text">5.1.2 重命名notebook</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-python-debug"><span class="nav-number">7.</span> <span class="nav-text">6. python debug</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85emacs"><span class="nav-number">1.</span> <span class="nav-text">1. 安装emacs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AEemacs"><span class="nav-number">2.</span> <span class="nav-text">2. 配置emacs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-elpy"><span class="nav-number">3.</span> <span class="nav-text">2.1 elpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-emacs-%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%92%8C%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">2.2 emacs 临时文件和备份文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-emacs-%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">4.1.</span> <span class="nav-text">3 emacs 快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-C-j-%E6%89%A7%E8%A1%8Clisp"><span class="nav-number">4.1.1.</span> <span class="nav-text">3.1 C-j 执行lisp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-C-c-C-c"><span class="nav-number">4.1.2.</span> <span class="nav-text">3.2 C-c C-c</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-C-c-v"><span class="nav-number">4.1.3.</span> <span class="nav-text">3.3 C-c ! v</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-%E5%89%AA%E5%88%87%EF%BC%8C%E5%A4%8D%E5%88%B6%EF%BC%8C%E7%B2%98%E8%B4%B4"><span class="nav-number">4.1.4.</span> <span class="nav-text">3.4 剪切，复制，粘贴</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-5-%E7%9F%A9%E5%BD%A2%E6%93%8D%E4%BD%9C"><span class="nav-number">4.1.5.</span> <span class="nav-text">3.5 矩形操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-jupyter"><span class="nav-number">5.</span> <span class="nav-text">4. jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-jupyter-server-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 jupyter server 配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-1-%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="nav-number">5.1.1.</span> <span class="nav-text">4.1.1. 修改密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-2-%E9%85%8D%E7%BD%AE%E7%AB%AF%E5%8F%A3"><span class="nav-number">5.1.2.</span> <span class="nav-text">4.1.2 配置端口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-3-ssh"><span class="nav-number">5.1.3.</span> <span class="nav-text">4.1.3 ssh</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-emacs-intergrate-jupyter"><span class="nav-number">6.</span> <span class="nav-text">5. emacs intergrate jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-ein%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 ein的快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-1-%E4%BF%9D%E5%AD%98notebook"><span class="nav-number">6.1.1.</span> <span class="nav-text">5.1.1 保存notebook</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-2-%E9%87%8D%E5%91%BD%E5%90%8Dnotebook"><span class="nav-number">6.1.2.</span> <span class="nav-text">5.1.2 重命名notebook</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-python-debug"><span class="nav-number">7.</span> <span class="nav-text">6. python debug</span></a></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/01/13/mac-emacs/';
-          this.page.identifier = '2018/01/13/mac-emacs/';
-          this.page.title = 'mac-emacs';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -770,19 +446,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 

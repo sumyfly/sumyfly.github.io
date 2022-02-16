@@ -1,144 +1,52 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="web,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
-<meta name="keywords" content="web">
+  <meta name="description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;27431681&#x2F;why-is-m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web-debug.md">
 <meta property="og:url" content="http://yoursite.com/2017/08/14/web-debug-md/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;27431681&#x2F;why-is-m">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/images/wechat_pay.png">
-<meta property="og:updated_time" content="2021-06-27T14:25:38.342Z">
+<meta property="article:published_time" content="2017-08-14T10:53:44.000Z">
+<meta property="article:modified_time" content="2021-06-27T14:25:38.342Z">
+<meta property="article:author" content="qsl">
+<meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="web-debug.md">
-<meta name="twitter:description" content="1.字体居中我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？https://stackoverflow.com/questions/27431681/why-is-m">
 <meta name="twitter:image" content="http://yoursite.com/images/wechat_pay.png">
 
+<link rel="canonical" href="http://yoursite.com/2017/08/14/web-debug-md/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2017/08/14/web-debug-md/">
-
-
-
-
 
   <title>web-debug.md | QSL</title>
   
@@ -146,238 +54,180 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/web-debug-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">web-debug.md</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          web-debug.md
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T18:53:44+08:00">
-                2017-08-14
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <time title="Created: 2017-08-14 18:53:44" itemprop="dateCreated datePublished" datetime="2017-08-14T18:53:44+08:00">2017-08-14</time>
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/08/14/web-debug-md/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/14/web-debug-md/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-27 22:25:38" itemprop="dateModified" datetime="2021-06-27T22:25:38+08:00">2021-06-27</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <h3 id="1-字体居中"><a href="#1-字体居中" class="headerlink" title="1.字体居中"></a>1.字体居中</h3><p>我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？<br><a href="https://stackoverflow.com/questions/27431681/why-is-my-font-face-adding-space-at-the-baseline" target="_blank" rel="noopener">https://stackoverflow.com/questions/27431681/why-is-my-font-face-adding-space-at-the-baseline</a></p>
+        <h3 id="1-字体居中"><a href="#1-字体居中" class="headerlink" title="1.字体居中"></a>1.字体居中</h3><p>我设置了flex, justifyContent: ‘center’,还是没用，后来发现是字体格式的问题，我用的HelveticaNeueLTPro-Cn.otf,这个字体的字下面有空白，所以居中不对，后来用了PingFangSC-Regular就好了，我就不知道为什么下面有空白？<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/27431681/why-is-my-font-face-adding-space-at-the-baseline">https://stackoverflow.com/questions/27431681/why-is-my-font-face-adding-space-at-the-baseline</a></p>
 <h3 id="2-mobile字体-mobile-web字体"><a href="#2-mobile字体-mobile-web字体" class="headerlink" title="2.mobile字体 mobile web字体"></a>2.mobile字体 mobile web字体</h3><p>mobile字体不一定能用于mobile web字体，不知道为什么。因为我用的一个字体可以用于react-native,但是不能用于mobile web，格式是ttf。</p>
 <h3 id="3-远程手机浏览器调试"><a href="#3-远程手机浏览器调试" class="headerlink" title="3.远程手机浏览器调试"></a>3.远程手机浏览器调试</h3><p>1.adb forward tcp:9224 localabstract:chrome_devtools_remote<br>然后localhost:9224</p>
 <p>2.chrome://inspect</p>
-<a id="more"></a>
-<h3 id="4-微信公众号支付"><a href="#4-微信公众号支付" class="headerlink" title="4.微信公众号支付"></a>4.微信公众号支付</h3><p>JSSDK和下单的appId要一样，chooseWXPay的签名，后台签名用timeStamp，前端用timestamp.url签名，不含#<br>如果微信支付提示{“errMsg”:”chooseWXPay:fail”}，一种可能是签名错误，一种可能是授权目录错误。<br><a href="http://tieba.baidu.com/p/3961646394" target="_blank" rel="noopener">http://tieba.baidu.com/p/3961646394</a><br><a href="https://example.com/weixin/pay#/home/xxx，支付授权目录要配置到home那一级，或者带个在#前加?来阻隔这个问题，这应该是微信的BUG。" target="_blank" rel="noopener">https://example.com/weixin/pay#/home/xxx，支付授权目录要配置到home那一级，或者带个在#前加?来阻隔这个问题，这应该是微信的BUG。</a></p>
+<span id="more"></span>
+
+<h3 id="4-微信公众号支付"><a href="#4-微信公众号支付" class="headerlink" title="4.微信公众号支付"></a>4.微信公众号支付</h3><p>JSSDK和下单的appId要一样，chooseWXPay的签名，后台签名用timeStamp，前端用timestamp.url签名，不含#<br>如果微信支付提示{“errMsg”:”chooseWXPay:fail”}，一种可能是签名错误，一种可能是授权目录错误。<br><a target="_blank" rel="noopener" href="http://tieba.baidu.com/p/3961646394">http://tieba.baidu.com/p/3961646394</a><br><a target="_blank" rel="noopener" href="https://example.com/weixin/pay#/home/xxx%EF%BC%8C%E6%94%AF%E4%BB%98%E6%8E%88%E6%9D%83%E7%9B%AE%E5%BD%95%E8%A6%81%E9%85%8D%E7%BD%AE%E5%88%B0home%E9%82%A3%E4%B8%80%E7%BA%A7%EF%BC%8C%E6%88%96%E8%80%85%E5%B8%A6%E4%B8%AA%E5%9C%A8#%E5%89%8D%E5%8A%A0?%E6%9D%A5%E9%98%BB%E9%9A%94%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%8C%E8%BF%99%E5%BA%94%E8%AF%A5%E6%98%AF%E5%BE%AE%E4%BF%A1%E7%9A%84BUG%E3%80%82">https://example.com/weixin/pay#/home/xxx，支付授权目录要配置到home那一级，或者带个在#前加?来阻隔这个问题，这应该是微信的BUG。</a></p>
 <blockquote>
-<p>我用的是hashHistory,所以要配置到/setting/:<br><a href="https://app-test.xxx.com/auth/webapp/index.html#/setting/" target="_blank" rel="noopener">https://app-test.xxx.com/auth/webapp/index.html#/setting/</a></p>
+<p>我用的是hashHistory,所以要配置到/setting/:<br><a target="_blank" rel="noopener" href="https://app-test.xxx.com/auth/webapp/index.html#/setting/">https://app-test.xxx.com/auth/webapp/index.html#/setting/</a></p>
 </blockquote>
 <blockquote>
-<p>有时候微信里打开链接，会自己加上参数?from=singlemessage&amp;install=0,这个时候就可以用<br><a href="https://app-tesst.xxx.com/auth/webapp" target="_blank" rel="noopener">https://app-tesst.xxx.com/auth/webapp</a></p>
+<p>有时候微信里打开链接，会自己加上参数?from=singlemessage&amp;install=0,这个时候就可以用<br><a target="_blank" rel="noopener" href="https://app-tesst.xxx.com/auth/webapp">https://app-tesst.xxx.com/auth/webapp</a></p>
 </blockquote>
 <blockquote>
-<p>ios微信浏览器路径识别到<br><a href="https://app-test.xxx.com/auth/webapp/index.html#/" target="_blank" rel="noopener">https://app-test.xxx.com/auth/webapp/index.html#/</a></p>
+<p>ios微信浏览器路径识别到<br><a target="_blank" rel="noopener" href="https://app-test.xxx.com/auth/webapp/index.html#/">https://app-test.xxx.com/auth/webapp/index.html#/</a></p>
 </blockquote>
 <p>最终配置了三个路径<br><img src="/images/wechat_pay.png" alt="微信授权目录配置"></p>
-<h3 id="5-Promise"><a href="#5-Promise" class="headerlink" title="5.Promise"></a>5.Promise</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> asyncFun()&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a)&#123;</span><br><span class="line">      resolve(n)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      reject() <span class="comment">//在安卓微信浏览器中，reject(), reject(undefined)都将导致await 等待，直至超时。这个应该是bug;reject(123)参数不为undeefined就可以。</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="keyword">await</span> asyncFun() <span class="comment">// 如果是resolve, resolve的实参值赋给a,如果是reject,a为初始值</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(e)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e) <span class="comment">//e 就是reject的实参值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-Promise"><a href="#5-Promise" class="headerlink" title="5.Promise"></a>5.Promise</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">asyncFun</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a)&#123;</span><br><span class="line">      <span class="title function_">resolve</span>(n)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="title function_">reject</span>() <span class="comment">//在安卓微信浏览器中，reject(), reject(undefined)都将导致await 等待，直至超时。这个应该是bug;reject(123)参数不为undeefined就可以。</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="keyword">await</span> <span class="title function_">asyncFun</span>() <span class="comment">// 如果是resolve, resolve的实参值赋给a,如果是reject,a为初始值</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(e)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e) <span class="comment">//e 就是reject的实参值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>async 函数返回值是一个Promise，如果需要得到resolve的值，需要async await或者then。当 async 函数返回一个值时，Promise 的 resolve 方法会负责传递这个值；当 async 函数抛出异常时，Promise 的 reject 方法也会传递这个异常值。如果 async 函数没有返回值，它会返回 Promise.resolve(undefined)。</p>
 </blockquote>
 <h3 id="6-dot"><a href="#6-dot" class="headerlink" title="6. dot"></a>6. dot</h3><p>Use <code>&amp;middot;</code> · for a dot or <code>&amp;bull;</code> • for a thicker, bulleted list style dot.</p>
 <h3 id="7-post"><a href="#7-post" class="headerlink" title="7. post"></a>7. post</h3><p>post 的body要进行JSON.stringify处理，   </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">transformRequestBody: <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> data == <span class="string">'object'</span> ? <span class="built_in">JSON</span>.stringify(data) : data</span><br><span class="line">&#125;, <span class="comment">// change RequestBody before fetch</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">transformRequestBody</span>: <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> data == <span class="string">&#x27;object&#x27;</span> ? <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data) : data</span><br><span class="line">&#125;, <span class="comment">// change RequestBody before fetch</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="8-Object-assign-参数有个数组"><a href="#8-Object-assign-参数有个数组" class="headerlink" title="8. Object.assign 参数有个数组"></a>8. Object.assign 参数有个数组</h3><p>Object.assign({}, res),如果res是个array,那么结果就是一个object，所以在Object.assign前，要确定是否需要一个array.</p>
-<h3 id="9-div的文本没有自动换行"><a href="#9-div的文本没有自动换行" class="headerlink" title="9. div的文本没有自动换行"></a>9. div的文本没有自动换行</h3><p>默认情况下，一个 DIV或者其他元素的文本，如果都是无文字分隔符，无空格，则不会自动换行，比如:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-test'</span>&gt;</span>012345555555555555555555555555555555555555555555555555555555<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--加上下面的样式即可解决--&gt;</span></span><br><span class="line">.div-test &#123;</span><br><span class="line">  word-break: break-all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://www.alloyteam.com/2016/05/css-word-for-word-breaker-do-you-really-understand/" target="_blank" rel="noopener">http://www.alloyteam.com/2016/05/css-word-for-word-breaker-do-you-really-understand/</a></p>
+<h3 id="9-div的文本没有自动换行"><a href="#9-div的文本没有自动换行" class="headerlink" title="9. div的文本没有自动换行"></a>9. div的文本没有自动换行</h3><p>默认情况下，一个 DIV或者其他元素的文本，如果都是无文字分隔符，无空格，则不会自动换行，比如:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;div-test&#x27;</span>&gt;</span>012345555555555555555555555555555555555555555555555555555555<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--加上下面的样式即可解决--&gt;</span></span><br><span class="line">.div-test &#123;</span><br><span class="line">  word-break: break-all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="http://www.alloyteam.com/2016/05/css-word-for-word-breaker-do-you-really-understand/">http://www.alloyteam.com/2016/05/css-word-for-word-breaker-do-you-really-understand/</a></p>
 <h3 id="10-文本空白符处理"><a href="#10-文本空白符处理" class="headerlink" title="10. 文本空白符处理"></a>10. 文本空白符处理</h3><p>使用<code>whiteSpace: &#39;pre-wrap&#39;</code>,但此时有个问题，<code>textIndent</code>无效。</p>
 <h3 id="11-置换元素"><a href="#11-置换元素" class="headerlink" title="11. 置换元素"></a>11. 置换元素</h3><blockquote>
 <p>CSS里，可替换元素（replaced element）的展现不是由CSS来控制的。这些元素是一类外观渲染独立于CSS的 外部对象。典型的可替换元素有<code>&lt;img&gt;</code>、 <code>&lt;object&gt;</code>、 <code>&lt;video&gt;</code> 和 表单元素，如<code>&lt;textarea&gt;</code>、 <code>&lt;input&gt;</code>。某些元素只在一些特殊情况下表现为可替换元素，例如 <code>&lt;audio&gt;</code> 和 <code>&lt;canvas&gt;</code> 。 通过 CSS content 属性来插入的对象 被称作 匿名可替换元素（anonymous replaced elements）。</p>
@@ -391,260 +241,254 @@
 <thead>
 <tr>
 <th>标签名称</th>
-<th style="text-align:center">用途</th>
+<th align="center">用途</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>address</td>
-<td style="text-align:center">地址</td>
-<td></td>
+<td align="center">地址</td>
 </tr>
 <tr>
 <td>blockquote</td>
-<td style="text-align:center">块引用</td>
+<td align="center">块引用</td>
 </tr>
 <tr>
 <td>center</td>
-<td style="text-align:center">举中对齐块</td>
+<td align="center">举中对齐块</td>
 </tr>
 <tr>
 <td>dir</td>
-<td style="text-align:center">目录列表</td>
+<td align="center">目录列表</td>
 </tr>
 <tr>
 <td>div</td>
-<td style="text-align:center">常用块级容易，也是css layout的主要标签</td>
+<td align="center">常用块级容易，也是css layout的主要标签</td>
 </tr>
 <tr>
 <td>dl</td>
-<td style="text-align:center">定义列表</td>
+<td align="center">定义列表</td>
 </tr>
 <tr>
 <td>fieldset</td>
-<td style="text-align:center">form控制组</td>
+<td align="center">form控制组</td>
 </tr>
 <tr>
 <td>form</td>
-<td style="text-align:center">交互表单</td>
+<td align="center">交互表单</td>
 </tr>
 <tr>
 <td>h1</td>
-<td style="text-align:center">大标题</td>
+<td align="center">大标题</td>
 </tr>
 <tr>
 <td>h2</td>
-<td style="text-align:center">副标题</td>
+<td align="center">副标题</td>
 </tr>
 <tr>
 <td>h3</td>
-<td style="text-align:center">3级标题</td>
+<td align="center">3级标题</td>
 </tr>
 <tr>
 <td>h4</td>
-<td style="text-align:center">4级标题</td>
+<td align="center">4级标题</td>
 </tr>
 <tr>
 <td>h5</td>
-<td style="text-align:center">5级标题</td>
+<td align="center">5级标题</td>
 </tr>
 <tr>
 <td>h6</td>
-<td style="text-align:center">6级标题</td>
+<td align="center">6级标题</td>
 </tr>
 <tr>
 <td>hr</td>
-<td style="text-align:center">水平分隔线</td>
+<td align="center">水平分隔线</td>
 </tr>
 <tr>
 <td>isindex</td>
-<td style="text-align:center">input prompt</td>
+<td align="center">input prompt</td>
 </tr>
 <tr>
 <td>menu</td>
-<td style="text-align:center">菜单列表</td>
+<td align="center">菜单列表</td>
 </tr>
 <tr>
 <td>noframes</td>
-<td style="text-align:center">frames可选内容（对于不支持frame的浏览器显示此区块内容）</td>
+<td align="center">frames可选内容（对于不支持frame的浏览器显示此区块内容）</td>
 </tr>
 <tr>
 <td>noscript</td>
-<td style="text-align:center">可选脚本</td>
-<td>内容（对于不支持script的浏览器显示此内容）</td>
+<td align="center">可选脚本</td>
 </tr>
 <tr>
 <td>ol</td>
-<td style="text-align:center">排序列表</td>
+<td align="center">排序列表</td>
 </tr>
 <tr>
 <td>p</td>
-<td style="text-align:center">段落</td>
+<td align="center">段落</td>
 </tr>
 <tr>
 <td>pre</td>
-<td style="text-align:center">格式化文本</td>
+<td align="center">格式化文本</td>
 </tr>
 <tr>
 <td>table</td>
-<td style="text-align:center">表格</td>
+<td align="center">表格</td>
 </tr>
 <tr>
 <td>ul</td>
-<td style="text-align:center">非排序列表</td>
+<td align="center">非排序列表</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="12-2-内联元素"><a href="#12-2-内联元素" class="headerlink" title="12.2 内联元素"></a>12.2 内联元素</h4><table>
 <thead>
 <tr>
 <th>标签名称</th>
-<th style="text-align:center">用途</th>
+<th align="center">用途</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>a</td>
-<td style="text-align:center">锚点</td>
+<td align="center">锚点</td>
 </tr>
 <tr>
 <td>abbr</td>
-<td style="text-align:center">缩写</td>
+<td align="center">缩写</td>
 </tr>
 <tr>
 <td>acronym</td>
-<td style="text-align:center">首字</td>
+<td align="center">首字</td>
 </tr>
 <tr>
 <td>b</td>
-<td style="text-align:center">粗体（不推荐）</td>
+<td align="center">粗体（不推荐）</td>
 </tr>
 <tr>
 <td>bdo</td>
-<td style="text-align:center">bidi override</td>
+<td align="center">bidi override</td>
 </tr>
 <tr>
 <td>big</td>
-<td style="text-align:center">大字体</td>
+<td align="center">大字体</td>
 </tr>
 <tr>
 <td>br</td>
-<td style="text-align:center">换行</td>
+<td align="center">换行</td>
 </tr>
 <tr>
 <td>cite</td>
-<td style="text-align:center">引用</td>
+<td align="center">引用</td>
 </tr>
 <tr>
 <td>code</td>
-<td style="text-align:center">计算机代码（在引用源码的时候需要）</td>
+<td align="center">计算机代码（在引用源码的时候需要）</td>
 </tr>
 <tr>
 <td>dfn</td>
-<td style="text-align:center">定义字段</td>
+<td align="center">定义字段</td>
 </tr>
 <tr>
 <td>em</td>
-<td style="text-align:center">强调</td>
+<td align="center">强调</td>
 </tr>
 <tr>
 <td>font</td>
-<td style="text-align:center">字体设定（不推荐）</td>
+<td align="center">字体设定（不推荐）</td>
 </tr>
 <tr>
 <td>i</td>
-<td style="text-align:center">斜体</td>
+<td align="center">斜体</td>
 </tr>
 <tr>
 <td>img</td>
-<td style="text-align:center">图片</td>
+<td align="center">图片</td>
 </tr>
 <tr>
 <td>input</td>
-<td style="text-align:center">输入框</td>
+<td align="center">输入框</td>
 </tr>
 <tr>
 <td>kbd</td>
-<td style="text-align:center">定义键盘文本</td>
+<td align="center">定义键盘文本</td>
 </tr>
 <tr>
 <td>label</td>
-<td style="text-align:center">表格标签</td>
+<td align="center">表格标签</td>
 </tr>
 <tr>
 <td>q</td>
-<td style="text-align:center">短引用</td>
+<td align="center">短引用</td>
 </tr>
 <tr>
 <td>s</td>
-<td style="text-align:center">中划线（不推荐）</td>
+<td align="center">中划线（不推荐）</td>
 </tr>
 <tr>
 <td>samp</td>
-<td style="text-align:center">定义范例计算机代码</td>
+<td align="center">定义范例计算机代码</td>
 </tr>
 <tr>
 <td>select</td>
-<td style="text-align:center">项目选择</td>
+<td align="center">项目选择</td>
 </tr>
 <tr>
 <td>small</td>
-<td style="text-align:center">小字体文本</td>
+<td align="center">小字体文本</td>
 </tr>
 <tr>
 <td>span</td>
-<td style="text-align:center">常用内联容器，定义文本内区块</td>
+<td align="center">常用内联容器，定义文本内区块</td>
 </tr>
 <tr>
 <td>strike</td>
-<td style="text-align:center">中划线</td>
+<td align="center">中划线</td>
 </tr>
 <tr>
 <td>strong</td>
-<td style="text-align:center">粗体强调</td>
+<td align="center">粗体强调</td>
 </tr>
 <tr>
 <td>sub</td>
-<td style="text-align:center">下标</td>
+<td align="center">下标</td>
 </tr>
 <tr>
 <td>sup</td>
-<td style="text-align:center">上标</td>
+<td align="center">上标</td>
 </tr>
 <tr>
 <td>textarea</td>
-<td style="text-align:center">多行文本输入框</td>
+<td align="center">多行文本输入框</td>
 </tr>
 <tr>
 <td>tt</td>
-<td style="text-align:center">电传文本</td>
+<td align="center">电传文本</td>
 </tr>
 <tr>
 <td>u</td>
-<td style="text-align:center">下划线</td>
+<td align="center">下划线</td>
 </tr>
 <tr>
 <td>var</td>
-<td style="text-align:center">定义变量</td>
+<td align="center">定义变量</td>
 </tr>
 <tr>
 <td>textarea</td>
-<td style="text-align:center">多行的文本输入</td>
+<td align="center">多行的文本输入</td>
 </tr>
 <tr>
 <td>canvas</td>
-<td style="text-align:center">画布</td>
+<td align="center">画布</td>
 </tr>
 <tr>
 <td>video</td>
-<td style="text-align:center">视频</td>
+<td align="center">视频</td>
 </tr>
 <tr>
 <td>audio</td>
-<td style="text-align:center">音频</td>
+<td align="center">音频</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="12-3块级元素和内联元素之间的转换："><a href="#12-3块级元素和内联元素之间的转换：" class="headerlink" title="12.3块级元素和内联元素之间的转换："></a>12.3块级元素和内联元素之间的转换：</h4><ul>
 <li><p>1.display<br>  块元素默认display:block;<br>  行内非替换元素(a,span)默认为display:inline;<br>  <strong>行内替换元素(input)默认为display:inline-block;</strong></p>
 <p>  a.display:none;不显示该元素，也不会保留该元素原先占有的文档流位置。<br>  b.display:block;转换为块级元素。<br>  c.display:inline;转换为行内元素。<br>  d.display:inline-block;转换为行内块级元素。</p>
@@ -654,361 +498,184 @@
 <li><p>3.position<br>当为行内元素进行定位时，position:absolute与position:fixed.都会使得原先的行内元素变为块级元素。</p>
 </li>
 </ul>
-<p><a href="https://www.jianshu.com/p/d69878549d92" target="_blank" rel="noopener">https://www.jianshu.com/p/d69878549d92</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d69878549d92">https://www.jianshu.com/p/d69878549d92</a></p>
 <h3 id="13-encodeURI和encodeURIComponent"><a href="#13-encodeURI和encodeURIComponent" class="headerlink" title="13. encodeURI和encodeURIComponent"></a>13. encodeURI和encodeURIComponent</h3><h4 id="13-1-相同点"><a href="#13-1-相同点" class="headerlink" title="13.1 相同点"></a>13.1 相同点</h4><p>都是编码URL，替换特殊字符为16进制数，如空格替换为%20,’/‘替换为%2F。</p>
-<h4 id="13-2-不同点"><a href="#13-2-不同点" class="headerlink" title="13.2 不同点"></a>13.2 不同点</h4><h5 id="13-2-1-编码范围不同"><a href="#13-2-1-编码范围不同" class="headerlink" title="13.2.1 编码范围不同"></a>13.2.1 编码范围不同</h5><p>encodeURL方法<strong>不会</strong>对下列字符编码 ASCII字母、数字、~!@#$&amp;<em>()=:/,;?+’<br>endoceURLComponent方法<strong>不会</strong>对下列字符编码 ASCII字母、数字、~!</em>()’<br>所以encodeURLComponent的编码范围更大，适合编码http url中的参数部分,因为:/都被编码了</p>
-<p><a href="https://www.cnblogs.com/season-huang/p/3439277.html" target="_blank" rel="noopener">https://www.cnblogs.com/season-huang/p/3439277.html</a><br><a href="https://www.cnblogs.com/hushuai-iOS/p/5500162.html" target="_blank" rel="noopener">https://www.cnblogs.com/hushuai-iOS/p/5500162.html</a></p>
-<h3 id="14"><a href="#14" class="headerlink" title="14."></a>14.<a></a></h3><p> a本身会触发一个链接，a的onclick会触发一个链接，onclick事件执行后会触发a本身的链接，为了阻止a本身链接的触发，需要对onclick事件的函数返回false。<br>return true：返回正常的处理结果。<br>return false：返回错误的处理结果;终止处理;阻止提交表单;阻止执行默认的行为。<br>return：把控制权返回给页面。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">若将html代码中的</span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"linkPage"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/banner1.gif"</span> <span class="attr">id</span>=<span class="string">"adBanner"</span> <span class="attr">alt</span>=<span class="string">"ad banner"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">改为：</span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/banner1.gif"</span> <span class="attr">id</span>=<span class="string">"adBanner"</span> <span class="attr">alt</span>=<span class="string">"ad banner"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="13-2-不同点"><a href="#13-2-不同点" class="headerlink" title="13.2 不同点"></a>13.2 不同点</h4><h5 id="13-2-1-编码范围不同"><a href="#13-2-1-编码范围不同" class="headerlink" title="13.2.1 编码范围不同"></a>13.2.1 编码范围不同</h5><p>encodeURL方法<strong>不会</strong>对下列字符编码 ASCII字母、数字、<del>!@#$&amp;*()=:/,;?+’<br>endoceURLComponent方法<strong>不会</strong>对下列字符编码 ASCII字母、数字、</del>!*()’<br>所以encodeURLComponent的编码范围更大，适合编码http url中的参数部分,因为:/都被编码了</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/season-huang/p/3439277.html">https://www.cnblogs.com/season-huang/p/3439277.html</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hushuai-iOS/p/5500162.html">https://www.cnblogs.com/hushuai-iOS/p/5500162.html</a></p>
+<h3 id="14"><a href="#14" class="headerlink" title="14."></a>14.<a></h3><p> a本身会触发一个链接，a的onclick会触发一个链接，onclick事件执行后会触发a本身的链接，为了阻止a本身链接的触发，需要对onclick事件的函数返回false。<br>return true：返回正常的处理结果。<br>return false：返回错误的处理结果;终止处理;阻止提交表单;阻止执行默认的行为。<br>return：把控制权返回给页面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">若将html代码中的</span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;linkPage&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/banner1.gif&quot;</span> <span class="attr">id</span>=<span class="string">&quot;adBanner&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;ad banner&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">改为：</span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/banner1.gif&quot;</span> <span class="attr">id</span>=<span class="string">&quot;adBanner&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;ad banner&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>此时去掉js代码中的return false，也可以实现同样的效果。</p>
 
-      
     </div>
 
-    <div>
-      
-        
+    
+    
+    
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/web/" rel="tag"># web</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/07/30/go入门/" rel="next" title="go入门">
-                <i class="fa fa-chevron-left"></i> go入门
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web/" rel="tag"># web</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/08/react-web/" rel="prev" title="react-web">
-                react-web <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/07/30/go%E5%85%A5%E9%97%A8/" rel="prev" title="go入门">
+      <i class="fa fa-chevron-left"></i> go入门
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/09/08/react-web/" rel="next" title="react-web">
+      react-web <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-字体居中"><span class="nav-number">1.</span> <span class="nav-text">1.字体居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-mobile字体-mobile-web字体"><span class="nav-number">2.</span> <span class="nav-text">2.mobile字体 mobile web字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-远程手机浏览器调试"><span class="nav-number">3.</span> <span class="nav-text">3.远程手机浏览器调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-微信公众号支付"><span class="nav-number">4.</span> <span class="nav-text">4.微信公众号支付</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Promise"><span class="nav-number">5.</span> <span class="nav-text">5.Promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-dot"><span class="nav-number">6.</span> <span class="nav-text">6. dot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-post"><span class="nav-number">7.</span> <span class="nav-text">7. post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Object-assign-参数有个数组"><span class="nav-number">8.</span> <span class="nav-text">8. Object.assign 参数有个数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-div的文本没有自动换行"><span class="nav-number">9.</span> <span class="nav-text">9. div的文本没有自动换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-文本空白符处理"><span class="nav-number">10.</span> <span class="nav-text">10. 文本空白符处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-置换元素"><span class="nav-number">11.</span> <span class="nav-text">11. 置换元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-块元素-内联元素"><span class="nav-number">12.</span> <span class="nav-text">12.块元素 内联元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-1块元素"><span class="nav-number">12.1.</span> <span class="nav-text">12.1块元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-2-内联元素"><span class="nav-number">12.2.</span> <span class="nav-text">12.2 内联元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-3块级元素和内联元素之间的转换："><span class="nav-number">12.3.</span> <span class="nav-text">12.3块级元素和内联元素之间的转换：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-encodeURI和encodeURIComponent"><span class="nav-number">13.</span> <span class="nav-text">13. encodeURI和encodeURIComponent</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#13-1-相同点"><span class="nav-number">13.1.</span> <span class="nav-text">13.1 相同点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-2-不同点"><span class="nav-number">13.2.</span> <span class="nav-text">13.2 不同点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#13-2-1-编码范围不同"><span class="nav-number">13.2.1.</span> <span class="nav-text">13.2.1 编码范围不同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14"><span class="nav-number">14.</span> <span class="nav-text">14.</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AD%97%E4%BD%93%E5%B1%85%E4%B8%AD"><span class="nav-number">1.</span> <span class="nav-text">1.字体居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-mobile%E5%AD%97%E4%BD%93-mobile-web%E5%AD%97%E4%BD%93"><span class="nav-number">2.</span> <span class="nav-text">2.mobile字体 mobile web字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%9C%E7%A8%8B%E6%89%8B%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95"><span class="nav-number">3.</span> <span class="nav-text">3.远程手机浏览器调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%94%AF%E4%BB%98"><span class="nav-number">4.</span> <span class="nav-text">4.微信公众号支付</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Promise"><span class="nav-number">5.</span> <span class="nav-text">5.Promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-dot"><span class="nav-number">6.</span> <span class="nav-text">6. dot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-post"><span class="nav-number">7.</span> <span class="nav-text">7. post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Object-assign-%E5%8F%82%E6%95%B0%E6%9C%89%E4%B8%AA%E6%95%B0%E7%BB%84"><span class="nav-number">8.</span> <span class="nav-text">8. Object.assign 参数有个数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-div%E7%9A%84%E6%96%87%E6%9C%AC%E6%B2%A1%E6%9C%89%E8%87%AA%E5%8A%A8%E6%8D%A2%E8%A1%8C"><span class="nav-number">9.</span> <span class="nav-text">9. div的文本没有自动换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E6%96%87%E6%9C%AC%E7%A9%BA%E7%99%BD%E7%AC%A6%E5%A4%84%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">10. 文本空白符处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E7%BD%AE%E6%8D%A2%E5%85%83%E7%B4%A0"><span class="nav-number">11.</span> <span class="nav-text">11. 置换元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E5%9D%97%E5%85%83%E7%B4%A0-%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0"><span class="nav-number">12.</span> <span class="nav-text">12.块元素 内联元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-1%E5%9D%97%E5%85%83%E7%B4%A0"><span class="nav-number">12.1.</span> <span class="nav-text">12.1块元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-2-%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0"><span class="nav-number">12.2.</span> <span class="nav-text">12.2 内联元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-3%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E5%92%8C%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="nav-number">12.3.</span> <span class="nav-text">12.3块级元素和内联元素之间的转换：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-encodeURI%E5%92%8CencodeURIComponent"><span class="nav-number">13.</span> <span class="nav-text">13. encodeURI和encodeURIComponent</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#13-1-%E7%9B%B8%E5%90%8C%E7%82%B9"><span class="nav-number">13.1.</span> <span class="nav-text">13.1 相同点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-2-%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="nav-number">13.2.</span> <span class="nav-text">13.2 不同点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#13-2-1-%E7%BC%96%E7%A0%81%E8%8C%83%E5%9B%B4%E4%B8%8D%E5%90%8C"><span class="nav-number">13.2.1.</span> <span class="nav-text">13.2.1 编码范围不同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14"><span class="nav-number">14.</span> <span class="nav-text">14.</span></a></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/08/14/web-debug-md/';
-          this.page.identifier = '2017/08/14/web-debug-md/';
-          this.page.title = 'web-debug.md';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -1022,19 +689,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 

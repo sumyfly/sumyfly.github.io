@@ -1,142 +1,51 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="debug,react-native,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
-<meta name="keywords" content="debug,react-native">
+  <meta name="description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React-Native-Debug">
 <meta property="og:url" content="http://yoursite.com/2017/07/08/React-Native-Debug/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-07-12T03:46:53.912Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-07-08T14:28:36.000Z">
+<meta property="article:modified_time" content="2021-07-12T03:46:53.912Z">
+<meta property="article:author" content="qsl">
+<meta property="article:tag" content="debug">
+<meta property="article:tag" content="react-native">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-Native-Debug">
-<meta name="twitter:description" content="1. Image overflowImage是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。">
+
+<link rel="canonical" href="http://yoursite.com/2017/07/08/React-Native-Debug/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2017/07/08/React-Native-Debug/">
-
-
-
-
 
   <title>React-Native-Debug | QSL</title>
   
@@ -144,237 +53,162 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/React-Native-Debug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">React-Native-Debug</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          React-Native-Debug
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T22:28:36+08:00">
-                2017-07-08
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React-Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2017-07-08 22:28:36" itemprop="dateCreated datePublished" datetime="2017-07-08T22:28:36+08:00">2017-07-08</time>
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/07/08/React-Native-Debug/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/08/React-Native-Debug/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-12 11:46:53" itemprop="dateModified" datetime="2021-07-12T11:46:53+08:00">2021-07-12</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React-Native/" itemprop="url" rel="index"><span itemprop="name">React-Native</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h3 id="1-Image-overflow"><a href="#1-Image-overflow" class="headerlink" title="1. Image overflow"></a>1. Image overflow</h3><p>Image是可以overflow:display,这个在android和ios都有效果。而View在android上不可以overflow:display的。</p>
-<a id="more"></a>
-<h3 id="2-flex-layout"><a href="#2-flex-layout" class="headerlink" title="2. flex layout"></a>2. flex layout</h3><h4 id="2-1-yoga"><a href="#2-1-yoga" class="headerlink" title="2.1 yoga"></a>2.1 yoga</h4><p>RN使用的layout引擎是yoga，<a href="https://github.com/facebook/yoga，" target="_blank" rel="noopener">https://github.com/facebook/yoga，</a> 跨平台的，实现flexbox。<br>RN默认是display:flex，block和inner-block都是有效的，in-line无效。</p>
+<span id="more"></span>
+<h3 id="2-flex-layout"><a href="#2-flex-layout" class="headerlink" title="2. flex layout"></a>2. flex layout</h3><h4 id="2-1-yoga"><a href="#2-1-yoga" class="headerlink" title="2.1 yoga"></a>2.1 yoga</h4><p>RN使用的layout引擎是yoga，<a target="_blank" rel="noopener" href="https://github.com/facebook/yoga%EF%BC%8C">https://github.com/facebook/yoga，</a> 跨平台的，实现flexbox。<br>RN默认是display:flex，block和inner-block都是有效的，in-line无效。</p>
 <h4 id="2-2-BFC"><a href="#2-2-BFC" class="headerlink" title="2.2 BFC"></a>2.2 BFC</h4><p>BFC blcok Formatting Context，这个文档流是相互隔离的盒子，所以margin不会合并而是并加，<br>这个可以都能通过overflow:hidden来设置，其实设置方式有很多，满足以下条件的任何一条都是BFC</p>
 <ul>
 <li>float不为none</li>
@@ -382,7 +216,7 @@
 <li>display 的值为 table-cell , table-caption , inline-block , flex , 或者 inline-flex 中的其中一个</li>
 <li>overflow 的值不为 visible</li>
 </ul>
-<p>RN默认IOS overflow:visiable, Android是overflow:hidden，但是它们都是display:flex, 所以都是用的BFC，相互隔离的盒子。<br><a href="https://segmentfault.com/a/1190000009139500" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009139500</a></p>
+<p>RN默认IOS overflow:visiable, Android是overflow:hidden，但是它们都是display:flex, 所以都是用的BFC，相互隔离的盒子。<br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009139500">https://segmentfault.com/a/1190000009139500</a></p>
 <h4 id="2-3-RN-CSS继承"><a href="#2-3-RN-CSS继承" class="headerlink" title="2.3 RN CSS继承"></a>2.3 RN CSS继承</h4><p>注意：CSS都是强制继承的，但是RN不是。React Native still has the concept of style inheritance, but limited to text subtrees.RN的继承只有Text。</p>
 <h4 id="2-4-RN-flex"><a href="#2-4-RN-flex" class="headerlink" title="2.4 RN flex"></a>2.4 RN flex</h4><p>flex在网页CSS中是flex-grow,flex-shrink,flex-basis的简写，默认值是0 1 auto，后两个属性可选；RN中flex是布局用</p>
 <p>宽高度应该是确定的，或者是可以推断的，如子节点宽高度，父容器宽高度。如果父节点、子节点皆不能推断，那么显示就会不确定，有问题。</p>
@@ -398,33 +232,40 @@
 <h3 id="7-ListView-中的onEndReached"><a href="#7-ListView-中的onEndReached" class="headerlink" title="7. ListView 中的onEndReached"></a>7. ListView 中的onEndReached</h3><p>不能设置contentContainerStyle,不然onEndReached不能再安卓上正确触发(初始化后的第一个onEndReached不能fired)。</p>
 <h3 id="8-子组件和父组件通讯问题"><a href="#8-子组件和父组件通讯问题" class="headerlink" title="8.子组件和父组件通讯问题"></a>8.子组件和父组件通讯问题</h3><p>如果使用ref,那么还可以用state来保证同步状态。如果用this.xx的私有变量，不能保证同步状态。因为显示的时候，可能在diff后不去更换控件，而私有变量就算变化了，也不能取到。<br>继续讨论： 我觉得使用ref还是可能会出问题，我应该传props去子控件，那样会保证状态是父组件可以预料的。</p>
 <h3 id="9-ref调用共有方法"><a href="#9-ref调用共有方法" class="headerlink" title="9.ref调用共有方法"></a>9.ref调用共有方法</h3><p>如果使用ref调用子控件的共有方法，那么可以不用bind(this)到子控件。在render函数中调用也不需要bind(this)，但是回调函数需要bind(this)。</p>
-<h3 id="10-继承和组合"><a href="#10-继承和组合" class="headerlink" title="10.继承和组合"></a>10.继承和组合</h3><p>实际项目中，使用了普通类作为Model，里面有函数来渲染一些组件，它继承自普通父类，而不是Component。像这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//应该使用Componet， extends Conponet</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Model</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubModel</span> <span class="keyword">extends</span> <span class="title">Model</span></span>&#123;</span><br><span class="line">  validated()&#123;</span><br><span class="line">    <span class="comment">//.....</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span> <span class="comment">// or false</span></span><br><span class="line">  &#125;</span><br><span class="line">  renderComponent()&#123;</span><br><span class="line">    reutnr (&lt;ValidatedComponent&gt;</span><br><span class="line">    //....</span><br><span class="line">    &lt;/ValidatedCoponent&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span> <span class="keyword">extends</span> <span class="title">Component</span>&lt;<span class="title">Props</span>,<span class="title">State</span>&gt;</span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    Model model = <span class="keyword">new</span> SubModel()</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;View&gt;</span><br><span class="line">      &#123;model.renderComponent()&#125;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="10-继承和组合"><a href="#10-继承和组合" class="headerlink" title="10.继承和组合"></a>10.继承和组合</h3><p>实际项目中，使用了普通类作为Model，里面有函数来渲染一些组件，它继承自普通父类，而不是Component。像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//应该使用Componet， extends Conponet</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Model</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SubModel</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Model</span>&#123;</span><br><span class="line">  <span class="title function_">validated</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">//.....</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span> <span class="comment">// or false</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">renderComponent</span>(<span class="params"></span>)&#123;</span><br><span class="line">    reutnr (&lt;<span class="title class_">ValidatedComponent</span>&gt;</span><br><span class="line">    <span class="comment">//....</span></span><br><span class="line">    &lt;/<span class="title class_">ValidatedCoponent</span>&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Page</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span>&lt;<span class="title class_">Props</span>,<span class="title class_">State</span>&gt;&#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="title class_">Model</span> model = <span class="keyword">new</span> <span class="title class_">SubModel</span>()</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;model.renderComponent()&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这样导致的结果是，在容器redner中初始化后，其组件的state与从外部获取不匹配，是因为diff时发现组件props没变，所以没有用刚刚初始化状态的组件替代。所以要加上props传到组件中，并且加上key，这样还不如用Componet的组件保存数据和状态。（如果是Componet那么还有另外一个方法是用componentWillReceiveProps中去判断某个props改变了，然后setState.）<br>教训：<br>1.如果没有渲染，使用普通类型，如果涉及到渲染UI，使用Compoent<br>2.优先使用props从父组件往下传递，包括回调函数，而不是this.ref.xx直接调用公开方法<br>共享功能时组合和继承选择？<br>1.is A 继承， has A 组合。<br>2.主动调用方法用继承（依赖构造函数传属性），回调方法用组合（用props传入更加方便）。</p>
-<h3 id="11-requestAnimationFrame"><a href="#11-requestAnimationFrame" class="headerlink" title="11.requestAnimationFrame"></a>11.requestAnimationFrame</h3><p>使用requestAnimationFrame要注意，在componentWillReceiveProps中,不要使用requestAnimationFrame中setState，因为此时可能导致这个setState在render之后，导致多了一次render，所以在componentWillReceiveProps中，不使用requestAnimationFrame中setState。也就是说不用requresAnimationFrame, setState会延迟渲染，等待此state更新成功。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">   <span class="keyword">if</span> (!nextProps.refreshing &amp;&amp; <span class="keyword">this</span>.props.rowSource != nextProps.rowSource) &#123;</span><br><span class="line">       <span class="comment">// requestAnimationFrame(() =&gt; &#123; //不要加上这个，否则导致额外的render</span></span><br><span class="line">         <span class="keyword">this</span>.setState(&#123; <span class="attr">showActivityIndicator</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">       <span class="comment">// &#125;)</span></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="11-requestAnimationFrame"><a href="#11-requestAnimationFrame" class="headerlink" title="11.requestAnimationFrame"></a>11.requestAnimationFrame</h3><p>使用requestAnimationFrame要注意，在componentWillReceiveProps中,不要使用requestAnimationFrame中setState，因为此时可能导致这个setState在render之后，导致多了一次render，所以在componentWillReceiveProps中，不使用requestAnimationFrame中setState。也就是说不用requresAnimationFrame, setState会延迟渲染，等待此state更新成功。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">componentWillReceiveProps</span>(<span class="params">nextProps</span>) &#123;</span><br><span class="line">   <span class="keyword">if</span> (!nextProps.<span class="property">refreshing</span> &amp;&amp; <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">rowSource</span> != nextProps.<span class="property">rowSource</span>) &#123;</span><br><span class="line">       <span class="comment">// requestAnimationFrame(() =&gt; &#123; //不要加上这个，否则导致额外的render</span></span><br><span class="line">         <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">showActivityIndicator</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">       <span class="comment">// &#125;)</span></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="12-gitignore"><a href="#12-gitignore" class="headerlink" title="12. .gitignore"></a>12. .gitignore</h3><p>.gitignore 没有起效，是因为我使用了 import ‘../../smile-shared/xx’ 应该是使用 ‘smile-shared/xxx’,这个是引用的问题，tsc运行时，output结果错误。</p>
 <h3 id="13-import-require外部文件"><a href="#13-import-require外部文件" class="headerlink" title="13. import require外部文件"></a>13. import require外部文件</h3><p>web在src文件夹里面的文件，不可以import那些在src外的其它文件，但是可以用require。比如在src文件夹外面的libs文件夹。</p>
 <h3 id="14-Text-布局"><a href="#14-Text-布局" class="headerlink" title="14. Text 布局"></a>14. Text 布局</h3><h3 id="14-1-Text-宽度"><a href="#14-1-Text-宽度" class="headerlink" title="14.1 Text 宽度"></a>14.1 Text 宽度</h3><p>Text如果不设置宽度，默认是一直延伸的，不会换行。默认占满容器宽度。可以设置固定宽度，或flex:1，或给它容器设置可计算宽度。</p>
 <h4 id="14-2-Text中嵌套View-要设置width-height"><a href="#14-2-Text中嵌套View-要设置width-height" class="headerlink" title="14.2 Text中嵌套View,要设置width,height"></a>14.2 Text中嵌套View,要设置width,height</h4><p>在Text中的嵌套View,Image都要设置width,height。可能是因为Text的样式会继承。</p>
 <h4 id="14-3-Text在View中布局"><a href="#14-3-Text在View中布局" class="headerlink" title="14.3 Text在View中布局"></a>14.3 Text在View中布局</h4><p>Text如果不设置宽度，会导致在flexDirection:row中，计算错误，会穿透本组件，到上一层容器(换行位置不对)。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;View style=&#123;&#123;<span class="attr">flexDirection</span>: <span class="string">'row'</span>&#125;&#125;&gt;</span><br><span class="line">  &lt;Text style=&#123;&#123;<span class="attr">marginRight</span>: <span class="number">3</span>&#125;&#125;&gt;Title&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">  &lt;Text &gt;This is a long contetn.&lt;/</span>Text&gt;</span><br><span class="line">&lt;<span class="regexp">/View&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="15-yield"><a href="#15-yield" class="headerlink" title="15. yield"></a>15. yield</h3><p> 调用generator时，没有yield会造成generator没有预期行为，比如直接使用saga effects的call没有阻塞调用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; takeLatest, delay &#125; <span class="keyword">from</span> <span class="string">'redux-saga'</span></span><br><span class="line"><span class="keyword">import</span> &#123; put, call, fork, take, race, select &#125; <span class="keyword">from</span> <span class="string">'redux-saga/effects'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">mySaga</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> call(delay, <span class="number">1000</span>) <span class="comment">// don't less yield call(delay, 1000)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 16. RCTNativeAppEventEmitter vs DeviceEventManagerModule.RCTDeviceEventEmitter</span></span><br><span class="line"><span class="string">RN中这两个Emitter应该没什么区别，我没有接受到消息，是因为我拼写中大小写有错误，浪费时间在寻找这两个Emitter区别。RCTNativeAppEventEmitter: Module that handles global application events.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">- iOS: RCTEventEmitter &lt;RCTBridgeModule&gt;</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span> Objective-C</span><br><span class="line">@interface CalendarManager : RCTEventEmitter &lt;RCTBridgeModule&gt;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation CalendarManager</span><br><span class="line">[self sendEventWithName:@<span class="string">"EventReminder"</span> body:@&#123;@<span class="string">"name"</span>: eventName&#125;];</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; NativeEventEmitter, NativeModules &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; CalendarManager &#125; = NativeModules;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> calendarManagerEmitter = <span class="keyword">new</span> NativeEventEmitter(CalendarManager);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> subscription = calendarManagerEmitter.addListener(</span><br><span class="line">  <span class="string">'EventReminder'</span>,</span><br><span class="line">  (reminder) =&gt; <span class="built_in">console</span>.log(reminder.name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">View</span> style=&#123;&#123;<span class="attr">flexDirection</span>: <span class="string">&#x27;row&#x27;</span>&#125;&#125;&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;&#123;marginRight:</span> <span class="attr">3</span>&#125;&#125;&gt;</span>Title<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Text</span> &gt;</span>This is a long contetn.<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">View</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="15-yield"><a href="#15-yield" class="headerlink" title="15. yield"></a>15. yield</h3><p> 调用generator时，没有yield会造成generator没有预期行为，比如直接使用saga effects的call没有阻塞调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; takeLatest, delay &#125; <span class="keyword">from</span> <span class="string">&#x27;redux-saga&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; put, call, fork, take, race, select &#125; <span class="keyword">from</span> <span class="string">&#x27;redux-saga/effects&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span>* <span class="title function_">mySaga</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="title function_">call</span>(delay, <span class="number">1000</span>) <span class="comment">// don&#x27;t less yield call(delay, 1000)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="16-RCTNativeAppEventEmitter-vs-DeviceEventManagerModule-RCTDeviceEventEmitter"><a href="#16-RCTNativeAppEventEmitter-vs-DeviceEventManagerModule-RCTDeviceEventEmitter" class="headerlink" title="16. RCTNativeAppEventEmitter vs DeviceEventManagerModule.RCTDeviceEventEmitter"></a>16. RCTNativeAppEventEmitter vs DeviceEventManagerModule.RCTDeviceEventEmitter</h3><p>RN中这两个Emitter应该没什么区别，我没有接受到消息，是因为我拼写中大小写有错误，浪费时间在寻找这两个Emitter区别。RCTNativeAppEventEmitter: Module that handles global application events.</p>
 <ul>
-<li>iOS: bridge<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@interface RNInmobi : NSObject &lt;RCTBridgeModule&gt;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation RNInmobi</span><br><span class="line">@synthesize bridge = _bridge;</span><br><span class="line">[self.bridge.eventDispatcher sendAppEventWithName:RCTInmobiEventName body:body];</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>iOS: RCTEventEmitter <RCTBridgeModule></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@interface CalendarManager : RCTEventEmitter &lt;RCTBridgeModule&gt;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation CalendarManager</span><br><span class="line">[self sendEventWithName:@&quot;EventReminder&quot; body:@&#123;@&quot;name&quot;: eventName&#125;];</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">NativeEventEmitter</span>, <span class="title class_">NativeModules</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">CalendarManager</span> &#125; = <span class="title class_">NativeModules</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> calendarManagerEmitter = <span class="keyword">new</span> <span class="title class_">NativeEventEmitter</span>(<span class="title class_">CalendarManager</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> subscription = calendarManagerEmitter.<span class="title function_">addListener</span>(</span><br><span class="line">  <span class="string">&#x27;EventReminder&#x27;</span>,</span><br><span class="line">  <span class="function">(<span class="params">reminder</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(reminder.<span class="property">name</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
+<li><p>iOS: bridge</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@interface RNInmobi : NSObject &lt;RCTBridgeModule&gt;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation RNInmobi</span><br><span class="line">@synthesize bridge = _bridge;</span><br><span class="line">[self.bridge.eventDispatcher sendAppEventWithName:RCTInmobiEventName body:body];</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">NativeModules</span>, <span class="title class_">Platform</span>, <span class="title class_">DeviceEventEmitter</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span>;</span><br><span class="line"><span class="title class_">DeviceEventEmitter</span>.<span class="title function_">addListener</span>(<span class="string">&#x27;Inmobi_Resp&#x27;</span>, <span class="function"><span class="params">resp</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> callback = savedCallback;</span><br><span class="line">  savedCallback = <span class="literal">undefined</span>;</span><br><span class="line">  callback &amp;&amp; <span class="title function_">callback</span>(resp);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>Android: RCTDeviceEventEmitter<br><a target="_blank" rel="noopener" href="https://facebook.github.io/react-native/docs/native-modules-android">https://facebook.github.io/react-native/docs/native-modules-android</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">sendEvent</span><span class="params">(ReactContext reactContext,</span></span><br><span class="line"><span class="params">                       String eventName,</span></span><br><span class="line"><span class="params">                       <span class="meta">@Nullable</span> WritableMap params)</span> &#123;</span><br><span class="line">  reactContext</span><br><span class="line">      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)</span><br><span class="line">      .emit(eventName, params);</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="type">WritableMap</span> <span class="variable">params</span> <span class="operator">=</span> Arguments.createMap();</span><br><span class="line">...</span><br><span class="line">sendEvent(reactContext, <span class="string">&quot;keyboardWillShow&quot;</span>, params);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">DeviceEventEmitter</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span>;</span><br><span class="line">...</span><br><span class="line">   <span class="title class_">DeviceEventEmitter</span>.<span class="title function_">addListener</span>(<span class="string">&#x27;keyboardWillShow&#x27;</span>, </span><br><span class="line">                      <span class="variable language_">this</span>.<span class="property">scrollResponderKeyboardWillShow</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>Android: RCTNativeAppEventEmitter</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getReactApplicationContext()</span><br><span class="line">               .getJSModule(RCTNativeAppEventEmitter.class)</span><br><span class="line">               .emit(<span class="string">&quot;QQ_Resp&quot;</span>, resultMap);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; NativeModules, Platform, DeviceEventEmitter &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line">DeviceEventEmitter.addListener(<span class="string">'Inmobi_Resp'</span>, resp =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> callback = savedCallback;</span><br><span class="line">  savedCallback = <span class="literal">undefined</span>;</span><br><span class="line">  callback &amp;&amp; callback(resp);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Android: RCTDeviceEventEmitter<br><a href="https://facebook.github.io/react-native/docs/native-modules-android" target="_blank" rel="noopener">https://facebook.github.io/react-native/docs/native-modules-android</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendEvent</span><span class="params">(ReactContext reactContext,</span></span></span><br><span class="line"><span class="function"><span class="params">                       String eventName,</span></span></span><br><span class="line"><span class="function"><span class="params">                       @Nullable WritableMap params)</span> </span>&#123;</span><br><span class="line">  reactContext</span><br><span class="line">      .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">      .<span class="title">emit</span>(<span class="title">eventName</span>, <span class="title">params</span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">WritableMap params = Arguments.createMap();</span><br><span class="line">...</span><br><span class="line">sendEvent(reactContext, <span class="string">"keyboardWillShow"</span>, params);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; DeviceEventEmitter &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line">...</span><br><span class="line">   DeviceEventEmitter.addListener(<span class="string">'keyboardWillShow'</span>, </span><br><span class="line">                      <span class="keyword">this</span>.scrollResponderKeyboardWillShow);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Android: RCTNativeAppEventEmitter<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getReactApplicationContext()</span><br><span class="line">               .getJSModule(RCTNativeAppEventEmitter<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line">               .emit("QQ_Resp", resultMap);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;NativeModules, NativeAppEventEmitter&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line">NativeAppEventEmitter.addListener(<span class="string">'QQ_Resp'</span>, resp =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> callback = savedCallback;</span><br><span class="line">    savedCallback = <span class="literal">undefined</span>;</span><br><span class="line">    callback &amp;&amp; callback(resp);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>总结: 原生中iOS用 RCTEventEmitter <rctbridgemodule>， Android 用RCTDeviceEventEmitter。JS端用DeviceEventEmitter or NativeEventEmitter.</rctbridgemodule></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">NativeModules</span>, <span class="title class_">NativeAppEventEmitter</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span>;</span><br><span class="line"><span class="title class_">NativeAppEventEmitter</span>.<span class="title function_">addListener</span>(<span class="string">&#x27;QQ_Resp&#x27;</span>, <span class="function"><span class="params">resp</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> callback = savedCallback;</span><br><span class="line">    savedCallback = <span class="literal">undefined</span>;</span><br><span class="line">    callback &amp;&amp; <span class="title function_">callback</span>(resp);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>总结: 原生中iOS用 RCTEventEmitter <RCTBridgeModule>， Android 用RCTDeviceEventEmitter。JS端用DeviceEventEmitter or NativeEventEmitter.</p>
 <h3 id="17-moment-format-‘M-D’"><a href="#17-moment-format-‘M-D’" class="headerlink" title="17. moment format ‘M-D’"></a>17. moment format ‘M-D’</h3><p>在排序时，没有考虑跨年的问题，只是按’M-D’排序，应该按’YYYY-M-D’排序。</p>
 <h3 id="18-键盘"><a href="#18-键盘" class="headerlink" title="18. 键盘"></a>18. 键盘</h3><p>RN的键盘输入，比较麻烦，不是很方便。</p>
 <ul>
@@ -436,21 +277,30 @@
 <p>如果焦点变化了，并且当前焦点不可以输入，键盘自动隐藏。就像<code>this._textInput.blur()</code>这样。</p>
 </blockquote>
 <blockquote>
-<p>如果使用KeyboardAvoidingView behavior=’padding’,它的容器高度可能会变化，比如Modal，那么在ScrollView中，并且顶部有个flex:1的View，它的高度包含了键盘高度。需要去掉这个高度，使用<code>View</code>包含它，这个其实就是不需要KeyboardAvoidingView了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">renderContent() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;KeyboardAvoidingView behavior=&#123;IsAndroid ? <span class="string">'padding'</span> : <span class="string">'position'</span>&#125;&gt;</span><br><span class="line">        &#123;<span class="keyword">this</span>.renderFooter()&#125;</span><br><span class="line">      &lt;<span class="regexp">/KeyboardAvoidingView&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">render ()&#123;</span></span><br><span class="line"><span class="regexp">  return (</span></span><br><span class="line"><span class="regexp">      &lt;Modal</span></span><br><span class="line"><span class="regexp">        visible=&#123;fullType == currentModal&#125;</span></span><br><span class="line"><span class="regexp">        animationType="fade"</span></span><br><span class="line"><span class="regexp">        transparent=&#123;true&#125;</span></span><br><span class="line"><span class="regexp">        onRequestClose=&#123;() =&gt; this.closeModal()&#125;&gt;</span></span><br><span class="line"><span class="regexp">        &lt;View style=&#123;&#123; flex: 1 &#125;&#125;&gt;</span></span><br><span class="line"><span class="regexp">          &lt;ScrollView</span></span><br><span class="line"><span class="regexp">            style=&#123;&#123; flex: 1 &#125;&#125;</span></span><br><span class="line"><span class="regexp">            contentContainerStyle=&#123;&#123; flex: 1 &#125;&#125;</span></span><br><span class="line"><span class="regexp">            showsVerticalScrollIndicator=&#123;false&#125;</span></span><br><span class="line"><span class="regexp">            automaticallyAdjustContentInsets=&#123;false&#125;</span></span><br><span class="line"><span class="regexp">          &gt;</span></span><br><span class="line"><span class="regexp">            &lt;TouchableOpacity</span></span><br><span class="line"><span class="regexp">              style=&#123;styles.empty&#125;</span></span><br><span class="line"><span class="regexp">              onPress=&#123;() =&gt; this.closeModal()&#125;&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>TouchableOpacity&gt;</span><br><span class="line">            &#123;</span><br><span class="line">              IsAndroid ?</span><br><span class="line">                &lt;View&gt;</span><br><span class="line">                  &#123;<span class="keyword">this</span>.renderContent()&#125;</span><br><span class="line">                &lt;<span class="regexp">/View&gt; :</span></span><br><span class="line"><span class="regexp">                this.renderContent()</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>ScrollView&gt;</span><br><span class="line">        &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Modal&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果使用KeyboardAvoidingView behavior=’padding’,它的容器高度可能会变化，比如Modal，那么在ScrollView中，并且顶部有个flex:1的View，它的高度包含了键盘高度。需要去掉这个高度，使用<code>View</code>包含它，这个其实就是不需要KeyboardAvoidingView了。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;KeyboardAvoidingView&#125; <span class="keyword">from</span> <span class="string">'react-native'</span></span><br><span class="line">&lt;KeyboardAvoidingView</span><br><span class="line">  style=&#123;&#123; <span class="attr">paddingBottom</span>: IsAndroid ? <span class="number">260</span> * heightScale : <span class="number">160</span> * widthScale &#125;&#125;</span><br><span class="line">  behavior=&#123;IsAndroid ? <span class="string">'padding'</span> : <span class="string">'position'</span>&#125;&gt;</span><br><span class="line">  &#123;children&#125;</span><br><span class="line">&lt;<span class="regexp">/KeyboardAvoidingView&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">renderContent</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">KeyboardAvoidingView</span> <span class="attr">behavior</span>=<span class="string">&#123;IsAndroid</span> ? &#x27;<span class="attr">padding</span>&#x27; <span class="attr">:</span> &#x27;<span class="attr">position</span>&#x27;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;this.renderFooter()&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">KeyboardAvoidingView</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line">render ()&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">Modal</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">visible</span>=<span class="string">&#123;fullType</span> == <span class="string">currentModal&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">animationType</span>=<span class="string">&quot;fade&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">transparent</span>=<span class="string">&#123;true&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">onRequestClose</span>=<span class="string">&#123;()</span> =&gt;</span> this.closeModal()&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">flex:</span> <span class="attr">1</span> &#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">ScrollView</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">flex:</span> <span class="attr">1</span> &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">contentContainerStyle</span>=<span class="string">&#123;&#123;</span> <span class="attr">flex:</span> <span class="attr">1</span> &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">showsVerticalScrollIndicator</span>=<span class="string">&#123;false&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">automaticallyAdjustContentInsets</span>=<span class="string">&#123;false&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          &gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">TouchableOpacity</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              <span class="attr">style</span>=<span class="string">&#123;styles.empty&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              <span class="attr">onPress</span>=<span class="string">&#123;()</span> =&gt;</span> this.closeModal()&#125;&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">TouchableOpacity</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;</span></span><br><span class="line"><span class="language-xml">              IsAndroid ?</span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">View</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                  &#123;this.renderContent()&#125;</span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;/<span class="name">View</span>&gt;</span> :</span></span><br><span class="line"><span class="language-xml">                this.renderContent()</span></span><br><span class="line"><span class="language-xml">            &#125;</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">ScrollView</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Modal</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">KeyboardAvoidingView</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span></span><br><span class="line">&lt;<span class="title class_">KeyboardAvoidingView</span></span><br><span class="line">  style=&#123;&#123; <span class="attr">paddingBottom</span>: <span class="title class_">IsAndroid</span> ? <span class="number">260</span> * heightScale : <span class="number">160</span> * widthScale &#125;&#125;</span><br><span class="line">  behavior=&#123;<span class="title class_">IsAndroid</span> ? <span class="string">&#x27;padding&#x27;</span> : <span class="string">&#x27;position&#x27;</span>&#125;&gt;</span><br><span class="line">  &#123;children&#125;</span><br><span class="line">&lt;/<span class="title class_">KeyboardAvoidingView</span>&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="19-Image-dimension"><a href="#19-Image-dimension" class="headerlink" title="19.Image dimension"></a>19.Image dimension</h3><p>Image source如果是本地，需要设置width,或者height.</p>
-<h3 id="19-1-本地图片"><a href="#19-1-本地图片" class="headerlink" title="19.1 本地图片"></a>19.1 本地图片</h3><h4 id="19-1-1-只设置width，或者只设置height-然后加上resizeMode-’contain’"><a href="#19-1-1-只设置width，或者只设置height-然后加上resizeMode-’contain’" class="headerlink" title="19.1.1 只设置width，或者只设置height,然后加上resizeMode:’contain’"></a>19.1.1 只设置width，或者只设置height,然后加上resizeMode:’contain’</h4><p>之前这么用，大部分没什么问题，但是如果这样用，图片显示没问题，但是图片占用的空间不是显示的大小。比如图片大小是100*50,<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Image style=&#123;&#123;<span class="attr">width</span>:<span class="number">80</span>,<span class="attr">resizeMode</span>:<span class="string">'contain'</span>&#125;&#125; source=&#123;<span class="built_in">require</span>(...)&#125;&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="19-1-本地图片"><a href="#19-1-本地图片" class="headerlink" title="19.1 本地图片"></a>19.1 本地图片</h3><h4 id="19-1-1-只设置width，或者只设置height-然后加上resizeMode-’contain’"><a href="#19-1-1-只设置width，或者只设置height-然后加上resizeMode-’contain’" class="headerlink" title="19.1.1 只设置width，或者只设置height,然后加上resizeMode:’contain’"></a>19.1.1 只设置width，或者只设置height,然后加上resizeMode:’contain’</h4><p>之前这么用，大部分没什么问题，但是如果这样用，图片显示没问题，但是图片占用的空间不是显示的大小。比如图片大小是100*50,</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Image</span> style=&#123;&#123;<span class="attr">width</span>:<span class="number">80</span>,<span class="attr">resizeMode</span>:<span class="string">&#x27;contain&#x27;</span>&#125;&#125; source=&#123;<span class="built_in">require</span>(...)&#125;&gt;</span><br></pre></td></tr></table></figure>
 <p>如上，没有设置height,但是这个Image的实际高度是50,然后垂直居中显示。这样导致图片的相邻元素的位置不对。</p>
 <h4 id="19-2-网络图片"><a href="#19-2-网络图片" class="headerlink" title="19.2 网络图片"></a>19.2 网络图片</h4><h4 id="19-2-1-使用Image-getSize-url-width-height-gt-error-gt"><a href="#19-2-1-使用Image-getSize-url-width-height-gt-error-gt" class="headerlink" title="19.2.1 使用Image.getSize(url, (width,height)=&gt;{}, error=&gt;{})"></a>19.2.1 使用Image.getSize(url, (width,height)=&gt;{}, error=&gt;{})</h4><p>在回调中setState({widht, height})</p>
-<h4 id="19-2-2-使用flex-1-或者-position-’absolute’"><a href="#19-2-2-使用flex-1-或者-position-’absolute’" class="headerlink" title="19.2.2 使用flex:1 或者 position=’absolute’"></a>19.2.2 使用flex:1 或者 position=’absolute’</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意：容器中不能设置justifyContent和alignItems,不然图片不显示</span></span><br><span class="line">&lt;Image source=&#123;&#123;<span class="attr">uri</span>: url&#125;&#125; style=&#123;&#123;<span class="attr">flex</span>: <span class="number">1</span>, <span class="attr">width</span>: <span class="literal">null</span>, <span class="attr">height</span>: <span class="literal">null</span>&#125;&#125; resizeMode=<span class="string">'contain'</span>/&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用position='absolute'</span></span><br><span class="line">&lt;Image source=&#123;&#123;<span class="attr">uri</span>: url&#125;&#125; style=&#123;&#123;<span class="attr">position</span>: <span class="string">'absolute'</span>, <span class="attr">left</span>: <span class="number">0</span>, <span class="attr">top</span>: <span class="number">0</span>, <span class="attr">right</span>: <span class="number">0</span>, <span class="attr">bottom</span>: <span class="number">0</span>&#125;&#125; resizeMode=<span class="string">'contain'</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="19-2-2-使用flex-1-或者-position-’absolute’"><a href="#19-2-2-使用flex-1-或者-position-’absolute’" class="headerlink" title="19.2.2 使用flex:1 或者 position=’absolute’"></a>19.2.2 使用flex:1 或者 position=’absolute’</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意：容器中不能设置justifyContent和alignItems,不然图片不显示</span></span><br><span class="line">&lt;<span class="title class_">Image</span> source=&#123;&#123;<span class="attr">uri</span>: url&#125;&#125; style=&#123;&#123;<span class="attr">flex</span>: <span class="number">1</span>, <span class="attr">width</span>: <span class="literal">null</span>, <span class="attr">height</span>: <span class="literal">null</span>&#125;&#125; resizeMode=<span class="string">&#x27;contain&#x27;</span>/&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用position=&#x27;absolute&#x27;</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span> <span class="attr">url</span>&#125;&#125; <span class="attr">style</span>=<span class="string">&#123;&#123;position:</span> &#x27;<span class="attr">absolute</span>&#x27;, <span class="attr">left:</span> <span class="attr">0</span>, <span class="attr">top:</span> <span class="attr">0</span>, <span class="attr">right:</span> <span class="attr">0</span>, <span class="attr">bottom:</span> <span class="attr">0</span>&#125;&#125; <span class="attr">resizeMode</span>=<span class="string">&#x27;contain&#x27;</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
+
 <p>如果Image的height，width不固定，用Image.getSize回调。如果容器size固定(不一定有width,height，而是可以是flex布局)，用flex:1或posiiton=’absolute’。</p>
 <blockquote>
 <p>注意本地图片如果也这么用，最好在外面加上一个View作为container, 这个container使用absolute或者flex:1。</p>
 </blockquote>
-<h3 id="20-tricky-of-ListView"><a href="#20-tricky-of-ListView" class="headerlink" title="20. tricky of ListView"></a>20. tricky of ListView</h3><p>ListView在ScrollView中，那么ListView不设置style={flex:1}, 那么ListView 和ScrollView的滑动事件很完美结合，表现为整体滑动。react-native-web中，Chrome表现和mobile一样，safari不行，ListView的父节点必须有个高度，手工计算它的高度，这个高度必须大于等于ListView content 的height, 那样滑动起来就像是一个整体，不然就会是局部滑动。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ScrollView&gt;</span><br><span class="line">  &lt;View style=&#123;&#123;<span class="attr">flex</span>:<span class="number">1</span>&#125;&#125; &#123;<span class="comment">/*这个flex:1在mobile app和chrome环境下会忽视，但是safari不行 */</span>&#125;&gt; </span><br><span class="line">    &lt;ListView</span><br><span class="line">      dataSource=&#123;dataSource&#125;</span><br><span class="line">      renderRow=&#123;<span class="keyword">this</span>.renderRow&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">  &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>ScrollView&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="21-react-native-run-android真机调试"><a href="#21-react-native-run-android真机调试" class="headerlink" title="21. react-native run-android真机调试"></a>21. react-native run-android真机调试</h3><p>Failed to install all. run-android on device<br>一种情况是真机没连上或者同时开了模拟器<br>第二种就是要这样执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line">List of devices attached</span><br><span class="line">85EABNGMFABC    device</span><br><span class="line"></span><br><span class="line">react-native run-android --deviceId 85EABNGMFABC <span class="comment">#这样可以成功安装到真机</span></span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/facebook/react-native/issues/9498" target="_blank" rel="noopener">github issue</a></p>
+<h3 id="20-tricky-of-ListView"><a href="#20-tricky-of-ListView" class="headerlink" title="20. tricky of ListView"></a>20. tricky of ListView</h3><p>ListView在ScrollView中，那么ListView不设置style={flex:1}, 那么ListView 和ScrollView的滑动事件很完美结合，表现为整体滑动。react-native-web中，Chrome表现和mobile一样，safari不行，ListView的父节点必须有个高度，手工计算它的高度，这个高度必须大于等于ListView content 的height, 那样滑动起来就像是一个整体，不然就会是局部滑动。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">ScrollView</span>&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;flex:1&#125;&#125;</span> &#123;/*这个<span class="attr">flex:1</span>在<span class="attr">mobile</span> <span class="attr">app</span>和<span class="attr">chrome</span>环境下会忽视，但是<span class="attr">safari</span>不行 */&#125;&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">ListView</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">dataSource</span>=<span class="string">&#123;dataSource&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">renderRow</span>=<span class="string">&#123;this.renderRow&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">ScrollView</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="21-react-native-run-android真机调试"><a href="#21-react-native-run-android真机调试" class="headerlink" title="21. react-native run-android真机调试"></a>21. react-native run-android真机调试</h3><p>Failed to install all. run-android on device<br>一种情况是真机没连上或者同时开了模拟器<br>第二种就是要这样执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line">List of devices attached</span><br><span class="line">85EABNGMFABC    device</span><br><span class="line"></span><br><span class="line">react-native run-android --deviceId 85EABNGMFABC <span class="comment">#这样可以成功安装到真机</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/facebook/react-native/issues/9498">github issue</a></p>
 <h3 id="22-flex布局中，子元素的宽高度"><a href="#22-flex布局中，子元素的宽高度" class="headerlink" title="22. flex布局中，子元素的宽高度"></a>22. flex布局中，子元素的宽高度</h3><h4 id="22-1-flexDirection-’column’"><a href="#22-1-flexDirection-’column’" class="headerlink" title="22.1 flexDirection:’column’"></a>22.1 flexDirection:’column’</h4><p>子元素的宽度通常内容决定的，高度是固定高度或flex布局。</p>
 <h4 id="22-2-flexDirection-‘row’"><a href="#22-2-flexDirection-‘row’" class="headerlink" title="22.2 flexDirection: ‘row’"></a>22.2 flexDirection: ‘row’</h4><p>子元素的高度通常是<strong>容器高度</strong>，宽度是固定宽度或flex布局。但这个有意外，可能是父容器设置了<code>alignItems:&#39;center&#39;</code>，所以当此时子元素高度不是父容器高度时，按需要可以设置<code>alignSelf:&#39;stretch&#39;</code>。</p>
 <h4 id="22-3-alignItmes-’center’-flexDirection-’column’"><a href="#22-3-alignItmes-’center’-flexDirection-’column’" class="headerlink" title="22.3 alignItmes:’center’, flexDirection:’column’"></a>22.3 alignItmes:’center’, flexDirection:’column’</h4><p><code>marginLeft: 20</code>，实际偏移10，因为alignItems:’center’的原因。这个是layout，影响占有空间。<br><code>left:10</code>,实际偏移10。left一般和position:’relative’和position:’absolute’一起使用。注意在relative时候，原有位置空间不会消失。也会影响占有空间。</p>
@@ -459,24 +309,36 @@
 <p>iOS release app, Project-&gt;Build Settings-&gt;Build Acitve Architecture Only,在release下是false,表示build出的.iap支持多个CPU架构。而通常debug下我们只需要x86_64（模拟器）的CPU架构就够了，或者当前真机的CPU架构。</p>
 </blockquote>
 <h4 id="24-js-class-vs-object"><a href="#24-js-class-vs-object" class="headerlink" title="24. js class vs object"></a>24. js class vs object</h4><blockquote>
-<p>区别就是有没有逗号<br>如果是class<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  fun1 = (a)&#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//没有逗号','</span></span><br><span class="line">  fun2 = (b)&#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(b)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>区别就是有没有逗号<br>如果是class</p>
 </blockquote>
-<p>如果是object<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> A = &#123;</span><br><span class="line">  fun1(a)&#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(a)</span><br><span class="line">  &#125;,</span><br><span class="line">  fun2(b)&#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(b)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  fun1 = (a)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//没有逗号&#x27;,&#x27;</span></span><br><span class="line">  fun2 = (b)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(b)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果是object</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> A = &#123;</span><br><span class="line">  <span class="title function_">fun1</span>(<span class="params">a</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(a)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">fun2</span>(<span class="params">b</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(b)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="25-android-build-error-with"><a href="#25-android-build-error-with" class="headerlink" title="25. android build error with"></a>25. android build error with</h3><p>发现自己写的react-native inmobi广告模块有问题，build.gradle的build tools版本不匹配<br>解决，使用和主build tool一致的版本号<br>造成冲突的原因，应该是此模块和主程序都使用了支持包</p>
 <p>主build.gradle</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">25</span></span><br><span class="line">    buildToolsVersion <span class="string">"25.0.2"</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        minSdkVersion <span class="number">16</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:appcompat-v7:23.0.1"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>react-native第三方模块的build.gradle<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">23</span></span><br><span class="line">    buildToolsVersion <span class="string">"23.0.1"</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        minSdkVersion <span class="number">16</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ext &#123;</span><br><span class="line">    androidSupportLibVersion = <span class="string">"23.0.1"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:design:$&#123;androidSupportLibVersion&#125;"</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:appcompat-v7:$&#123;androidSupportLibVersion&#125;"</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:recyclerview-v7:$&#123;androidSupportLibVersion&#125;"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>修改第三方模块的build.gradle<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> android &#123;</span><br><span class="line">-    compileSdkVersion <span class="number">23</span></span><br><span class="line">-    buildToolsVersion <span class="string">"23.0.1"</span></span><br><span class="line">+    compileSdkVersion <span class="number">25</span> <span class="comment">//改成和主build.gradle一样</span></span><br><span class="line">+    buildToolsVersion <span class="string">"25.0.2"</span> <span class="comment">//改成和主build.gradle一样</span></span><br><span class="line"> </span><br><span class="line">     defaultConfig &#123;</span><br><span class="line">         minSdkVersion <span class="number">16</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="26-读取Anroid的AndroidManifest-xml中的meta-data"><a href="#26-读取Anroid的AndroidManifest-xml中的meta-data" class="headerlink" title="26.读取Anroid的AndroidManifest.xml中的meta-data"></a>26.读取Anroid的AndroidManifest.xml中的meta-data</h3><p>meta-data的值读的时候不会自动类型转换，比如你要一个String,实际value是一个float，那么就会报警，返回一个null。<br>比如build.gradle中SomeValue值类型是int,那么AndroidMainfest.xml中的”${SomeValue}就是int,读取时就不能用getString.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//metaData.getString如果读到了float就会报警告，返回一个null</span></span><br><span class="line">metaData.get(metaDataKey).toString();</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">25</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;25.0.2&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        minSdkVersion <span class="number">16</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.android.support:appcompat-v7:23.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>react-native第三方模块的build.gradle</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">23</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;23.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        minSdkVersion <span class="number">16</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ext &#123;</span><br><span class="line">    androidSupportLibVersion = <span class="string">&quot;23.0.1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.android.support:design:$&#123;androidSupportLibVersion&#125;&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.android.support:appcompat-v7:$&#123;androidSupportLibVersion&#125;&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.android.support:recyclerview-v7:$&#123;androidSupportLibVersion&#125;&quot;</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>修改第三方模块的build.gradle</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> android &#123;</span><br><span class="line">-    compileSdkVersion <span class="number">23</span></span><br><span class="line">-    buildToolsVersion <span class="string">&quot;23.0.1&quot;</span></span><br><span class="line">+    compileSdkVersion <span class="number">25</span> <span class="comment">//改成和主build.gradle一样</span></span><br><span class="line">+    buildToolsVersion <span class="string">&quot;25.0.2&quot;</span> <span class="comment">//改成和主build.gradle一样</span></span><br><span class="line"> </span><br><span class="line">     defaultConfig &#123;</span><br><span class="line">         minSdkVersion <span class="number">16</span></span><br><span class="line">        targetSdkVersion <span class="number">22</span></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="26-读取Anroid的AndroidManifest-xml中的meta-data"><a href="#26-读取Anroid的AndroidManifest-xml中的meta-data" class="headerlink" title="26.读取Anroid的AndroidManifest.xml中的meta-data"></a>26.读取Anroid的AndroidManifest.xml中的meta-data</h3><p>meta-data的值读的时候不会自动类型转换，比如你要一个String,实际value是一个float，那么就会报警，返回一个null。<br>比如build.gradle中SomeValue值类型是int,那么AndroidMainfest.xml中的”${SomeValue}就是int,读取时就不能用getString.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//metaData.getString如果读到了float就会报警告，返回一个null</span></span><br><span class="line">metaData.get(metaDataKey).toString();</span><br></pre></td></tr></table></figure>
 <p>我遇到的是grovey的问题，它读取一个Long的值，toString时变成了科学计数法，没有办法就只有加个前缀了，我觉得它应该有个方法toString时是直接String，不改变表示方法的。</p>
-<h3 id="27-map不返回"><a href="#27-map不返回" class="headerlink" title="27.map不返回"></a>27.map不返回</h3><p>我有时遇到map使用的时候，不加return,导致页面不显示。跟lambada时更加要注意，是<code>=&gt;()</code>还是<code>=&gt;{}</code>。</p>
-<h3 id="28-Component-bind-this"><a href="#28-Component-bind-this" class="headerlink" title="28.Component bind this"></a>28.Component bind this</h3><p>Component中的回调如果是用了this.props或者<strong>this.renderxxx()</strong>，都是需要bind this的。</p>
-<h3 id="29-padStart-6-‘’"><a href="#29-padStart-6-‘’" class="headerlink" title="29. padStart(6, ‘’)"></a>29. padStart(6, ‘’)</h3><p>Android对TypeScript<code>padStart(6, &#39;&#39;)</code>不支持，还是改用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">"0000"</span>+str).slice(<span class="number">-4</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="27-map不返回"><a href="#27-map不返回" class="headerlink" title="27.map不返回"></a>27.map不返回</h3><p>我有时遇到map使用的时候，不加return,导致页面不显示。跟lambada时更加要注意，是<code>=&gt;()</code>还是<code>=&gt;&#123;&#125;</code>。</p>
+<h3 id="28-Component-bind-this"><a href="#28-Component-bind-this" class="headerlink" title="28.Component bind this"></a>28.Component bind this</h3><p>Component中的回调如果是用了this.props或者**this.renderxxx()**，都是需要bind this的。</p>
+<h3 id="29-padStart-6-‘’"><a href="#29-padStart-6-‘’" class="headerlink" title="29. padStart(6, ‘’)"></a>29. padStart(6, ‘’)</h3><p>Android对TypeScript<code>padStart(6, &#39;&#39;)</code>不支持，还是改用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">&quot;0000&quot;</span>+str).<span class="title function_">slice</span>(-<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
 <h3 id="30-lineHeight"><a href="#30-lineHeight" class="headerlink" title="30. lineHeight"></a>30. lineHeight</h3><p>Android的lineHeight要求是Integer，不能是Double。IOS没问题。</p>
 <h3 id="31-StyleSheet-hairlineWidth"><a href="#31-StyleSheet-hairlineWidth" class="headerlink" title="31. StyleSheet.hairlineWidth"></a>31. StyleSheet.hairlineWidth</h3><p>这个在iPhone5上，不能和backgroundColor一起使用。所以当前View不设backgroundColor,父容器设置backgroundColor。</p>
 <h3 id="32-react-native-svg-ui-polish"><a href="#32-react-native-svg-ui-polish" class="headerlink" title="32. react-native-svg ui polish"></a>32. react-native-svg ui polish</h3><p>在Android平台，如果svg使用width: 12 * widthScale，那么可能出现icon的截边，所以使用固定宽度 6 来解决。</p>
 <h3 id="33-genymotion-修改时区"><a href="#33-genymotion-修改时区" class="headerlink" title="33. genymotion 修改时区"></a>33. genymotion 修改时区</h3><p>运行<code>adb shell</code>进入Android的shell环境。<br>查看当前时区 cat /data/property/persist.sys.timezone<br>修改当前时区 setprop persist.sys.timezone Asia/Shanghai</p>
-<h3 id="34-ScrollView-tricky"><a href="#34-ScrollView-tricky" class="headerlink" title="34. ScrollView tricky"></a>34. ScrollView tricky</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;View style=&#123;styles.flexOne&#125;&gt;</span><br><span class="line">    &lt;ScrollView</span><br><span class="line">      style=&#123;styles.flexOne&#125;</span><br><span class="line">      showsVerticalScrollIndicator=&#123;<span class="literal">false</span>&#125;</span><br><span class="line">      scrollEventThrottle=&#123;<span class="number">16</span>&#125;&gt;</span><br><span class="line">      &lt;View style=&#123;&#123; <span class="attr">flex</span>: <span class="number">1</span>, <span class="attr">alignItems</span>: <span class="string">'center'</span> &#125;&#125;&gt;</span><br><span class="line">        &#123;matchUp&#125;</span><br><span class="line">        &#123;answersBox&#125;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">      &#123;this.renderFooter()&#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>ScrollView&gt;</span><br><span class="line">&lt;<span class="regexp">/View&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="34-ScrollView-tricky"><a href="#34-ScrollView-tricky" class="headerlink" title="34. ScrollView tricky"></a>34. ScrollView tricky</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">View</span> style=&#123;styles.<span class="property">flexOne</span>&#125;&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">ScrollView</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">style</span>=<span class="string">&#123;styles.flexOne&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">showsVerticalScrollIndicator</span>=<span class="string">&#123;false&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">scrollEventThrottle</span>=<span class="string">&#123;16&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">flex:</span> <span class="attr">1</span>, <span class="attr">alignItems:</span> &#x27;<span class="attr">center</span>&#x27; &#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;matchUp&#125;</span></span><br><span class="line"><span class="language-xml">        &#123;answersBox&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;this.renderFooter()&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ScrollView</span>&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">View</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>注意这里不能设置contentContainerStyle的高度或者flex,这个是内容撑开的。但是这里奇怪的地方是ScrollView内部的第一View用的是flex:1,这个flex:1对应的是ScrollView的高度，不是contentContainerStyle的高度，有点像minHeight。 所以renderFooter（）就会在内容不够长的时候在底部。内容足够长的时候在可以滑动下面。</p>
 <h3 id="35-tips"><a href="#35-tips" class="headerlink" title="35. tips"></a>35. tips</h3><ul>
 <li><ol>
@@ -506,10 +368,12 @@
 </ul>
 <h3 id="39-border-虚线"><a href="#39-border-虚线" class="headerlink" title="39. border 虚线"></a>39. border 虚线</h3><p>RN 支持borderStyle: ‘dotted’，所以不需要用图片来代替虚线了。</p>
 <h3 id="40-Text"><a href="#40-Text" class="headerlink" title="40. Text"></a>40. Text</h3><p>RN Text的默认字体大小是14,ios上是14.TODO:android, 系统设置默认字体？</p>
-<h3 id="41-TouchableOpacity-TouchableWithouFeedback的onPress回调函数"><a href="#41-TouchableOpacity-TouchableWithouFeedback的onPress回调函数" class="headerlink" title="41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数"></a>41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数</h3><p>我遇到一个错误，<code>Malformed call from JS: field size are different</code><br>原因是给react-native-navigation的navigator传错参数了。<br>它们的回调函数有参数event,比如我定义一个<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onPressHandler =<span class="function">(<span class="params">title</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.props.jump(<span class="string">'xxx.xx'</span>, &#123;title&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="41-TouchableOpacity-TouchableWithouFeedback的onPress回调函数"><a href="#41-TouchableOpacity-TouchableWithouFeedback的onPress回调函数" class="headerlink" title="41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数"></a>41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数</h3><p>我遇到一个错误，<code>Malformed call from JS: field size are different</code><br>原因是给react-native-navigation的navigator传错参数了。<br>它们的回调函数有参数event,比如我定义一个</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onPressHandler =<span class="function">(<span class="params">title</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">props</span>.<span class="title function_">jump</span>(<span class="string">&#x27;xxx.xx&#x27;</span>, &#123;title&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里的title应该是一个string，但是实参是一个event的对象。所以在闭包中，一定要注意默认参数，比如onPress的。</p>
 <h3 id="42-Trying-to-add-a-‘RCTRawText-text-gt-’-to-a-‘RCTView’"><a href="#42-Trying-to-add-a-‘RCTRawText-text-gt-’-to-a-‘RCTView’" class="headerlink" title="42. Trying to add a ‘RCTRawText [text: &gt;]’ to a ‘RCTView’"></a>42. Trying to add a ‘RCTRawText [text: &gt;]’ to a ‘RCTView’</h3><p>这个是因为在JSX语法中，多了一个’&gt;’,这个是写代码不小心造成的。JSX所有代码都要在标签里。Android会导致crash,iOS不会crash.改正习惯<code>&gt;</code>不能单独一行。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//crash示例</span></span><br><span class="line">render()&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;View</span><br><span class="line">      style=&#123;styles.container&#125;&gt;</span><br><span class="line">      &gt; <span class="comment">//culprit</span></span><br><span class="line">      &lt;Text&gt;示例&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>View&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//crash示例</span></span><br><span class="line"><span class="title function_">render</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">style</span>=<span class="string">&#123;styles.container&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &gt; //culprit</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Text</span>&gt;</span>示例<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h3 id="43-模块设计"><a href="#43-模块设计" class="headerlink" title="43. 模块设计"></a>43. 模块设计</h3><ul>
 <li>不用使用一个Page(Container)来共享逻辑，这让重构复杂。</li>
 <li>有时候我想用数据代替逻辑处理props，比如数据model中有个字段是type,那么使用这个model时就可以自处理，而不用把逻辑(用props传递函数)从外部传入。增加数据的自描述能力，功能函数尽量无状态。</li>
@@ -523,12 +387,13 @@
 <blockquote>
 <p>TODO: setTImeout在app后台运行时应该也是起效的。被OS杀死就是重置了。</p>
 </blockquote>
-<h3 id="45-iOS的启动脚本中的-bin-sh"><a href="#45-iOS的启动脚本中的-bin-sh" class="headerlink" title="45. iOS的启动脚本中的/bin/sh"></a>45. iOS的启动脚本中的/bin/sh</h3><p><a href="https://apple.stackexchange.com/questions/208408/profile-is-not-loaded-on-non-login-bin-sh" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/208408/profile-is-not-loaded-on-non-login-bin-sh</a></p>
+<h3 id="45-iOS的启动脚本中的-bin-sh"><a href="#45-iOS的启动脚本中的-bin-sh" class="headerlink" title="45. iOS的启动脚本中的/bin/sh"></a>45. iOS的启动脚本中的/bin/sh</h3><p><a target="_blank" rel="noopener" href="https://apple.stackexchange.com/questions/208408/profile-is-not-loaded-on-non-login-bin-sh">https://apple.stackexchange.com/questions/208408/profile-is-not-loaded-on-non-login-bin-sh</a></p>
 <blockquote>
-<p>/bin/sh速度比/bin/bash要快，但是/bin/sh只有登录的session有读取~/.profile，其它的session是不读~/.profile。所以加上env ENV=$HOME/.profile /bin/sh<br>我遇到的问题好像是node在xcode的Bundle React Native code and images中没能识别node<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NODE_BINARY=node</span><br><span class="line">../node_modules/react-native/scripts/react-native-xcode.sh</span><br></pre></td></tr></table></figure></p>
+<p>/bin/sh速度比/bin/bash要快，但是/bin/sh只有登录的session有读取<del>/.profile，其它的session是不读</del>/.profile。所以加上env ENV=$HOME/.profile /bin/sh<br>我遇到的问题好像是node在xcode的Bundle React Native code and images中没能识别node</p>
 </blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NODE_BINARY=node</span><br><span class="line">../node_modules/react-native/scripts/react-native-xcode.sh</span><br></pre></td></tr></table></figure>
 <p>一开始我是想给sh加上node环境，发现其实我的sh是有node的，但是没有nvm，我以为是nvm问题，后来发现不是nvm的问题，而是我的sh的node不是nvm管理的node路径，是有brew安装yarn是安装了一个node的10.x的版本，解决方案:先卸载yarn，brew uninstall yarn,然后brew install yarn –without-node，发现环境现在OK了，sh不需要nvm,只需要node。</p>
-<p><a href="https://www.cnblogs.com/EasonJim/p/6850319.html" target="_blank" rel="noopener">https://www.cnblogs.com/EasonJim/p/6850319.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/EasonJim/p/6850319.html">https://www.cnblogs.com/EasonJim/p/6850319.html</a></p>
 <h3 id="46-xcode-的文件夹Group和Reference"><a href="#46-xcode-的文件夹Group和Reference" class="headerlink" title="46. xcode 的文件夹Group和Reference"></a>46. xcode 的文件夹Group和Reference</h3><ul>
 <li><p>xcode创建Resources时，用的Create Group with folder,右侧属性 Location是relative to Grup.这种是没有文件夹，只是一个引用，相当于内部的一个软连接，因为在项目文件夹下是看不到这Resources的。</p>
 </li>
@@ -539,35 +404,38 @@
 </ul>
 <h3 id="47-Text不占满父元素"><a href="#47-Text不占满父元素" class="headerlink" title="47.Text不占满父元素"></a>47.Text不占满父元素</h3><p>设置父元素<code>alignItems: &#39;flex-start&#39;</code>,因为默认父元素是<code>alignItems: &#39;stretch&#39;</code>。</p>
 <h3 id="48-Malformed-calls-from-JS-field-sizes-are-different"><a href="#48-Malformed-calls-from-JS-field-sizes-are-different" class="headerlink" title="48.  Malformed calls from JS: field sizes are different."></a>48.  Malformed calls from JS: field sizes are different.</h3><p>这个是JS调用函数时的参数类型不对，检查参数类型。</p>
-<h3 id="50-尽量不使用数组的index作为key"><a href="#50-尽量不使用数组的index作为key" class="headerlink" title="50.尽量不使用数组的index作为key"></a>50.尽量不使用数组的index作为key</h3><p>iOS上Google地图上的markers会有闪烁的问题，一开始我以为是原生地图的绘制问题。后来我发现是<marker>的key设置问题，我使用了数组的index，但是当新的markers数组请求到，用的还是同一个index，所以Dom diff时候，<marker>会漂移，因为被当做了同一个组件（相同的key）。我一开始是在fetch的onSuccess的callback中手动关闭Callout，但是体验不好，Callout会消失，需要重新点开，最好在请求结束后保持打开状态，也就是组件不要被Dom diff后替代。<br>解决方案：使用maker的_id作为key,这是mongoDB的存储键，是唯一的，完美解决闪烁问题。Dom diff效率还是很高的,选择合适的key会解决这种漂移闪烁问题。</marker></marker></p>
+<h3 id="50-尽量不使用数组的index作为key"><a href="#50-尽量不使用数组的index作为key" class="headerlink" title="50.尽量不使用数组的index作为key"></a>50.尽量不使用数组的index作为key</h3><p>iOS上Google地图上的markers会有闪烁的问题，一开始我以为是原生地图的绘制问题。后来我发现是<Marker>的key设置问题，我使用了数组的index，但是当新的markers数组请求到，用的还是同一个index，所以Dom diff时候，<Marker>会漂移，因为被当做了同一个组件（相同的key）。我一开始是在fetch的onSuccess的callback中手动关闭Callout，但是体验不好，Callout会消失，需要重新点开，最好在请求结束后保持打开状态，也就是组件不要被Dom diff后替代。<br>解决方案：使用maker的_id作为key,这是mongoDB的存储键，是唯一的，完美解决闪烁问题。Dom diff效率还是很高的,选择合适的key会解决这种漂移闪烁问题。</p>
 <h3 id="51-flexible-and-reusable"><a href="#51-flexible-and-reusable" class="headerlink" title="51.flexible and reusable"></a>51.flexible and reusable</h3><p>我觉得flexible可能更加重要些，或者说优先级高些，原因是我实际项目中，更改需求是非常常见的，所以代码要求非常灵活，以应对各种变化（UI,排版，数据格式）。项目时间长了，又要重构，以去除冗余代码，让代码可重用性高，但是在项目初期阶段，很难写出可重用性高的代码，因为对于未来的需求变化一无所知。所以在项目初期阶段，写一下面条代码也是可以的，对于细微的组件还是需要单独分开，以便将来重构。</p>
 <blockquote>
 <p>flexible和reusable初期阶段可能对立，当长期来看，是互补的。</p>
 </blockquote>
-<h3 id="52-image-picke-集成"><a href="#52-image-picke-集成" class="headerlink" title="52.image picke 集成"></a>52.image picke 集成</h3><p>react-native-image-crop-picker，返回path没有“file://“前缀也可以使用在FormData中的uri.FormData中name不能是数字，也不能是null，必须是一个字符串值，没有值我用String(Date.now())。<br>上传图片，不能用Debug Remote，那个时候的JS的运行环境是brower，而RN运行时是用的JCore，所以不能Debug.RN内置的fetch用的内置的XmlHttpRequest，所以axios也是可以用的(都是封装XmlHttpRequest)。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> form = <span class="keyword">new</span> FormData()</span><br><span class="line">form.append(<span class="string">'image'</span>, &#123;</span><br><span class="line">  uri: $filePath, <span class="comment">// 'Private/xxx/xx.../xx.jpeg' </span></span><br><span class="line">  type: $mime, <span class="comment">// 'image/jpeg'</span></span><br><span class="line">  name: $name</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="52-image-picke-集成"><a href="#52-image-picke-集成" class="headerlink" title="52.image picke 集成"></a>52.image picke 集成</h3><p>react-native-image-crop-picker，返回path没有“file://“前缀也可以使用在FormData中的uri.FormData中name不能是数字，也不能是null，必须是一个字符串值，没有值我用String(Date.now())。<br>上传图片，不能用Debug Remote，那个时候的JS的运行环境是brower，而RN运行时是用的JCore，所以不能Debug.RN内置的fetch用的内置的XmlHttpRequest，所以axios也是可以用的(都是封装XmlHttpRequest)。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> form = <span class="keyword">new</span> <span class="title class_">FormData</span>()</span><br><span class="line">form.<span class="title function_">append</span>(<span class="string">&#x27;image&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">uri</span>: $filePath, <span class="comment">// &#x27;Private/xxx/xx.../xx.jpeg&#x27; </span></span><br><span class="line">  <span class="attr">type</span>: $mime, <span class="comment">// &#x27;image/jpeg&#x27;</span></span><br><span class="line">  <span class="attr">name</span>: $name</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>后台node server中可以得到这个FormData,用的fileuplaod模块那么在req.files。<br>TODO:如果用multer模块会在body中？应该是按照FormData的type来确定。</p>
 <p>一开始我Debug Remote时，文件是在是在body中，不在req.files里，关了Debug Remote时就进req.files.</p>
-<p>很有帮助：<a href="https://github.com/g6ling/React-Native-Tips/tree/master/How_to_upload_photo%2Cfile_in%20react-native" target="_blank" rel="noopener">https://github.com/g6ling/React-Native-Tips/tree/master/How_to_upload_photo%2Cfile_in%20react-native</a></p>
+<p>很有帮助：<a target="_blank" rel="noopener" href="https://github.com/g6ling/React-Native-Tips/tree/master/How_to_upload_photo%2Cfile_in%20react-native">https://github.com/g6ling/React-Native-Tips/tree/master/How_to_upload_photo%2Cfile_in%20react-native</a></p>
 <blockquote>
 <p>FormData 是XmlHttpRequest中新增的，File继承自Blob。Blob有两个属性:size和type。Blob.size (只读),Blob 对象中所包含数据的大小（字节）;Blob.type (只读),一个字符串，表明该Blob对象所包含数据的MIME类型,如果类型未知，则该值为空字符串。如果分块上传，使用有blob.slice(),那个用的Transfer-Encoding: chunked这个Header.</p>
 </blockquote>
-<p>较全:<a href="https://deliciousbrains.com/using-javascript-file-api-to-avoid-file-upload-limits/" target="_blank" rel="noopener">https://deliciousbrains.com/using-javascript-file-api-to-avoid-file-upload-limits/</a><br><a href="https://blog.csdn.net/foolish0421/article/details/73302336" target="_blank" rel="noopener">https://blog.csdn.net/foolish0421/article/details/73302336</a><br><a href="https://www.cnblogs.com/xuehaoyue/p/6639029.html" target="_blank" rel="noopener">https://www.cnblogs.com/xuehaoyue/p/6639029.html</a></p>
+<p>较全:<a target="_blank" rel="noopener" href="https://deliciousbrains.com/using-javascript-file-api-to-avoid-file-upload-limits/">https://deliciousbrains.com/using-javascript-file-api-to-avoid-file-upload-limits/</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/foolish0421/article/details/73302336">https://blog.csdn.net/foolish0421/article/details/73302336</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xuehaoyue/p/6639029.html">https://www.cnblogs.com/xuehaoyue/p/6639029.html</a></p>
 <blockquote>
 <p>Fetch在Browser环境中不能设置ContentType:’multi/form-data’,会报没有bundary的错误。因为Fetch上传文件时会自动设置这个ContentType,还会加上bundary.</p>
 </blockquote>
-<h3 id="53-cocoaPosd"><a href="#53-cocoaPosd" class="headerlink" title="53. cocoaPosd"></a>53. cocoaPosd</h3><p>现在RN的第三方模块都开始支持cocoaPods,如果是数组target，需要在Podfile中写ruby.<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">targetArray = [<span class="string">'sample-develop'</span>, <span class="string">'sample-production'</span>]</span><br><span class="line">targetArray.each  <span class="keyword">do</span> <span class="params">|t|</span></span><br><span class="line">  target t <span class="keyword">do</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="53-cocoaPosd"><a href="#53-cocoaPosd" class="headerlink" title="53. cocoaPosd"></a>53. cocoaPosd</h3><p>现在RN的第三方模块都开始支持cocoaPods,如果是数组target，需要在Podfile中写ruby.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">targetArray = [<span class="string">&#x27;sample-develop&#x27;</span>, <span class="string">&#x27;sample-production&#x27;</span>]</span><br><span class="line">targetArray.each  <span class="keyword">do</span> <span class="params">|t|</span></span><br><span class="line">  target t <span class="keyword">do</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>增加了新的pod要去PROJECT-&gt;Configurations-&gt;Debug/Release中把配置都设置为None,然后执行pod install,那么新的配置文件就设置好了。</p>
 <blockquote>
 <p>如果出现了pod的链接错误，去Link Binary With Libraries中删除无效的xx.a文件。</p>
 </blockquote>
-<h3 id="54-react-naitve-link-match-error"><a href="#54-react-naitve-link-match-error" class="headerlink" title="54. react-naitve link match error"></a>54. react-naitve link match error</h3><p>比如我用<code>react-native link react-native-config</code> ,iOS部分出现<code>Error: Cannot read property &#39;match&#39; of undefined</code>。原因是iOS的中已经适应了CocoaPods 如果你的iOS项目使用的是CocoaPods(包含Podfile)，链接库有podspec文件，那么反应式本地链接将使用Podfile链接库. 那么此时需要在 Podfile文件end 前加入你的pod,这个必须在执行link命令前添加。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod <span class="string">'react-native-config'</span>, <span class="symbol">:path</span> =&gt; <span class="string">'../node_modules/react-native-config'</span> <span class="comment"># dot env file config</span></span><br></pre></td></tr></table></figure></p>
-<p><a href="https://www.jianshu.com/p/b41037546ef9" target="_blank" rel="noopener">https://www.jianshu.com/p/b41037546ef9</a></p>
+<h3 id="54-react-naitve-link-match-error"><a href="#54-react-naitve-link-match-error" class="headerlink" title="54. react-naitve link match error"></a>54. react-naitve link match error</h3><p>比如我用<code>react-native link react-native-config</code> ,iOS部分出现<code>Error: Cannot read property &#39;match&#39; of undefined</code>。原因是iOS的中已经适应了CocoaPods 如果你的iOS项目使用的是CocoaPods(包含Podfile)，链接库有podspec文件，那么反应式本地链接将使用Podfile链接库. 那么此时需要在 Podfile文件end 前加入你的pod,这个必须在执行link命令前添加。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pod <span class="string">&#x27;react-native-config&#x27;</span>, <span class="symbol">:path</span> =&gt; <span class="string">&#x27;../node_modules/react-native-config&#x27;</span> <span class="comment"># dot env file config</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b41037546ef9">https://www.jianshu.com/p/b41037546ef9</a></p>
 <h3 id="55-FlatList-onEndReached-的触发问题"><a href="#55-FlatList-onEndReached-的触发问题" class="headerlink" title="55. FlatList onEndReached 的触发问题"></a>55. FlatList onEndReached 的触发问题</h3><p>如果在FlatList中的items不能占满整个空间时，mounted后会触发onEndReached两次，第一次会渲染items,第二次会得到没有更多的信息（数据为空数组）。但是<code>刷新</code>中只会触发onEndReached<code>一次</code>，如果有判断条件依赖第二次fetch的结果（空数组）就会有bug,这部分逻辑在refresh是不起效。</p>
 <h3 id="56-chrome-copy"><a href="#56-chrome-copy" class="headerlink" title="56. chrome copy()"></a>56. chrome copy()</h3><p>copy(var1)可以复制变量到剪切板，很方便。不需要JSON.stringify转字符串。</p>
-<h3 id="57-Statusbar-设置了hidden但在安卓上有时候会显示"><a href="#57-Statusbar-设置了hidden但在安卓上有时候会显示" class="headerlink" title="57. Statusbar 设置了hidden但在安卓上有时候会显示"></a>57. Statusbar 设置了hidden但在安卓上有时候会显示</h3><p>原因是getCurrentActivity有时候会返回null.因为currentActivity只有在onHostResume和onNewIntent时候才设置，所以onCreat时没有设置，而React-Native在onCreate时候就开始js的渲染。解决方案是加个延时setTimeout，并没有一个好的方式，所以在gteCurrentActivity时候保证页面已经渲染了，或者加个判断。Cobrowse也会遇到这个问题，所以还是很普遍的。<br><a href="https://github.com/facebook/react-native/issues/18345" target="_blank" rel="noopener">https://github.com/facebook/react-native/issues/18345</a><br>onHostResume是ActivityEventListener的方法。onNewIntent是Activity的方法。</p>
+<h3 id="57-Statusbar-设置了hidden但在安卓上有时候会显示"><a href="#57-Statusbar-设置了hidden但在安卓上有时候会显示" class="headerlink" title="57. Statusbar 设置了hidden但在安卓上有时候会显示"></a>57. Statusbar 设置了hidden但在安卓上有时候会显示</h3><p>原因是getCurrentActivity有时候会返回null.因为currentActivity只有在onHostResume和onNewIntent时候才设置，所以onCreat时没有设置，而React-Native在onCreate时候就开始js的渲染。解决方案是加个延时setTimeout，并没有一个好的方式，所以在gteCurrentActivity时候保证页面已经渲染了，或者加个判断。Cobrowse也会遇到这个问题，所以还是很普遍的。<br><a target="_blank" rel="noopener" href="https://github.com/facebook/react-native/issues/18345">https://github.com/facebook/react-native/issues/18345</a><br>onHostResume是ActivityEventListener的方法。onNewIntent是Activity的方法。</p>
 <h3 id="58-reducer和saga使用的是同一个action"><a href="#58-reducer和saga使用的是同一个action" class="headerlink" title="58. reducer和saga使用的是同一个action"></a>58. reducer和saga使用的是同一个action</h3><p>当reducer和saga监听了同一个action，先是reducer触发，然后是saga,注意一点：不要在reducer里面修改action的payload，不然saga就是接受到修改后的payload,引发bug。如果要有修改需求，可以用Object.assgin做浅复制或者深复制。</p>
 <h3 id="59-react中state现在不能修改了"><a href="#59-react中state现在不能修改了" class="headerlink" title="59. react中state现在不能修改了"></a>59. react中state现在不能修改了</h3><p>在16.0之前，state可以修改，但是有warning,16.0之后，state修改就会报错，说不能修改一个immutable或者freeze的object.具体表现是，primitive的类型可以修改(number, boolean)，object的类型不能修改(array)。</p>
-<p>之前我们为了减少render次数，只想做shallow comparison，用的是react-addons-update，这个可以修改引用。后来有了immutable,功能更加强大。<br><a href="https://reactjs.org/docs/update.html" target="_blank" rel="noopener">https://reactjs.org/docs/update.html</a><br><a href="https://immutable-js.github.io/immutable-js/docs/#/List" target="_blank" rel="noopener">https://immutable-js.github.io/immutable-js/docs/#/List</a></p>
+<p>之前我们为了减少render次数，只想做shallow comparison，用的是react-addons-update，这个可以修改引用。后来有了immutable,功能更加强大。<br><a target="_blank" rel="noopener" href="https://reactjs.org/docs/update.html">https://reactjs.org/docs/update.html</a><br><a target="_blank" rel="noopener" href="https://immutable-js.github.io/immutable-js/docs/#/List">https://immutable-js.github.io/immutable-js/docs/#/List</a></p>
 <p>但是我们会遇到一个复合类型的state，像{printers:[{name:’’, tags:[]}]},这种类型的state，不能在原来基础上修改，immutable是个好的方案，mergeDeep如果没改变，那么引用也不会改变。但是immutable每次都要重新有赋值操作。我在想如果使用lodash.cloneDeep是不是也可以呢？比immutable的劣势就是每次setState都会导致渲染。</p>
 <p>这里有两个问题：</p>
 <ul>
@@ -575,8 +443,11 @@
 <li>如何减少渲染次数，使用shouldUpdateComponent后者继承PureComponent: 1.immutable state 2.react-addons-update</li>
 </ul>
 <h3 id="60-realm-的RealmResults的在for循环中的问题"><a href="#60-realm-的RealmResults的在for循环中的问题" class="headerlink" title="60. realm 的RealmResults的在for循环中的问题"></a>60. realm 的RealmResults的在for循环中的问题</h3><p>RN版本是0.58.5，在真机上jscore中for循环RealmResults会有问题，显示iterator不是一个function,而debug的时候因为是chrome的环境，没有这个问题。在emulator上也没有这个问题。所以我用了<code>for (let item of Object.values(record.items))</code>,如果给其它函数调用这个record,需要重新包装一下，不能在RealResuls中操作，而是重新创建一个对象, 不能在RealmResutls上直接修改。<br>在RN的0.59.10中好像没有这个问题了。不知道是RN修复了，还是Realm修复了。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; items, ...others &#125; = record;</span><br><span class="line">newRecord = &#123; ...others, <span class="attr">items</span>: <span class="built_in">Object</span>.values(items) &#125;;</span><br></pre></td></tr></table></figure>
-<p>注意：不能在RealmObject上直接修改值，需要重新浅copy,但是Object.assign({}, realmObject)不行，{…realmObject}也不行，只有{one, …others} = realmObject, newObject= {one, …others}可以。但是最后我选择了for…in..循环。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_transactionMergeItems = &#123;&#125;;</span><br><span class="line"><span class="comment">// In case we need to set the serviceCharge,so need a shallow copy of the realm object.</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> openOrderTransaction) &#123;</span><br><span class="line">  <span class="keyword">if</span> (openOrderTransaction.hasOwnProperty(key)) &#123;</span><br><span class="line">    _transactionMergeItems[key] = openOrderTransaction[key];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; items, ...others &#125; = record;</span><br><span class="line">newRecord = &#123; ...others, <span class="attr">items</span>: <span class="title class_">Object</span>.<span class="title function_">values</span>(items) &#125;;</span><br></pre></td></tr></table></figure>
+<p>注意：不能在RealmObject上直接修改值，需要重新浅copy,但是Object.assign({}, realmObject)不行，{…realmObject}也不行，只有{one, …others} = realmObject, newObject= {one, …others}可以。但是最后我选择了for…in..循环。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_transactionMergeItems = &#123;&#125;;</span><br><span class="line"><span class="comment">// In case we need to set the serviceCharge,so need a shallow copy of the realm object.</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> openOrderTransaction) &#123;</span><br><span class="line">  <span class="keyword">if</span> (openOrderTransaction.<span class="title function_">hasOwnProperty</span>(key)) &#123;</span><br><span class="line">    _transactionMergeItems[key] = openOrderTransaction[key];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h3 id="61-RealmResults的序列化"><a href="#61-RealmResults的序列化" class="headerlink" title="61. RealmResults的序列化"></a>61. RealmResults的序列化</h3><p>由于RealmObject在序列化的时候，遇到外键的情况，可能导致循环引用，那么序列化就会有问题，表现为卡死。TODO:check later?<br>而且我的Redux中使用了Immutable作为对象类型，所以必然遇到这样的问题。<br>解决方案就是：<br>不要把RealmObject放到Redux中，也不要序列化它。可以只传一个primaryKey,接收方再次查找一次数据库。</p>
 <h3 id="62-RealmObject是个引用，它的属性是通过方法调用的"><a href="#62-RealmObject是个引用，它的属性是通过方法调用的" class="headerlink" title="62. RealmObject是个引用，它的属性是通过方法调用的"></a>62. RealmObject是个引用，它的属性是通过方法调用的</h3><p>比如我们查到一个RealmObject,每次调用它的某个属性，如productName,那么每次都是数据库中的实时存储的值。TODO: check?</p>
 <h3 id="63-React-Native-languages的json中的key"><a href="#63-React-Native-languages的json中的key" class="headerlink" title="63. React-Native-languages的json中的key"></a>63. React-Native-languages的json中的key</h3><p>key不能含有<code>.</code>字符，不然匹配不到，<code>?</code>是可以匹配到的。<br>如果有{“info”:”‘s ages is “},调用的时候t(‘info’, {name:’xx’, age: 10}).</p>
@@ -588,363 +459,189 @@
 <h3 id="67-NaN-Infinity"><a href="#67-NaN-Infinity" class="headerlink" title="67. NaN, Infinity"></a>67. NaN, Infinity</h3><p>NaN, Infinity这些JS类型如果传到Native moduel,会导致App crash, 原因是Native无法处理这些类型。</p>
 <p>null可以传到Native，Native module可以处理Double类型，但是不能直接getDouble，这样也会报错。要先判断类型，使用readableMap.getType(key)。</p>
 <p>undefined的值，在Native直接是key不存在。</p>
-<h3 id="68-Saga的call-调用instance的方法"><a href="#68-Saga的call-调用instance的方法" class="headerlink" title="68. Saga的call 调用instance的方法"></a>68. Saga的call 调用instance的方法</h3><p>Saga的call调用instance方法，如果instance方法中用到了this.value，那么需要传递context，就是绑定this.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">yield</span> call([loggly, loggly.push], logData) <span class="comment">// loggly.push中有用到this.属性值，所以需要传递context,不然this指向的值不对。</span></span><br><span class="line"><span class="keyword">yield</span> call(loggly.push.bind(loggly), logData) <span class="comment">// 这样也是可以的，但是传递context更好。bind会返回新函数。</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="69-使用WiFi连接调试真机RN"><a href="#69-使用WiFi连接调试真机RN" class="headerlink" title="69. 使用WiFi连接调试真机RN"></a>69. 使用WiFi连接调试真机RN</h3><p>首先还是需要先用USB连接真机<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># adb -s [device id] tcpip [port] 为需要 wifi 连接的设备指定端口号</span></span><br><span class="line">adb -s 98899a4558304e384f tcpip 8888</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用命令 adb connect [phone ip]:[port] 连接设备</span></span><br><span class="line">adb connect 10.10.10.60:8888</span><br></pre></td></tr></table></figure></p>
+<h3 id="68-Saga的call-调用instance的方法"><a href="#68-Saga的call-调用instance的方法" class="headerlink" title="68. Saga的call 调用instance的方法"></a>68. Saga的call 调用instance的方法</h3><p>Saga的call调用instance方法，如果instance方法中用到了this.value，那么需要传递context，就是绑定this.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">yield</span> <span class="title function_">call</span>([loggly, loggly.<span class="property">push</span>], logData) <span class="comment">// loggly.push中有用到this.属性值，所以需要传递context,不然this指向的值不对。</span></span><br><span class="line"><span class="keyword">yield</span> <span class="title function_">call</span>(loggly.<span class="property">push</span>.<span class="title function_">bind</span>(loggly), logData) <span class="comment">// 这样也是可以的，但是传递context更好。bind会返回新函数。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="69-使用WiFi连接调试真机RN"><a href="#69-使用WiFi连接调试真机RN" class="headerlink" title="69. 使用WiFi连接调试真机RN"></a>69. 使用WiFi连接调试真机RN</h3><p>首先还是需要先用USB连接真机</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># adb -s [device id] tcpip [port] 为需要 wifi 连接的设备指定端口号</span></span><br><span class="line">adb -s 98899a4558304e384f tcpip 8888</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用命令 adb connect [phone ip]:[port] 连接设备</span></span><br><span class="line">adb connect 10.10.10.60:8888</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>之后就可以拔掉USB线进行调试了，如果遇到unauthorized问题，去真机Settings页面，再点下系统版本，打开developer功能。</p>
 <p>在Android中找到src/main/java/MainApplication（Android 主入口文件）类名，找到 onCreate方法,代码附上：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">super</span>.onCreate();</span><br><span class="line"> <span class="comment">//SoLoader.init(this, /* native exopackage */ false);</span></span><br><span class="line"> </span><br><span class="line"> SharedPreferences mPreferences =  PreferenceManager.getDefaultSharedPreferences(getApplicationContext());</span><br><span class="line"> mPreferences.edit().putString(<span class="string">"debug_http_host"</span>,<span class="string">"localhost:8081"</span>).commit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">()</span> &#123;</span><br><span class="line"> <span class="built_in">super</span>.onCreate();</span><br><span class="line"> <span class="comment">//SoLoader.init(this, /* native exopackage */ false);</span></span><br><span class="line"> </span><br><span class="line"> <span class="type">SharedPreferences</span> <span class="variable">mPreferences</span> <span class="operator">=</span>  PreferenceManager.getDefaultSharedPreferences(getApplicationContext());</span><br><span class="line"> mPreferences.edit().putString(<span class="string">&quot;debug_http_host&quot;</span>,<span class="string">&quot;localhost:8081&quot;</span>).commit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>有时候遇到device offliene, 去开发者选项中把Usb Debug选项打开再关闭下，也能解决网络Debug中的offline问题。</li>
 <li>adb kill-server 有时候也有用。</li>
 </ul>
-<p><a href="https://blog.csdn.net/captive_rainbow_/article/details/81012704" target="_blank" rel="noopener">https://blog.csdn.net/captive_rainbow_/article/details/81012704</a><br><a href="https://www.jb51.net/article/119804.htm" target="_blank" rel="noopener">https://www.jb51.net/article/119804.htm</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/captive_rainbow_/article/details/81012704">https://blog.csdn.net/captive_rainbow_/article/details/81012704</a><br><a target="_blank" rel="noopener" href="https://www.jb51.net/article/119804.htm">https://www.jb51.net/article/119804.htm</a></p>
 
-      
     </div>
 
-    <div>
-      
-        
+    
+    
+    
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/debug/" rel="tag"># debug</a>
-          
-            <a href="/tags/react-native/" rel="tag"># react-native</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/debug/" rel="tag"># debug</a>
+              <a href="/tags/react-native/" rel="tag"># react-native</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/13/mac-apache2/" rel="prev" title="mac-apache2">
-                mac-apache2 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2017/07/13/mac-apache2/" rel="next" title="mac-apache2">
+      mac-apache2 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Image-overflow"><span class="nav-number">1.</span> <span class="nav-text">1. Image overflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-flex-layout"><span class="nav-number">2.</span> <span class="nav-text">2. flex layout</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-yoga"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 yoga</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-BFC"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 BFC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-RN-CSS继承"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 RN CSS继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-RN-flex"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 RN flex</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-1父节点-gt-子节点"><span class="nav-number">2.4.1.</span> <span class="nav-text">2.4.1父节点-&gt;子节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-2-父节点flex-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">2.4.2 父节点flex:1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-3-父节点absolute-子节点flex-1"><span class="nav-number">2.4.3.</span> <span class="nav-text">2.4.3 父节点absolute,子节点flex:1</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-style覆盖"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 style覆盖</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-postion-absolute"><span class="nav-number">3.</span> <span class="nav-text">3. postion:absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Text"><span class="nav-number">4.</span> <span class="nav-text">4. Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-borderRadius"><span class="nav-number">5.</span> <span class="nav-text">5. borderRadius</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-setState"><span class="nav-number">6.</span> <span class="nav-text">6. setState</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-ListView-中的onEndReached"><span class="nav-number">7.</span> <span class="nav-text">7. ListView 中的onEndReached</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-子组件和父组件通讯问题"><span class="nav-number">8.</span> <span class="nav-text">8.子组件和父组件通讯问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-ref调用共有方法"><span class="nav-number">9.</span> <span class="nav-text">9.ref调用共有方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-继承和组合"><span class="nav-number">10.</span> <span class="nav-text">10.继承和组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-requestAnimationFrame"><span class="nav-number">11.</span> <span class="nav-text">11.requestAnimationFrame</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-gitignore"><span class="nav-number">12.</span> <span class="nav-text">12. .gitignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-import-require外部文件"><span class="nav-number">13.</span> <span class="nav-text">13. import require外部文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-Text-布局"><span class="nav-number">14.</span> <span class="nav-text">14. Text 布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-1-Text-宽度"><span class="nav-number">15.</span> <span class="nav-text">14.1 Text 宽度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#14-2-Text中嵌套View-要设置width-height"><span class="nav-number">15.1.</span> <span class="nav-text">14.2 Text中嵌套View,要设置width,height</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-3-Text在View中布局"><span class="nav-number">15.2.</span> <span class="nav-text">14.3 Text在View中布局</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-yield"><span class="nav-number">16.</span> <span class="nav-text">15. yield</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-moment-format-‘M-D’"><span class="nav-number">17.</span> <span class="nav-text">17. moment format ‘M-D’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-键盘"><span class="nav-number">18.</span> <span class="nav-text">18. 键盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-Image-dimension"><span class="nav-number">19.</span> <span class="nav-text">19.Image dimension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-1-本地图片"><span class="nav-number">20.</span> <span class="nav-text">19.1 本地图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#19-1-1-只设置width，或者只设置height-然后加上resizeMode-’contain’"><span class="nav-number">20.1.</span> <span class="nav-text">19.1.1 只设置width，或者只设置height,然后加上resizeMode:’contain’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-2-网络图片"><span class="nav-number">20.2.</span> <span class="nav-text">19.2 网络图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-2-1-使用Image-getSize-url-width-height-gt-error-gt"><span class="nav-number">20.3.</span> <span class="nav-text">19.2.1 使用Image.getSize(url, (width,height)=&gt;{}, error=&gt;{})</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-2-2-使用flex-1-或者-position-’absolute’"><span class="nav-number">20.4.</span> <span class="nav-text">19.2.2 使用flex:1 或者 position=’absolute’</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-tricky-of-ListView"><span class="nav-number">21.</span> <span class="nav-text">20. tricky of ListView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-react-native-run-android真机调试"><span class="nav-number">22.</span> <span class="nav-text">21. react-native run-android真机调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-flex布局中，子元素的宽高度"><span class="nav-number">23.</span> <span class="nav-text">22. flex布局中，子元素的宽高度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#22-1-flexDirection-’column’"><span class="nav-number">23.1.</span> <span class="nav-text">22.1 flexDirection:’column’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-2-flexDirection-‘row’"><span class="nav-number">23.2.</span> <span class="nav-text">22.2 flexDirection: ‘row’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-3-alignItmes-’center’-flexDirection-’column’"><span class="nav-number">23.3.</span> <span class="nav-text">22.3 alignItmes:’center’, flexDirection:’column’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-lipo-ios的库查询"><span class="nav-number">23.4.</span> <span class="nav-text">23. lipo ios的库查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-js-class-vs-object"><span class="nav-number">23.5.</span> <span class="nav-text">24. js class vs object</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-android-build-error-with"><span class="nav-number">24.</span> <span class="nav-text">25. android build error with</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-读取Anroid的AndroidManifest-xml中的meta-data"><span class="nav-number">25.</span> <span class="nav-text">26.读取Anroid的AndroidManifest.xml中的meta-data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-map不返回"><span class="nav-number">26.</span> <span class="nav-text">27.map不返回</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-Component-bind-this"><span class="nav-number">27.</span> <span class="nav-text">28.Component bind this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-padStart-6-‘’"><span class="nav-number">28.</span> <span class="nav-text">29. padStart(6, ‘’)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#30-lineHeight"><span class="nav-number">29.</span> <span class="nav-text">30. lineHeight</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-StyleSheet-hairlineWidth"><span class="nav-number">30.</span> <span class="nav-text">31. StyleSheet.hairlineWidth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-react-native-svg-ui-polish"><span class="nav-number">31.</span> <span class="nav-text">32. react-native-svg ui polish</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-genymotion-修改时区"><span class="nav-number">32.</span> <span class="nav-text">33. genymotion 修改时区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-ScrollView-tricky"><span class="nav-number">33.</span> <span class="nav-text">34. ScrollView tricky</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-tips"><span class="nav-number">34.</span> <span class="nav-text">35. tips</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#36-flexWrap-‘wrap’-flexDirection-‘row’"><span class="nav-number">35.</span> <span class="nav-text">36. flexWrap: ‘wrap’, flexDirection: ‘row’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#37-在reduce中使用state-mergeDeep"><span class="nav-number">36.</span> <span class="nav-text">37. 在reduce中使用state.mergeDeep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#38-ToucchableOpacity-vs-TouchableWithoutFeedback"><span class="nav-number">37.</span> <span class="nav-text">38. ToucchableOpacity vs TouchableWithoutFeedback</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不同点"><span class="nav-number">37.1.</span> <span class="nav-text">不同点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-border-虚线"><span class="nav-number">38.</span> <span class="nav-text">39. border 虚线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#40-Text"><span class="nav-number">39.</span> <span class="nav-text">40. Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#41-TouchableOpacity-TouchableWithouFeedback的onPress回调函数"><span class="nav-number">40.</span> <span class="nav-text">41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-Trying-to-add-a-‘RCTRawText-text-gt-’-to-a-‘RCTView’"><span class="nav-number">41.</span> <span class="nav-text">42. Trying to add a ‘RCTRawText [text: &gt;]’ to a ‘RCTView’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-模块设计"><span class="nav-number">42.</span> <span class="nav-text">43. 模块设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#44-RN中使用setImmediate"><span class="nav-number">43.</span> <span class="nav-text">44. RN中使用setImmediate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#45-iOS的启动脚本中的-bin-sh"><span class="nav-number">44.</span> <span class="nav-text">45. iOS的启动脚本中的/bin/sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46-xcode-的文件夹Group和Reference"><span class="nav-number">45.</span> <span class="nav-text">46. xcode 的文件夹Group和Reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#47-Text不占满父元素"><span class="nav-number">46.</span> <span class="nav-text">47.Text不占满父元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#48-Malformed-calls-from-JS-field-sizes-are-different"><span class="nav-number">47.</span> <span class="nav-text">48.  Malformed calls from JS: field sizes are different.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#50-尽量不使用数组的index作为key"><span class="nav-number">48.</span> <span class="nav-text">50.尽量不使用数组的index作为key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#51-flexible-and-reusable"><span class="nav-number">49.</span> <span class="nav-text">51.flexible and reusable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-image-picke-集成"><span class="nav-number">50.</span> <span class="nav-text">52.image picke 集成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-cocoaPosd"><span class="nav-number">51.</span> <span class="nav-text">53. cocoaPosd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#54-react-naitve-link-match-error"><span class="nav-number">52.</span> <span class="nav-text">54. react-naitve link match error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#55-FlatList-onEndReached-的触发问题"><span class="nav-number">53.</span> <span class="nav-text">55. FlatList onEndReached 的触发问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#56-chrome-copy"><span class="nav-number">54.</span> <span class="nav-text">56. chrome copy()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#57-Statusbar-设置了hidden但在安卓上有时候会显示"><span class="nav-number">55.</span> <span class="nav-text">57. Statusbar 设置了hidden但在安卓上有时候会显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#58-reducer和saga使用的是同一个action"><span class="nav-number">56.</span> <span class="nav-text">58. reducer和saga使用的是同一个action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#59-react中state现在不能修改了"><span class="nav-number">57.</span> <span class="nav-text">59. react中state现在不能修改了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#60-realm-的RealmResults的在for循环中的问题"><span class="nav-number">58.</span> <span class="nav-text">60. realm 的RealmResults的在for循环中的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#61-RealmResults的序列化"><span class="nav-number">59.</span> <span class="nav-text">61. RealmResults的序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#62-RealmObject是个引用，它的属性是通过方法调用的"><span class="nav-number">60.</span> <span class="nav-text">62. RealmObject是个引用，它的属性是通过方法调用的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-React-Native-languages的json中的key"><span class="nav-number">61.</span> <span class="nav-text">63. React-Native-languages的json中的key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#64-CALL-AND-RETRY-LAST-Allocation-failed-JavaScript-heap-out-of-memory"><span class="nav-number">62.</span> <span class="nav-text">64. CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#65-redux-persist-发送REHYDRATE"><span class="nav-number">63.</span> <span class="nav-text">65. redux-persist 发送REHYDRATE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#66-string-integer使用"><span class="nav-number">64.</span> <span class="nav-text">66. string,integer使用===</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#67-NaN-Infinity"><span class="nav-number">65.</span> <span class="nav-text">67. NaN, Infinity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#68-Saga的call-调用instance的方法"><span class="nav-number">66.</span> <span class="nav-text">68. Saga的call 调用instance的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#69-使用WiFi连接调试真机RN"><span class="nav-number">67.</span> <span class="nav-text">69. 使用WiFi连接调试真机RN</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Image-overflow"><span class="nav-number">1.</span> <span class="nav-text">1. Image overflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-flex-layout"><span class="nav-number">2.</span> <span class="nav-text">2. flex layout</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-yoga"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 yoga</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-BFC"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 BFC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-RN-CSS%E7%BB%A7%E6%89%BF"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 RN CSS继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-RN-flex"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 RN flex</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-1%E7%88%B6%E8%8A%82%E7%82%B9-gt-%E5%AD%90%E8%8A%82%E7%82%B9"><span class="nav-number">2.4.1.</span> <span class="nav-text">2.4.1父节点-&gt;子节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-2-%E7%88%B6%E8%8A%82%E7%82%B9flex-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">2.4.2 父节点flex:1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-3-%E7%88%B6%E8%8A%82%E7%82%B9absolute-%E5%AD%90%E8%8A%82%E7%82%B9flex-1"><span class="nav-number">2.4.3.</span> <span class="nav-text">2.4.3 父节点absolute,子节点flex:1</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-style%E8%A6%86%E7%9B%96"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 style覆盖</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-postion-absolute"><span class="nav-number">3.</span> <span class="nav-text">3. postion:absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Text"><span class="nav-number">4.</span> <span class="nav-text">4. Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-borderRadius"><span class="nav-number">5.</span> <span class="nav-text">5. borderRadius</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-setState"><span class="nav-number">6.</span> <span class="nav-text">6. setState</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-ListView-%E4%B8%AD%E7%9A%84onEndReached"><span class="nav-number">7.</span> <span class="nav-text">7. ListView 中的onEndReached</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%AD%90%E7%BB%84%E4%BB%B6%E5%92%8C%E7%88%B6%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF%E9%97%AE%E9%A2%98"><span class="nav-number">8.</span> <span class="nav-text">8.子组件和父组件通讯问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-ref%E8%B0%83%E7%94%A8%E5%85%B1%E6%9C%89%E6%96%B9%E6%B3%95"><span class="nav-number">9.</span> <span class="nav-text">9.ref调用共有方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E7%BB%A7%E6%89%BF%E5%92%8C%E7%BB%84%E5%90%88"><span class="nav-number">10.</span> <span class="nav-text">10.继承和组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-requestAnimationFrame"><span class="nav-number">11.</span> <span class="nav-text">11.requestAnimationFrame</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-gitignore"><span class="nav-number">12.</span> <span class="nav-text">12. .gitignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-import-require%E5%A4%96%E9%83%A8%E6%96%87%E4%BB%B6"><span class="nav-number">13.</span> <span class="nav-text">13. import require外部文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-Text-%E5%B8%83%E5%B1%80"><span class="nav-number">14.</span> <span class="nav-text">14. Text 布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-1-Text-%E5%AE%BD%E5%BA%A6"><span class="nav-number">15.</span> <span class="nav-text">14.1 Text 宽度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#14-2-Text%E4%B8%AD%E5%B5%8C%E5%A5%97View-%E8%A6%81%E8%AE%BE%E7%BD%AEwidth-height"><span class="nav-number">15.1.</span> <span class="nav-text">14.2 Text中嵌套View,要设置width,height</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-3-Text%E5%9C%A8View%E4%B8%AD%E5%B8%83%E5%B1%80"><span class="nav-number">15.2.</span> <span class="nav-text">14.3 Text在View中布局</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-yield"><span class="nav-number">16.</span> <span class="nav-text">15. yield</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-RCTNativeAppEventEmitter-vs-DeviceEventManagerModule-RCTDeviceEventEmitter"><span class="nav-number">17.</span> <span class="nav-text">16. RCTNativeAppEventEmitter vs DeviceEventManagerModule.RCTDeviceEventEmitter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-moment-format-%E2%80%98M-D%E2%80%99"><span class="nav-number">18.</span> <span class="nav-text">17. moment format ‘M-D’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-%E9%94%AE%E7%9B%98"><span class="nav-number">19.</span> <span class="nav-text">18. 键盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-Image-dimension"><span class="nav-number">20.</span> <span class="nav-text">19.Image dimension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-1-%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87"><span class="nav-number">21.</span> <span class="nav-text">19.1 本地图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#19-1-1-%E5%8F%AA%E8%AE%BE%E7%BD%AEwidth%EF%BC%8C%E6%88%96%E8%80%85%E5%8F%AA%E8%AE%BE%E7%BD%AEheight-%E7%84%B6%E5%90%8E%E5%8A%A0%E4%B8%8AresizeMode-%E2%80%99contain%E2%80%99"><span class="nav-number">21.1.</span> <span class="nav-text">19.1.1 只设置width，或者只设置height,然后加上resizeMode:’contain’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-2-%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87"><span class="nav-number">21.2.</span> <span class="nav-text">19.2 网络图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-2-1-%E4%BD%BF%E7%94%A8Image-getSize-url-width-height-gt-error-gt"><span class="nav-number">21.3.</span> <span class="nav-text">19.2.1 使用Image.getSize(url, (width,height)&#x3D;&gt;{}, error&#x3D;&gt;{})</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-2-2-%E4%BD%BF%E7%94%A8flex-1-%E6%88%96%E8%80%85-position-%E2%80%99absolute%E2%80%99"><span class="nav-number">21.4.</span> <span class="nav-text">19.2.2 使用flex:1 或者 position&#x3D;’absolute’</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-tricky-of-ListView"><span class="nav-number">22.</span> <span class="nav-text">20. tricky of ListView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-react-native-run-android%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95"><span class="nav-number">23.</span> <span class="nav-text">21. react-native run-android真机调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-flex%E5%B8%83%E5%B1%80%E4%B8%AD%EF%BC%8C%E5%AD%90%E5%85%83%E7%B4%A0%E7%9A%84%E5%AE%BD%E9%AB%98%E5%BA%A6"><span class="nav-number">24.</span> <span class="nav-text">22. flex布局中，子元素的宽高度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#22-1-flexDirection-%E2%80%99column%E2%80%99"><span class="nav-number">24.1.</span> <span class="nav-text">22.1 flexDirection:’column’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-2-flexDirection-%E2%80%98row%E2%80%99"><span class="nav-number">24.2.</span> <span class="nav-text">22.2 flexDirection: ‘row’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-3-alignItmes-%E2%80%99center%E2%80%99-flexDirection-%E2%80%99column%E2%80%99"><span class="nav-number">24.3.</span> <span class="nav-text">22.3 alignItmes:’center’, flexDirection:’column’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-lipo-ios%E7%9A%84%E5%BA%93%E6%9F%A5%E8%AF%A2"><span class="nav-number">24.4.</span> <span class="nav-text">23. lipo ios的库查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-js-class-vs-object"><span class="nav-number">24.5.</span> <span class="nav-text">24. js class vs object</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-android-build-error-with"><span class="nav-number">25.</span> <span class="nav-text">25. android build error with</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-%E8%AF%BB%E5%8F%96Anroid%E7%9A%84AndroidManifest-xml%E4%B8%AD%E7%9A%84meta-data"><span class="nav-number">26.</span> <span class="nav-text">26.读取Anroid的AndroidManifest.xml中的meta-data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-map%E4%B8%8D%E8%BF%94%E5%9B%9E"><span class="nav-number">27.</span> <span class="nav-text">27.map不返回</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-Component-bind-this"><span class="nav-number">28.</span> <span class="nav-text">28.Component bind this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-padStart-6-%E2%80%98%E2%80%99"><span class="nav-number">29.</span> <span class="nav-text">29. padStart(6, ‘’)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#30-lineHeight"><span class="nav-number">30.</span> <span class="nav-text">30. lineHeight</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-StyleSheet-hairlineWidth"><span class="nav-number">31.</span> <span class="nav-text">31. StyleSheet.hairlineWidth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-react-native-svg-ui-polish"><span class="nav-number">32.</span> <span class="nav-text">32. react-native-svg ui polish</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-genymotion-%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA"><span class="nav-number">33.</span> <span class="nav-text">33. genymotion 修改时区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-ScrollView-tricky"><span class="nav-number">34.</span> <span class="nav-text">34. ScrollView tricky</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-tips"><span class="nav-number">35.</span> <span class="nav-text">35. tips</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#36-flexWrap-%E2%80%98wrap%E2%80%99-flexDirection-%E2%80%98row%E2%80%99"><span class="nav-number">36.</span> <span class="nav-text">36. flexWrap: ‘wrap’, flexDirection: ‘row’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#37-%E5%9C%A8reduce%E4%B8%AD%E4%BD%BF%E7%94%A8state-mergeDeep"><span class="nav-number">37.</span> <span class="nav-text">37. 在reduce中使用state.mergeDeep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#38-ToucchableOpacity-vs-TouchableWithoutFeedback"><span class="nav-number">38.</span> <span class="nav-text">38. ToucchableOpacity vs TouchableWithoutFeedback</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="nav-number">38.1.</span> <span class="nav-text">不同点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-border-%E8%99%9A%E7%BA%BF"><span class="nav-number">39.</span> <span class="nav-text">39. border 虚线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#40-Text"><span class="nav-number">40.</span> <span class="nav-text">40. Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#41-TouchableOpacity-TouchableWithouFeedback%E7%9A%84onPress%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number">41.</span> <span class="nav-text">41. TouchableOpacity, TouchableWithouFeedback的onPress回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-Trying-to-add-a-%E2%80%98RCTRawText-text-gt-%E2%80%99-to-a-%E2%80%98RCTView%E2%80%99"><span class="nav-number">42.</span> <span class="nav-text">42. Trying to add a ‘RCTRawText [text: &gt;]’ to a ‘RCTView’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="nav-number">43.</span> <span class="nav-text">43. 模块设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#44-RN%E4%B8%AD%E4%BD%BF%E7%94%A8setImmediate"><span class="nav-number">44.</span> <span class="nav-text">44. RN中使用setImmediate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#45-iOS%E7%9A%84%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84-bin-sh"><span class="nav-number">45.</span> <span class="nav-text">45. iOS的启动脚本中的&#x2F;bin&#x2F;sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46-xcode-%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9Group%E5%92%8CReference"><span class="nav-number">46.</span> <span class="nav-text">46. xcode 的文件夹Group和Reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#47-Text%E4%B8%8D%E5%8D%A0%E6%BB%A1%E7%88%B6%E5%85%83%E7%B4%A0"><span class="nav-number">47.</span> <span class="nav-text">47.Text不占满父元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#48-Malformed-calls-from-JS-field-sizes-are-different"><span class="nav-number">48.</span> <span class="nav-text">48.  Malformed calls from JS: field sizes are different.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#50-%E5%B0%BD%E9%87%8F%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E7%9A%84index%E4%BD%9C%E4%B8%BAkey"><span class="nav-number">49.</span> <span class="nav-text">50.尽量不使用数组的index作为key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#51-flexible-and-reusable"><span class="nav-number">50.</span> <span class="nav-text">51.flexible and reusable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-image-picke-%E9%9B%86%E6%88%90"><span class="nav-number">51.</span> <span class="nav-text">52.image picke 集成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-cocoaPosd"><span class="nav-number">52.</span> <span class="nav-text">53. cocoaPosd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#54-react-naitve-link-match-error"><span class="nav-number">53.</span> <span class="nav-text">54. react-naitve link match error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#55-FlatList-onEndReached-%E7%9A%84%E8%A7%A6%E5%8F%91%E9%97%AE%E9%A2%98"><span class="nav-number">54.</span> <span class="nav-text">55. FlatList onEndReached 的触发问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#56-chrome-copy"><span class="nav-number">55.</span> <span class="nav-text">56. chrome copy()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#57-Statusbar-%E8%AE%BE%E7%BD%AE%E4%BA%86hidden%E4%BD%86%E5%9C%A8%E5%AE%89%E5%8D%93%E4%B8%8A%E6%9C%89%E6%97%B6%E5%80%99%E4%BC%9A%E6%98%BE%E7%A4%BA"><span class="nav-number">56.</span> <span class="nav-text">57. Statusbar 设置了hidden但在安卓上有时候会显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#58-reducer%E5%92%8Csaga%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%90%8C%E4%B8%80%E4%B8%AAaction"><span class="nav-number">57.</span> <span class="nav-text">58. reducer和saga使用的是同一个action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#59-react%E4%B8%ADstate%E7%8E%B0%E5%9C%A8%E4%B8%8D%E8%83%BD%E4%BF%AE%E6%94%B9%E4%BA%86"><span class="nav-number">58.</span> <span class="nav-text">59. react中state现在不能修改了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#60-realm-%E7%9A%84RealmResults%E7%9A%84%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">59.</span> <span class="nav-text">60. realm 的RealmResults的在for循环中的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#61-RealmResults%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">60.</span> <span class="nav-text">61. RealmResults的序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#62-RealmObject%E6%98%AF%E4%B8%AA%E5%BC%95%E7%94%A8%EF%BC%8C%E5%AE%83%E7%9A%84%E5%B1%9E%E6%80%A7%E6%98%AF%E9%80%9A%E8%BF%87%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E7%9A%84"><span class="nav-number">61.</span> <span class="nav-text">62. RealmObject是个引用，它的属性是通过方法调用的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-React-Native-languages%E7%9A%84json%E4%B8%AD%E7%9A%84key"><span class="nav-number">62.</span> <span class="nav-text">63. React-Native-languages的json中的key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#64-CALL-AND-RETRY-LAST-Allocation-failed-JavaScript-heap-out-of-memory"><span class="nav-number">63.</span> <span class="nav-text">64. CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#65-redux-persist-%E5%8F%91%E9%80%81REHYDRATE"><span class="nav-number">64.</span> <span class="nav-text">65. redux-persist 发送REHYDRATE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#66-string-integer%E4%BD%BF%E7%94%A8"><span class="nav-number">65.</span> <span class="nav-text">66. string,integer使用&#x3D;&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#67-NaN-Infinity"><span class="nav-number">66.</span> <span class="nav-text">67. NaN, Infinity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#68-Saga%E7%9A%84call-%E8%B0%83%E7%94%A8instance%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">67.</span> <span class="nav-text">68. Saga的call 调用instance的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#69-%E4%BD%BF%E7%94%A8WiFi%E8%BF%9E%E6%8E%A5%E8%B0%83%E8%AF%95%E7%9C%9F%E6%9C%BARN"><span class="nav-number">68.</span> <span class="nav-text">69. 使用WiFi连接调试真机RN</span></a></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/07/08/React-Native-Debug/';
-          this.page.identifier = '2017/07/08/React-Native-Debug/';
-          this.page.title = 'React-Native-Debug';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -958,19 +655,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 

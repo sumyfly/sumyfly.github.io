@@ -1,142 +1,51 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="mac,python,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1.Mac OS自带pythonMAC OS会自带python, 通常我们不需要使用和修改它，我们自己安装python,同时保留系统python。设置方法就是$PATH中/usr/local/bin/优先级高于/usr/bin/,优先使用local用户的pyton。  系统python路径/System/Library/Frameworks/Python.framework/Versions/2.">
-<meta name="keywords" content="mac,python">
+  <meta name="description" content="1.Mac OS自带pythonMAC OS会自带python, 通常我们不需要使用和修改它，我们自己安装python,同时保留系统python。设置方法就是$PATH中&#x2F;usr&#x2F;local&#x2F;bin&#x2F;优先级高于&#x2F;usr&#x2F;bin&#x2F;,优先使用local用户的pyton。  系统python路径&#x2F;System&#x2F;Library&#x2F;Frameworks&#x2F;Python.framework&#x2F;Versions&#x2F;2.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mac-python">
 <meta property="og:url" content="http://yoursite.com/2017/12/13/mac-python/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1.Mac OS自带pythonMAC OS会自带python, 通常我们不需要使用和修改它，我们自己安装python,同时保留系统python。设置方法就是$PATH中/usr/local/bin/优先级高于/usr/bin/,优先使用local用户的pyton。  系统python路径/System/Library/Frameworks/Python.framework/Versions/2.">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-06-20T05:13:59.645Z">
+<meta property="og:description" content="1.Mac OS自带pythonMAC OS会自带python, 通常我们不需要使用和修改它，我们自己安装python,同时保留系统python。设置方法就是$PATH中&#x2F;usr&#x2F;local&#x2F;bin&#x2F;优先级高于&#x2F;usr&#x2F;bin&#x2F;,优先使用local用户的pyton。  系统python路径&#x2F;System&#x2F;Library&#x2F;Frameworks&#x2F;Python.framework&#x2F;Versions&#x2F;2.">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-12-13T01:53:59.000Z">
+<meta property="article:modified_time" content="2021-06-20T05:13:59.645Z">
+<meta property="article:author" content="qsl">
+<meta property="article:tag" content="mac">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac-python">
-<meta name="twitter:description" content="1.Mac OS自带pythonMAC OS会自带python, 通常我们不需要使用和修改它，我们自己安装python,同时保留系统python。设置方法就是$PATH中/usr/local/bin/优先级高于/usr/bin/,优先使用local用户的pyton。  系统python路径/System/Library/Frameworks/Python.framework/Versions/2.">
+
+<link rel="canonical" href="http://yoursite.com/2017/12/13/mac-python/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2017/12/13/mac-python/">
-
-
-
-
 
   <title>mac-python | QSL</title>
   
@@ -144,210 +53,148 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/mac-python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">mac-python</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          mac-python
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T09:53:59+08:00">
-                2017-12-13
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <time title="Created: 2017-12-13 09:53:59" itemprop="dateCreated datePublished" datetime="2017-12-13T09:53:59+08:00">2017-12-13</time>
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/12/13/mac-python/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/13/mac-python/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-20 13:13:59" itemprop="dateModified" datetime="2021-06-20T13:13:59+08:00">2021-06-20</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
+
     
-
+    
+    
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <h3 id="1-Mac-OS自带python"><a href="#1-Mac-OS自带python" class="headerlink" title="1.Mac OS自带python"></a>1.Mac OS自带python</h3><p>MAC OS会自带python, 通常我们不需要使用和修改它，我们自己安装python,同时保留系统python。设置方法就是$PATH中/usr/local/bin/优先级高于/usr/bin/,优先使用local用户的pyton。</p>
@@ -355,7 +202,8 @@
 <p>系统python路径<br>/System/Library/Frameworks/Python.framework/Versions/2.7/bin</p>
 </blockquote>
 <p>注意：系统自带的python没有pip，我们也不需要安装pip到系统自带的python中。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <h3 id="2-使用brew安装python"><a href="#2-使用brew安装python" class="headerlink" title="2.使用brew安装python"></a>2.使用brew安装python</h3><p>brew 安装pyton2.7 python3都是相互独立的，直接brew install python2 或者brew intall python3.</p>
 <blockquote>
 <p>python 2.7路径<br>/usr/local/Cellar/python</p>
@@ -374,33 +222,42 @@
 <p>理论上它们是共享的，多个python 2.7版本会共享一个目录，python 3也同理。</p>
 <p>解决方法，设置pip的指定包安装目录,同时需要把此目录添加到PYTONPATH。我不推荐此解决方法，因为需要设置PYTHONPATH，我推荐使用virtualenv或者Docker。</p>
 <blockquote>
-<p>用户目录下面，.pip目录下建立pip.conf文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[install]</span><br><span class="line">install-option=--prefix=~/.local</span><br></pre></td></tr></table></figure></p>
+<p>用户目录下面，.pip目录下建立pip.conf文件。</p>
 </blockquote>
-<p>然后pip的库就安装到用户目录下的.local下面了<br><a href="http://jyd.me/linux/pip-install-to-different-home/" target="_blank" rel="noopener">ref</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[install]</span><br><span class="line">install-option=--prefix=~/.local</span><br></pre></td></tr></table></figure>
+
+<p>然后pip的库就安装到用户目录下的.local下面了<br><a target="_blank" rel="noopener" href="http://jyd.me/linux/pip-install-to-different-home/">ref</a></p>
 <blockquote>
 <p>使用brew安装的pip,pip3安装模块时，不要带<code>sudo</code>,不然安装的模块权限是root，不是当前用户，以后安装依赖此模块的新模块会再度需要root权限。</p>
 </blockquote>
 <h3 id="4-使用virtualenv"><a href="#4-使用virtualenv" class="headerlink" title="4.使用virtualenv"></a>4.使用virtualenv</h3><p>如果想要一个独立的python环境，可以使用virtualenv.它们的python, 包都是独立的，相互不影响。Docker也可以做到同样的事情。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装virtualenv</span></span><br><span class="line">pip install --upgrade virtualenv </span><br><span class="line"></span><br><span class="line"><span class="comment"># for Python 2.7, $your_target_directory like tensorflow</span></span><br><span class="line"><span class="comment"># virtualenv --system-site-packages $your_target_directory</span></span><br><span class="line"><span class="comment"># for Python 3.n</span></span><br><span class="line">virtualenv --system-site-packages -p python3 <span class="variable">$your_target_directory</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># go into $your_target_directory </span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$your_target_directory</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># active virtualenv</span></span><br><span class="line"><span class="built_in">source</span> ~/<span class="variable">$your_target_directory</span> /bin/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># install tensroflow</span></span><br><span class="line">pip install --upgrade tensorflow  <span class="comment"># for Python 2.7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># deactive virtualenv</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.tensorflow.org/install/install_mac" target="_blank" rel="noopener">ref</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装virtualenv</span></span><br><span class="line">pip install --upgrade virtualenv </span><br><span class="line"></span><br><span class="line"><span class="comment"># for Python 2.7, $your_target_directory like tensorflow</span></span><br><span class="line"><span class="comment"># virtualenv --system-site-packages $your_target_directory</span></span><br><span class="line"><span class="comment"># for Python 3.n</span></span><br><span class="line">virtualenv --system-site-packages -p python3 <span class="variable">$your_target_directory</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># go into $your_target_directory </span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$your_target_directory</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># active virtualenv</span></span><br><span class="line"><span class="built_in">source</span> ~/<span class="variable">$your_target_directory</span> /bin/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># install tensroflow</span></span><br><span class="line">pip install --upgrade tensorflow  <span class="comment"># for Python 2.7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># deactive virtualenv</span></span><br><span class="line">deactivate</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.tensorflow.org/install/install_mac">ref</a></p>
 <h3 id="5-visual-code-中设置交互命令"><a href="#5-visual-code-中设置交互命令" class="headerlink" title="5.visual code 中设置交互命令"></a>5.visual code 中设置交互命令</h3><p>在 “name”: “Python: Terminal (external)”下，设置cwd的值为工作目录<br>“cwd”: “${workspaceFolder}”,</p>
-<h3 id="6-python的调试工具"><a href="#6-python的调试工具" class="headerlink" title="6.python的调试工具"></a>6.python的调试工具</h3><h4 id="6-1-pdb-ipdb"><a href="#6-1-pdb-ipdb" class="headerlink" title="6.1 pdb,ipdb"></a>6.1 pdb,ipdb</h4><p>默认是pdb,增强版ipdb，使用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install ipdb</span><br><span class="line">python -m ipdb test.py</span><br><span class="line"><span class="comment">#python -m pdb test.py</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="6-2-pudb"><a href="#6-2-pudb" class="headerlink" title="6.2 pudb"></a>6.2 pudb</h4><p>如果需要GUI,可以使用<a href="https://pypi.python.org/pypi/pudb" target="_blank" rel="noopener">pudb</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pudb</span><br><span class="line">python -m pudb.run test.py</span><br></pre></td></tr></table></figure></p>
-<h3 id="6-3-crash-on-ipy"><a href="#6-3-crash-on-ipy" class="headerlink" title="6.3 crash_on_ipy"></a>6.3 crash_on_ipy</h3><p>create <code>crash_on_ipy.py</code> :<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExceptionHook</span>:</span></span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.instance <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">from</span> IPython.core <span class="keyword">import</span> ultratb</span><br><span class="line">            self.instance = ultratb.FormattedTB(mode=<span class="string">'Plain'</span>,</span><br><span class="line">                 color_scheme=<span class="string">'Linux'</span>, call_pdb=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.instance(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">sys.excepthook = ExceptionHook()</span><br></pre></td></tr></table></figure></p>
-<p>链接：<a href="https://www.zhihu.com/question/21572891/answer/26046582" target="_blank" rel="noopener">https://www.zhihu.com/question/21572891/answer/26046582</a></p>
+<h3 id="6-python的调试工具"><a href="#6-python的调试工具" class="headerlink" title="6.python的调试工具"></a>6.python的调试工具</h3><h4 id="6-1-pdb-ipdb"><a href="#6-1-pdb-ipdb" class="headerlink" title="6.1 pdb,ipdb"></a>6.1 pdb,ipdb</h4><p>默认是pdb,增强版ipdb，使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install ipdb</span><br><span class="line">python -m ipdb test.py</span><br><span class="line"><span class="comment">#python -m pdb test.py</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="6-2-pudb"><a href="#6-2-pudb" class="headerlink" title="6.2 pudb"></a>6.2 pudb</h4><p>如果需要GUI,可以使用<a target="_blank" rel="noopener" href="https://pypi.python.org/pypi/pudb">pudb</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pudb</span><br><span class="line">python -m pudb.run test.py</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-3-crash-on-ipy"><a href="#6-3-crash-on-ipy" class="headerlink" title="6.3 crash_on_ipy"></a>6.3 crash_on_ipy</h3><p>create <code>crash_on_ipy.py</code> :</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ExceptionHook</span>:</span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self, *args, **kwargs</span>):</span><br><span class="line">        <span class="keyword">if</span> self.instance <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">from</span> IPython.core <span class="keyword">import</span> ultratb</span><br><span class="line">            self.instance = ultratb.FormattedTB(mode=<span class="string">&#x27;Plain&#x27;</span>,</span><br><span class="line">                 color_scheme=<span class="string">&#x27;Linux&#x27;</span>, call_pdb=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.instance(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">sys.excepthook = ExceptionHook()</span><br></pre></td></tr></table></figure>
+<p>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21572891/answer/26046582">https://www.zhihu.com/question/21572891/answer/26046582</a></p>
 <p>如果要调试某个文件，import crash_on_ipy,只要有异常，就会自动进入ipdb</p>
-<h3 id="7-pipenv"><a href="#7-pipenv" class="headerlink" title="7. pipenv"></a>7. pipenv</h3><p>pipenv和npm yarn很像，一个项目一个环境。等于是pip+virtual的功能结合。但是我觉得这样有点冗余，而且对IDE支持不佳，要把项目的路径包含到python的环境中。<br>pipenv install 会创建一个virtualenv，目录在~/.local/share/virtualenvs/xxxx。当使用pipenv install django后，就会在这个目录下面安装moudle。我觉得如果在本地项目目录就好了，和node一样。否则这样删除项目还要去~/.loda/sahre/virtualenvs/里面再删除一次module。</p>
+<h3 id="7-pipenv"><a href="#7-pipenv" class="headerlink" title="7. pipenv"></a>7. pipenv</h3><p>pipenv和npm yarn很像，一个项目一个环境。等于是pip+virtual的功能结合。但是我觉得这样有点冗余，而且对IDE支持不佳，要把项目的路径包含到python的环境中。<br>pipenv install 会创建一个virtualenv，目录在<del>/.local/share/virtualenvs/xxxx。当使用pipenv install django后，就会在这个目录下面安装moudle。我觉得如果在本地项目目录就好了，和node一样。否则这样删除项目还要去</del>/.loda/sahre/virtualenvs/里面再删除一次module。</p>
 <ul>
 <li>每次需要激活虚拟环境时，运行命令<code>pipenv shell</code>，就是调用virtualenv的activate。</li>
 </ul>
-<p><a href="http://www.itboth.com/d/aIrM3u/python" target="_blank" rel="noopener">http://www.itboth.com/d/aIrM3u/python</a></p>
-<h3 id="8-vs-code-debug时卡在imp-py"><a href="#8-vs-code-debug时卡在imp-py" class="headerlink" title="8. vs code debug时卡在imp.py"></a>8. vs code debug时卡在imp.py</h3><p>在 .vscode/launch.json 中修改 “type”:”python” 为 “type”:”pythonExperimental”。<br><a href="https://github.com/Microsoft/vscode-python/issues" target="_blank" rel="noopener">github issue imp.py</a><br>或者把stopOnEntry设置成false<br><a href="https://stackoverflow.com/questions/45229745/debugging-django-in-vscode-fails-on-imp-py" target="_blank" rel="noopener">https://stackoverflow.com/questions/45229745/debugging-django-in-vscode-fails-on-imp-py</a></p>
-<h3 id="9-python-import路径"><a href="#9-python-import路径" class="headerlink" title="9. python import路径"></a>9. python import路径</h3><p>python中，文件是module, 文件夹是package(必须要<strong>init</strong>.py),所以一般是packageName.moudleName.functionName。</p>
+<p><a target="_blank" rel="noopener" href="http://www.itboth.com/d/aIrM3u/python">http://www.itboth.com/d/aIrM3u/python</a></p>
+<h3 id="8-vs-code-debug时卡在imp-py"><a href="#8-vs-code-debug时卡在imp-py" class="headerlink" title="8. vs code debug时卡在imp.py"></a>8. vs code debug时卡在imp.py</h3><p>在 .vscode/launch.json 中修改 “type”:”python” 为 “type”:”pythonExperimental”。<br><a target="_blank" rel="noopener" href="https://github.com/Microsoft/vscode-python/issues">github issue imp.py</a><br>或者把stopOnEntry设置成false<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/45229745/debugging-django-in-vscode-fails-on-imp-py">https://stackoverflow.com/questions/45229745/debugging-django-in-vscode-fails-on-imp-py</a></p>
+<h3 id="9-python-import路径"><a href="#9-python-import路径" class="headerlink" title="9. python import路径"></a>9. python import路径</h3><p>python中，文件是module, 文件夹是package(必须要__init__.py),所以一般是packageName.moudleName.functionName。</p>
 <h4 id="9-1-绝对路径，相对路径"><a href="#9-1-绝对路径，相对路径" class="headerlink" title="9.1 绝对路径，相对路径"></a>9.1 绝对路径，相对路径</h4><pre><code>app/
     __init__.py
     mod.py
     string.py
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>绝对导入，按照sys.path顺序搜索，先主目录（sys.path中第一项’’），然后PYTHONPATH环境变量、标准库路径、pth指定路径等。</li>
 <li>相对导入，在模块所在同一个包内搜索，注意该包目录与主目录的区别。</li>
 </ul>
@@ -410,384 +267,211 @@
 <blockquote>
 <p>在python3.3中默认只搜索绝对路径，要使用相对导入，执行以下语句：<br>from . import string or from ..myMoudle import myFunc</p>
 </blockquote>
-<h4 id="9-2-相对路径"><a href="#9-2-相对路径" class="headerlink" title="9.2 相对路径"></a>9.2 相对路径</h4><p>相对导入使用模块的<strong>name</strong>属性来决定模块在包结构中的位置。当<strong>name</strong>属性不包含包信息（i.e. 没有用’.’表示的层次结构，比如<code>__main__</code>），<strong>则相对导入将模块解析为顶层模块，而不管模块在文件系统中的实际位置。</strong>, 比如python -m unittest test.testIsland,就不会去查找test的上层模块(如src.leetCode)，如果testIsland代码用到了，就会报错（ValueError: attempted relative import beyond top-level package），应该到src的上层目录使用<code>python -m unittest src.test.testIsland</code>。</p>
-<h4 id="9-3-package"><a href="#9-3-package" class="headerlink" title="9.3 package"></a>9.3 package</h4><p>文件夹被python解释器视作package需要满足两个条件：<br>　　1、文件夹中必须有<strong>init</strong>.py文件，该文件可以为空，但必须存在该文件。<br>　　2、不能作为顶层模块来执行该文件夹中的py文件（即不能作为主函数的入口）。</p>
+<h4 id="9-2-相对路径"><a href="#9-2-相对路径" class="headerlink" title="9.2 相对路径"></a>9.2 相对路径</h4><p>相对导入使用模块的__name__属性来决定模块在包结构中的位置。当__name__属性不包含包信息（i.e. 没有用’.’表示的层次结构，比如<code>__main__</code>），<strong>则相对导入将模块解析为顶层模块，而不管模块在文件系统中的实际位置。</strong>, 比如python -m unittest test.testIsland,就不会去查找test的上层模块(如src.leetCode)，如果testIsland代码用到了，就会报错（ValueError: attempted relative import beyond top-level package），应该到src的上层目录使用<code>python -m unittest src.test.testIsland</code>。</p>
+<h4 id="9-3-package"><a href="#9-3-package" class="headerlink" title="9.3 package"></a>9.3 package</h4><p>文件夹被python解释器视作package需要满足两个条件：<br>　　1、文件夹中必须有__init__.py文件，该文件可以为空，但必须存在该文件。<br>　　2、不能作为顶层模块来执行该文件夹中的py文件（即不能作为主函数的入口）。</p>
 <blockquote>
-<p>补充：在”from YY import XX”这样的代码中，无论是XX还是YY，只要被python解释器视作package，就会首先调用该package的<strong>init</strong>.py文件。如果都是package，则调用顺序是YY，XX。</p>
+<p>补充：在”from YY import XX”这样的代码中，无论是XX还是YY，只要被python解释器视作package，就会首先调用该package的__init__.py文件。如果都是package，则调用顺序是YY，XX。</p>
 </blockquote>
 <blockquote>
 <p>另外，练习中“from . import XXX”和“from .. import XXX”中的’.’和’..’，可以等同于linux里的shell中’.’和’..’的作用，表示当前工作目录的package和上一级的package。</p>
 </blockquote>
-<p><a href="https://blog.csdn.net/liberize/article/details/8882659" target="_blank" rel="noopener">https://blog.csdn.net/liberize/article/details/8882659</a><br><a href="https://www.cnblogs.com/ArsenalfanInECNU/p/5346751.html" target="_blank" rel="noopener">https://www.cnblogs.com/ArsenalfanInECNU/p/5346751.html</a></p>
-<h4 id="10-brew安装3-6-5"><a href="#10-brew安装3-6-5" class="headerlink" title="10. brew安装3.6.5"></a>10. brew安装3.6.5</h4><p>因为TensorFlow版本依赖的python问题，我要使用3.6.5。但是brew安装不了3.6.5,要使用特殊的Formula.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew unlink python <span class="comment"># ONLY if you have installed (with brew) another version of python 3</span></span><br><span class="line">brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb</span><br></pre></td></tr></table></figure></p>
-<p>这个CPU版本的TensorFlow,没有独显的Mac需要这个版本，不然有warning。<br><a href="https://github.com/lakshayg/tensorflow-build" target="_blank" rel="noopener">https://github.com/lakshayg/tensorflow-build</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/liberize/article/details/8882659">https://blog.csdn.net/liberize/article/details/8882659</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ArsenalfanInECNU/p/5346751.html">https://www.cnblogs.com/ArsenalfanInECNU/p/5346751.html</a></p>
+<h4 id="10-brew安装3-6-5"><a href="#10-brew安装3-6-5" class="headerlink" title="10. brew安装3.6.5"></a>10. brew安装3.6.5</h4><p>因为TensorFlow版本依赖的python问题，我要使用3.6.5。但是brew安装不了3.6.5,要使用特殊的Formula.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew <span class="built_in">unlink</span> python <span class="comment"># ONLY if you have installed (with brew) another version of python 3</span></span><br><span class="line">brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb</span><br></pre></td></tr></table></figure>
+<p>这个CPU版本的TensorFlow,没有独显的Mac需要这个版本，不然有warning。<br><a target="_blank" rel="noopener" href="https://github.com/lakshayg/tensorflow-build">https://github.com/lakshayg/tensorflow-build</a></p>
 <blockquote>
-<p>不要直接使用brew upgrade,这个会升级所有的Formula,这个会导致一些版本依赖问题，会自动升级pyton.加上brew pin python保平安。<br><a href="https://www.jianshu.com/p/c2bdc1997a9d" target="_blank" rel="noopener">https://www.jianshu.com/p/c2bdc1997a9d</a></p>
+<p>不要直接使用brew upgrade,这个会升级所有的Formula,这个会导致一些版本依赖问题，会自动升级pyton.加上brew pin python保平安。<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c2bdc1997a9d">https://www.jianshu.com/p/c2bdc1997a9d</a></p>
 </blockquote>
 <p>这个方法已经brew已经不支持了，所以推荐用pyenv</p>
 <h4 id="11-pyenv"><a href="#11-pyenv" class="headerlink" title="11. pyenv"></a>11. pyenv</h4><p>virtualenv没有之前好用了，比如安装特定版本的python不方便，所以我现在转到使用pyenv。pyenv支持不同的python版本，支持mac和linux,不支持windows。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install pyenv</span><br><span class="line">brew install pyenv-virtualenv</span><br></pre></td></tr></table></figure>
-<p>修改.bashrc文件,添加以下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(pyenv init -)</span>"</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(pyenv virtualenv-init -)</span>"</span></span><br></pre></td></tr></table></figure></p>
+
+<p>修改.bashrc文件,添加以下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv init -)</span>&quot;</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv virtualenv-init -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="11-1-安装python特定版本"><a href="#11-1-安装python特定版本" class="headerlink" title="11.1 安装python特定版本"></a>11.1 安装python特定版本</h4><p>pyenv install 3.6.5</p>
 <h4 id="11-2-创建一个virtualenv环境"><a href="#11-2-创建一个virtualenv环境" class="headerlink" title="11.2 创建一个virtualenv环境"></a>11.2 创建一个virtualenv环境</h4><p>pyenv virtualenv 3.6.5 google_sheet<br>这个会在$HOME/.pyenv/versions/3.6.5/envs的目录下面，envs里面创建一个virtualenv环境。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 激活环境</span></span><br><span class="line">pyenv activate google_sheet</span><br><span class="line"><span class="comment"># 退出环境</span></span><br><span class="line">pyenv deactivate google_sheet</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>注意同一个versions/3.6.5下面的virtualenv会共享一个python bin目录，但是site-packages第三方包是独立的。</p>
 </blockquote>
-<h3 id="11-3-删除一个virtualenv环境"><a href="#11-3-删除一个virtualenv环境" class="headerlink" title="11.3 删除一个virtualenv环境"></a>11.3 删除一个virtualenv环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv virtualenv-delete google_sheet <span class="comment"># 运行后需要输入一个'y',直接回车不会删除。</span></span><br></pre></td></tr></table></figure>
+<h3 id="11-3-删除一个virtualenv环境"><a href="#11-3-删除一个virtualenv环境" class="headerlink" title="11.3 删除一个virtualenv环境"></a>11.3 删除一个virtualenv环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv virtualenv-delete google_sheet <span class="comment"># 运行后需要输入一个&#x27;y&#x27;,直接回车不会删除。</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="11-4-指定tensorflow版本"><a href="#11-4-指定tensorflow版本" class="headerlink" title="11.4 指定tensorflow版本"></a>11.4 指定tensorflow版本</h3><p>pip install tensorflow==1.14</p>
-<h3 id="12-手动编译tensorflow"><a href="#12-手动编译tensorflow" class="headerlink" title="12. 手动编译tensorflow"></a>12. 手动编译tensorflow</h3><p><a href="https://medium.com/@thomaschou_9652/customized-tensorflow-for-macos-1fe31110d92c" target="_blank" rel="noopener">https://medium.com/@thomaschou_9652/customized-tensorflow-for-macos-1fe31110d92c</a></p>
+<h3 id="12-手动编译tensorflow"><a href="#12-手动编译tensorflow" class="headerlink" title="12. 手动编译tensorflow"></a>12. 手动编译tensorflow</h3><p><a target="_blank" rel="noopener" href="https://medium.com/@thomaschou_9652/customized-tensorflow-for-macos-1fe31110d92c">https://medium.com/@thomaschou_9652/customized-tensorflow-for-macos-1fe31110d92c</a></p>
 
-      
     </div>
 
-    <div>
-      
-        
+    
+    
+    
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/mac/" rel="tag"># mac</a>
-          
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/10/31/Andorid-Debug/" rel="next" title="Andorid-Debug">
-                <i class="fa fa-chevron-left"></i> Andorid-Debug
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mac/" rel="tag"># mac</a>
+              <a href="/tags/python/" rel="tag"># python</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/14/react-native通讯原理/" rel="prev" title="react-native通讯原理">
-                react-native通讯原理 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/10/31/Andorid-Debug/" rel="prev" title="Andorid-Debug">
+      <i class="fa fa-chevron-left"></i> Andorid-Debug
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/12/14/react-native%E9%80%9A%E8%AE%AF%E5%8E%9F%E7%90%86/" rel="next" title="react-native通讯原理">
+      react-native通讯原理 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Mac-OS自带python"><span class="nav-number">1.</span> <span class="nav-text">1.Mac OS自带python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用brew安装python"><span class="nav-number">2.</span> <span class="nav-text">2.使用brew安装python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-注意事项"><span class="nav-number">3.</span> <span class="nav-text">3.注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-使用virtualenv"><span class="nav-number">4.</span> <span class="nav-text">4.使用virtualenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-visual-code-中设置交互命令"><span class="nav-number">5.</span> <span class="nav-text">5.visual code 中设置交互命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-python的调试工具"><span class="nav-number">6.</span> <span class="nav-text">6.python的调试工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-pdb-ipdb"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 pdb,ipdb</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-pudb"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 pudb</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-crash-on-ipy"><span class="nav-number">7.</span> <span class="nav-text">6.3 crash_on_ipy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-pipenv"><span class="nav-number">8.</span> <span class="nav-text">7. pipenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-vs-code-debug时卡在imp-py"><span class="nav-number">9.</span> <span class="nav-text">8. vs code debug时卡在imp.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-python-import路径"><span class="nav-number">10.</span> <span class="nav-text">9. python import路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1-绝对路径，相对路径"><span class="nav-number">10.1.</span> <span class="nav-text">9.1 绝对路径，相对路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-相对路径"><span class="nav-number">10.2.</span> <span class="nav-text">9.2 相对路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-package"><span class="nav-number">10.3.</span> <span class="nav-text">9.3 package</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-brew安装3-6-5"><span class="nav-number">10.4.</span> <span class="nav-text">10. brew安装3.6.5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-pyenv"><span class="nav-number">10.5.</span> <span class="nav-text">11. pyenv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-1-安装python特定版本"><span class="nav-number">10.6.</span> <span class="nav-text">11.1 安装python特定版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-2-创建一个virtualenv环境"><span class="nav-number">10.7.</span> <span class="nav-text">11.2 创建一个virtualenv环境</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-3-删除一个virtualenv环境"><span class="nav-number">11.</span> <span class="nav-text">11.3 删除一个virtualenv环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-4-指定tensorflow版本"><span class="nav-number">12.</span> <span class="nav-text">11.4 指定tensorflow版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-手动编译tensorflow"><span class="nav-number">13.</span> <span class="nav-text">12. 手动编译tensorflow</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Mac-OS%E8%87%AA%E5%B8%A6python"><span class="nav-number">1.</span> <span class="nav-text">1.Mac OS自带python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8brew%E5%AE%89%E8%A3%85python"><span class="nav-number">2.</span> <span class="nav-text">2.使用brew安装python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.</span> <span class="nav-text">3.注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8virtualenv"><span class="nav-number">4.</span> <span class="nav-text">4.使用virtualenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-visual-code-%E4%B8%AD%E8%AE%BE%E7%BD%AE%E4%BA%A4%E4%BA%92%E5%91%BD%E4%BB%A4"><span class="nav-number">5.</span> <span class="nav-text">5.visual code 中设置交互命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-python%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="nav-number">6.</span> <span class="nav-text">6.python的调试工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-pdb-ipdb"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 pdb,ipdb</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-pudb"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 pudb</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-crash-on-ipy"><span class="nav-number">7.</span> <span class="nav-text">6.3 crash_on_ipy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-pipenv"><span class="nav-number">8.</span> <span class="nav-text">7. pipenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-vs-code-debug%E6%97%B6%E5%8D%A1%E5%9C%A8imp-py"><span class="nav-number">9.</span> <span class="nav-text">8. vs code debug时卡在imp.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-python-import%E8%B7%AF%E5%BE%84"><span class="nav-number">10.</span> <span class="nav-text">9. python import路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1-%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%EF%BC%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="nav-number">10.1.</span> <span class="nav-text">9.1 绝对路径，相对路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="nav-number">10.2.</span> <span class="nav-text">9.2 相对路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-package"><span class="nav-number">10.3.</span> <span class="nav-text">9.3 package</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-brew%E5%AE%89%E8%A3%853-6-5"><span class="nav-number">10.4.</span> <span class="nav-text">10. brew安装3.6.5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-pyenv"><span class="nav-number">10.5.</span> <span class="nav-text">11. pyenv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-1-%E5%AE%89%E8%A3%85python%E7%89%B9%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-number">10.6.</span> <span class="nav-text">11.1 安装python特定版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-2-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAvirtualenv%E7%8E%AF%E5%A2%83"><span class="nav-number">10.7.</span> <span class="nav-text">11.2 创建一个virtualenv环境</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-3-%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AAvirtualenv%E7%8E%AF%E5%A2%83"><span class="nav-number">11.</span> <span class="nav-text">11.3 删除一个virtualenv环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-4-%E6%8C%87%E5%AE%9Atensorflow%E7%89%88%E6%9C%AC"><span class="nav-number">12.</span> <span class="nav-text">11.4 指定tensorflow版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91tensorflow"><span class="nav-number">13.</span> <span class="nav-text">12. 手动编译tensorflow</span></a></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/12/13/mac-python/';
-          this.page.identifier = '2017/12/13/mac-python/';
-          this.page.title = 'mac-python';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -801,19 +485,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 

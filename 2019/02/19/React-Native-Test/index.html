@@ -1,142 +1,51 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="debug,react-native,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1. jest mock1.1 mock node_module 中的 moduel手动 mock，放到mocks目录下面">
-<meta name="keywords" content="debug,react-native">
+  <meta name="description" content="1. jest mock1.1 mock node_module 中的 moduel手动 mock，放到mocks目录下面">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React-Native-Test">
 <meta property="og:url" content="http://yoursite.com/2019/02/19/React-Native-Test/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. jest mock1.1 mock node_module 中的 moduel手动 mock，放到mocks目录下面">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.048Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-02-19T08:46:47.000Z">
+<meta property="article:modified_time" content="2021-01-14T06:26:09.048Z">
+<meta property="article:author" content="qsl">
+<meta property="article:tag" content="debug">
+<meta property="article:tag" content="react-native">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-Native-Test">
-<meta name="twitter:description" content="1. jest mock1.1 mock node_module 中的 moduel手动 mock，放到mocks目录下面">
+
+<link rel="canonical" href="http://yoursite.com/2019/02/19/React-Native-Test/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2019/02/19/React-Native-Test/">
-
-
-
-
 
   <title>React-Native-Test | QSL</title>
   
@@ -144,604 +53,355 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/React-Native-Test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">React-Native-Test</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          React-Native-Test
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-19T16:46:47+08:00">
-                2019-02-19
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React-Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2019-02-19 16:46:47" itemprop="dateCreated datePublished" datetime="2019-02-19T16:46:47+08:00">2019-02-19</time>
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2019/02/19/React-Native-Test/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/19/React-Native-Test/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React-Native/" itemprop="url" rel="index"><span itemprop="name">React-Native</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h3 id="1-jest-mock"><a href="#1-jest-mock" class="headerlink" title="1. jest mock"></a>1. jest mock</h3><h4 id="1-1-mock-node-module-中的-moduel"><a href="#1-1-mock-node-module-中的-moduel" class="headerlink" title="1.1 mock node_module 中的 moduel"></a>1.1 mock node_module 中的 moduel</h4><p>手动 mock，放到<strong>mocks</strong>目录下面</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <h4 id="1-2-mock-源码中的-module"><a href="#1-2-mock-源码中的-module" class="headerlink" title="1.2 mock 源码中的 module"></a>1.2 mock 源码中的 module</h4><h5 id="1-2-1-可以用-require"><a href="#1-2-1-可以用-require" class="headerlink" title="1.2.1 可以用 require"></a>1.2.1 可以用 require</h5><p>但是 mock 的结果按需要加上 default 这个 key，也要修改源码</p>
 <h5 id="1-2-2-依旧-import"><a href="#1-2-2-依旧-import" class="headerlink" title="1.2.2 依旧 import"></a>1.2.2 依旧 import</h5><p>默认 jest 会加在 babel-jest 这个 transform.但是 RN 0.56 版本没有使用 babel-jest。所以 mock 不必提升到 import 之前，这个功能本来是 babel-jest 中的 plugin “jest-hoist”带来的，所以现在要手工在.babelrc 中加上这个插件。</p>
 <blockquote>
-<p>在加入这jest-hoist之前，node_modules中的模块只能用文件mock（创建<strong>mocks</strong>文件夹），加入jest-hoist后可以使用函数mock(jest.mock(‘xxx’))</p>
+<p>在加入这jest-hoist之前，node_modules中的模块只能用文件mock（创建__mocks__文件夹），加入jest-hoist后可以使用函数mock(jest.mock(‘xxx’))</p>
 </blockquote>
 <p>.babelrc 文件如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    &quot;module:metro-react-native-babel-preset&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    &quot;jest-hoist&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    &quot;module:metro-react-native-babel-preset&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    &quot;jest-hoist&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>package.json 中 jest 相关配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&quot;jest&quot;: &#123;</span><br><span class="line">  &quot;preset&quot;: &quot;react-native&quot;,</span><br><span class="line">  &quot;moduleFileExtensions&quot;: [</span><br><span class="line">    &quot;ts&quot;,</span><br><span class="line">    &quot;tsx&quot;,</span><br><span class="line">    &quot;js&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;transform&quot;: &#123;</span><br><span class="line">    &quot;^.+\\.(js)$&quot;: &quot;&lt;rootDir&gt;/node_modules/react-native/jest/preprocessor.js&quot;,</span><br><span class="line">    &quot;^.+\\.(ts|tsx)$&quot;: &quot;ts-jest&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;testPathIgnorePatterns&quot;: [</span><br><span class="line">    &quot;\\.snap$&quot;,</span><br><span class="line">    &quot;&lt;rootDir&gt;/node_modules/&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;cacheDirectory&quot;: &quot;.jest/cache&quot;,</span><br><span class="line">  &quot;testMatch&quot;: [</span><br><span class="line">    &quot;&lt;rootDir&gt;/__tests__/(**/*|*.)(spec|test).js?(x)&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;snapshotSerializers&quot;: [</span><br><span class="line">    &quot;enzyme-to-json/serializer&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;setupFiles&quot;: [</span><br><span class="line">    &quot;&lt;rootDir&gt;/jest/setup.js&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&quot;jest&quot;: &#123;</span><br><span class="line">  &quot;preset&quot;: &quot;react-native&quot;,</span><br><span class="line">  &quot;moduleFileExtensions&quot;: [</span><br><span class="line">    &quot;ts&quot;,</span><br><span class="line">    &quot;tsx&quot;,</span><br><span class="line">    &quot;js&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;transform&quot;: &#123;</span><br><span class="line">    &quot;^.+\\.(js)$&quot;: &quot;&lt;rootDir&gt;/node_modules/react-native/jest/preprocessor.js&quot;,</span><br><span class="line">    &quot;^.+\\.(ts|tsx)$&quot;: &quot;ts-jest&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;testPathIgnorePatterns&quot;: [</span><br><span class="line">    &quot;\\.snap$&quot;,</span><br><span class="line">    &quot;&lt;rootDir&gt;/node_modules/&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;cacheDirectory&quot;: &quot;.jest/cache&quot;,</span><br><span class="line">  &quot;testMatch&quot;: [</span><br><span class="line">    &quot;&lt;rootDir&gt;/__tests__/(**/*|*.)(spec|test).js?(x)&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;snapshotSerializers&quot;: [</span><br><span class="line">    &quot;enzyme-to-json/serializer&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;setupFiles&quot;: [</span><br><span class="line">    &quot;&lt;rootDir&gt;/jest/setup.js&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>setup.js, 不想要这个文件，也可以安装 enzyme 的官方文档下载一个 moduel 做 setup.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; configure &#125; <span class="keyword">from</span> <span class="string">"enzyme"</span>;</span><br><span class="line"><span class="keyword">import</span> Adapter <span class="keyword">from</span> <span class="string">"enzyme-adapter-react-16"</span>;</span><br><span class="line"></span><br><span class="line">configure(&#123; <span class="attr">adapter</span>: <span class="keyword">new</span> Adapter() &#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; configure &#125; <span class="keyword">from</span> <span class="string">&quot;enzyme&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Adapter</span> <span class="keyword">from</span> <span class="string">&quot;enzyme-adapter-react-16&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">configure</span>(&#123; <span class="attr">adapter</span>: <span class="keyword">new</span> <span class="title class_">Adapter</span>() &#125;);</span><br></pre></td></tr></table></figure>
+
 <h3 id="2-shallow-vs-render"><a href="#2-shallow-vs-render" class="headerlink" title="2. shallow vs render"></a>2. shallow vs render</h3><p>render、mount、shallow 的区别<br>render 采用的是第三方库 Cheerio 的渲染，渲染结果是普通的 html 结构，对于 snapshot 使用 render 比较合适。<br>shallow 和 mount 对组件的渲染结果不是 html 的 dom 树，而是 react 树，如果你 chrome 装了 react devtool 插件，他的渲染结果就是 react devtool tab 下查看的组件结构，而 render 函数的结果是 element tab 下查看的结果。<br>这些只是渲染结果上的差别，更大的差别是 shallow 和 mount 的结果是个被封装的 ReactWrapper，可以进行多种操作，譬如 find()、parents()、children()等选择器进行元素查找；state()、props()进行数据查找，setState()、setprops()操作数据；simulate()模拟事件触发。<br>shallow 只渲染当前组件，只能能对当前组件做断言；mount 会渲染当前组件以及所有子组件，对所有子组件也可以做上述操作。一般交互测试都会关心到子组件，我使用的都是 mount。但是 mount 耗时更长，内存啥的也都占用的更多，如果没必要操作和断言子组件，可以使用 shallow。</p>
-<p>链接：<a href="https://www.jianshu.com/p/d4e447430c3c" target="_blank" rel="noopener">https://www.jianshu.com/p/d4e447430c3c</a></p>
-<h3 id="3-测试文件的模块名字"><a href="#3-测试文件的模块名字" class="headerlink" title="3. 测试文件的模块名字"></a>3. 测试文件的模块名字</h3><p>我遇到一个问题，如果某个文件名定义为 transaction, 源文件中使用它<code>import {funA} from &#39;../utils/transaction&#39;</code>,如果刚好我有个局部变量，定义为_transaction, 那么这个局部变量改写了模块的变量，会导致这个模块的函数 funA 是 undefiend.这个问题在源码中不会有问题，但是在测试文件中有问题，我觉得是 transform 这个 import 的时候导致的。</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d4e447430c3c">https://www.jianshu.com/p/d4e447430c3c</a></p>
+<h3 id="3-测试文件的模块名字"><a href="#3-测试文件的模块名字" class="headerlink" title="3. 测试文件的模块名字"></a>3. 测试文件的模块名字</h3><p>我遇到一个问题，如果某个文件名定义为 transaction, 源文件中使用它<code>import &#123;funA&#125; from &#39;../utils/transaction&#39;</code>,如果刚好我有个局部变量，定义为_transaction, 那么这个局部变量改写了模块的变量，会导致这个模块的函数 funA 是 undefiend.这个问题在源码中不会有问题，但是在测试文件中有问题，我觉得是 transform 这个 import 的时候导致的。</p>
 <h3 id="4-Jest-it-and-test-must-return-either-a-Promise-or-undefined"><a href="#4-Jest-it-and-test-must-return-either-a-Promise-or-undefined" class="headerlink" title="4. Jest: it and test must return either a Promise or undefined."></a>4. Jest: <code>it</code> and <code>test</code> must return either a Promise or undefined.</h3><p>这个是测试sagas时的函数没有用 async 关键字，我不知道generator也需要这个关键字？</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">"test"</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> testSata();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">it</span>(<span class="string">&quot;test&quot;</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">testSata</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h3 id="5-AutoMock"><a href="#5-AutoMock" class="headerlink" title="5. AutoMock"></a>5. AutoMock</h3><p>automock是jest容易搞混的概念，之前的旧版本，jest默认都是automock，也就是所有模块都是mock的。现在的版本配置，automock默认是false。就是因为automock容易搞混，对新手不友好。<br>无论是用文件mock，还是函数mock，都不是automock，都是manual mock。</p>
 
-      
     </div>
 
-    <div>
-      
-        
+    
+    
+    
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/debug/" rel="tag"># debug</a>
-          
-            <a href="/tags/react-native/" rel="tag"># react-native</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/02/13/bash/" rel="next" title="bash">
-                <i class="fa fa-chevron-left"></i> bash
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/debug/" rel="tag"># debug</a>
+              <a href="/tags/react-native/" rel="tag"># react-native</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/21/Xcode/" rel="prev" title="xcode">
-                xcode <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/02/13/bash/" rel="prev" title="bash">
+      <i class="fa fa-chevron-left"></i> bash
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/02/21/Xcode/" rel="next" title="xcode">
+      xcode <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-jest-mock"><span class="nav-number">1.</span> <span class="nav-text">1. jest mock</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-mock-node-module-中的-moduel"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 mock node_module 中的 moduel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-mock-源码中的-module"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 mock 源码中的 module</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-1-可以用-require"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 可以用 require</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-2-依旧-import"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 依旧 import</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-shallow-vs-render"><span class="nav-number">2.</span> <span class="nav-text">2. shallow vs render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试文件的模块名字"><span class="nav-number">3.</span> <span class="nav-text">3. 测试文件的模块名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Jest-it-and-test-must-return-either-a-Promise-or-undefined"><span class="nav-number">4.</span> <span class="nav-text">4. Jest: it and test must return either a Promise or undefined.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-AutoMock"><span class="nav-number">5.</span> <span class="nav-text">5. AutoMock</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-jest-mock"><span class="nav-number">1.</span> <span class="nav-text">1. jest mock</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-mock-node-module-%E4%B8%AD%E7%9A%84-moduel"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 mock node_module 中的 moduel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-mock-%E6%BA%90%E7%A0%81%E4%B8%AD%E7%9A%84-module"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 mock 源码中的 module</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-1-%E5%8F%AF%E4%BB%A5%E7%94%A8-require"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 可以用 require</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-2-%E4%BE%9D%E6%97%A7-import"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 依旧 import</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-shallow-vs-render"><span class="nav-number">2.</span> <span class="nav-text">2. shallow vs render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6%E7%9A%84%E6%A8%A1%E5%9D%97%E5%90%8D%E5%AD%97"><span class="nav-number">3.</span> <span class="nav-text">3. 测试文件的模块名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Jest-it-and-test-must-return-either-a-Promise-or-undefined"><span class="nav-number">4.</span> <span class="nav-text">4. Jest: it and test must return either a Promise or undefined.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-AutoMock"><span class="nav-number">5.</span> <span class="nav-text">5. AutoMock</span></a></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2019/02/19/React-Native-Test/';
-          this.page.identifier = '2019/02/19/React-Native-Test/';
-          this.page.title = 'React-Native-Test';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -755,19 +415,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 

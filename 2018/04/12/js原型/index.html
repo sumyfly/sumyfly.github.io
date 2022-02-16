@@ -1,142 +1,50 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="javascript,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1.构造函数12345678function Foo(a)&amp;#123;  if(!(this instanceof Foo))&amp;#123;    //非当前实例，原因是没用new去调用    return new Foo(a)  &amp;#125;  this.name = a&amp;#125;var foo = new Foo(&apos;foo&apos;) //这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都">
-<meta name="keywords" content="javascript">
+  <meta name="description" content="1.构造函数12345678function Foo(a)&amp;#123;  if(!(this instanceof Foo))&amp;#123;    &#x2F;&#x2F;非当前实例，原因是没用new去调用    return new Foo(a)  &amp;#125;  this.name &#x3D; a&amp;#125;var foo &#x3D; new Foo(&amp;#x27;foo&amp;#x27;) &#x2F;&#x2F;这里加不加new一样，但是推荐加，不能保证">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js原型">
-<meta property="og:url" content="http://yoursite.com/2018/04/12/js原型/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/12/js%E5%8E%9F%E5%9E%8B/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1.构造函数12345678function Foo(a)&amp;#123;  if(!(this instanceof Foo))&amp;#123;    //非当前实例，原因是没用new去调用    return new Foo(a)  &amp;#125;  this.name = a&amp;#125;var foo = new Foo(&apos;foo&apos;) //这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.058Z">
+<meta property="og:description" content="1.构造函数12345678function Foo(a)&amp;#123;  if(!(this instanceof Foo))&amp;#123;    &#x2F;&#x2F;非当前实例，原因是没用new去调用    return new Foo(a)  &amp;#125;  this.name &#x3D; a&amp;#125;var foo &#x3D; new Foo(&amp;#x27;foo&amp;#x27;) &#x2F;&#x2F;这里加不加new一样，但是推荐加，不能保证">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-04-12T06:26:17.000Z">
+<meta property="article:modified_time" content="2021-01-14T06:26:09.058Z">
+<meta property="article:author" content="qsl">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js原型">
-<meta name="twitter:description" content="1.构造函数12345678function Foo(a)&amp;#123;  if(!(this instanceof Foo))&amp;#123;    //非当前实例，原因是没用new去调用    return new Foo(a)  &amp;#125;  this.name = a&amp;#125;var foo = new Foo(&apos;foo&apos;) //这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都">
+
+<link rel="canonical" href="http://yoursite.com/2018/04/12/js%E5%8E%9F%E5%9E%8B/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/04/12/js原型/">
-
-
-
-
 
   <title>js原型 | QSL</title>
   
@@ -144,581 +52,345 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/js原型/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/js%E5%8E%9F%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">js原型</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          js原型
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T14:26:17+08:00">
-                2018-04-12
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <time title="Created: 2018-04-12 14:26:17" itemprop="dateCreated datePublished" datetime="2018-04-12T14:26:17+08:00">2018-04-12</time>
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2018/04/12/js原型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/12/js原型/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <h3 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="1.构造函数"></a>1.构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Foo))&#123;</span><br><span class="line">    <span class="comment">//非当前实例，原因是没用new去调用</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Foo(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.name = a</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo(<span class="string">'foo'</span>) <span class="comment">//这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都会check instance</span></span><br></pre></td></tr></table></figure>
+        <h3 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="1.构造函数"></a>1.构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Foo</span>(<span class="params">a</span>)&#123;</span><br><span class="line">  <span class="keyword">if</span>(!(<span class="variable language_">this</span> <span class="keyword">instanceof</span> <span class="title class_">Foo</span>))&#123;</span><br><span class="line">    <span class="comment">//非当前实例，原因是没用new去调用</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Foo</span>(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = a</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> <span class="title class_">Foo</span>(<span class="string">&#x27;foo&#x27;</span>) <span class="comment">//这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都会check instance</span></span><br></pre></td></tr></table></figure>
 <p>我记得构造函数首字母要大写，但是发现现在不大写也可以，最好大写吧。<br>new 的作用：</p>
 <ul>
 <li>绑定了this</li>
 <li>返回一个对象</li>
 <li>增加一个<code>__proto__</code>的属性指向构造函数的<code>protoType</code></li>
 </ul>
-<h3 id="2-原型"><a href="#2-原型" class="headerlink" title="2.原型"></a>2.原型</h3><h4 id="2-1-继承"><a href="#2-1-继承" class="headerlink" title="2.1 继承"></a>2.1 继承</h4><p>js中的继承是原型链，就是<code>GrandFather grandFather&lt;-Father father&lt;-Son son</code>.它们之间靠<strong>proto</strong>联系在一起。就是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">son.__proto__ === Son.ProtoType</span><br><span class="line">son.__proto__.__proto__ === Father.protoType</span><br><span class="line">son.__proto__.__proto__ .__proto__ === GrandFather.protoType</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">由于js查找属性时，按照这个原型链去查，一直能查到祖父。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#### 2.2 protoType `</span>__proto__<span class="string">`</span></span><br><span class="line"><span class="string">- 相同点：</span></span><br><span class="line"><span class="string">protoType和__proto__对应的是同一个原型，**它是一个Object**。每个实例的__proto__都是构造函数用自己的protoType赋值的。</span></span><br><span class="line"><span class="string">- 不同点：</span></span><br><span class="line"><span class="string">不同点__proto__是实例调用的，protoType是构造函数调用的（注意：我没说是类，js本质上没类，只有对象和函数，每个实例都是构造函数构造出来的）。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span> js</span><br><span class="line"><span class="keyword">var</span> p =&#123; </span><br><span class="line">  isHuman: <span class="literal">false</span>,</span><br><span class="line">  name: <span class="string">'foo'</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Glass</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.glass = <span class="string">'glass'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"><span class="comment">// 不要直接给一个对象赋值__proto__,这个会导致性能问题，不是赋值的时候有问题，而是查找的时候有性能问题</span></span><br><span class="line">a.__proto__ = p </span><br><span class="line"><span class="comment">// 1. 可以用原型来做</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> Glass()</span><br><span class="line">b.__proto__.__proto__ = p <span class="comment">// or Glass.protoType.__proto__ = p</span></span><br><span class="line"><span class="comment">// 2. 用Obejct.create()</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="built_in">Object</span>.create(p) <span class="comment">// 这个没有影响任何构造函数</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="2-原型"><a href="#2-原型" class="headerlink" title="2.原型"></a>2.原型</h3><h4 id="2-1-继承"><a href="#2-1-继承" class="headerlink" title="2.1 继承"></a>2.1 继承</h4><p>js中的继承是原型链，就是<code>GrandFather grandFather&lt;-Father father&lt;-Son son</code>.它们之间靠__proto__联系在一起。就是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">son.<span class="property">__proto__</span> === <span class="title class_">Son</span>.<span class="property">ProtoType</span></span><br><span class="line">son.<span class="property">__proto__</span>.<span class="property">__proto__</span> === <span class="title class_">Father</span>.<span class="property">protoType</span></span><br><span class="line">son.<span class="property">__proto__</span>.<span class="property">__proto__</span> .<span class="property">__proto__</span> === <span class="title class_">GrandFather</span>.<span class="property">protoType</span></span><br></pre></td></tr></table></figure>
+<p>由于js查找属性时，按照这个原型链去查，一直能查到祖父。</p>
+<h4 id="2-2-protoType-proto"><a href="#2-2-protoType-proto" class="headerlink" title="2.2 protoType __proto__"></a>2.2 protoType <code>__proto__</code></h4><ul>
+<li>相同点：<br>protoType和__proto__对应的是同一个原型，<strong>它是一个Object</strong>。每个实例的__proto__都是构造函数用自己的protoType赋值的。</li>
+<li>不同点：<br>不同点__proto__是实例调用的，protoType是构造函数调用的（注意：我没说是类，js本质上没类，只有对象和函数，每个实例都是构造函数构造出来的）。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p =&#123; </span><br><span class="line">  <span class="attr">isHuman</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;foo&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Glass</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">glass</span> = <span class="string">&#x27;glass&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"><span class="comment">// 不要直接给一个对象赋值__proto__,这个会导致性能问题，不是赋值的时候有问题，而是查找的时候有性能问题</span></span><br><span class="line">a.<span class="property">__proto__</span> = p </span><br><span class="line"><span class="comment">// 1. 可以用原型来做</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="title class_">Glass</span>()</span><br><span class="line">b.<span class="property">__proto__</span>.<span class="property">__proto__</span> = p <span class="comment">// or Glass.protoType.__proto__ = p</span></span><br><span class="line"><span class="comment">// 2. 用Obejct.create()</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="title class_">Object</span>.<span class="title function_">create</span>(p) <span class="comment">// 这个没有影响任何构造函数</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="2-3-实例的属性"><a href="#2-3-实例的属性" class="headerlink" title="2.3 实例的属性"></a>2.3 实例的属性</h4><p>js的属性分为自己的(<code>Object.getOwnerPropety()</code>)和继承的(<code>Object.getPrototypeOf()</code>)<br>循环遍历属性有几个特殊的地方：</p>
 <ul>
-<li><p>如果使用for<br>for会打印所有属性，包括自己的和继承的。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用上面的b这个例子</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">in</span> b)&#123;</span><br><span class="line">  <span class="built_in">console</span>(v) <span class="comment">// isHuman, name, glass 都是可以打印出来的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用Object.keys<br>Object.keys只会打印自己的属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(b) <span class="comment">//只会打印 isHuman, name</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>如果使用for<br>for会打印所有属性，包括自己的和继承的。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用上面的b这个例子</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">in</span> b)&#123;</span><br><span class="line">  <span class="title function_">console</span>(v) <span class="comment">// isHuman, name, glass 都是可以打印出来的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>使用Object.keys<br>Object.keys只会打印自己的属性<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">keys</span>(b) <span class="comment">//只会打印 isHuman, name</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p>我很少写原生的js了，大部分是用TS，写多了TS，这些都忘记了。</p>
 </blockquote>
 
-      
     </div>
 
-    <div>
-      
-        
+    
+    
+    
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/04/11/web-js/" rel="next" title="web-js">
-                <i class="fa fa-chevron-left"></i> web-js
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/13/Android签名相关内容/" rel="prev" title="Android签名相关内容">
-                Android签名相关内容 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/04/11/web-js/" rel="prev" title="web-js">
+      <i class="fa fa-chevron-left"></i> web-js
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/04/13/Android%E7%AD%BE%E5%90%8D%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" rel="next" title="Android签名相关内容">
+      Android签名相关内容 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-构造函数"><span class="nav-number">1.</span> <span class="nav-text">1.构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-原型"><span class="nav-number">2.</span> <span class="nav-text">2.原型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-继承"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-实例的属性"><span class="nav-number">2.2.</span> <span class="nav-text">2.3 实例的属性</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">1.构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8E%9F%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">2.原型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E7%BB%A7%E6%89%BF"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-protoType-proto"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 protoType __proto__</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 实例的属性</span></a></li></ol></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/04/12/js原型/';
-          this.page.identifier = '2018/04/12/js原型/';
-          this.page.title = 'js原型';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -732,19 +404,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 

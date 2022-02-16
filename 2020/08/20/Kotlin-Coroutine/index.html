@@ -1,142 +1,50 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="Kotlin,">
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
-
-
-
-
-
-
-<meta name="description" content="1. 协程协程就是轻量级线程，或者称绿色线程，跟线程相似可以并发执行，不同点是：  线程由操作系统调度，协程由协程调度器调度。 线程有单独的线程栈，协程按照语言设计: Golang有协程栈，支持动态扩展协程栈大小；Tokio没有协程栈，使用的是状态机和闭包保存状态。TODO:Kotlin-Coroutine好像是管理的是线程，没有同线程内部调度。每次launch都是启动了一个新的线程。Kotlin">
-<meta name="keywords" content="Kotlin">
+  <meta name="description" content="1. 协程协程就是轻量级线程，或者称绿色线程，跟线程相似可以并发执行，不同点是：  线程由操作系统调度，协程由协程调度器调度。 线程有单独的线程栈，协程按照语言设计: Golang有协程栈，支持动态扩展协程栈大小；Tokio没有协程栈，使用的是状态机和闭包保存状态。TODO:Kotlin-Coroutine好像是管理的是线程，没有同线程内部调度。每次launch都是启动了一个新的线程。Kotlin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin-Coroutine">
 <meta property="og:url" content="http://yoursite.com/2020/08/20/Kotlin-Coroutine/index.html">
 <meta property="og:site_name" content="QSL">
 <meta property="og:description" content="1. 协程协程就是轻量级线程，或者称绿色线程，跟线程相似可以并发执行，不同点是：  线程由操作系统调度，协程由协程调度器调度。 线程有单独的线程栈，协程按照语言设计: Golang有协程栈，支持动态扩展协程栈大小；Tokio没有协程栈，使用的是状态机和闭包保存状态。TODO:Kotlin-Coroutine好像是管理的是线程，没有同线程内部调度。每次launch都是启动了一个新的线程。Kotlin">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T06:26:09.041Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-08-20T02:59:57.000Z">
+<meta property="article:modified_time" content="2021-01-14T06:26:09.041Z">
+<meta property="article:author" content="qsl">
+<meta property="article:tag" content="Kotlin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kotlin-Coroutine">
-<meta name="twitter:description" content="1. 协程协程就是轻量级线程，或者称绿色线程，跟线程相似可以并发执行，不同点是：  线程由操作系统调度，协程由协程调度器调度。 线程有单独的线程栈，协程按照语言设计: Golang有协程栈，支持动态扩展协程栈大小；Tokio没有协程栈，使用的是状态机和闭包保存状态。TODO:Kotlin-Coroutine好像是管理的是线程，没有同线程内部调度。每次launch都是启动了一个新的线程。Kotlin">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/20/Kotlin-Coroutine/">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2020/08/20/Kotlin-Coroutine/">
-
-
-
-
 
   <title>Kotlin-Coroutine | QSL</title>
   
@@ -144,210 +52,148 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-102260804-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-
-
-
-
-
-
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QSL</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">blog</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/20/Kotlin-Coroutine/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="description" content="technology, web, js">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QSL">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Kotlin-Coroutine</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Kotlin-Coroutine
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-20T10:59:57+08:00">
-                2020-08-20
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <time title="Created: 2020-08-20 10:59:57" itemprop="dateCreated datePublished" datetime="2020-08-20T10:59:57+08:00">2020-08-20</time>
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2020/08/20/Kotlin-Coroutine/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/20/Kotlin-Coroutine/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
+
     
-
+    
+    
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <h3 id="1-协程"><a href="#1-协程" class="headerlink" title="1. 协程"></a>1. 协程</h3><p>协程就是轻量级线程，或者称绿色线程，跟线程相似可以并发执行，不同点是：</p>
@@ -355,11 +201,12 @@
 <li>线程由操作系统调度，协程由协程调度器调度。</li>
 <li>线程有单独的线程栈，协程按照语言设计: Golang有协程栈，支持动态扩展协程栈大小；Tokio没有协程栈，使用的是状态机和闭包保存状态。TODO:Kotlin-Coroutine好像是管理的是线程，没有同线程内部调度。每次launch都是启动了一个新的线程。Kotlin-Coroutine也是无栈设计，使用了状态机。CPS (Continuation Passing Style)</li>
 </ul>
-<p><a href="https://www.infoq.cn/article/RuBcSfg9bFt4gwdToyd7" target="_blank" rel="noopener">https://www.infoq.cn/article/RuBcSfg9bFt4gwdToyd7</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.infoq.cn/article/RuBcSfg9bFt4gwdToyd7">https://www.infoq.cn/article/RuBcSfg9bFt4gwdToyd7</a></p>
 <blockquote>
 <p>协程最重要的地方就是它们可以挂起和恢复，所以表现出并发的能力，它是由调度器提供的。</p>
 </blockquote>
-<a id="more"></a>
+<span id="more"></span>
+
 <h3 id="2-runBlocking-coroutineScope"><a href="#2-runBlocking-coroutineScope" class="headerlink" title="2. runBlocking/coroutineScope"></a>2. runBlocking/coroutineScope</h3><ul>
 <li>两者都会阻塞当前协程，等待子协程域或者协程完成</li>
 <li>runBlocking会阻塞当前线程，coroutineScope不会阻塞当前线程</li>
@@ -372,8 +219,7 @@
 <li>GlobalScope.launch，即使多个地方调用它也是并发执行的。</li>
 <li>runBlocking，阻塞当前线程。</li>
 <li>MainScope.launch, 主线程的协程作用域。</li>
-<li>CoroutineScope 自定义协程作用域。其实GlobalScope.launch，runBlocking，这些生产中都不常用，应该使用CoroutineScope函数创建协程。<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> job = Job() <span class="comment">// job可以cancel其相关作用域中的所有协程</span></span><br><span class="line"><span class="keyword">val</span> scope = CoroutineScope(job)</span><br><span class="line">scope.lauch &#123;</span><br><span class="line">  <span class="comment">// run coroutine</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>CoroutineScope 自定义协程作用域。其实GlobalScope.launch，runBlocking，这些生产中都不常用，应该使用CoroutineScope函数创建协程。<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> job = Job() <span class="comment">// job可以cancel其相关作用域中的所有协程</span></span><br><span class="line"><span class="keyword">val</span> scope = CoroutineScope(job)</span><br><span class="line">scope.lauch &#123;</span><br><span class="line">  <span class="comment">// run coroutine</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="3-2-创建子协程域"><a href="#3-2-创建子协程域" class="headerlink" title="3.2 创建子协程域"></a>3.2 创建子协程域</h4><p>只能在协程域中调用，继承外部协程作用域并且创建一个子协程作用域。子协程域特点是如果外部协程域结束了，该作用域下的所有子协程也会结束了。</p>
 <ul>
@@ -419,354 +265,176 @@
 <h3 id="7-调度器"><a href="#7-调度器" class="headerlink" title="7. 调度器"></a>7. 调度器</h3><p>协程的调度器是全局的吗，还是每个线程一个调度器？看资料说是一个线程一个。那么调度器看起来应该是以最外层的协程作用域为单位。那么Dispatchers.IO怎么说？</p>
 <p>1）launch默认在调用的协程上下文中执行，即runBlocking所在的主线程。<br>2）Dispatchers.Unconfined在调用线程启动以一个协程，挂起之后再次恢复执行在默认的执行者kotlinxcoroutines.DefaultExecutor线程中执行。<br>3）Dispatchers.Default默认调度器，开启新线程执行协程。<br>4）Dispatchers.IO创建在IO线程执行。<br>5）newSingleThreadContext创建一个独立的线程执行。</p>
 
-      
     </div>
 
-    <div>
-      
-        
+    
+    
+    
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Kotlin/" rel="tag"># Kotlin</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/05/05/缩写-md/" rel="next" title="缩写.md">
-                <i class="fa fa-chevron-left"></i> 缩写.md
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Kotlin/" rel="tag"># Kotlin</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/08/25/Android打包/" rel="prev" title="Android打包">
-                Android打包 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/05/%E7%BC%A9%E5%86%99-md/" rel="prev" title="缩写.md">
+      <i class="fa fa-chevron-left"></i> 缩写.md
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/25/Android%E6%89%93%E5%8C%85/" rel="next" title="Android打包">
+      Android打包 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="qsl">
-          <p class="site-author-name" itemprop="name">qsl</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology, web, js</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">68</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-协程"><span class="nav-number">1.</span> <span class="nav-text">1. 协程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-runBlocking-coroutineScope"><span class="nav-number">2.</span> <span class="nav-text">2. runBlocking/coroutineScope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-协程作用域"><span class="nav-number">3.</span> <span class="nav-text">3. 协程作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-最外层协程域"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 最外层协程域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-创建子协程域"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 创建子协程域</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-执行协程"><span class="nav-number">4.</span> <span class="nav-text">4. 执行协程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-不需要执行结果"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 不需要执行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-需要执行结果"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 需要执行结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-suspend"><span class="nav-number">5.</span> <span class="nav-text">5. suspend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-suspend-gt-resume"><span class="nav-number">6.</span> <span class="nav-text">6. suspend-&gt;resume</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-调度器"><span class="nav-number">7.</span> <span class="nav-text">7. 调度器</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8D%8F%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">1. 协程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-runBlocking-coroutineScope"><span class="nav-number">2.</span> <span class="nav-text">2. runBlocking&#x2F;coroutineScope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8D%8F%E7%A8%8B%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">3.</span> <span class="nav-text">3. 协程作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E6%9C%80%E5%A4%96%E5%B1%82%E5%8D%8F%E7%A8%8B%E5%9F%9F"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 最外层协程域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E5%88%9B%E5%BB%BA%E5%AD%90%E5%8D%8F%E7%A8%8B%E5%9F%9F"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 创建子协程域</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%89%A7%E8%A1%8C%E5%8D%8F%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">4. 执行协程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-%E4%B8%8D%E9%9C%80%E8%A6%81%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 不需要执行结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-%E9%9C%80%E8%A6%81%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 需要执行结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-suspend"><span class="nav-number">5.</span> <span class="nav-text">5. suspend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-suspend-gt-resume"><span class="nav-number">6.</span> <span class="nav-text">6. suspend-&gt;resume</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E8%B0%83%E5%BA%A6%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">7. 调度器</span></a></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">technology, web, js</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        
+
+        
+
+<div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">qsl</span>
 </div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         
 
-        
+
+
+
+
+
+
+
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://edwardqian.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2020/08/20/Kotlin-Coroutine/';
-          this.page.identifier = '2020/08/20/Kotlin-Coroutine/';
-          this.page.title = 'Kotlin-Coroutine';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://edwardqian.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -780,19 +448,12 @@
 
 
 
-  
 
 
 
 
 
-  
 
-  
-
-  
-
-  
 
   
 
