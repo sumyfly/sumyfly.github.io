@@ -157,6 +157,93 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/03/07/Redux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="technology, web, js">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/07/Redux/" class="post-title-link" itemprop="url">Redux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-03-07 16:37:44 / Modified: 17:44:06" itemprop="dateCreated datePublished" datetime="2022-03-07T16:37:44+08:00">2022-03-07</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/03/07/Redux/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/07/Redux/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-Redux"><a href="#1-Redux" class="headerlink" title="1. Redux"></a>1. Redux</h3><p>Redux createStore三个主要的属性和方法是{store, getState, dispatch}。createStore是创建一个Redux Store, store是这个Redux Store的引用，getState是返回全局的State, dispatch是发送一个Action. 这个全局State对于JS来说是plain object，每次dispatch都会创建一个新的object，而redux-immutable会使用原来的Immutale Map引用。</p>
+<p>其它一些辅助方法：<br>combineReducers(reducers), 这个是把reducersMap变成一个大reducer object.它接受一个Action和当前State, 然后遍历所有的reducer(这里可能会有性能问题，试想一千个reducer，会影响性能)。</p>
+<ul>
+<li><p>createStore的第一个参数就是combineReducers(reducers)返回的结果, 内部创建一个currentState, finalReducers, dispatch方法。State的key就是reducers的key, 在createStore内部，store创建好之后会dispatch 当ActionTypes.INIT，这个会在finalReducers里面运行一次，由于这个时候全局State是undefined，所以会使用reducers的defaultState，这里也就解释为什么reducers的defaultState要合reducers的key(reducers的name)一样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">combination</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="comment">// dispatch 当ActionTypes.INIT 的时候，state是undefined, 所以这里使用了函数默认值&#123;&#125;.</span></span></span><br><span class="line"><span class="params">    state: StateFromReducersMapObject&lt;<span class="keyword">typeof</span> reducers&gt; = &#123;&#125;,</span></span><br><span class="line"><span class="params">    action: AnyAction</span></span><br><span class="line"><span class="params">  </span>) &#123;</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> hasChanged = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">const</span> <span class="attr">nextState</span>: <span class="title class_">StateFromReducersMapObject</span>&lt;<span class="keyword">typeof</span> reducers&gt; = &#123;&#125;</span><br><span class="line">    <span class="comment">// 遍历所有的Reducer</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; finalReducerKeys.<span class="property">length</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">const</span> key = finalReducerKeys[i]</span><br><span class="line">      <span class="comment">// 获取一个reducer方法</span></span><br><span class="line">      <span class="keyword">const</span> reducer = finalReducers[key]</span><br><span class="line">      <span class="comment">// 获取当前的shape (某个reducer key下面的值)</span></span><br><span class="line">      <span class="keyword">const</span> previousStateForKey = state[key]</span><br><span class="line">      <span class="comment">// reduxer都会运行一次, 除非报错</span></span><br><span class="line">      <span class="comment">// 当接受ActionTypes.INIT时，previousStateForKey是个undefined，所以reducer里面返回的是reducer的defaultState。 </span></span><br><span class="line">      <span class="keyword">const</span> nextStateForKey = <span class="title function_">reducer</span>(previousStateForKey, action)</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> nextStateForKey === <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> actionType = action &amp;&amp; action.<span class="property">type</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>()</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 改写下个shape (某个reducer key下面的值)</span></span><br><span class="line">      nextState[key] = nextStateForKey</span><br><span class="line">      hasChanged = hasChanged || nextStateForKey !== previousStateForKey</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 监测至少有一次变化</span></span><br><span class="line">    hasChanged =</span><br><span class="line">      hasChanged || finalReducerKeys.<span class="property">length</span> !== <span class="title class_">Object</span>.<span class="title function_">keys</span>(state).<span class="property">length</span></span><br><span class="line">    <span class="keyword">return</span> hasChanged ? nextState : state</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>createStore的第二个参数时initialState，它的值要和reducer的key一样。它会和Reducer产生的State做hydrate。</p>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/07/Redux/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/20/Tools/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -903,81 +990,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/18/Google/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="technology, web, js">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/18/Google/" class="post-title-link" itemprop="url">Google</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-18 14:41:16 / Modified: 14:44:59" itemprop="dateCreated datePublished" datetime="2021-03-18T14:41:16+08:00">2021-03-18</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/18/Google/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/18/Google/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-Firebase-Admin-SDK"><a href="#1-Firebase-Admin-SDK" class="headerlink" title="1. Firebase Admin SDK"></a>1. Firebase Admin SDK</h3><p>按照文档集成之后，发现查询DynamicLinks的数据返回<code>403</code>，那么就需要到GCP(Google Cloud Platform)中检查用户email的权限，这个权限根具体内容相关，默认的Firebase Admin SDK的权限只有两个，需要什么服务自己加上。</p>
-<p>1.Find the client_email in the service account file<br>2.Go to GCP &gt; select your Firebase project &gt; click IAM &amp; admin &gt; click IAM <a target="_blank" rel="noopener" href="https://console.cloud.google.com/iam-admin/iam?project=">https://console.cloud.google.com/iam-admin/iam?project=</a>_<br>3.Make sure the IAM row for the client_email in step 1 has the Firebase App Distribution Admin role, or add it if it is missing. Check by clicking the “edit” pencil icon to the right-side of the row and a panel will show the current roles. If Firebase App Distribution Admin isn’t there, press “+ ADD ANOTHER ROLE” and include it.</p>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/62385911/firebase-app-distribution-failed-to-fetch-app-information-403-the-caller-do">https://stackoverflow.com/questions/62385911/firebase-app-distribution-failed-to-fetch-app-information-403-the-caller-do</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1049,7 +1061,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1060,7 +1072,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
