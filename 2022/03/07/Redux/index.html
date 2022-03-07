@@ -28,7 +28,7 @@
 <meta property="og:description" content="1. ReduxRedux createStore三个主要的属性和方法是{store, getState, dispatch}。createStore是创建一个Redux Store, store是这个Redux Store的引用，getState是返回全局的State, dispatch是发送一个Action. 这个全局State对于JS来说是plain object，每次dispatch都会创">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-07T08:37:44.000Z">
-<meta property="article:modified_time" content="2022-03-07T10:51:29.215Z">
+<meta property="article:modified_time" content="2022-03-07T10:52:04.258Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="Redux">
 <meta name="twitter:card" content="summary">
@@ -185,7 +185,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-03-07 16:37:44 / Modified: 18:51:29" itemprop="dateCreated datePublished" datetime="2022-03-07T16:37:44+08:00">2022-03-07</time>
+              <time title="Created: 2022-03-07 16:37:44 / Modified: 18:52:04" itemprop="dateCreated datePublished" datetime="2022-03-07T16:37:44+08:00">2022-03-07</time>
             </span>
 
           
@@ -219,7 +219,7 @@
 <li>createStore的第一个参数就是combineReducers(reducers)返回的结果, 内部创建一个currentState, finalReducers, dispatch方法。State的key就是reducers的key, 在createStore内部，store创建好之后会dispatch 当ActionTypes.INIT，这个会在finalReducers里面运行一次，由于这个时候全局State是undefined，所以会使用reducers的defaultState，这里也就解释为什么reducers的defaultState要合reducers的key(reducers的name)一样。</li>
 </ul>
 <blockquote>
-<p>Action是一个Object,它包含type, payload（自定义的负荷）. ActionTypes.INIT， 是Redux自带的Action，它的type其实是一个随机生成的字符串。我们不该针对这个INIT写任何的reducer。</p>
+<p>Action是一个Object,它包含type, payload（自定义的负荷）. ActionTypes.INIT， 是Redux自带的Action，它的type其实是一个随机生成的字符串。我们不该针对这个ActionTypes.INIT写任何的reducer。</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">ActionTypes</span> = &#123;</span><br><span class="line">  <span class="attr">INIT</span>: <span class="string">`@@redux/INIT<span class="subst">$&#123;/* #__PURE__ */ randomString()&#125;</span>`</span>,</span><br><span class="line">  <span class="attr">REPLACE</span>: <span class="string">`@@redux/REPLACE<span class="subst">$&#123;/* #__PURE__ */ randomString()&#125;</span>`</span>,</span><br><span class="line">  <span class="attr">PROBE_UNKNOWN_ACTION</span>: <span class="function">() =&gt;</span> <span class="string">`@@redux/PROBE_UNKNOWN_ACTION<span class="subst">$&#123;randomString()&#125;</span>`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
