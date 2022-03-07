@@ -28,7 +28,7 @@
 <meta property="og:description" content="1. ReduxRedux createStore三个主要的属性和方法是{store, getState, dispatch}。createStore是创建一个Redux Store, store是这个Redux Store的引用，getState是返回全局的State, dispatch是发送一个Action. 这个全局State对于JS来说是plain object，每次dispatch都会创">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-07T08:37:44.000Z">
-<meta property="article:modified_time" content="2022-03-07T09:44:06.116Z">
+<meta property="article:modified_time" content="2022-03-07T09:46:33.165Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="Redux">
 <meta name="twitter:card" content="summary">
@@ -185,7 +185,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-03-07 16:37:44 / Modified: 17:44:06" itemprop="dateCreated datePublished" datetime="2022-03-07T16:37:44+08:00">2022-03-07</time>
+              <time title="Created: 2022-03-07 16:37:44 / Modified: 17:46:33" itemprop="dateCreated datePublished" datetime="2022-03-07T16:37:44+08:00">2022-03-07</time>
             </span>
 
           
@@ -221,6 +221,9 @@
 <li><p>createStore的第二个参数时initialState，它的值要和reducer的key一样。它会和Reducer产生的State做hydrate。</p>
 </li>
 </ul>
+<blockquote>
+<p>Redux中函数默认值的使用很广泛，第一重要的就是reducers中函数默认值defaultState的使用，然后是createStore中initialState的使用。createStore中初始化Reduxt的Gloabal State就是用到了上面两个函数默认值。</p>
+</blockquote>
 <span id="more"></span>
 
 <h3 id="2-Middleware"><a href="#2-Middleware" class="headerlink" title="2. Middleware"></a>2. Middleware</h3><p>Middleware是利用了职责链设计模式。所以适合compose方法，<code>compose(a, b ,c ,d)</code>变成<code>a(b(c(d)))</code>。关键其实就是传进去原来的store.dispatch方法, 传出一个新的dispatch方法。</p>
