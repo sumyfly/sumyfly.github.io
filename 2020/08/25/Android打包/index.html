@@ -28,7 +28,7 @@
 <meta property="og:description" content="1. dalviksmali&#x2F;baksmali is an assembler&#x2F;disassembler for the dex format used by dalvik, Android’s Java VM implementation.smali 芬兰语中的编译baksmali 芬兰语中的反编译dex文件是组装smali后文件格式: dx工具会把class转为smali，dexdump查看d">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-08-25T07:11:47.000Z">
-<meta property="article:modified_time" content="2021-06-03T04:06:56.038Z">
+<meta property="article:modified_time" content="2022-03-07T08:24:39.247Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-03 12:06:56" itemprop="dateModified" datetime="2021-06-03T12:06:56+08:00">2021-06-03</time>
+                <time title="Modified: 2022-03-07 16:24:39" itemprop="dateModified" datetime="2022-03-07T16:24:39+08:00">2022-03-07</time>
               </span>
 
           
@@ -249,6 +249,7 @@
 </ul>
 <p>App安装时看applicationId, applicationId如果已经存在，再检查签名是否一样，如果一样可以覆盖安装(versionCode &gt;= 当前app的versionCode)。</p>
 <h3 id="4-applicationId-vs-Package"><a href="#4-applicationId-vs-Package" class="headerlink" title="4. applicationId vs Package"></a>4. applicationId vs Package</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/25621771">https://zhuanlan.zhihu.com/p/25621771</a></p>
+<h3 id="5-Gradle-Script"><a href="#5-Gradle-Script" class="headerlink" title="5. Gradle Script"></a>5. Gradle Script</h3><p>gralde缓存目录<code>~/.gradle/caches/modules-2/files-2.1</code>, 里面会按package分开子目录，每个子目录按版本再分成子目录。例如<code>~/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.12.1</code></p>
 
     </div>
 
@@ -339,7 +340,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dalvik"><span class="nav-number">1.</span> <span class="nav-text">1. dalvik</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-apk%E5%8F%8D%E7%BC%96%E8%AF%91"><span class="nav-number">2.</span> <span class="nav-text">2. apk反编译</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-apk-dex-gt-Jar-gt-Java"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 apk&#x2F;dex -&gt; Jar -&gt; Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-apk-dex-gt-Java"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 apk&#x2F;dex -&gt; Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-JDE"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. JDE</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-vsersionCode-versionName"><span class="nav-number">3.</span> <span class="nav-text">3. vsersionCode, versionName</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-applicationId-vs-Package"><span class="nav-number">4.</span> <span class="nav-text">4. applicationId vs Package</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dalvik"><span class="nav-number">1.</span> <span class="nav-text">1. dalvik</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-apk%E5%8F%8D%E7%BC%96%E8%AF%91"><span class="nav-number">2.</span> <span class="nav-text">2. apk反编译</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-apk-dex-gt-Jar-gt-Java"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 apk&#x2F;dex -&gt; Jar -&gt; Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-apk-dex-gt-Java"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 apk&#x2F;dex -&gt; Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-JDE"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. JDE</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-vsersionCode-versionName"><span class="nav-number">3.</span> <span class="nav-text">3. vsersionCode, versionName</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-applicationId-vs-Package"><span class="nav-number">4.</span> <span class="nav-text">4. applicationId vs Package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Gradle-Script"><span class="nav-number">5.</span> <span class="nav-text">5. Gradle Script</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
