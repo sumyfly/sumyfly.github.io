@@ -666,7 +666,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-25 19:12:20" itemprop="dateModified" datetime="2021-08-25T19:12:20+08:00">2021-08-25</time>
+                <time title="Modified: 2022-03-22 16:43:28" itemprop="dateModified" datetime="2022-03-22T16:43:28+08:00">2022-03-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -706,7 +706,7 @@
           <h3 id="1-rvm"><a href="#1-rvm" class="headerlink" title="1.rvm"></a>1.rvm</h3><p>管理不同的ruby版本。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rvm list <span class="comment">#列出不同的ruby版本</span></span><br><span class="line">rvm use 2.4.1 --default <span class="comment">#使用ruby 2.4.1做为默认版本</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-gem"><a href="#2-gem" class="headerlink" title="2.gem"></a>2.gem</h3><p>管理ruby的库文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gem install cocoapods <span class="comment">#安装cocoapods到全局环境</span></span><br><span class="line">gem environment <span class="comment"># gem的环境，看gem的安装目录</span></span><br><span class="line">gem list --<span class="built_in">local</span> <span class="comment">#看gem中库的版本，如果看到一个库有2个不同版本，说明在2个路径都可以查到，比如/usr/local/bin和$HOME/.rvm/gems/ruby-2.4.1/bin/bundler</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gem install cocoapods <span class="comment">#安装cocoapods到全局环境</span></span><br><span class="line">gem environment <span class="comment"># gem的环境，看gem的安装目录</span></span><br><span class="line">gem list --<span class="built_in">local</span> <span class="comment">#看gem中库的版本，如果看到一个库有2个不同版本，说明在2个路径都可以查到，比如/usr/local/bin和$HOME/.rvm/gems/ruby-2.4.1/bin/bundler</span></span><br><span class="line">gem cleanup <span class="comment">#清除gem的缓存，当gem中lib太多会导致很卡，因为ruby运行会遍历lib下的所有库，这个查找依赖的方式十分地低效。。</span></span><br></pre></td></tr></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014621915/article/details/62221705">https://blog.csdn.net/u014621915/article/details/62221705</a></p>
           <!--noindex-->
