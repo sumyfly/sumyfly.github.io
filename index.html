@@ -157,6 +157,91 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/03/26/node%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="technology, web, js">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/26/node%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" class="post-title-link" itemprop="url">node内存泄漏</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-03-26 12:57:23 / Modified: 13:08:05" itemprop="dateCreated datePublished" datetime="2022-03-26T12:57:23+08:00">2022-03-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node/" itemprop="url" rel="index"><span itemprop="name">Node</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/03/26/node%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/26/node内存泄漏/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="内存泄漏类型"><a href="#内存泄漏类型" class="headerlink" title="内存泄漏类型"></a>内存泄漏类型</h3><p>内存泄漏的本质是生命周期长的引用生命周期短的，导致生命周期短的不能按预期被释放。</p>
+<h4 id="被全局变量引用"><a href="#被全局变量引用" class="headerlink" title="被全局变量引用"></a>被全局变量引用</h4><p>全局变量的生命周期是程序的周期，所以被全局变量引用，它就不能被释放。</p>
+<h4 id="被单例实例引用"><a href="#被单例实例引用" class="headerlink" title="被单例实例引用"></a>被单例实例引用</h4><p>单例也是程序的生命周期，比如express中的依赖注入，如果变量别单例引用，也会有这个问题。</p>
+<h4 id="被clourse引用"><a href="#被clourse引用" class="headerlink" title="被clourse引用"></a>被clourse引用</h4><p>因为闭包会引用函数内部的变量，同一个函数的多个闭包会共享内部的变量。闭包会导致函数内部变量不会释放，而且要注意有多个闭包时，它们生命周期不同导致的函数内部变量没有被释放。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/03/10/Chrom%E6%8F%92%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -916,89 +1001,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/27/Android%20App%20Bundle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="technology, web, js">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/27/Android%20App%20Bundle/" class="post-title-link" itemprop="url">Bundle</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-05-27 11:00:54 / Modified: 11:01:40" itemprop="dateCreated datePublished" datetime="2021-05-27T11:00:54+08:00">2021-05-27</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/05/27/Android%20App%20Bundle/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/05/27/Android App Bundle/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Launch-Instant-App"><a href="#Launch-Instant-App" class="headerlink" title="Launch Instant App"></a>Launch Instant App</h3><p>Instant App depends on Play Dynamic Delivery, Dynamic Delivery depends on Dynamic Features.</p>
-<p>Developers submit .aab file to GooglePlay, then Goole Play use tool <code>bundletool</code> to extract the apks from this bundle file. Note: apks is a file format means apk set, it’s not equal to apk.</p>
-<p>We cannot use <code>adb install</code> to install .apks archive, we need a new tool <code>ia</code> coming from Google to install .apks file. This process also happens when users run instant apps published on GoolgePlay.</p>
-<p>Actually, we needn’t to use bundletool &amp; ia to launch instant app now, the Android Studio already can launch the intant app conveniently.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/27/Android%20App%20Bundle/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1070,18 +1072,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

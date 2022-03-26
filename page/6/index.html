@@ -157,6 +157,108 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/js%E5%8E%9F%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="technology, web, js">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/04/12/js%E5%8E%9F%E5%9E%8B/" class="post-title-link" itemprop="url">js原型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-04-12 14:26:17" itemprop="dateCreated datePublished" datetime="2018-04-12T14:26:17+08:00">2018-04-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/04/12/js%E5%8E%9F%E5%9E%8B/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/12/js原型/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="1.构造函数"></a>1.构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Foo</span>(<span class="params">a</span>)&#123;</span><br><span class="line">  <span class="keyword">if</span>(!(<span class="variable language_">this</span> <span class="keyword">instanceof</span> <span class="title class_">Foo</span>))&#123;</span><br><span class="line">    <span class="comment">//非当前实例，原因是没用new去调用</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Foo</span>(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = a</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> <span class="title class_">Foo</span>(<span class="string">&#x27;foo&#x27;</span>) <span class="comment">//这里加不加new一样，但是推荐加，不能保证每个人写的构造函数都会check instance</span></span><br></pre></td></tr></table></figure>
+<p>我记得构造函数首字母要大写，但是发现现在不大写也可以，最好大写吧。<br>new 的作用：</p>
+<ul>
+<li>绑定了this</li>
+<li>返回一个对象</li>
+<li>增加一个<code>__proto__</code>的属性指向构造函数的<code>protoType</code></li>
+</ul>
+<h3 id="2-原型"><a href="#2-原型" class="headerlink" title="2.原型"></a>2.原型</h3><h4 id="2-1-继承"><a href="#2-1-继承" class="headerlink" title="2.1 继承"></a>2.1 继承</h4><p>js中的继承是原型链，就是<code>GrandFather grandFather&lt;-Father father&lt;-Son son</code>.它们之间靠__proto__联系在一起。就是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">son.<span class="property">__proto__</span> === <span class="title class_">Son</span>.<span class="property">ProtoType</span></span><br><span class="line">son.<span class="property">__proto__</span>.<span class="property">__proto__</span> === <span class="title class_">Father</span>.<span class="property">protoType</span></span><br><span class="line">son.<span class="property">__proto__</span>.<span class="property">__proto__</span> .<span class="property">__proto__</span> === <span class="title class_">GrandFather</span>.<span class="property">protoType</span></span><br></pre></td></tr></table></figure>
+<p>由于js查找属性时，按照这个原型链去查，一直能查到祖父。</p>
+<h4 id="2-2-protoType-proto"><a href="#2-2-protoType-proto" class="headerlink" title="2.2 protoType __proto__"></a>2.2 protoType <code>__proto__</code></h4><ul>
+<li>相同点：<br>protoType和__proto__对应的是同一个原型，<strong>它是一个Object</strong>。每个实例的__proto__都是构造函数用自己的protoType赋值的。</li>
+<li>不同点：<br>不同点__proto__是实例调用的，protoType是构造函数调用的（注意：我没说是类，js本质上没类，只有对象和函数，每个实例都是构造函数构造出来的）。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p =&#123; </span><br><span class="line">  <span class="attr">isHuman</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;foo&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Glass</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">glass</span> = <span class="string">&#x27;glass&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"><span class="comment">// 不要直接给一个对象赋值__proto__,这个会导致性能问题，不是赋值的时候有问题，而是查找的时候有性能问题</span></span><br><span class="line">a.<span class="property">__proto__</span> = p </span><br><span class="line"><span class="comment">// 1. 可以用原型来做</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="title class_">Glass</span>()</span><br><span class="line">b.<span class="property">__proto__</span>.<span class="property">__proto__</span> = p <span class="comment">// or Glass.protoType.__proto__ = p</span></span><br><span class="line"><span class="comment">// 2. 用Obejct.create()</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="title class_">Object</span>.<span class="title function_">create</span>(p) <span class="comment">// 这个没有影响任何构造函数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-实例的属性"><a href="#2-3-实例的属性" class="headerlink" title="2.3 实例的属性"></a>2.3 实例的属性</h4><p>js的属性分为自己的(<code>Object.getOwnerPropety()</code>)和继承的(<code>Object.getPrototypeOf()</code>)<br>循环遍历属性有几个特殊的地方：</p>
+<ul>
+<li>如果使用for<br>for会打印所有属性，包括自己的和继承的。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用上面的b这个例子</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">in</span> b)&#123;</span><br><span class="line">  <span class="title function_">console</span>(v) <span class="comment">// isHuman, name, glass 都是可以打印出来的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>使用Object.keys<br>Object.keys只会打印自己的属性<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">keys</span>(b) <span class="comment">//只会打印 isHuman, name</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>我很少写原生的js了，大部分是用TS，写多了TS，这些都忘记了。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/web-js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -997,103 +1099,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="technology, web, js">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/12/29/git/" class="post-title-link" itemprop="url">git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-12-29 16:52:21" itemprop="dateCreated datePublished" datetime="2017-12-29T16:52:21+08:00">2017-12-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-22 11:10:30" itemprop="dateModified" datetime="2021-04-22T11:10:30+08:00">2021-04-22</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2017/12/29/git/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/29/git/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-rename-git-branch-locally-and-remotely"><a href="#1-rename-git-branch-locally-and-remotely" class="headerlink" title="1. rename git branch locally and remotely"></a>1. rename git branch locally and remotely</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -m old_branch new_branch         <span class="comment"># Rename branch locally    </span></span><br><span class="line">git push origin :old_branch                 <span class="comment"># Delete the old branch    </span></span><br><span class="line">git push --set-upstream origin new_branch   <span class="comment"># Push the new branch, set local branch to track the new remote</span></span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://gist.github.com/lttlrck/9628955">git hub refference</a></p>
-<h3 id="2-github-PR的mergefangs"><a href="#2-github-PR的mergefangs" class="headerlink" title="2. github PR的mergefangs"></a>2. github PR的mergefangs</h3><h4 id="2-1-Create-a-merge-commit"><a href="#2-1-Create-a-merge-commit" class="headerlink" title="2.1 Create a merge commit"></a>2.1 Create a merge commit</h4><p>All commits from this branch will be added to the base branch via a merge commit.<br>创建一个专门用于合并的commit,保留原始的commit id.</p>
-<h4 id="2-2-Squash-and-merge"><a href="#2-2-Squash-and-merge" class="headerlink" title="2.2 Squash and merge"></a>2.2 Squash and merge</h4><p>The 1 commit from this branch will be added to the base branch.<br>创建一个commit,包含所有的changes，但是commit id丢失了。</p>
-<h4 id="2-3-Rebase-and-merge"><a href="#2-3-Rebase-and-merge" class="headerlink" title="2.3 Rebase and merge"></a>2.3 Rebase and merge</h4><p>The 1 commit from this branch will be rebased and added to the base branch.<br>这里的1 commit我不是很理解，其实是整体一组commits。它们的修改时间（Date)没有变化，但是提交时间(commite Date)时间统一变为rebase命令的执行时间。<br>重新Rebase对象的分支，然后所有的commit id和commit Date变了，changes,commit message，Date没变。</p>
-<blockquote>
-<p>git 做diff时，是按照一个起始点，然后把所有changes显示出来。如果是三方合并，它们是从共同起始点开始，看相同的行有没有修改。所以如果从master到development或者相反的方向，<strong>不要</strong>使用rebase,也不要使用Squash,因为它们会修改<strong>commit的id</strong>，导致merge的时候出现冲突。</p>
-</blockquote>
-<blockquote>
-<p>默认commit的时候，Date和commit Date是一样的，但是rebase之后commit Date的时间变成了rebase执行时的时间。</p>
-</blockquote>
-<p>怎么选项merge方式：</p>
-<ul>
-<li>feature、fix分支到development，三种方式都可以选择，优先选择Rebase,保持commit一条直线。</li>
-<li>development、release、master分支由于要相互间持续的merge，所以它们之间的merge方法选择第一种，Create a merge commit。这种方式会保留commit id.那么merge的时候冲突就少了。</li>
-</ul>
-<h3 id="3-rebase操作"><a href="#3-rebase操作" class="headerlink" title="3. rebase操作"></a>3. rebase操作</h3><h4 id="3-1-同一个分支"><a href="#3-1-同一个分支" class="headerlink" title="3.1 同一个分支"></a>3.1 同一个分支</h4><p>git pull –rebase,如果有冲突，解决冲突后git rebase –continue.</p>
-<h4 id="3-2-不同分支"><a href="#3-2-不同分支" class="headerlink" title="3.2 不同分支"></a>3.2 不同分支</h4><p>git rebase target,把head rebase到target的Head上，然后本地修改会以它为起点，产生diff。之后执行git rebase –continue.<br>然后远程分支直接强制push。git push -f</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1165,18 +1170,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
