@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1. HeapHeap 分为young generation, old generation.  young generation, 采用算法，分为from, to两个区域。当需要GC时，会检测分配的对象的有效性，如果从这次GC中存活，会标记，然后copy到to 区域，清空from区，然后交换from, to的命名。当有对象在2次GC都存活了，那么会移动到old generation. old g">
+  <meta name="description" content="1. HeapHeap 分为young generation, old generation.  young generation, 采用清除算法，分为from, to两个区域。当需要GC时，会检测分配的对象的有效性，如果从这次GC中存活，会标记，然后copy到to 区域，清空from区，然后交换from, to的命名。当有对象在2次GC都存活了，那么会移动到old generation.这个也被">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node内存泄漏">
 <meta property="og:url" content="http://yoursite.com/2022/03/26/node%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="1. HeapHeap 分为young generation, old generation.  young generation, 采用算法，分为from, to两个区域。当需要GC时，会检测分配的对象的有效性，如果从这次GC中存活，会标记，然后copy到to 区域，清空from区，然后交换from, to的命名。当有对象在2次GC都存活了，那么会移动到old generation. old g">
+<meta property="og:description" content="1. HeapHeap 分为young generation, old generation.  young generation, 采用清除算法，分为from, to两个区域。当需要GC时，会检测分配的对象的有效性，如果从这次GC中存活，会标记，然后copy到to 区域，清空from区，然后交换from, to的命名。当有对象在2次GC都存活了，那么会移动到old generation.这个也被">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-26T04:57:23.000Z">
-<meta property="article:modified_time" content="2022-03-28T03:07:42.950Z">
+<meta property="article:modified_time" content="2022-03-28T03:21:36.922Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="memory leak">
 <meta name="twitter:card" content="summary">
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-28 11:07:42" itemprop="dateModified" datetime="2022-03-28T11:07:42+08:00">2022-03-28</time>
+                <time title="Modified: 2022-03-28 11:21:36" itemprop="dateModified" datetime="2022-03-28T11:21:36+08:00">2022-03-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,9 +230,19 @@
       
         <h3 id="1-Heap"><a href="#1-Heap" class="headerlink" title="1. Heap"></a>1. Heap</h3><p>Heap 分为young generation, old generation.</p>
 <ul>
-<li>young generation, 采用算法，分为from, to两个区域。当需要GC时，会检测分配的对象的有效性，如果从这次GC中存活，会标记，然后copy到to 区域，清空from区，然后交换from, to的命名。当有对象在2次GC都存活了，那么会移动到old generation.</li>
-<li>old generation, 采用mark, old generation中allocate分配容易，清理难。<h3 id="2-取得Heapsnap"><a href="#2-取得Heapsnap" class="headerlink" title="2. 取得Heapsnap"></a>2. 取得Heapsnap</h3><h4 id="2-1-heapdump"><a href="#2-1-heapdump" class="headerlink" title="2.1 heapdump"></a>2.1 heapdump</h4>使用第三方库heapdump<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="variable constant_">SNAP_DIR_PATH</span> + <span class="string">&#x27;/&#x27;</span> + <span class="title class_">Date</span>.<span class="title function_">now</span>() + <span class="string">&#x27;.heapsnapshot&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+<li>young generation, 采用清除算法，分为from, to两个区域。当需要GC时，会检测分配的对象的有效性，如果从这次GC中存活，会标记，然后copy到to 区域，清空from区，然后交换from, to的命名。当有对象在2次GC都存活了，那么会移动到old generation.这个也被称为minor GC.</li>
+<li>old generation, 采用mark-sweep方法, old generation中allocate分配容易，清理难。这个也被称为major GC。这里的GC也有两种可能，一种是内存充裕时使用mark-sweep, 另一种是内存不充足时内存压塑，移动内存，释放内存碎片。</li>
 </ul>
+<p>Usually, ~20% of the Young Generation survives into the Old Generation. Collection in the Old Space will only commence once it is getting exhausted. To do so the V8 engine uses two different collection algorithms:</p>
+<ul>
+<li>Scavenge collection, which is fast and runs on the Young Generation,</li>
+<li>Mark-Sweep collection, which is slower and runs on the Old Generation.</li>
+</ul>
+<p>node GC时会stop the world，代表主线程被暂停了。</p>
+<span id="more"></span>
+<h3 id="2-取得Heapsnap"><a href="#2-取得Heapsnap" class="headerlink" title="2. 取得Heapsnap"></a>2. 取得Heapsnap</h3><h4 id="2-1-heapdump"><a href="#2-1-heapdump" class="headerlink" title="2.1 heapdump"></a>2.1 heapdump</h4><p>使用第三方库heapdump</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="variable constant_">SNAP_DIR_PATH</span> + <span class="string">&#x27;/&#x27;</span> + <span class="title class_">Date</span>.<span class="title function_">now</span>() + <span class="string">&#x27;.heapsnapshot&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="2-2-node自带的v8模块"><a href="#2-2-node自带的v8模块" class="headerlink" title="2.2 node自带的v8模块"></a>2.2 node自带的v8模块</h4><p>这个要node版本14以上才有</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">dump</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> snapshotStream = v8.<span class="title function_">getHeapSnapshot</span>();</span><br><span class="line">  snapshotStream.<span class="title function_">pipe</span>(fs.<span class="title function_">createWriteStream</span>(<span class="variable constant_">SNAP_DIR_PATH</span> + <span class="string">&#x27;/&#x27;</span> + <span class="title class_">Date</span>.<span class="title function_">now</span>() + <span class="string">&#x27;.heapsnapshot&#x27;</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -257,11 +267,15 @@
 </blockquote>
 <h4 id="4-4-Tips"><a href="#4-4-Tips" class="headerlink" title="4.4 Tips"></a>4.4 Tips</h4><ul>
 <li>如果distance太大了，达到了几百，那么存在循环引用。</li>
+<li>node默认heap大小是1.5G，可以设置node的启动参数，由于node会按需要GC，当有空间时并不会及时清除old generation。</li>
 </ul>
 <h3 id="5-Low-Level-Tools"><a href="#5-Low-Level-Tools" class="headerlink" title="5. Low-Level Tools"></a>5. Low-Level Tools</h3><h4 id="5-1-mdb"><a href="#5-1-mdb" class="headerlink" title="5.1 mdb"></a>5.1 mdb</h4><p>这个工具可以debug操作系统，系统crash，用户进程，用户进程的core dump，和对象文件。</p>
 <h4 id="5-2-gcore"><a href="#5-2-gcore" class="headerlink" title="5.2 gcore"></a>5.2 gcore</h4><p>可以在程序运行时dump程序的core dump。</p>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a target="_blank" rel="noopener" href="https://developer.chrome.com/docs/devtools/memory-problems/memory-101/">https://developer.chrome.com/docs/devtools/memory-problems/memory-101/</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.risingstack.com/finding-a-memory-leak-in-node-js/">https://blog.risingstack.com/finding-a-memory-leak-in-node-js/</a></p>
+<p><a target="_blank" rel="noopener" href="https://medium.com/@wavded/how-to-heap-snapshots-aac9284d5329">https://medium.com/@wavded/how-to-heap-snapshots-aac9284d5329</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/QcloudCommunity/article/details/121026553">https://blog.csdn.net/QcloudCommunity/article/details/121026553</a></p>
+<p>视频<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hS4y1g7U3?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1hS4y1g7U3?spm_id_from=333.999.0.0</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kF411x7JZ?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1kF411x7JZ?spm_id_from=333.999.0.0</a></p>
 
     </div>
 
