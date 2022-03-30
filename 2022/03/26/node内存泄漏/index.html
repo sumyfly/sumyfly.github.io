@@ -28,7 +28,7 @@
 <meta property="og:description" content="1. HeapHeap 分为young generation, old generation.  young generation, 采用清除算法，分为from, to两个区域。当需要GC时，会检测分配的对象的有效性，如果从这次GC中存活，会标记，然后copy到to 区域，清空from区，然后交换from, to的命名。当有对象在2次GC都存活了，那么会移动到old generation.这个也被">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-26T04:57:23.000Z">
-<meta property="article:modified_time" content="2022-03-28T03:21:36.922Z">
+<meta property="article:modified_time" content="2022-03-30T06:34:03.221Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="memory leak">
 <meta name="twitter:card" content="summary">
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-28 11:21:36" itemprop="dateModified" datetime="2022-03-28T11:21:36+08:00">2022-03-28</time>
+                <time title="Modified: 2022-03-30 14:34:03" itemprop="dateModified" datetime="2022-03-30T14:34:03+08:00">2022-03-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,6 +268,7 @@
 <h4 id="4-4-Tips"><a href="#4-4-Tips" class="headerlink" title="4.4 Tips"></a>4.4 Tips</h4><ul>
 <li>如果distance太大了，达到了几百，那么存在循环引用。</li>
 <li>node默认heap大小是1.5G，可以设置node的启动参数，由于node会按需要GC，当有空间时并不会及时清除old generation。</li>
+<li>dump的之前去掉所有的断点，不然那会影响dump的结果</li>
 </ul>
 <h3 id="5-Low-Level-Tools"><a href="#5-Low-Level-Tools" class="headerlink" title="5. Low-Level Tools"></a>5. Low-Level Tools</h3><h4 id="5-1-mdb"><a href="#5-1-mdb" class="headerlink" title="5.1 mdb"></a>5.1 mdb</h4><p>这个工具可以debug操作系统，系统crash，用户进程，用户进程的core dump，和对象文件。</p>
 <h4 id="5-2-gcore"><a href="#5-2-gcore" class="headerlink" title="5.2 gcore"></a>5.2 gcore</h4><p>可以在程序运行时dump程序的core dump。</p>
@@ -275,6 +276,10 @@
 <p><a target="_blank" rel="noopener" href="https://blog.risingstack.com/finding-a-memory-leak-in-node-js/">https://blog.risingstack.com/finding-a-memory-leak-in-node-js/</a></p>
 <p><a target="_blank" rel="noopener" href="https://medium.com/@wavded/how-to-heap-snapshots-aac9284d5329">https://medium.com/@wavded/how-to-heap-snapshots-aac9284d5329</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/QcloudCommunity/article/details/121026553">https://blog.csdn.net/QcloudCommunity/article/details/121026553</a></p>
+<p><a target="_blank" rel="noopener" href="https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html">https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.freesion.com/article/7314103000/">https://www.freesion.com/article/7314103000/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bookstack.cn/read/node-in-debugging/2.2heapdump.md">https://www.bookstack.cn/read/node-in-debugging/2.2heapdump.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.freesion.com/article/7314103000/">https://www.freesion.com/article/7314103000/</a></p>
 <p>视频<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hS4y1g7U3?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1hS4y1g7U3?spm_id_from=333.999.0.0</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kF411x7JZ?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1kF411x7JZ?spm_id_from=333.999.0.0</a></p>
 
     </div>
