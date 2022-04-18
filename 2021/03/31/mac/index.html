@@ -28,7 +28,7 @@
 <meta property="og:description" content="1. 目录变成黄色那是因为目录权限变为任何人都可以读写，去掉这个权限使用chmod go-w $directory_name 1ls | xargs chmod -R go-w">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-31T03:06:06.000Z">
-<meta property="article:modified_time" content="2022-03-22T08:46:03.830Z">
+<meta property="article:modified_time" content="2022-04-18T01:07:24.429Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="mac">
 <meta name="twitter:card" content="summary">
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-22 16:46:03" itemprop="dateModified" datetime="2022-03-22T16:46:03+08:00">2022-03-22</time>
+                <time title="Modified: 2022-04-18 09:07:24" itemprop="dateModified" datetime="2022-04-18T09:07:24+08:00">2022-04-18</time>
               </span>
 
           
@@ -244,6 +244,9 @@
 <li>ruby缓存 $HOME/.rvm/gems</li>
 <li>cocoaPods缓存 $HOME/Library/Caches/CocoaPods/Pods/Release</li>
 <li>gradle缓存：$Home/.gradle/caches/modules-2/files-2.1</li>
+<li>yarn缓存: $HOME/Library/Caches/Yarn。 清理缓存的命令<code>yarn cache clean</code></li>
+<li>rustup缓存：$HOME/.rustup/toolchains。清理缓存的命令<code>rustup toolchain remove nightly-2021-07-29</code></li>
+<li>cargo缓存：$HOME/.cargo。清理缓存命令<code>cargo cache -a</code></li>
 </ol>
 
     </div>
