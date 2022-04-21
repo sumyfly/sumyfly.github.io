@@ -157,6 +157,114 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/04/OC%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="technology, web, js">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/01/04/OC%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">OC的使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-01-04 22:18:50" itemprop="dateCreated datePublished" datetime="2018-01-04T22:18:50+08:00">2018-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-27 22:25:38" itemprop="dateModified" datetime="2021-06-27T22:25:38+08:00">2021-06-27</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/01/04/OC%E7%9A%84%E4%BD%BF%E7%94%A8/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/04/OC的使用/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-Core-Foundation"><a href="#1-Core-Foundation" class="headerlink" title="1.Core Foundation"></a>1.Core Foundation</h3><p>Core Foundation框架 (CoreFoundation.framework) 是一组C语言接口，它们为iOS应用程序提供基本数据管理和服务功能。</p>
+<blockquote>
+<p>CF是由C语言实现的，而不是Objective-C，所以如果用到了CF，就需要手动管理内存，ARC是无能为力的。当然因为CF和Foundation之间的友好关系，它们之间的管理权也是可以移交的，这个后面再说。</p>
+</blockquote>
+<blockquote>
+<p>Objective-C是ARC管理的对象，而Core Foundation不是ARC管理的对象，所以才要特意这样转换，这与id类型向void*转换是一个概念。也就是说，当这两种类型（有ARC管理，没有ARC管理）在转换时，需要告诉编译器怎样处理对象的所有权。</p>
+</blockquote>
+<h3 id="1-1-CF和OC转换关键字"><a href="#1-1-CF和OC转换关键字" class="headerlink" title="1.1 CF和OC转换关键字"></a>1.1 CF和OC转换关键字</h3><ul>
+<li>__bridge<br>被代入对象的所有者需要明确对象生命周期的管理，不要出现异常访问的问题。OC&lt;-&gt;CF</li>
+<li>__bridge_retained<br>类型被转换时，其对象的所有权也将被变换后变量所持有。 OC-&gt;CF</li>
+<li>__bridge_transfer<br>把本来拥有对象所有权的变量，在类型转换后，让其释放原先所有权。 CF-&gt;OC</li>
+</ul>
+<blockquote>
+<p>__bridge_retained 是编译器替我们做了 retain 操作，而 __bridge_transfer 是替我们做了 release。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5c98ac2dab58">Core Foundation框架详解</a></p>
+<h3 id="1-2-Cocoa-Foundation"><a href="#1-2-Cocoa-Foundation" class="headerlink" title="1.2 Cocoa Foundation"></a>1.2 Cocoa Foundation</h3><p>Foundation框架定义的是OC类的基础层,它的根是NSObject类，（和NSObject及NSCopying协议一起）定义了基本的对象属性和行为。除了提供一组有用的基本对象类之外，它还引入了一些OC语言不涵盖的功能的范例。Foundation预期实现以下几个功能：</p>
+<ul>
+<li>提供少量的基本的实用工具类；</li>
+<li>为了降低开发的难度，引入了一些统一的约定，比如dealloc函数；</li>
+<li>支持Unicode字符串、对象持久性和对象分布；</li>
+<li>提供了一个标准的操作系统独立,提高可移植性。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/01/04/OC%E7%9A%84%E4%BD%BF%E7%94%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -985,101 +1093,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/react-native-listview%E6%80%A7%E8%83%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="technology, web, js">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/07/27/react-native-listview%E6%80%A7%E8%83%BD/" class="post-title-link" itemprop="url">react-native-preformace</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-07-27 17:14:00" itemprop="dateCreated datePublished" datetime="2017-07-27T17:14:00+08:00">2017-07-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index"><span itemprop="name">React-Native</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2017/07/27/react-native-listview%E6%80%A7%E8%83%BD/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/27/react-native-listview性能/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="React-Native-ListView性能"><a href="#React-Native-ListView性能" class="headerlink" title="React-Native ListView性能"></a>React-Native ListView性能</h1><h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><p>1.使用react-native-sglistview、react-native-gifted-listview<br>2.设置removeClippedSubviews 为true，子类需要添加样式overflow:’hidden’<br>3.设置拖动速率 decelerationRate<br>4.dataSource里的数组个数做限制，做分页处理，10~15一页<br>5.在sholudComponentUpdate处理，确保不要重复刷新<br>6.上拉下拉刷新操作，加载过程中隐藏listview，显示加载界面</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/07/27/react-native-listview%E6%80%A7%E8%83%BD/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1151,7 +1164,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">75</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
