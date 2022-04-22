@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="technology, web, js">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QSL">
-<meta property="og:url" content="http://yoursite.com/tags/JSI/index.html">
+  <meta name="description" content="1. Limits资源限制内部机制使用的是cgroup类型目录： &#x2F;sys&#x2F;fs&#x2F;cgroup&#x2F;systemd k8s采用request和limit两种限制类型来对资源进行分配 request(资源需求)：即运行pod的节点必须满足运行pod的最基本需求才能运行pod。limit(资源限制)：即运行pod期间，可能内存使用量会增加，那最多能使用多少内存，这就是资源限额。资源类型： CPU的单位是核">
+<meta property="og:type" content="article">
+<meta property="og:title" content="K8s">
+<meta property="og:url" content="http://yoursite.com/2022/04/22/K8s/index.html">
 <meta property="og:site_name" content="QSL">
-<meta property="og:description" content="technology, web, js">
+<meta property="og:description" content="1. Limits资源限制内部机制使用的是cgroup类型目录： &#x2F;sys&#x2F;fs&#x2F;cgroup&#x2F;systemd k8s采用request和limit两种限制类型来对资源进行分配 request(资源需求)：即运行pod的节点必须满足运行pod的最基本需求才能运行pod。limit(资源限制)：即运行pod期间，可能内存使用量会增加，那最多能使用多少内存，这就是资源限额。资源类型： CPU的单位是核">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-04-22T06:03:00.000Z">
+<meta property="article:modified_time" content="2022-04-22T06:03:16.109Z">
 <meta property="article:author" content="qsl">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/JSI/">
+<link rel="canonical" href="http://yoursite.com/2022/04/22/K8s/">
 
 
 <script id="page-configurations">
@@ -38,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Tag: JSI | QSL</title>
+  <title>K8s | QSL</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102260804-1"></script>
     <script>
@@ -151,57 +153,108 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/04/22/K8s/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="technology, web, js">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          K8s
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-04-22 14:03:00 / Modified: 14:03:16" itemprop="dateCreated datePublished" datetime="2022-04-22T14:03:00+08:00">2022-04-22</time>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">JSI
-          <small>Tag</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/04/22/K8s/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/04/22/K8s/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <h3 id="1-Limits"><a href="#1-Limits" class="headerlink" title="1. Limits"></a>1. Limits</h3><p>资源限制内部机制使用的是cgroup类型<br>目录： /sys/fs/cgroup/systemd</p>
+<p>k8s采用request和limit两种限制类型来对资源进行分配</p>
+<p>request(资源需求)：即运行pod的节点必须满足运行pod的最基本需求才能运行pod。<br>limit(资源限制)：即运行pod期间，可能内存使用量会增加，那最多能使用多少内存，这就是资源限额。<br>资源类型：</p>
+<p>CPU的单位是核心数，内存的单位是字节。<br>一个容器申请0.5各CPU，就相当于申请1个CPU的一半，可以加个后缀m表示千分之一的概念。比如说100m的CPU，100豪的CPU和0.1个CPU都是一样的。<br>内存单位：</p>
+<p>K，M，G，T，P，E #通常是以1000为换算标准的。<br>Ki，Mi，Gi，Ti，Pi，Ei #通常是以1024为换算标准的。</p>
+<span id="more"></span>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-09T17:00:02+08:00"
-              content="2022-01-09">
-          01-09
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/09/JSI/" itemprop="url">
-            <span itemprop="name">JSI</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/21/%E7%BD%91%E7%BB%9C/" rel="prev" title="网络">
+      <i class="fa fa-chevron-left"></i> 网络
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -248,6 +301,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Limits"><span class="nav-number">1.</span> <span class="nav-text">1. Limits</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -370,6 +424,26 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2022/04/22/K8s/";
+    this.page.identifier = "2022/04/22/K8s/";
+    this.page.title = "K8s";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://edwardqian.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
 </body>
