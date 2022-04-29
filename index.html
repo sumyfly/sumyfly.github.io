@@ -539,7 +539,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-29 11:52:43" itemprop="dateModified" datetime="2022-04-29T11:52:43+08:00">2022-04-29</time>
+                <time title="Modified: 2022-04-29 11:55:41" itemprop="dateModified" datetime="2022-04-29T11:55:41+08:00">2022-04-29</time>
               </span>
 
           
@@ -570,7 +570,7 @@
           <h3 id="1-Redux"><a href="#1-Redux" class="headerlink" title="1. Redux"></a>1. Redux</h3><p>Redux createStore三个主要的属性和方法是{store, getState, dispatch}。createStore是创建一个Redux Store, store是这个Redux Store的引用，getState是返回全局的State, dispatch是发送一个Action. 这个全局State对于JS来说是plain object，每次dispatch都会创建一个新的object，而redux-immutable会使用原来的Immutale Map引用。</p>
 <p>其它一些辅助方法：<br>combineReducers(reducers), 这个是把reducersMap变成一个大reducer object.它接受一个Action和当前State, 然后遍历所有的reducer(这里可能会有性能问题，试想一千个reducer，会影响性能)。</p>
 <ul>
-<li>createStore的第一个参数就是combineReducers(reducers)返回的结果, 内部创建一个currentState, finalReducers, dispatch方法。State的key就是reducers的key, 在createStore内部，store创建好之后会dispatch 当ActionTypes.INIT，这个会在finalReducers里面运行一次，由于这个时候全局State是undefined，所以会使用reducers的defaultState，这里也就解释为什么reducers的defaultState要合reducers的key(reducers的name)一样。</li>
+<li>createStore的第一个参数就是combineReducers(reducers)返回的结果, 内部创建一个currentState, finalReducers, dispatch方法。State的key就是reducers的key, 在createStore内部，store创建好之后会dispatch 当ActionTypes.INIT，这个会在finalReducers里面运行一次，由于这个时候全局State是undefined，所以会使用reducers的defaultState，这里也就解释为什么reducers的defaultState要和reducers的key(reducers的name)一样。</li>
 </ul>
 <blockquote>
 <p>Action是一个Object,它包含type, payload（自定义的负荷）. ActionTypes.INIT， 是Redux自带的Action，它的type其实是一个随机生成的字符串。我们不该针对这个ActionTypes.INIT写任何的reducer。</p>
