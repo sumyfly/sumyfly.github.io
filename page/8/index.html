@@ -157,6 +157,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/react-web/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="technology, web, js">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/09/08/react-web/" class="post-title-link" itemprop="url">react-web</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-08 12:17:23" itemprop="dateCreated datePublished" datetime="2017-09-08T12:17:23+08:00">2017-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-16 15:56:00" itemprop="dateModified" datetime="2022-02-16T15:56:00+08:00">2022-02-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/09/08/react-web/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/08/react-web/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-使用svg"><a href="#1-使用svg" class="headerlink" title="1.使用svg"></a>1.使用svg</h3><h4 id="1-1-image"><a href="#1-1-image" class="headerlink" title="1.1  image"></a>1.1  image</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> backIcon <span class="keyword">from</span> <span class="string">&#x27;../assets/svg/back.svg&#x27;</span>    </span><br><span class="line">&lt;img src=&#123;backIcon&#125; /&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-div-background"><a href="#1-2-div-background" class="headerlink" title="1.2 div background"></a>1.2 div background</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> backIcon <span class="keyword">from</span> <span class="string">&#x27;../assets/svg/back.svg&#x27;</span>    </span><br><span class="line">&lt;div style=&#123;&#123;</span><br><span class="line">  <span class="attr">background</span>: <span class="string">&#x27;url(&#x27;</span> + backIcon + <span class="string">&#x27;) no-repeat 50% 50%&#x27;</span>,</span><br><span class="line">  <span class="attr">width</span>: width,</span><br><span class="line">  <span class="attr">height</span>: height,</span><br><span class="line">  ...style</span><br><span class="line">&#125;&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-div-background-image"><a href="#1-3-div-background-image" class="headerlink" title="1.3 div background-image"></a>1.3 div background-image</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> backIcon <span class="keyword">from</span> <span class="string">&#x27;../assets/svg/back.svg&#x27;</span>    </span><br><span class="line">&lt;div style=&#123;&#123;</span><br><span class="line">  <span class="attr">backgroundImage</span>: <span class="string">&#x27;url(&#x27;</span> + source + <span class="string">&#x27;)&#x27;</span>,</span><br><span class="line">  <span class="attr">width</span>: width,</span><br><span class="line">  <span class="attr">height</span>: height,</span><br><span class="line">  ...style</span><br><span class="line">&#125;&#125; /&gt;</span><br><span class="line"><span class="comment">//这个是渐变色背景</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">  <span class="attr">backgroundImage:</span> &#x27;<span class="attr">linear-gradient</span>(<span class="attr">to</span> <span class="attr">bottom</span>, #<span class="attr">26a9ff</span> <span class="attr">0</span>%, #<span class="attr">324dff</span> <span class="attr">100</span>%)&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">  <span class="attr">width:</span> <span class="attr">width</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">  <span class="attr">height:</span> <span class="attr">height</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">  <span class="attr">...style</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">&#125;&#125; /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/web-debug-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -850,7 +933,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-count">78</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
