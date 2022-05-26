@@ -182,7 +182,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-05-26 21:09:41 / Modified: 21:17:55" itemprop="dateCreated datePublished" datetime="2022-05-26T21:09:41+08:00">2022-05-26</time>
+              <time title="Created: 2022-05-26 21:09:41 / Modified: 21:19:24" itemprop="dateCreated datePublished" datetime="2022-05-26T21:09:41+08:00">2022-05-26</time>
             </span>
 
           
@@ -213,18 +213,6 @@
           <h3 id="1-iOS结构"><a href="#1-iOS结构" class="headerlink" title="1. iOS结构"></a>1. iOS结构</h3><p><img src="/images/iOS.webp" alt="iOS"></p>
 <p>iOS操作系统从上到下依次是：</p>
 <p>交互层 Cocoa Touch<br>媒体层 Media<br>核心服务层 Core Services<br>操作系统层 Core OS<br>内核层 Kernel</p>
-<h4 id="1-1-Cocoa-Touch"><a href="#1-1-Cocoa-Touch" class="headerlink" title="1.1 Cocoa Touch"></a>1.1 Cocoa Touch</h4><p>最上层的Cocoa Touch层直接和用户进行交互，比如最常用的UIKit中的各种控件就属于此层，以及最核心的基础服务Foundation框架，以及地图MapKit等。</p>
-<p>Foundation，Objective-C的核心实现，动态、高效、完备。<br>UIKit，内含各种交互控件和手势，比如UILabel、UIButton、UIImageView、UIScrollView，是所有程序必不可少的组成部分。</p>
-<h4 id="1-2-Media"><a href="#1-2-Media" class="headerlink" title="1.2 Media"></a>1.2 Media</h4><p>Media媒体层为上层的Cocoa Touch提供画图和多媒体服务，比如文字、图像、音视频处理等。</p>
-<ul>
-<li>文字<br>Core Text，文字渲染</li>
-<li>图像<br>Core Graphics，也叫Quartz 2D，是Apple所有设备的二维绘图引擎，可以实现颜色空间管理、路径绘制、仿射变换、渐变阴影、PDF相关功能。<br>Core Image，方便易用的图片处理库，内置大量滤镜，特征检测，比如人脸、矩形、文字等，还可以自动优化图片效果。<br>Core Animation，提供高级动画能力，是对Core Graphics和OpenGL的一次封装，具体可分为基本动画、关键帧动画、动画组和转场动画。<br>OpenGL ES，一个跨平台3D渲染引擎，实际上大部分工作是把3D坐标转换为2D像素来实现渲染的。</li>
-<li>音视频<br>AVFoundation，音视频录制、播放、处理相关，是封装在Core Avdio、Core Media、Core Animition之上的。<br>Core Audio，为iOS和macOS等提供数字音频服务，包含常用的Audio Toolbox和Audio Unit。<br>AVFoundation依赖结构<br>Core Audio架构</li>
-</ul>
-<h4 id="1-3-Core-Services"><a href="#1-3-Core-Services" class="headerlink" title="1.3 Core Services"></a>1.3 Core Services</h4><p>核心服务层为Application提供基础的系统服务，比如数据存储框架Core Data、安全服务Security、网络访问CFNetwork等，以及最重要的Foundation和CoreFoundation，它们是Objective-C的核心。</p>
-<p>CFNetwork，网络服务<br>Core Data， 数据存储<br>Core Location，定位<br>Core Motion，重力加速度、陀螺仪<br>Webkit，浏览器引擎<br>JavaScriptCore，JavaScript解释引擎</p>
-<h3 id="1-4-Core-OS"><a href="#1-4-Core-OS" class="headerlink" title="1.4 Core OS"></a>1.4 Core OS</h3><p>核心操作系统层为其上所有层提供最基础的服务，比如内存管理、线程管理、本地认证、文件系统、电源管理等，是底层的硬件和上层各种服务之间的接口。</p>
-<h3 id="1-5-操作系统内核服"><a href="#1-5-操作系统内核服" class="headerlink" title="1.5 操作系统内核服"></a>1.5 操作系统内核服</h3><p>比如BSD sockets、I/O访问、内存申请、文件系统、数学计算等。<br>本地认证，比如指纹识别验证等。<br>安全服务，管理证书、公钥、密钥等的接口等。<br>数学加速 ，比如执行数学、大数字以及DSP运算,这些接口iOS设备硬件相匹配等。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/05/26/iOS%E7%BB%93%E6%9E%84/#more" rel="contents">
@@ -276,7 +264,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-05-26 20:40:14 / Modified: 21:05:12" itemprop="dateCreated datePublished" datetime="2022-05-26T20:40:14+08:00">2022-05-26</time>
+              <time title="Created: 2022-05-26 20:40:14 / Modified: 21:19:46" itemprop="dateCreated datePublished" datetime="2022-05-26T20:40:14+08:00">2022-05-26</time>
             </span>
 
           
@@ -308,65 +296,6 @@
 <blockquote>
 <p>Mac OS X 包含两个主要部分：以 FreeBSD 源代码 和 Mach 微核心为基础的 XUN 混合内核，并在 XNU 上构建的 Darwin 核心系统；及一个由苹果开发，称为 Aqua 的闭源、独占版权的图形用户界面。细分的看，Mac OS X 系统可以分成五层结构，每一层有其代表性技术。</p>
 </blockquote>
-<h4 id="1-1-内核和设备服务层"><a href="#1-1-内核和设备服务层" class="headerlink" title="1.1 内核和设备服务层"></a>1.1 内核和设备服务层</h4><p>内核和设备服务层：包括 XNU 内核、设备驱动和其他底层组件。<br>Darwin（达尔文）是苹果公司于2000年发布的一个开源操作系统，Darwin是macOS 和 iOS的一部分。可以将Darwin理解为操作系统的代号。</p>
-<blockquote>
-<p>Darwin = XNU+System utilties。</p>
-</blockquote>
-<h5 id="1-1-1-XNU"><a href="#1-1-1-XNU" class="headerlink" title="1.1.1 XNU"></a>1.1.1 XNU</h5><p>XNU是由苹果公司发布的操作系统内核，即Darwin的内核是XNU。除macOS外，XNU还是iOS、tvOS、watchOS操作系统的内核。XNU是X is not Unix的缩写。XNU包含三部分：<strong>Mach内核、BSD、I/O Kit</strong>。</p>
-<blockquote>
-<p>XNU = Mach + BSD + I/O Kit</p>
-</blockquote>
-<p>最初版本的 XNU 是 Mach 2.5 版本和 BSD 4.3的混合，随着 OS X 的发布，Mach 版本升级到 3，BSD 部分被 FreeBSD 替代。</p>
-<ul>
-<li><p>Mach内核<br>XNU内核以一个被深度定制的Mach3.0内核作为基础。Mach是一个由卡内基梅隆大学开发的计算机操作系统微内核，主要是为了用于操作系统研究，特别是在分布式与并行运算上。XNU中的Mach所负责的功能非常少（核心功能），只能完成操作系统最基本的职责，比如任务调度、消息传递、进程间通信等。</p>
-</li>
-<li><p>BSD<br>BSD，伯克利软件套件（Berkeley Software Distribution）,也被称为伯克利Unix(Berkeley Unix)，是一个操作系统的名称。XNU中的BSD部分提供了POSIX应用程序接口（BSD系统称之为API）:进程模型、网络协议栈、虚拟文件系统等。</p>
-</li>
-<li><p>I/O Kit<br>I/O Kit是一个设备驱动框架，为开发者提供了开发设备驱动程序的API。</p>
-<h4 id="1-2-核心系统层（Core-OS）"><a href="#1-2-核心系统层（Core-OS）" class="headerlink" title="1.2 核心系统层（Core OS）"></a>1.2 核心系统层（Core OS）</h4><p>核心系统层的技术和框架是硬件/网络相关的底层服务，这些服务是和内核特性直接相关的。包括以下组件和框架（不完全列举）：</p>
-</li>
-<li><p>安全措施：（为上层提供支持）包括Gatekeeper、APP 沙盒化、代码签名等。<br>Core OS 框架：包括磁盘管理、硬件加速、OpenCL、系统配置等。<br>Hypervisor：虚拟化支持。</p>
-</li>
-</ul>
-<h4 id="1-3-核心服务层（Core-service）"><a href="#1-3-核心服务层（Core-service）" class="headerlink" title="1.3 核心服务层（Core service）"></a>1.3 核心服务层（Core service）</h4><p>核心服务层和用户界面的应用程序没有直接联系，但是它们建立在内核和核心系统层上，为APP提供诸如数据处理、字符串控制、封装网络库等核心支持。包括以下组件和框架（不完全列举）：</p>
-<ul>
-<li><p>iCloud 存储服务和 CloudKit<br>社交网络帐号：包括保存在 OS X 内的社交帐户的管理。<br>文件管理<br>本地化设置：语言、货币、日期和时间的格式化、编码、字体排版和渲染。<br>安全认证：包括本地账户、信任的证书、安全传输、密钥串访问等。</p>
-</li>
-<li><p>Time Machine 支持：OS X 的系统备份功能。<br>Bonjour：局域网下的设备发现服务，是打印机服务和局域网文件共享服务的基础。<br>XML 和 SQLite 支持：系统和 APP 的配置文件使用 XML 格式进行存储，数据使用 SQLite 格式进行保存。</p>
-</li>
-<li><p>Webkit: 允许 APP 进行网页渲染，具有 Web Core 和 JavaScript Core 两个部分。</p>
-</li>
-<li><p>快速预览：包括在 spotlight 中预览和空格键预览。</p>
-</li>
-<li><p>Store Kit: 为 Mac Appstore 和 iTunes 提供支持，处理相关请求。</p>
-</li>
-<li><p>Core Services Umbrella Framework：包括管理文件打开方式、MIME 支持、文件元数据管理、SearchKit 搜索支持、词典服务等。</p>
-</li>
-<li><p>Carbon: Carbon 也是 OS X 上的原生 API，也是 Core Services Umbrella Framework 的子集[4]，和 Cocoa 不同的是，Carbon是面向过程（Procedural）的编程语言API，也更加接近系统底层，可以使用包括 C 和 C++ 在内的多种编程语言进行开发，类似 Windows 的 win32 API。Carbon API 提供了良好的向下兼容性，为开发者快速将旧 MacOS 上的程序移植到 OS X 提供了便利，但是 Carbon 本身已经处于被苹果不建议使用的状态，也没有64位支持，在 OS X 10.8 后苹果没有对 Carbon 提供后续更新。</p>
-<h4 id="1-4-媒体层"><a href="#1-4-媒体层" class="headerlink" title="1.4 媒体层"></a>1.4 媒体层</h4><p>媒体层负责音频、图像等多媒体文件的处理，2D 和 3D 图像的渲染，各种动画支持。</p>
-</li>
-<li><p>OpenGL ：OpenGL是一个定义了一个跨编程语言、跨平台的应用程序接口（API）的规范，它用于生成二维、三维图像。OpenGL本身与语言和平台无关，它将具体实现交给窗口系统，OS X 也提供了OpenGL 的实现。</p>
-</li>
-<li><p>Metal ：Metal 是一种面向底层的硬件加速 API，Metal 在单一 API 下提供了类似 OpenGL 和 OpenCL 的功能，旨在为提供和 Windows上Direct3D 12和跨平台的Vulkan相似的功能和特性。 从10.11开始在 OS X 上提供支持。</p>
-</li>
-<li><p>Quartz：Quartz 是 OS X 上的 UI 绘图层，由 Quartz Compositor（合成视窗系统，管理和合成幕后视窗视频来创建Mac OS X用户界面） 和 Quartz 2D（以PDF规范为基础的图形库，用来绘制二维文字和图形，现在被称为 Core Graphics）组成。</p>
-</li>
-<li><p>颜色管理。</p>
-</li>
-<li><p>音视频文件解析：包括QuickTime Kit、Core Media 、Core Video等一系列多媒体处理框架。</p>
-</li>
-<li><p>字体渲染系统：包括 Cocoa Text 系统和Core Text。</p>
-</li>
-</ul>
-<h4 id="1-5-图形用户界面（Cocoa-层）"><a href="#1-5-图形用户界面（Cocoa-层）" class="headerlink" title="1.5 图形用户界面（Cocoa 层）"></a>1.5 图形用户界面（Cocoa 层）</h4><p>图形用户界面层包括设计和用户交互的 UI、响应用户操作、管理程序的行为。<br>Aqua：Aqua 是承载于 Quartz 上的 GUI 系统和视觉主题，首次发布于2000年。</p>
-<ul>
-<li>X11（XQuartz）: XQuartz 是 OS X 上 X窗口系统的一个实现，最初和 OS X 10.2 公开预览版一起提供，从 OS X 10.8 开始不随系统提供。</li>
-<li>Spotlight：OS X 下的搜索工具。</li>
-<li>Cocoa: Cocoa是 Mac OS X 上原生面向对象的编程环境，建立在 Quartz 上并由Objective-C语言编写，Cocoa 程序也主要使用Objective-C语言编写，但是通过桥接技术，也可以使用 JAVA、Python、Ruby 等语言开发 Cocoa 应用。Cocoa是典型的 MVC 模式。</li>
-<li>Appkit：直接派生自NeXTSTEP的AppKit的。它包含了程序与图形用户界面交互所需的代码。</li>
-<li>Foundation 工具包：首先出现在OpenStep中。在Mac OS X中，它是基于Core Foundation的。作为通用的面向对象的函数库，Foundation提供了字符串，数值的管理，容器及其枚举，分布式计算，事件循环，以及一些其它的与图形用户界面没有直接关系的功能。</li>
-<li>Core Data：Core Data是Mac OS X中Cocoa API的一部分，它允许按照MVC模型组织APP的数据，并以XML，二进制文件或SQLite数据文件的格式将其序列化。</li>
-</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/05/26/macOS%E7%BB%93%E6%9E%84/#more" rel="contents">
