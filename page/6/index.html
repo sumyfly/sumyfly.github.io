@@ -157,6 +157,93 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="technology, web, js">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/17/JavaScript/" class="post-title-link" itemprop="url">JavaScript</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-07-17 16:27:17" itemprop="dateCreated datePublished" datetime="2018-07-17T16:27:17+08:00">2018-07-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/07/17/JavaScript/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/17/JavaScript/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-循环"><a href="#1-循环" class="headerlink" title="1.循环"></a>1.循环</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. for 普通循环</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i= <span class="number">0</span>; i &lt; length; i++)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以有brek, continue</span></span><br><span class="line"><span class="comment">// 缺点: 这个最慢</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. forEach</span></span><br><span class="line"><span class="title class_">Array</span>.<span class="property">forEach</span></span><br><span class="line"><span class="comment">// 缺点: 只对数组有效,不能break,continue</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. for of, 最新添加的功能，推荐使用</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> o <span class="keyword">of</span> arr)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 效率比较高</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. for in, 这个是用来遍历属性的，不推荐遍历数组。这个会把原型的属性也遍历。</span></span><br><span class="line"><span class="comment">// <span class="doctag">TODO:</span> check? 应该还是可遍历属性。</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> p <span class="keyword">in</span> objectA)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt; <span class="variable constant_">JS</span>其实没有数组，都是对象。</span><br></pre></td></tr></table></figure>
+<p>所以，应该优先使用for of,其次for 普通的循环。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/17/JavaScript/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/Android-Kotlin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1014,90 +1101,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/08/typescript-debug/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="technology, web, js">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/02/08/typescript-debug/" class="post-title-link" itemprop="url">typescript-debug</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-02-08 14:07:57" itemprop="dateCreated datePublished" datetime="2018-02-08T14:07:57+08:00">2018-02-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-14 12:26:10" itemprop="dateModified" datetime="2021-10-14T12:26:10+08:00">2021-10-14</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/02/08/typescript-debug/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/08/typescript-debug/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="1-去掉转换后的exports"><a href="#1-去掉转换后的exports" class="headerlink" title="1. 去掉转换后的exports"></a>1. 去掉转换后的exports</h4><p>由于phantomjs发现不了exports，所以需要把转换后文件的第一行去掉。方法是在ts文件最上面加上<code>export = 0;</code>。<br>//issue: don’t add Object.defineProperty(exports, “__esModule”, { value: true });<br>//<a target="_blank" rel="noopener" href="https://github.com/Microsoft/TypeScript/issues/14351">https://github.com/Microsoft/TypeScript/issues/14351</a></p>
-<h4 id="2-noEmit"><a href="#2-noEmit" class="headerlink" title="2. noEmit"></a>2. noEmit</h4><p><code>&quot;noEmit&quot;:true</code>这个配置就不会产生输出文件了。</p>
-<h3 id="3-esModuleInterop配置"><a href="#3-esModuleInterop配置" class="headerlink" title="3. esModuleInterop配置"></a>3. esModuleInterop配置</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;moduleResolution&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;esModuleInterop&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span> <span class="comment">// 这个是node package引入的问题，如果是true，会引用default</span></span><br><span class="line">      <span class="attr">&quot;module&quot;</span><span class="punctuation">:</span> <span class="string">&quot;commonjs&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;target&quot;</span><span class="punctuation">:</span> <span class="string">&quot;es6&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;allowJs&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;outDir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./build&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;noImplicitAny&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;sourceMap&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;noImplicitReturns&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;noFallthroughCasesInSwitch&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;strictNullChecks&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;include&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="string">&quot;./src/**/*&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;exclude&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="string">&quot;node_modules&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>当我们import xx from ‘module’时，等价于var xx = require(‘module’).default。<br>当我们import {A,B,C} from ‘module’时，等价于 var {A,B,C} = require(‘module’)</p>
-<p>当我们export modue时，等价于 export.module = module<br>当我们export default module时， 等价于 export.default = module<br>当我们export = module时， 就是最特殊的情况，因为没有default了，也没有其它的export.xx了。</p>
-<p>总结一下，node legacy没有那个default的概念，但是用TypeScript时有了这个default的概念，为了保持兼容性，就把这个<code>esModuleInterop</code>设置为true，起的效果就是当遇到没有default的情况，给它用{deault: moduel}包装下，那么都会有default这个值了，避免了default是undefined的情况。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1169,7 +1172,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">79</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
