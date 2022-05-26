@@ -182,7 +182,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-05-26 20:40:14 / Modified: 20:42:33" itemprop="dateCreated datePublished" datetime="2022-05-26T20:40:14+08:00">2022-05-26</time>
+              <time title="Created: 2022-05-26 20:40:14 / Modified: 20:44:47" itemprop="dateCreated datePublished" datetime="2022-05-26T20:40:14+08:00">2022-05-26</time>
             </span>
 
           
@@ -223,6 +223,20 @@
 <p>OpenGL ：OpenGL是一个定义了一个跨编程语言、跨平台的应用程序接口（API）的规范，它用于生成二维、三维图像。OpenGL本身与语言和平台无关，它将具体实现交给窗口系统，OS X 也提供了OpenGL 的实现。<br>Metal ：Metal 是一种面向底层的硬件加速 API，Metal 在单一 API 下提供了类似 OpenGL 和 OpenCL 的功能，旨在为提供和 Windows上Direct3D 12和跨平台的Vulkan相似的功能和特性。 从10.11开始在 OS X 上提供支持。<br>Quartz：Quartz 是 OS X 上的 UI 绘图层，由 Quartz Compositor（合成视窗系统，管理和合成幕后视窗视频来创建Mac OS X用户界面） 和 Quartz 2D（以PDF规范为基础的图形库，用来绘制二维文字和图形，现在被称为 Core Graphics）组成。<br>颜色管理<br>音视频文件解析：包括QuickTime Kit、Core Media 、Core Video等一系列多媒体处理框架。<br>字体渲染系统：包括 Cocoa Text 系统和Core Text。<br>图形用户界面（Cocoa 层）<br>图形用户界面层包括设计和用户交互的 UI、响应用户操作、管理程序的行为。</p>
 <p>Aqua：Aqua 是承载于 Quartz 上的 GUI 系统和视觉主题，首次发布于2000年。<br>X11（XQuartz）: XQuartz 是 OS X 上 X窗口系统的一个实现，最初和 OS X 10.2 公开预览版一起提供，从 OS X 10.8 开始不随系统提供。<br>Spotlight：OS X 下的搜索工具。<br>Cocoa: Cocoa是 Mac OS X 上原生面向对象的编程环境，建立在 Quartz 上并由Objective-C语言编写，Cocoa 程序也主要使用Objective-C语言编写，但是通过桥接技术，也可以使用 JAVA、Python、Ruby 等语言开发 Cocoa 应用。Cocoa是典型的 MVC 模式。<br>Appkit：直接派生自NeXTSTEP的AppKit的。它包含了程序与图形用户界面交互所需的代码。<br>Foundation 工具包：首先出现在OpenStep中。在Mac OS X中，它是基于Core Foundation的。作为通用的面向对象的函数库，Foundation提供了字符串，数值的管理，容器及其枚举，分布式计算，事件循环，以及一些其它的与图形用户界面没有直接关系的功能。<br>Core Data：Core Data是Mac OS X中Cocoa API的一部分，它允许按照MVC模型组织APP的数据，并以XML，二进制文件或SQLite数据文件的格式将其序列化。</p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b684092e01b0">https://www.jianshu.com/p/b684092e01b0</a></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>系统名称介绍<br>macOS，2012年前称之为Mac OS X，2012 - 2016年称OS X，2016年起称macOS，是苹果公司推出的图形用户界面操作系统。iOS，原名iPhone OS，后改为iOS。是苹果公司为移动设备所开发的移动操作系统。无论是iOS还是macOS,都是类Unix操作系统。</p>
+<p>系统名词解释<br>在学习iOS、macOS系统结构时，如果没有充分的了解，常常会被一些名词给搞混，这里对一些不常用到的名词做一下解释。</p>
+<p>Darwin<br>Darwin（达尔文）是苹果公司于2000年发布的一个开源操作系统，Darwin是macOS 和 iOS的一部分。可以将Darwin理解为操作系统的代号。Darwin由XNU和一些其他的Darwin库组成。</p>
+<p>XNU<br>XNU是由苹果公司发布的操作系统内核，即Darwin的内核是XNU，是Darwin操作系统的一部分。除macOS外，XNU还是iOS、tvOS、watchOS操作系统的内核。XNU是X is not Unix的缩写。XNU包含三部分：Mach内核、BSD、I/O Kit。</p>
+<p>Mach内核<br>XNU内核以一个被深度定制的Mach3.0内核作为基础。Mach是一个由卡内基梅隆大学开发的计算机操作系统微内核，主要是为了用于操作系统研究，特别是在分布式与并行运算上。XNU中的Mach所负责的功能非常少（核心功能），只能完成操作系统最基本的职责，比如任务调度、消息传递、进程间通信等。</p>
+<p>BSD<br>BSD，伯克利软件套件（Berkeley Software Distribution）,也被称为伯克利Unix(Berkeley Unix)，是一个操作系统的名称。XNU中的BSD部分提供了POSIX应用程序接口（BSD系统称之为API）:进程模型、网络协议栈、虚拟文件系统等。</p>
+<p>I/O Kit<br>I/O Kit是一个设备驱动框架，为开发者提供了开发设备驱动程序的API。</p>
+<p>易混淆名词解释<br>除上面提到的名词外，还有一些易混淆的名词，这里也做一下解释。</p>
+<p>用户体验层<br>用户体验层又被称为应用层，主要包括用户能够接触到的图形应用，如SprintBoard等。</p>
+<p>应用框架层<br>应用框架层即Cocoa层，就是开发人员能够接触到的Cocoa等框架。</p>
+<p>核心框架层<br>核心框架层包括各种核心架构、OpenGL等。</p>
+<p>核心框架层、应用框架层、用户体验层均位于Darwin之上。</p>
+<p>系统结构<br>根据官方文档介绍，整个系统可以分为上面提到的4个层次：Darwin、核心框架层、应用框架层、用户体验层。整个系统的结构可以表示为下图：</p>
+<p>系统结构</p>
 
       
     </div>
