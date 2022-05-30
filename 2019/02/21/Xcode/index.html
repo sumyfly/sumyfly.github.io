@@ -28,7 +28,7 @@
 <meta property="og:description" content="1. 打开xcode时显示启动页“Window” -&gt; “Welcome to Xcode”勾选”Show this window when Xcode launches”。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2019-02-21T07:19:58.000Z">
-<meta property="article:modified_time" content="2022-05-30T10:11:16.027Z">
+<meta property="article:modified_time" content="2022-05-30T10:14:24.540Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="Mac">
 <meta name="twitter:card" content="summary">
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-30 18:11:16" itemprop="dateModified" datetime="2022-05-30T18:11:16+08:00">2022-05-30</time>
+                <time title="Modified: 2022-05-30 18:14:24" itemprop="dateModified" datetime="2022-05-30T18:14:24+08:00">2022-05-30</time>
               </span>
 
           
@@ -227,7 +227,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf ~/Library/Developer/Xcode/DerivedData/*</span><br><span class="line"><span class="comment"># 可以定期执行清楚缓存</span></span><br><span class="line"><span class="built_in">alias</span> xcode-clean-derived=<span class="string">&quot;rm -rf ~/Library/Developer/Xcode/DerivedData/*&quot;</span> </span><br></pre></td></tr></table></figure>
 
 <h3 id="4-脚本的选项"><a href="#4-脚本的选项" class="headerlink" title="4. 脚本的选项"></a>4. 脚本的选项</h3><ul>
-<li><p>For install builds only<br>勾选后只有在release打包时才会执行，否则在debug或release时都会执行</p>
+<li><p>For install builds only<br>勾选后只有在release打包时才会执行，否则在debug或release时都会执行。<br>另一个解释，TODO: Xcode 12 adds a new option to skip build script execution in incremental builds if the inputs and outputs haven’t changed! (first image is Xcode 11, second 12)。</p>
 </li>
 <li><p>Run script only when installing<br>勾选后只有在Product Archieve时执行</p>
 </li>
