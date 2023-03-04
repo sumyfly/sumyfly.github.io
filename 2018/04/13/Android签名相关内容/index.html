@@ -28,7 +28,7 @@
 <meta property="og:description" content="1. 查看签名 提取签名jar xf HelloWorld.apk META-INF&#x2F;CERT.RSA  打印签名keytool -printcert -file CERT.RSA  打印公钥，签名用的公钥keytool -printcert -file CERT.RSA -rfc，或者导出到一个文件keytool -printcert -file CERT.RSA -rfc &gt; my_pu">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-04-13T07:37:27.000Z">
-<meta property="article:modified_time" content="2021-01-14T06:26:09.039Z">
+<meta property="article:modified_time" content="2023-03-04T09:27:53.322Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="Android">
 <meta property="article:tag" content="签名">
@@ -192,7 +192,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
+                <time title="Modified: 2023-03-04 17:27:53" itemprop="dateModified" datetime="2023-03-04T17:27:53+08:00">2023-03-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,19 +239,21 @@
 </ul>
 <p>相同的签名的不同版本APK应用相同的md5，sha1,sha256指纹，代表同一个公钥签名。</p>
 <h3 id="2-查看public-key的指纹"><a href="#2-查看public-key的指纹" class="headerlink" title="2. 查看public key的指纹"></a>2. 查看public key的指纹</h3><blockquote>
-<p>指纹就是用散列算法计算公钥的文本，rfc格式(带有<code>-----BEGIN CERTIFICATE-----</code>和<code>-----END CERTIFICATE-----</code>)。</p>
+<p>指纹就是用散列算法计算公钥的文本，rfc格式(带有<code>-----BEGIN CERTIFICATE-----</code>和<code>-----END CERTIFICATE-----</code>)。</p>
 </blockquote>
 <p>使用上面步骤得到的my_pub.key，验证md5。实际工作中不需要，工具都帮我们做好了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -noout -fingerprint -md5 -inform pem -<span class="keyword">in</span> my_pub.key</span><br><span class="line">openssl x509 -noout -fingerprint -SHA1 -inform pem -<span class="keyword">in</span> my_pub.key</span><br><span class="line">openssl x509 -noout -fingerprint -SHA256 -inform pem -<span class="keyword">in</span> my_pub.key</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-查看keystore中的签名"><a href="#3-查看keystore中的签名" class="headerlink" title="3. 查看keystore中的签名"></a>3. 查看keystore中的签名</h3><blockquote>
-<p>keystore中有多个公钥秘钥对，一个对就是一个alias, 每个的访问密码不同。<br><code>keytool -list -keystore my.keystore -alias myAlias</code>输入库密码可以看到公钥的指纹。</p>
+<p>keystore中有多个公钥秘钥对，一个对就是一个alias, 每个的访问密码不同。<br><code>keytool -list -keystore my.keystore -alias myAlias</code>输入库密码可以看到公钥的指纹。</p>
 </blockquote>
 <h3 id="4-给apk签名"><a href="#4-给apk签名" class="headerlink" title="4. 给apk签名"></a>4. 给apk签名</h3><p><code>jarsigner -verbose -keystore my.keystore -signedjar ma_app_signed.apk my.apk myAlias</code></p>
 <h3 id="5-Android-Studio-Debug签名"><a href="#5-Android-Studio-Debug签名" class="headerlink" title="5. Android Studio Debug签名"></a>5. Android Studio Debug签名</h3><p>默认Android Stuido Debug时会自动签名(这个是IDE生成的，gradle命令行不会自动生成签名)，用的keystore是没有密码的，但是有时候我们调试第三方登录，需要固定的签名，所以就自己生成签名，覆盖默认的Debug的签名。</p>
-<h4 id="5-1-生成Debug签名"><a href="#5-1-生成Debug签名" class="headerlink" title="5.1 生成Debug签名"></a>5.1 生成Debug签名</h4><p><code>$ keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname &quot;C=US, O=Android, CN=Android Debug&quot; </code><br><a target="_blank" rel="noopener" href="https://gist.github.com/henriquemenezes/70feb8fff20a19a65346e48786bedb8f">https://gist.github.com/henriquemenezes/70feb8fff20a19a65346e48786bedb8f</a></p>
-<span id="more"></span>
-
+<h4 id="5-1-生成Debug签名"><a href="#5-1-生成Debug签名" class="headerlink" title="5.1 生成Debug签名"></a>5.1 生成Debug签名</h4><p><code>$ keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname &quot;C=US, O=Android, CN=Android Debug&quot; </code><br><a target="_blank" rel="noopener" href="https://gist.github.com/henriquemenezes/70feb8fff20a19a65346e48786bedb8f">https://gist.github.com/henriquemenezes/70feb8fff20a19a65346e48786bedb8f</a><br>这里需要注意的是，如果用的JDK8里面的keytool生成的keystore是没有问题的。但是用JDK11里面的keytll生成keystore会报错：Invalid keystore forma。两种方案：</p>
+<ul>
+<li>用回JDK8的keytool生成keystore</li>
+<li>用Android Studio生成keystore<span id="more"></span></li>
+</ul>
 <h4 id="5-2-设置keystore-properties"><a href="#5-2-设置keystore-properties" class="headerlink" title="5.2 设置keystore.properties"></a>5.2 设置keystore.properties</h4><p>keystore.properties</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">storePassword=myStorePassword</span><br><span class="line">keyPassword=mykeyPassword</span><br><span class="line">keyAlias=myKeyAlias</span><br><span class="line">storeFile=myStoreFileLocation</span><br></pre></td></tr></table></figure>
 
@@ -411,7 +413,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
