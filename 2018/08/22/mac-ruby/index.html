@@ -28,7 +28,7 @@
 <meta property="og:description" content="1.rvm管理不同的ruby版本。 12rvm list #列出不同的ruby版本rvm use 2.4.1 --default #使用ruby 2.4.1做为默认版本 2.gem管理ruby的库文件。 1234gem install cocoapods #安装cocoapods到全局环境gem environment # gem的环境，看gem的安装目录gem list --local #看ge">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-08-22T07:54:59.000Z">
-<meta property="article:modified_time" content="2022-03-22T08:43:28.387Z">
+<meta property="article:modified_time" content="2023-03-05T05:03:44.411Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="mac">
 <meta property="article:tag" content="ruby">
@@ -192,7 +192,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-22 16:43:28" itemprop="dateModified" datetime="2022-03-22T16:43:28+08:00">2022-03-22</time>
+                <time title="Modified: 2023-03-05 13:03:44" itemprop="dateModified" datetime="2023-03-05T13:03:44+08:00">2023-03-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +255,14 @@
 <p>3.如果用gem install gem_name 安装相关gem后，bundle install 还会安装吗？<br>gem install 之后, bundle install 会复用, 不会重新安装.<br>以上所有行为都是默认情况下, 基本上都可以指派参数来调整缺省行为.</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://ruby-china.org/topics/24703?page=2">https://ruby-china.org/topics/24703?page=2</a></p>
-<h3 id="4-ruby的加载"><a href="#4-ruby的加载" class="headerlink" title="4. ruby的加载"></a>4. ruby的加载</h3><p>ruby有一个加载路径，所有的模块都是从这个路径中寻找文件。</p>
+<h3 id="4-ruby的加载"><a href="#4-ruby的加载" class="headerlink" title="4.ruby的加载"></a>4.ruby的加载</h3><p>ruby有一个加载路径，所有的模块都是从这个路径中寻找文件。运行<code>gem clean</code>可以去掉不要的gems，这样就可以加速gem的查找顺序。</p>
+<h3 id="5-Rvm-ruby-Permission-denied"><a href="#5-Rvm-ruby-Permission-denied" class="headerlink" title="5.Rvm ruby Permission denied"></a>5.Rvm ruby Permission denied</h3><p>Since you are already there this should fix it:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rvmsudo rvm get stable --auto-dotfiles</span><br><span class="line">rvm fix-permissions system</span><br></pre></td></tr></table></figure>
+<p>Also make sure you are in rvm group - if not add yourself:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm group add rvm <span class="variable">$USER</span> <span class="comment">#这个是optional</span></span><br></pre></td></tr></table></figure>
+<p>and log in to a new shell (log out and log back in).</p>
+<h3 id="6-按照ruby3-0"><a href="#6-按照ruby3-0" class="headerlink" title="6.按照ruby3.0"></a>6.按照ruby3.0</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rvm get stable <span class="comment"># 这个是升级rvm</span></span><br><span class="line">rvm list known</span><br><span class="line">rvm install ruby-3.0</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -347,7 +354,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-rvm"><span class="nav-number">1.</span> <span class="nav-text">1.rvm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gem"><span class="nav-number">2.</span> <span class="nav-text">2.gem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-bundler"><span class="nav-number">3.</span> <span class="nav-text">3.bundler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-cocoapods"><span class="nav-number">4.</span> <span class="nav-text">3.cocoapods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-ruby%E7%9A%84%E5%8A%A0%E8%BD%BD"><span class="nav-number">5.</span> <span class="nav-text">4. ruby的加载</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-rvm"><span class="nav-number">1.</span> <span class="nav-text">1.rvm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gem"><span class="nav-number">2.</span> <span class="nav-text">2.gem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-bundler"><span class="nav-number">3.</span> <span class="nav-text">3.bundler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-cocoapods"><span class="nav-number">4.</span> <span class="nav-text">3.cocoapods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-ruby%E7%9A%84%E5%8A%A0%E8%BD%BD"><span class="nav-number">5.</span> <span class="nav-text">4.ruby的加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Rvm-ruby-Permission-denied"><span class="nav-number">6.</span> <span class="nav-text">5.Rvm ruby Permission denied</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%8C%89%E7%85%A7ruby3-0"><span class="nav-number">7.</span> <span class="nav-text">6.按照ruby3.0</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
