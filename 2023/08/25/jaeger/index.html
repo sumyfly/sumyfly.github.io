@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1. 概述Jaeger有几个组件：  Jaeger-agent：一个无状态的进程，负责接收并转发数据到Jaeger-collector。 Jaeger-collector：一个有状态的进程，负责接收并聚合数据，以及提供查询服务。 Jaeger-query：一个有状态的进程，负责接收查询请求，并返回结果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jaeger">
+<meta property="og:url" content="http://yoursite.com/2023/08/25/jaeger/index.html">
+<meta property="og:site_name" content="QSL">
+<meta property="og:description" content="1. 概述Jaeger有几个组件：  Jaeger-agent：一个无状态的进程，负责接收并转发数据到Jaeger-collector。 Jaeger-collector：一个有状态的进程，负责接收并聚合数据，以及提供查询服务。 Jaeger-query：一个有状态的进程，负责接收查询请求，并返回结果。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-08-25T10:23:35.000Z">
+<meta property="article:modified_time" content="2023-08-25T10:24:12.998Z">
+<meta property="article:author" content="qsl">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2023/08/25/jaeger/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>jaeger | QSL</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102260804-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-102260804-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/08/25/jaeger/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          jaeger
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-08-25 18:23:35 / Modified: 18:24:12" itemprop="dateCreated datePublished" datetime="2023-08-25T18:23:35+08:00">2023-08-25</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2023/08/25/jaeger/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/08/25/jaeger/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><p>Jaeger有几个组件：</p>
+<ul>
+<li>Jaeger-agent：一个无状态的进程，负责接收并转发数据到Jaeger-collector。</li>
+<li>Jaeger-collector：一个有状态的进程，负责接收并聚合数据，以及提供查询服务。</li>
+<li>Jaeger-query：一个有状态的进程，负责接收查询请求，并返回结果。</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="2-部署"><a href="#2-部署" class="headerlink" title="2. 部署"></a>2. 部署</h1><h2 id="2-1-Jaeger-agen"><a href="#2-1-Jaeger-agen" class="headerlink" title="2.1 Jaeger-agen"></a>2.1 Jaeger-agen</h2><p>Jaeger-agent可以部署到node上，所有的数据会发送到collector，collector会聚合数据，query负责查询。然后此node上的所有Application都可以连接此agnet，然后agent把数据发给collector。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 14250是Jaeger collector的grpc端口</span></span><br><span class="line">./jaeger-agent --log-level=debug --reporter.grpc.host-port=localhost:14250</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-Jaeger-collector"><a href="#2-2-Jaeger-collector" class="headerlink" title="2.2 Jaeger-collector"></a>2.2 Jaeger-collector</h2><p>Jaeger-collector接受数据，然后内部有个队列，类似logstash，把接受的数据都转发个后端存储，比如Elasticsearch, cassandra. 这里有个非常tricky的地方，在使用命令行部署Jaeger-collector和Jaeger-query的时候，需要先指定环境变量<code>export SPAN_STORAGE_TYPE=elasticsearch</code>，这里是我很迷惑的地方，为啥要先指定环境变量<code>SPAN_STORAGE_TYPE</code>，不能也作为参数吗。<a target="_blank" rel="noopener" href="https://www.jaegertracing.io/docs/1.48/cli/#jaeger-collector">1</a></p>
+<p>Jaeger-agent和Jaeger-collector都可以支持多种协议，如HTPP, gprc。默认是grpc，而且当要使用HTTP的时候，建议直接连接Collector，而不是Agent。因为Agent使用的UDP接受数据，而非HTTP，并且是grpc的方式，数据结构是protobuffer, 所以对于Web或者mobile的tracing数据，适合用HTTP协议，所以可以发给Jaeger-collector，或者使用一个log service做转发。 <a target="_blank" rel="noopener" href="https://www.jaegertracing.io/docs/1.48/deployment/#collector">2</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 14250是给Jaeger-agent用的grpc端口，4318是标准的OTLP的HTTP端口。</span></span><br><span class="line">./jaeger-collector </span><br></pre></td></tr></table></figure>
+
+<p>Jagerger使用的是Opentracing协议，目前已经不维护了，Opentracing协议已经被OpenTelemetry协议取代了。所以不要继续使用Jager的SDK，而应该使用OpenTelemetry的SDK。</p>
+<h2 id="2-3-Jaeger-query"><a href="#2-3-Jaeger-query" class="headerlink" title="2.3 Jaeger-query"></a>2.3 Jaeger-query</h2><p>Jaeger-query负责查询，可以查询span，也可以查询traces。它是连接后端的存储服务，如ES。它的前端是用React写的SPA，后端是用go写的。然后把前端build并且压缩后，和后端代码一起打包成一个二进制文件，然后启动。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Jager-ui源码根目录</span></span><br><span class="line"><span class="comment"># 修改React代码后打包</span></span><br><span class="line">yarn build</span><br><span class="line"><span class="comment"># 复制package/jaeger-ui/build下的static文件夹和index.html到jaeger-ui/cmd/query/app/ui/actual中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Jaeger源码路根目录</span></span><br><span class="line"><span class="comment"># 压缩和加后缀</span></span><br><span class="line">find cmd/query/app/ui/actual -<span class="built_in">type</span> f | grep -v .gitignore | xargs gzip --no-name</span><br><span class="line"><span class="comment"># 运行，注意必须要带-tags ui，不然用的是query/app/ui/placeholder下的文件。</span></span><br><span class="line">go run -tags ui ./cmd/query</span><br><span class="line"><span class="comment"># 打包</span></span><br><span class="line">go build -tags ui ./cmd/query</span><br><span class="line"><span class="comment"># 找到单体程序query即可</span></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/16/jenkins/" rel="prev" title="jenkins">
+      <i class="fa fa-chevron-left"></i> jenkins
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E9%83%A8%E7%BD%B2"><span class="nav-number">2.</span> <span class="nav-text">2. 部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Jaeger-agen"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Jaeger-agen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Jaeger-collector"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Jaeger-collector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Jaeger-query"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 Jaeger-query</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="qsl"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">Mobile, Web</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qsl</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://edwardqian.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2023/08/25/jaeger/";
+    this.page.identifier = "2023/08/25/jaeger/";
+    this.page.title = "jaeger";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://edwardqian.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
