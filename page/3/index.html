@@ -157,6 +157,81 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/18/Google/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/18/Google/" class="post-title-link" itemprop="url">Google</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-18 14:41:16 / Modified: 14:44:59" itemprop="dateCreated datePublished" datetime="2021-03-18T14:41:16+08:00">2021-03-18</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/18/Google/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/18/Google/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-Firebase-Admin-SDK"><a href="#1-Firebase-Admin-SDK" class="headerlink" title="1. Firebase Admin SDK"></a>1. Firebase Admin SDK</h3><p>按照文档集成之后，发现查询DynamicLinks的数据返回<code>403</code>，那么就需要到GCP(Google Cloud Platform)中检查用户email的权限，这个权限根具体内容相关，默认的Firebase Admin SDK的权限只有两个，需要什么服务自己加上。</p>
+<p>1.Find the client_email in the service account file<br>2.Go to GCP &gt; select your Firebase project &gt; click IAM &amp; admin &gt; click IAM <a target="_blank" rel="noopener" href="https://console.cloud.google.com/iam-admin/iam?project=">https://console.cloud.google.com/iam-admin/iam?project=</a>_<br>3.Make sure the IAM row for the client_email in step 1 has the Firebase App Distribution Admin role, or add it if it is missing. Check by clicking the “edit” pencil icon to the right-side of the row and a panel will show the current roles. If Firebase App Distribution Admin isn’t there, press “+ ADD ANOTHER ROLE” and include it.</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/62385911/firebase-app-distribution-failed-to-fetch-app-information-403-the-caller-do">https://stackoverflow.com/questions/62385911/firebase-app-distribution-failed-to-fetch-app-information-403-the-caller-do</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/25/Android%E6%89%93%E5%8C%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1001,92 +1076,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="Mobile, Web">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/03/14/linux/" class="post-title-link" itemprop="url">linux</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-03-14 23:28:11" itemprop="dateCreated datePublished" datetime="2019-03-14T23:28:11+08:00">2019-03-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-22 10:53:39" itemprop="dateModified" datetime="2021-12-22T10:53:39+08:00">2021-12-22</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/03/14/linux/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/14/linux/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-M不可见字符"><a href="#1-M不可见字符" class="headerlink" title="1. ^M不可见字符"></a>1. ^M不可见字符</h3><p>vim中输入CTRL+V CTRL+M, 而不是上箭号+M。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/kkwant/article/details/81501241">https://blog.csdn.net/kkwant/article/details/81501241</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/03/14/linux/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1158,7 +1147,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
