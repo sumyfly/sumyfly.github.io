@@ -28,7 +28,7 @@
 <meta property="og:description" content="由于Mac的磁盘空间不足，需要时常清理一下。 1. XCodeDerived Data是一个文件夹，它默认情况下位于：~&#x2F;Library&#x2F;Developer&#x2F;Xcode&#x2F;DerivedData。它是Xcode存储各种中间构建结果、生成索引等的位置，这个文件夹通常会很大，清理后会回收不少空间。你可以在Xcode的preferences中设置Derived Data的位置。清理之后构建首次构建项目的时">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-08-26T04:13:45.000Z">
-<meta property="article:modified_time" content="2023-08-26T04:25:09.498Z">
+<meta property="article:modified_time" content="2023-10-20T07:30:46.729Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="mac">
 <meta name="twitter:card" content="summary">
@@ -183,10 +183,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-08-26 12:13:45 / Modified: 12:25:09" itemprop="dateCreated datePublished" datetime="2023-08-26T12:13:45+08:00">2023-08-26</time>
+              <time title="Created: 2023-08-26 12:13:45" itemprop="dateCreated datePublished" datetime="2023-08-26T12:13:45+08:00">2023-08-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-10-20 15:30:46" itemprop="dateModified" datetime="2023-10-20T15:30:46+08:00">2023-10-20</time>
+              </span>
 
           
   
@@ -228,7 +234,7 @@
 <li>rustup缓存：$HOME/.rustup/toolchains。清理缓存的命令<code>rustup toolchain remove nightly-2021-07-29</code>.</li>
 <li>cargo缓存：$HOME/.cargo。清理缓存命令<code>cargo cache -a</code>.</li>
 <li>maven缓存：$HOME/.m2。可以删除这个文件夹，然后maven会重新下载。</li>
-<li>Apph缓存：$HOME/Library/Caches。这个文件夹按需删除，全部删除也是安全的，但是会影响App的性能。</li>
+<li>Application的缓存：$HOME/Library/Caches。这个文件夹按需删除，全部删除也是安全的，但是会影响App的性能。</li>
 <li>AndroidStudio缓存： $HOME/Library/Caches/Google/AndroidStudio。按版本删除，这里主要别把chrom的缓存删了。</li>
 <li>TypeScript缓存：$HOME/Library/Caches/typescript。全删即可。</li>
 <li>HomeBrew缓存：$HOME/Library/Caches/Homebrew, 这个可以全部删除，也可以用命令删除<code>brew cleanup --prune=1 -s</code></li>
