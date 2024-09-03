@@ -157,6 +157,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2024/09/03/Python-Debug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/03/Python-Debug/" class="post-title-link" itemprop="url">Python-Debug</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-09-03 15:08:38 / Modified: 15:12:28" itemprop="dateCreated datePublished" datetime="2024-09-03T15:08:38+08:00">2024-09-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React-Native/" itemprop="url" rel="index"><span itemprop="name">React-Native</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/09/03/Python-Debug/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/09/03/Python-Debug/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-os-getcwd"><a href="#1-os-getcwd" class="headerlink" title="1. os.getcwd()"></a>1. os.getcwd()</h3><p>os.getcwd()返回工作目录，工作目录（Working Directory）是指当前用户或程序正在其中执行命令或访问文件的目录。在操作系统中，当你打开一个命令行界面（如终端、命令提示符）或运行一个程序时，都有一个与之关联的工作目录。这个目录是相对于该环境而言的当前位置，用于解析相对路径。<br>os.getcwd() 函数是 Python 标准库 os 模块中的一个函数，用于获取当前工作目录的绝对路径。这个函数通过查询操作系统来确定当前进程的工作目录，并将其作为一个字符串返回。<br>具体来说，os.getcwd() 如何确定工作目录，取决于操作系统提供的机制。在 Unix-like 系统（如 Linux 和 macOS）中，这通常涉及到查询当前进程的环境信息，该信息中包含了工作目录的路径。在 Windows 系统中，机制可能有所不同，但同样依赖于操作系统提供的API来查询当前进程的工作目录。</p>
+<p>当 Python 程序（或 Python 交互式解释器）启动时，它的工作目录通常是启动该程序或解释器的那个目录。但是，在程序执行过程中，可以使用 os.chdir(path) 函数来改变工作目录，这时 os.getcwd() 返回的将是新的工作目录路径。<br>需要注意的是，os.getcwd() 返回的是绝对路径，这意味着它是一个从根目录开始的完整路径，不受当前工作目录的相对位置影响。这对于需要精确处理文件路径的程序来说是非常有用的。</p>
+<p>所以python返回的工作目录是执行python命令的那个目录，所以这个目录很重要，不能随便用来删除目录，我不小心就把自己的源码目录给删除了，还好有GitHub。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/08/29/Linux-shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -938,111 +1022,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/03/26/node%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="Mobile, Web">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/26/node%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" class="post-title-link" itemprop="url">node内存泄漏</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-03-26 12:57:23" itemprop="dateCreated datePublished" datetime="2022-03-26T12:57:23+08:00">2022-03-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-30 14:38:41" itemprop="dateModified" datetime="2022-03-30T14:38:41+08:00">2022-03-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Node/" itemprop="url" rel="index"><span itemprop="name">Node</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/03/26/node%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/26/node内存泄漏/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-Heap"><a href="#1-Heap" class="headerlink" title="1. Heap"></a>1. Heap</h3><p>Heap 分为young generation, old generation.</p>
-<ul>
-<li>young generation, 采用清除算法，分为from, to两个区域。当需要GC时，会检测分配的对象的有效性，如果从这次GC中存活，会标记，然后copy到to 区域，清空from区，然后交换from, to的命名。当有对象在2次GC都存活了，那么会移动到old generation.这个也被称为minor GC.</li>
-<li>old generation, 采用mark-sweep方法, old generation中allocate分配容易，清理难。这个也被称为major GC。这里的GC也有两种可能，一种是内存充裕时使用mark-sweep, 另一种是内存不充足时内存压塑，移动内存，释放内存碎片。</li>
-</ul>
-<p>Usually, ~20% of the Young Generation survives into the Old Generation. Collection in the Old Space will only commence once it is getting exhausted. To do so the V8 engine uses two different collection algorithms:</p>
-<ul>
-<li>Scavenge collection, which is fast and runs on the Young Generation,</li>
-<li>Mark-Sweep collection, which is slower and runs on the Old Generation.</li>
-</ul>
-<p>node GC时会stop the world，代表主线程被暂停了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/26/node%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1114,7 +1093,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1125,7 +1104,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
