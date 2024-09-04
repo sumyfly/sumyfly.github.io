@@ -28,7 +28,7 @@
 <meta property="og:description" content="1. os.getcwd()os.getcwd()返回工作目录，工作目录（Working Directory）是指当前用户或程序正在其中执行命令或访问文件的目录。在操作系统中，当你打开一个命令行界面（如终端、命令提示符）或运行一个程序时，都有一个与之关联的工作目录。这个目录是相对于该环境而言的当前位置，用于解析相对路径。os.getcwd() 函数是 Python 标准库 os 模块中的一个函数，">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-09-03T07:08:38.000Z">
-<meta property="article:modified_time" content="2024-09-03T07:12:28.029Z">
+<meta property="article:modified_time" content="2024-09-04T11:06:53.048Z">
 <meta property="article:author" content="qsl">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -183,10 +183,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-09-03 15:08:38 / Modified: 15:12:28" itemprop="dateCreated datePublished" datetime="2024-09-03T15:08:38+08:00">2024-09-03</time>
+              <time title="Created: 2024-09-03 15:08:38" itemprop="dateCreated datePublished" datetime="2024-09-03T15:08:38+08:00">2024-09-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-09-04 19:06:53" itemprop="dateModified" datetime="2024-09-04T19:06:53+08:00">2024-09-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -225,6 +231,14 @@
         <h3 id="1-os-getcwd"><a href="#1-os-getcwd" class="headerlink" title="1. os.getcwd()"></a>1. os.getcwd()</h3><p>os.getcwd()返回工作目录，工作目录（Working Directory）是指当前用户或程序正在其中执行命令或访问文件的目录。在操作系统中，当你打开一个命令行界面（如终端、命令提示符）或运行一个程序时，都有一个与之关联的工作目录。这个目录是相对于该环境而言的当前位置，用于解析相对路径。<br>os.getcwd() 函数是 Python 标准库 os 模块中的一个函数，用于获取当前工作目录的绝对路径。这个函数通过查询操作系统来确定当前进程的工作目录，并将其作为一个字符串返回。<br>具体来说，os.getcwd() 如何确定工作目录，取决于操作系统提供的机制。在 Unix-like 系统（如 Linux 和 macOS）中，这通常涉及到查询当前进程的环境信息，该信息中包含了工作目录的路径。在 Windows 系统中，机制可能有所不同，但同样依赖于操作系统提供的API来查询当前进程的工作目录。</p>
 <p>当 Python 程序（或 Python 交互式解释器）启动时，它的工作目录通常是启动该程序或解释器的那个目录。但是，在程序执行过程中，可以使用 os.chdir(path) 函数来改变工作目录，这时 os.getcwd() 返回的将是新的工作目录路径。<br>需要注意的是，os.getcwd() 返回的是绝对路径，这意味着它是一个从根目录开始的完整路径，不受当前工作目录的相对位置影响。这对于需要精确处理文件路径的程序来说是非常有用的。</p>
 <p>所以python返回的工作目录是执行python命令的那个目录，所以这个目录很重要，不能随便用来删除目录，我不小心就把自己的源码目录给删除了，还好有GitHub。</p>
+<h3 id="2-timezone"><a href="#2-timezone" class="headerlink" title="2. timezone"></a>2. timezone</h3><p>python有第三方库<code>pytz</code>,python 3.9版本以上有一个自带的库<code>zoneinfo</code>。我必须吐槽一下，这个timezone库就这么不重视吗，这么晚才有。</p>
+<h4 id="2-1-不带timezone的创建方法"><a href="#2-1-不带timezone的创建方法" class="headerlink" title="2.1 不带timezone的创建方法"></a>2.1 不带timezone的创建方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">date1= datetime.now()</span><br><span class="line">date2 = datetime.strptime(<span class="built_in">str</span>, <span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br><span class="line">date3 = datetime(<span class="number">2023</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">0</span>, <span class="number">0</span>) </span><br></pre></td></tr></table></figure>
+<p>这3种都是不带timezone，但是有个地方要注意，date1虽然没带，但是如果打印它，是当前的系统timezone下的时间，而非UTC时间，所以就是它没有这个<code>tzinfo</code>的属性，但是就是用了。</p>
+<h4 id="2-2-带有timezone的创建方法"><a href="#2-2-带有timezone的创建方法" class="headerlink" title="2.2 带有timezone的创建方法"></a>2.2 带有timezone的创建方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tz = pytz.timezone(<span class="string">&#x27;Asia/Shanghai&#x27;</span>)</span><br><span class="line">date1= datetime.now(pytz.utc) <span class="comment"># 或者 datetime.now(tz)</span></span><br><span class="line"></span><br><span class="line">date2 = datetime.strptime(<span class="built_in">str</span>, <span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br><span class="line">local_date = tz.localize(date2)</span><br><span class="line">utc_date = pytz.utc.localize(date2)</span><br></pre></td></tr></table></figure>
+<p>这里就是给datetime.now一个tzinfo，无论给它什么样的tzinfo，最近它们的本质还是一样的，都是同一个时间，不同点只是tzinfo不同。注意localize只能对没有tzinfo的值设置，而replace没有这个限制。<br>尽管实参一样，但是local_date和utc_date的表示时间却是不一样的，因为date2原来没有tzinfo，调用了不同的tzinfo.localize方法后，产生的时间就是不一样的，所以这需要知道你的实参的timezone是什么，才能正确的给它设置timezone。</p>
+<h4 id="2-3-timezone转换"><a href="#2-3-timezone转换" class="headerlink" title="2.3 timezone转换"></a>2.3 timezone转换</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将UTC时间转换为上海时间</span></span><br><span class="line"><span class="comment"># 第一种方法</span></span><br><span class="line">local_date = utc_date.astimezone(tz) <span class="comment"># 结果正确</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种方法</span></span><br><span class="line"><span class="keyword">from</span> zoneinfo <span class="keyword">import</span> ZoneInfo</span><br><span class="line">zone_info = ZoneInfo(<span class="string">&#x27;Asia/Shanghai&#x27;</span>)</span><br><span class="line">local_date2 = utc_date.astimezone(zone_info) <span class="comment"># 结果不正确</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三种方法</span></span><br><span class="line">local_date3 = datetime.now(tz=pytz.utc).replace(tzinfo=pytz.utc).astimezone(shanghai_tz) <span class="comment">#结果正确</span></span><br><span class="line">local_date4 = datetime.now().replace(tz=shanghai_tz) <span class="comment">#结果不正确，虽然按照2.1的创建方法date.now其实使用了tzinfo的信息，但是结果是不对。</span></span><br><span class="line">local_date3 = datetime.now(tz=shanghai_tz).replace(tzinfo=shanghai_tz).astimezone(shanghai_tz) <span class="comment">#结果不正确</span></span><br><span class="line"><span class="built_in">print</span>(local_date4) <span class="comment"># local_date4 2024-09-04 19:02:43.948018+08:06 这个后面带有06分钟，是个什么意思？</span></span><br></pre></td></tr></table></figure>
+<p>当我们有一个带有timezone的时间，想转为另一个timezone的时间，从时间本身来讲，它们是一样的，只不过是影响了表现形式。这里的作用就是给用户看的时候，他能理解这个是他的时区的时间，所以这种转换就是为了输出可视化字符串。<br>由于<code>replace</code>过于粗暴，所以还是最好别用了。</p>
+<h4 id="2-4-时间比较"><a href="#2-4-时间比较" class="headerlink" title="2.4 时间比较"></a>2.4 时间比较</h4><p>时间比较需要注意的是，要么两个时间都不带timezone，要么都带，不能一个带一个不带。所以推荐都带，两个时间相减时，得到<code>timedelta</code>。因为有些服务的API返回的date是带有timezone的，所以最好我们自己的时间也带上。</p>
 
     </div>
 
@@ -312,7 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-os-getcwd"><span class="nav-number">1.</span> <span class="nav-text">1. os.getcwd()</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-os-getcwd"><span class="nav-number">1.</span> <span class="nav-text">1. os.getcwd()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-timezone"><span class="nav-number">2.</span> <span class="nav-text">2. timezone</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E4%B8%8D%E5%B8%A6timezone%E7%9A%84%E5%88%9B%E5%BB%BA%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 不带timezone的创建方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E5%B8%A6%E6%9C%89timezone%E7%9A%84%E5%88%9B%E5%BB%BA%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 带有timezone的创建方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-timezone%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 timezone转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-%E6%97%B6%E9%97%B4%E6%AF%94%E8%BE%83"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 时间比较</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
