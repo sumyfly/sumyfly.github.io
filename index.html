@@ -157,6 +157,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2025/01/21/Docker-MySQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/01/21/Docker-MySQL/" class="post-title-link" itemprop="url">Docker-MySQL</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-01-21 11:40:00 / Modified: 14:20:48" itemprop="dateCreated datePublished" datetime="2025-01-21T11:40:00+08:00">2025-01-21</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2025/01/21/Docker-MySQL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/01/21/Docker-MySQL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-Mac上使用Docker安装MySQL"><a href="#1-Mac上使用Docker安装MySQL" class="headerlink" title="1. Mac上使用Docker安装MySQL"></a>1. Mac上使用Docker安装MySQL</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动容器</span></span><br><span class="line">docker run --name=mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root  -d mysql/mysql-server:8.0.32</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it mysql8 mysql -uroot -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改root的localhost</span></span><br><span class="line">mysql&gt; update user <span class="built_in">set</span> host=<span class="string">&#x27;%&#x27;</span> <span class="built_in">where</span> user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line"></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新密码算法，让Navicat可以连接</span></span><br><span class="line">ALTER user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED WITH mysql_native_password BY <span class="string">&#x27;root&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>最后这个修改密码算法是必要的，不然会出现这个错误<code>Public Key Retrieval is not allowed</code>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/01/21/Docker-MySQL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2024/09/03/Python-Debug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -954,88 +1035,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/04/21/%E7%BD%91%E7%BB%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="Mobile, Web">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/21/%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">网络</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-21 13:08:16 / Modified: 14:45:12" itemprop="dateCreated datePublished" datetime="2022-04-21T13:08:16+08:00">2022-04-21</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/04/21/%E7%BD%91%E7%BB%9C/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/04/21/网络/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-TLS"><a href="#1-TLS" class="headerlink" title="1. TLS"></a>1. TLS</h3><p>TLS现在的版本是1.2，下一个版本1.3也快普及。<br>Android开始支持TLS v1.2从Android 4.1开始<br>iOS开始支持TLS v1.2从iOS 5开始<br>Browser开始支持TLS v1.2: Chrome version 29(2013), Safari version 7(2013)</p>
-<p>通常TLS是应用协议，HTTP on SSL，所以一般情况下不需要应用程序去指定TLS版本，交给系统或浏览器就行。</p>
-<p>ref:<br><a target="_blank" rel="noopener" href="https://developer.android.com/reference/javax/net/ssl/SSLSocket">Android</a><br><a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/technotes/tn2287/_index.html">iOS</a><br><a target="_blank" rel="noopener" href="https://afba.secure.force.com/MemberPortal/TLSVPage">Browser</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/21/%E7%BD%91%E7%BB%9C/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1107,7 +1106,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-count">85</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1118,7 +1117,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1145,7 +1144,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
