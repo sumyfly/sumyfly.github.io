@@ -157,6 +157,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2025/06/26/vercel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/26/vercel/" class="post-title-link" itemprop="url">vercel</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-06-26 15:43:06 / Modified: 15:47:48" itemprop="dateCreated datePublished" datetime="2025-06-26T15:43:06+08:00">2025-06-26</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2025/06/26/vercel/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/06/26/vercel/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-Vercel"><a href="#1-Vercel" class="headerlink" title="1. Vercel"></a>1. Vercel</h1><p>Vercel即支持Next.js也支持express，但是注意它们都是无状态的serverless。不支持长连接，如websocket。</p>
+<p>接下来介绍下moonorepo的配置</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;builds&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;backend/api/index.ts&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;use&quot;</span><span class="punctuation">:</span> <span class="string">&quot;@vercel/node&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;frontend/next.config.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;use&quot;</span><span class="punctuation">:</span> <span class="string">&quot;@vercel/next&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;rewrites&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/api/(.*)&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;destination&quot;</span><span class="punctuation">:</span> <span class="string">&quot;backend/api/index.ts&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/(.*)&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;destination&quot;</span><span class="punctuation">:</span> <span class="string">&quot;frontend/$1&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>这里注意使用了<code>rewrites</code>，不用使用<code>routes</code>，因为<code>routes</code>不支持动态链接，这个是好坑的，我在上面浪费了不少时间。混合渲染注意事项，后端渲染拿不到windows和localstoreage，所以这里要注意使用前端渲染去获取。更好的比方是，后端渲染返回了html，前端渲染使用JS。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/06/26/vercel/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2025/01/21/Docker-MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -951,90 +1034,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/04/22/K8s/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="Mobile, Web">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/22/K8s/" class="post-title-link" itemprop="url">K8s</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-04-22 14:03:00 / Modified: 14:03:16" itemprop="dateCreated datePublished" datetime="2022-04-22T14:03:00+08:00">2022-04-22</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/04/22/K8s/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/04/22/K8s/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-Limits"><a href="#1-Limits" class="headerlink" title="1. Limits"></a>1. Limits</h3><p>资源限制内部机制使用的是cgroup类型<br>目录： /sys/fs/cgroup/systemd</p>
-<p>k8s采用request和limit两种限制类型来对资源进行分配</p>
-<p>request(资源需求)：即运行pod的节点必须满足运行pod的最基本需求才能运行pod。<br>limit(资源限制)：即运行pod期间，可能内存使用量会增加，那最多能使用多少内存，这就是资源限额。<br>资源类型：</p>
-<p>CPU的单位是核心数，内存的单位是字节。<br>一个容器申请0.5各CPU，就相当于申请1个CPU的一半，可以加个后缀m表示千分之一的概念。比如说100m的CPU，100豪的CPU和0.1个CPU都是一样的。<br>内存单位：</p>
-<p>K，M，G，T，P，E #通常是以1000为换算标准的。<br>Ki，Mi，Gi，Ti，Pi，Ei #通常是以1024为换算标准的。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/22/K8s/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1106,7 +1105,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1117,7 +1116,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
