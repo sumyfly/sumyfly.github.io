@@ -157,6 +157,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/05/17/React-Native%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/17/React-Native%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-title-link" itemprop="url">React-Native性能优化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-05-17 17:54:18 / Modified: 18:42:41" itemprop="dateCreated datePublished" datetime="2022-05-17T17:54:18+08:00">2022-05-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React-Native/" itemprop="url" rel="index"><span itemprop="name">React-Native</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/05/17/React-Native%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/05/17/React-Native性能优化/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-大纲"><a href="#1-大纲" class="headerlink" title="1. 大纲"></a>1. 大纲</h3><h4 id="1-1-线程优化"><a href="#1-1-线程优化" class="headerlink" title="1.1 线程优化"></a>1.1 线程优化</h4><p>JS是单线程，不能block它，也不适合做CPU密集型工作。如果有可能尽量使用native模块或多线程技术负担JS线程工作。</p>
+<h4 id="1-2-渲染优化"><a href="#1-2-渲染优化" class="headerlink" title="1.2 渲染优化"></a>1.2 渲染优化</h4><h5 id="1-2-1-React渲染"><a href="#1-2-1-React渲染" class="headerlink" title="1.2.1 React渲染"></a>1.2.1 React渲染</h5><ul>
+<li>减少渲染次数， 比如shoudComponentUpdate, PureComponent</li>
+<li>避免不可见内容的渲染，比如控制render的返回内容</li>
+<li>长列表的优化</li>
+</ul>
+<h5 id="1-2-2-Native渲染"><a href="#1-2-2-Native渲染" class="headerlink" title="1.2.2 Native渲染"></a>1.2.2 Native渲染</h5><ul>
+<li>Android上RecycleView2的使用</li>
+</ul>
+<h4 id="1-3-框架优化"><a href="#1-3-框架优化" class="headerlink" title="1.3 框架优化"></a>1.3 框架优化</h4><h4 id="1-3-1-通讯方法"><a href="#1-3-1-通讯方法" class="headerlink" title="1.3.1 通讯方法"></a>1.3.1 通讯方法</h4><ul>
+<li>JS Bridge的通讯的payload是JSON字符串，而且所有通讯都是占用JS Bridge，所以一方面会出现阻塞，比如滑动事件，另一方面JSON字符串的解析也会消耗计算。所以尽量不要在JS Bridge上发太多消息。随着JSI的发布，可以使用JSI代替JS Bridge, 它不需要再通过JSON字符串通讯，而是使用了共享内存通讯，而且是同步方式，效率更高。跟之前相比，需要写C++代码，但是有自动化工具可以帮助完成，比如CodeGen。</li>
+<li>Bundel拆包，按需加载，和提前加载，提升页面首次渲染的性能。</li>
+<li>体积优化，使用混淆工具减少包体积。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/04/22/K8s/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -943,88 +1038,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/08/25/%E5%8E%8B%E7%BC%A9-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="Mobile, Web">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/25/%E5%8E%8B%E7%BC%A9-md/" class="post-title-link" itemprop="url">压缩.md</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-08-25 19:28:34 / Modified: 19:43:36" itemprop="dateCreated datePublished" datetime="2021-08-25T19:28:34+08:00">2021-08-25</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/08/25/%E5%8E%8B%E7%BC%A9-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/25/压缩-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-zlib-gzip"><a href="#1-zlib-gzip" class="headerlink" title="1. zlib, gzip"></a>1. zlib, gzip</h3><p>zlib是压缩算法，这个分gunzip和inflate, inflateraw。一般用zlib的默认算法是inflate， python里面的zlib使用的也是inflate。</p>
-<p>gzip是文件格式。</p>
-<h3 id="2-windowBits"><a href="#2-windowBits" class="headerlink" title="2. windowBits"></a>2. windowBits</h3><p>zip里面有个参数windowBits, The wbits argument controls the size of the history buffer (or the “window size”) used when compressing data, and whether a header and trailer is included in the output. It can take several ranges of values. The default is 15.</p>
-<p>+9 到 +15：窗口大小以 2 为底的对数。即这些值对应着 512 到 32768 的窗口大小。更大的值会提供更好的压缩，同时内存开销也会更大。压缩输出会包含 zlib 特定格式的头部和尾部。</p>
-<p>−9 到 −15：绝对值为窗口大小以 2 为底的对数。压缩输出仅包含压缩数据，没有头部和尾部。</p>
-<p>+25 到 +31 = 16 + (9 到 15)：后 4 个比特位为窗口大小以 2 为底的对数。压缩输出包含一个基本的 gzip 头部，并以校验和为尾部。</p>
-<blockquote>
-<p>所以如果windowBits为负数，那么就是代表没有头和尾。这个可以让压缩文件结果变小。</p>
-</blockquote>
-<p>node里面不能设置为负数，用inflateRaw也不行。最后使用了<code>ZlibSync</code>和<code>pako</code>.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1096,7 +1109,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">87</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

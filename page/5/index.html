@@ -157,6 +157,111 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/ShadowSocks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/02/11/ShadowSocks/" class="post-title-link" itemprop="url">ShadowSocks</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-02-11 18:40:33" itemprop="dateCreated datePublished" datetime="2019-02-11T18:40:33+08:00">2019-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/02/11/ShadowSocks/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/11/ShadowSocks/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-ShadowSocks"><a href="#1-ShadowSocks" class="headerlink" title="1. ShadowSocks"></a>1. ShadowSocks</h3><p>ShadowSocks是Socks5代理。之前我在Bandwagon上有个OpenVZ的ShadowSocks代理，后来到期了，买了一个KVM的虚拟机，手工装了ShadowSocks.<br>网上有一键安装ShadowSocks的脚本，但是不支持CentorOS,只支持Debian和Ubuntu。我想用BBR加速，自带的镜像只有CenterOS有BBR，所以就手动安装。难点是Python的版本问题，CenterOS的默认自带Python时2.6版本，而ShadowSocks是要2.7版本。而如果升级了python，yum就使用不了，方案就是升级python，软连接python，然后yum还是使用python2.6，这样就不冲突。</p>
+<h4 id="1-1-CenterOS升级python为2-7"><a href="#1-1-CenterOS升级python为2-7" class="headerlink" title="1.1 CenterOS升级python为2.7"></a>1.1 CenterOS升级python为2.7</h4><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/haoorhuai/p/9773628.html">https://www.cnblogs.com/haoorhuai/p/9773628.html</a></p>
+<p>安装python使用的是源码编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br><span class="line">yum groupinstall <span class="string">&#x27;Development Tools&#x27;</span></span><br><span class="line">yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel expat-devel</span><br><span class="line"></span><br><span class="line">wget https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tgz</span><br><span class="line">tar -zxvf Python-2.7.15.tgz </span><br><span class="line"><span class="built_in">cd</span> Python-2.7.15</span><br><span class="line">./configure --prefix=/usr/local</span><br><span class="line">make all</span><br><span class="line">make altinstall</span><br><span class="line">make clean</span><br></pre></td></tr></table></figure>
+
+<p>不用使用easy_install安装python,使用官方自己带脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py</span><br><span class="line">python get-pip.py --user</span><br></pre></td></tr></table></figure>
+
+<p>安装结束后使用pip2命令，不要使用pip。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip2 install shadowsocks</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-安装ShadowSocks"><a href="#1-2-安装ShadowSocks" class="headerlink" title="1.2 安装ShadowSocks"></a>1.2 安装ShadowSocks</h4><p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/Linux/2015-05/117290.htm">https://www.linuxidc.com/Linux/2015-05/117290.htm</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip2 install shadowsocks</span><br><span class="line"><span class="built_in">touch</span> /etc/shadowsocks.json </span><br><span class="line">vi /etc/shadowsocks.json </span><br></pre></td></tr></table></figure>
+<p>{<br>“server”:”138.128.208.158”,<br>“server_port”:443,<br>“local_address”: “127.0.0.1”,<br>“local_port”:1080,<br>“password”:”MyPass”,<br>“timeout”:600,<br>“method”:”rc4-md5”<br>}<br>备注：加密方式官方默认使用aes-256-cfb，推荐使用rc4-md5，因为 RC4比AES速度快好几倍。<br>各字段说明：</p>
+<pre><code>server:服务器IP
+server_port:服务器端口
+local_port:本地端端口
+password:用来加密的密码
+timeout:超时时间（秒）
+method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, “rc4″等
+</code></pre>
+<p>使用配置文件在后台运行shadowsocks服务<br>[root@localhost /]# ssserver -c /etc/shadowsocks.json -d start<br>备注：若无配置文件，在后台可以使用一下命令运行：<br>[root@localhost /]# ssserver -p 443 -k MyPass -m rc4-md5 -d start<br>停止服务<br>[root@localhost /]# ssserver -c /etc/shadowsocks.json -d stop</p>
+<h3 id="2-BBR"><a href="#2-BBR" class="headerlink" title="2. BBR"></a>2. BBR</h3><p>Google的TCP BBR拥塞控制算法解析，只能内核4.9以上支持。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#   查看内核版本，含有 4.9 就表示 OK 了</span></span><br><span class="line"><span class="built_in">uname</span> -r</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Eason1024/p/8177665.html">https://www.cnblogs.com/Eason1024/p/8177665.html</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/dog250/article/details/52830576">https://blog.csdn.net/dog250/article/details/52830576</a></p>
+<h3 id="3-一键shadowsocks脚本"><a href="#3-一键shadowsocks脚本" class="headerlink" title="3. 一键shadowsocks脚本"></a>3. 一键shadowsocks脚本</h3><p>只支持debian和ubuntu<br><a target="_blank" rel="noopener" href="https://www.tennfy.com/2136.html">https://www.tennfy.com/2136.html</a></p>
+<h3 id="4-拷贝公钥给目标服务器"><a href="#4-拷贝公钥给目标服务器" class="headerlink" title="4. 拷贝公钥给目标服务器"></a>4. 拷贝公钥给目标服务器</h3><p>[root@localhost .ssh]# ssh-copy-id -i id_dsa.pub <a href="mailto:&#111;&#109;&#x64;&#x40;&#x31;&#57;&#x32;&#46;&#x31;&#54;&#56;&#x2e;&#x32;&#x35;&#x2e;&#x31;&#49;&#48;">&#111;&#109;&#x64;&#x40;&#x31;&#57;&#x32;&#46;&#x31;&#54;&#56;&#x2e;&#x32;&#x35;&#x2e;&#x31;&#49;&#48;</a>              【 使用ssh登录的默认端口22】<br>[root@localhost .ssh]# ssh-copy-id -i id_dsa.pub –p 666 <a href="mailto:&#111;&#x6d;&#x64;&#64;&#x31;&#x39;&#x32;&#x2e;&#49;&#x36;&#x38;&#46;&#x32;&#53;&#x2e;&#x31;&#50;&#x30;">&#111;&#x6d;&#x64;&#64;&#x31;&#x39;&#x32;&#x2e;&#49;&#x36;&#x38;&#46;&#x32;&#53;&#x2e;&#x31;&#50;&#x30;</a>   【使用ssh登录设置的端口666】<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ftl1012/p/ssh.html">https://www.cnblogs.com/ftl1012/p/ssh.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/Android-Studio/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -986,95 +1091,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/Openssl%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="Mobile, Web">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/08/22/Openssl%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Openssl使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-08-22 15:54:39" itemprop="dateCreated datePublished" datetime="2018-08-22T15:54:39+08:00">2018-08-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/08/22/Openssl%E4%BD%BF%E7%94%A8/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/22/Openssl使用/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-查看private-key"><a href="#1-查看private-key" class="headerlink" title="1.查看private key"></a>1.查看private key</h3><p>openssl pkcs8  -in my_private_key -passin mypassworld<br>openssl pkcs12  -info -in my_private_key -passin mypassworld</p>
-<blockquote>
-<p>注意不同的加密格式对应不同命令</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/22/Openssl%E4%BD%BF%E7%94%A8/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1146,7 +1162,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">87</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
