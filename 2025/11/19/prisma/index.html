@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Prisma 命令行Prisma CLI 提供了一套完整的命令来支持数据库的开发、迁移和维护工作。下面我将主要命令按照开发流程和环境进行分类说明，并特别注明在 PostgreSQL 数据库下的注意事项。 核心命令速览下表汇总了Prisma的核心CLI命令及其主要用途，你可以对其有个快速的整体印象。    命令 主要用途 典型使用场景    prisma init 初始化一个新的Prisma项目结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="prisma">
+<meta property="og:url" content="http://yoursite.com/2025/11/19/prisma/index.html">
+<meta property="og:site_name" content="QSL">
+<meta property="og:description" content="Prisma 命令行Prisma CLI 提供了一套完整的命令来支持数据库的开发、迁移和维护工作。下面我将主要命令按照开发流程和环境进行分类说明，并特别注明在 PostgreSQL 数据库下的注意事项。 核心命令速览下表汇总了Prisma的核心CLI命令及其主要用途，你可以对其有个快速的整体印象。    命令 主要用途 典型使用场景    prisma init 初始化一个新的Prisma项目结构">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-11-19T09:49:08.000Z">
+<meta property="article:modified_time" content="2025-11-19T11:16:06.223Z">
+<meta property="article:author" content="qsl">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2025/11/19/prisma/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>prisma | QSL</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102260804-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-102260804-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">QSL</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2025/11/19/prisma/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          prisma
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-11-19 17:49:08 / Modified: 19:16:06" itemprop="dateCreated datePublished" datetime="2025-11-19T17:49:08+08:00">2025-11-19</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2025/11/19/prisma/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/11/19/prisma/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Prisma-命令行"><a href="#Prisma-命令行" class="headerlink" title="Prisma 命令行"></a>Prisma 命令行</h1><p>Prisma CLI 提供了一套完整的命令来支持数据库的开发、迁移和维护工作。下面我将主要命令按照开发流程和环境进行分类说明，并特别注明在 PostgreSQL 数据库下的注意事项。</p>
+<h1 id="核心命令速览"><a href="#核心命令速览" class="headerlink" title="核心命令速览"></a>核心命令速览</h1><p>下表汇总了Prisma的核心CLI命令及其主要用途，你可以对其有个快速的整体印象。</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">主要用途</th>
+<th align="left">典型使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>prisma init</code></td>
+<td align="left">初始化一个新的Prisma项目结构。</td>
+<td align="left">新项目搭建，创建<code>schema.prisma</code>和<code>.env</code>文件模板。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma generate</code></td>
+<td align="left">根据数据模型生成Prisma Client（类型安全的查询客户端）。</td>
+<td align="left"><strong>每次修改<code>schema.prisma</code>文件后都必须运行</strong>，以使更改生效于代码。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma db pull</code></td>
+<td align="left">从现有数据库提取结构，生成Prisma数据模型（反向工程）。</td>
+<td align="left">接管一个已有的数据库项目。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma db push</code></td>
+<td align="left">将Prisma数据模型中的更改直接同步到数据库，<strong>不生成迁移文件</strong>。</td>
+<td align="left">仅用于开发环境的快速原型设计，切勿在生产环境使用。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma migrate dev</code></td>
+<td align="left">在开发环境中，创建并应用数据库迁移文件，同时生成Client。</td>
+<td align="left">开发阶段管理所有数据库结构变更的<strong>主要命令</strong>。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma migrate deploy</code></td>
+<td align="left">将已生成的迁移文件应用到生产环境数据库。</td>
+<td align="left">在生产服务器上部署最新的数据库结构变更。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma migrate resolve</code></td>
+<td align="left">手动解决迁移冲突，标记某个迁移为已应用或已回滚。</td>
+<td align="left">当<code>migrate deploy</code>失败，数据库状态与迁移历史不一致时。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma migrate reset</code></td>
+<td align="left">重置整个数据库，清空所有数据并重新应用所有迁移。</td>
+<td align="left">开发或测试环境中，需要回归到初始干净状态时。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma studio</code></td>
+<td align="left">启动一个Web界面，用于直观地查看和编辑数据库中的数据。</td>
+<td align="left">开发调试时快速查看、修改数据。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma db seed</code></td>
+<td align="left">运行种子脚本，为数据库填充初始数据。</td>
+<td align="left">在<code>migrate reset</code>后或首次初始化数据库后自动填充基础数据。</td>
+</tr>
+</tbody></table>
+<p>执行<code>prisma migrate</code>系列命令，会产生数据记录表<code>_prisma_migrations</code>，记录每次迁移的详细信息，包括名称、开始时间、结束时间、状态等。Prisma在数据库中的id是迁移文件的MD5哈希值，所以迁移结束后手动修改迁移文件也会报不一致的错误。</p>
+<span id="more"></span>
+
+<h1 id="开发环境工作流"><a href="#开发环境工作流" class="headerlink" title="开发环境工作流"></a>开发环境工作流</h1><p>在开发过程中，你会频繁使用以下命令来迭代你的数据模型。</p>
+<ol>
+<li><p>定义与同步模型<br> 修改 <code>prisma/schema.prisma</code> 文件，定义你的数据模型（Models）。</p>
+</li>
+<li><p>创建与应用迁移<br> 当你对数据模型感到满意时，运行以下命令来创建一次正式的迁移记录：</p>
+<pre><code> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx prisma migrate dev --name your_migration_name</span><br></pre></td></tr></table></figure>
+ 这个命令会：
+ - 在 `/prisma/migrations` 目录下生成一个包含SQL语句（如`CREATE TABLE`, `ALTER TABLE`）的迁移文件。
+ - 立即将这份迁移文件应用到你的开发数据库。
+ - 自动运行 `prisma generate`，确保Prisma Client是最新的。
+</code></pre>
+</li>
+<li><p>重置与填充数据<br> 如果开发数据库陷入混乱，可以使用 <code>prisma migrate reset</code> 来彻底重置它。这个命令会清空数据库并重新从头应用所有迁移。你可以在 <code>package.json</code> 的 <code>prisma</code> 段配置 <code>seed</code> 命令，这样在 <code>reset</code> 后会自动运行，为数据库填充初始测试数据。</p>
+</li>
+</ol>
+<h1 id="生产环境部署流程"><a href="#生产环境部署流程" class="headerlink" title="生产环境部署流程"></a>生产环境部署流程</h1><p>生产环境的操作需要更加谨慎，核心原则是：<strong>只应用已经生成并经过测试的迁移文件，绝不直接修改数据库结构</strong>。</p>
+<ol>
+<li> <strong>准备迁移文件</strong>：在开发环境中，通过 <code>prisma migrate dev</code> 创建的所有迁移文件（位于 <code>/prisma/migrations</code> 目录）都需要纳入版本控制系统。</li>
+<li> <strong>部署应用</strong>：将你的应用代码（包括Prisma Client和迁移文件目录）部署到生产服务器。</li>
+<li><strong>应用迁移</strong>：在生产服务器上，运行以下命令来更新数据库结构： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx prisma migrate deploy</span><br></pre></td></tr></table></figure>
+ 这个命令会检查数据库中的 <code>_prisma_migrations</code> 表，找出所有尚未应用的迁移文件，然后按创建顺序依次执行。<strong>它不会使用本地的 <code>schema.prisma</code> 文件来修改数据库</strong>。</li>
+<li> <strong>生成客户端</strong>：在部署脚本中，确保在应用迁移后运行 <code>prisma generate</code>，以确保生产服务器上的Prisma Client与数据库结构匹配。</li>
+</ol>
+<h1 id="关键注意事项与技巧"><a href="#关键注意事项与技巧" class="headerlink" title="关键注意事项与技巧"></a>关键注意事项与技巧</h1><ul>
+<li>  <strong><code>db push</code> 与 <code>migrate dev</code> 的区别</strong>：这是最重要的概念。<code>db push</code> 是一个直接同步工具，方便快速迭代，但无版本迁移记录。<code>migrate dev</code> 是正式的、可版本化的数据库变更管理方式。<strong>生产环境必须使用迁移工作流</strong>。</li>
+<li>  <strong>安全处理字段重命名</strong>：默认情况下，在Prisma模型中重命名字段会生成 <code>DROP COLUMN</code> 和 <code>ADD COLUMN</code> 的SQL，导致原有数据丢失。为了安全地重命名，可以使用 <code>--create-only</code> 参数先创建迁移文件，然后手动修改生成的SQL文件，将 <code>DROP</code> 和 <code>ADD</code> 改为 <code>RENAME COLUMN</code>，再应用迁移。</li>
+<li>  <strong>解决迁移冲突</strong>：如果生产环境数据库的状态与迁移历史记录不一致，<code>migrate deploy</code> 会失败。此时可以使用 <code>prisma migrate resolve</code> 命令手动将某个迁移标记为已应用或已回滚，来解决冲突。</li>
+<li>  <strong>回滚迁移</strong>：如果在开发过程中发现某个迁移有误，可以使用 <code>prisma migrate resolve --rolled-back &quot;your_migration_name&quot;</code> 将其标记为已回滚，然后重新创建正确的迁移。</li>
+</ul>
+<h1 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h1><ul>
+<li>  **不要在生产环境使用 <code>db push</code>**：它会直接修改数据库结构，且无法追踪变更历史。</li>
+<li>  <strong>不要在生产环境使用 <code>migrate reset</code></strong>: 它会清空所有数据并重置数据库，仅用于开发环境。</li>
+</ul>
+<h1 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h1><h2 id="1-如果在开发环境prisma-migrate-reset，接着又进行了了数据库schema的修改去修改Table定义，此时使用prisma-migrate-dev-–name-your-migration-name产生的迁移文件只是对应这次schema的修改吗？"><a href="#1-如果在开发环境prisma-migrate-reset，接着又进行了了数据库schema的修改去修改Table定义，此时使用prisma-migrate-dev-–name-your-migration-name产生的迁移文件只是对应这次schema的修改吗？" class="headerlink" title="1. 如果在开发环境prisma migrate reset，接着又进行了了数据库schema的修改去修改Table定义，此时使用prisma migrate dev –name your_migration_name产生的迁移文件只是对应这次schema的修改吗？"></a>1. 如果在开发环境prisma migrate reset，接着又进行了了数据库schema的修改去修改Table定义，此时使用prisma migrate dev –name your_migration_name产生的迁移文件只是对应这次schema的修改吗？</h2><p>是的。在你描述的场景下，使用 <code>prisma migrate dev --name your_migration_name</code> 产生的迁移文件<strong>通常只会包含你最近这次对Schema的修改</strong>。</p>
+<p>下面这个表格清晰地对比了<code>prisma migrate reset</code>之后两种不同的工作流程，帮助你理解其中的区别。</p>
+<table>
+<thead>
+<tr>
+<th align="left">操作步骤</th>
+<th align="left">数据库状态</th>
+<th align="left">迁移历史状态</th>
+<th align="left"><code>migrate dev</code> 行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>1. <code>prisma migrate reset</code></strong></td>
+<td align="left">被重置，数据清空，但会<strong>重新完整地应用所有已存在的迁移文件</strong>，使其结构与当前<code>schema.prisma</code>文件定义一致。</td>
+<td align="left">迁移记录表（<code>_prisma_migrations</code>）会被重置并重新填充，记录显示<strong>所有迁移都已被应用</strong>。</td>
+<td align="left">准备就绪，等待新的变更。</td>
+</tr>
+<tr>
+<td align="left"><strong>2. 修改<code>schema.prisma</code></strong></td>
+<td align="left">保持不变，与最新的<code>schema.prisma</code>定义<strong>出现差异</strong>。</td>
+<td align="left">保持不变，仍然记录所有旧迁移已应用。</td>
+<td align="left">检测到数据库当前结构与你修改后的新<code>schema.prisma</code>定义之间存在差异。</td>
+</tr>
+<tr>
+<td align="left"><strong>3. <code>prisma migrate dev --name ...</code></strong></td>
+<td align="left">根据新生成的迁移文件<strong>更新结构</strong>，使其与新的<code>schema.prisma</code>定义同步。</td>
+<td align="left">将<strong>新生成的迁移记录</strong>添加到历史中。</td>
+<td align="left"><strong>生成一个全新的迁移文件</strong>，其内容仅包含使数据库从“重置后状态”变为“修改后schema状态”所需的SQL指令。</td>
+</tr>
+</tbody></table>
+<p><code>prisma migrate dev</code> 命令非常智能，它会执行以下操作：</p>
+<ol>
+<li> <strong>对比差异</strong>：首先，它会将你当前的Prisma数据模型（<code>schema.prisma</code>文件）与数据库的当前结构进行比较。</li>
+<li> <strong>检查历史</strong>：同时，它会查看数据库中的迁移历史记录表（<code>_prisma_migrations</code>），了解哪些迁移已经被应用。</li>
+<li> <strong>生成迁移</strong>：当它发现数据库的结构与你的Prisma数据模型不一致，但这种不一致并非由于有未应用的迁移文件造成时（正如你在执行<code>reset</code>后，数据库已处于最新状态），它会认为这是一次新的、基于最新模型的变更。因此，它会为你最近的这次schema修改生成一个新的迁移文件。<blockquote>
+<p>所以prisma并不是依赖迁移记录，当它发现数据库和Prisma数据模型已经一致了，那么迁移记录如果未应用，也是可行的，具体下面有提及。</p>
+</blockquote>
+</li>
+</ol>
+<p>有一种情况需要留意：如果在执行 <code>prisma migrate reset</code> 之后、运行 <code>prisma migrate dev</code> 之前，你<strong>手动修改了数据库结构</strong>（例如，直接用SQL语句添加了一个字段），或者使用了 <code>prisma db push</code> 命令，这会使数据库进入一个Prisma迁移系统无法预期的状态。</p>
+<p>此时再运行 <code>prisma migrate dev</code>，Prisma可能会检测到无法协调的差异。它通常会提供解决方案，最常见的是提示你是否要<strong>重置数据库</strong>（这将再次清空数据）并基于当前的<code>schema.prisma</code>文件重新创建所有的迁移历史。因此，在开发过程中，保持使用迁移工作流而非混合使用<code>db push</code>或手动修改，是更稳妥的做法。</p>
+<h2 id="2-我要修改schema，正确的操作流程是什么？"><a href="#2-我要修改schema，正确的操作流程是什么？" class="headerlink" title="2. 我要修改schema，正确的操作流程是什么？"></a>2. 我要修改schema，正确的操作流程是什么？</h2><ol>
+<li>修改schema.prisma文件</li>
+<li>创建并应用迁移：在终端运行<code>npx prisma migrate dev --name your_migration_name</code>，为本次变更创建一个迁移文件。此命令会：<br> a. 生成迁移文件：在 prisma/migrations目录下创建一个新的文件夹（以时间戳和你的命名开头），其中包含 migration.sql文件，文件里是具体的 SQL 变更语句（如 ALTER TABLE…）。<br> b. 将迁移应用到开发数据库：自动执行该 SQL 文件，修改你的开发数据库结构。<br> c. 重新生成 Prisma Client：确保你的客户端代码与最新的 Schema 定义保持同步</li>
+</ol>
+<h2 id="3-如果我很频繁的修改schema，那么怎么管理迁移文件"><a href="#3-如果我很频繁的修改schema，那么怎么管理迁移文件" class="headerlink" title="3. 如果我很频繁的修改schema，那么怎么管理迁移文件"></a>3. 如果我很频繁的修改schema，那么怎么管理迁移文件</h2><p>频繁修改Schema时，管理迁移文件的核心在于<strong>保持迁移历史的清晰、可读和可回溯</strong>。<br>| 目标 | 核心实践 | 具体操作与命令 |<br>| :— | :— | :— |<br>| <strong>保持提交历史清晰</strong> | <strong>功能对应原则</strong>：每个完整的功能或用户故事对应一个迁移文件。 | 在功能分支上开发，所有相关的Schema修改都通过 <code>prisma migrate dev</code> 进行。功能完成合并前，使用 <code>--create-only</code> 生成<strong>一个</strong>最终的、描述性的迁移文件 。 |<br>| <strong>合并微小变更</strong> | <strong>手动合并迁移</strong>：将开发周期内的多个零散变更合并成一个有意义的迁移。 | 使用 <code>prisma migrate dev --create-only --name descriptive_name</code> 生成迁移文件但不应用，手动编辑或合并SQL语句，然后使用 <code>prisma migrate deploy</code> 应用 。 |<br>| <strong>规范团队协作</strong> | <strong>代码审查与命名规范</strong>：将迁移文件视为重要代码，进行审查并采用一致的命名规则。 | 迁移文件命名格式如 <code>add_user_table</code>、<code>add_email_to_user</code>。在PR中审查迁移文件的SQL内容 。 |<br>| <strong>准备生产部署</strong> | <strong>严格分离环境与备份</strong>：绝不在生产环境使用 <code>migrate dev</code>，且每次部署前备份。 | 生产环境始终使用 <code>prisma migrate deploy</code> 。执行生产迁移前，使用 <code>pg_dump</code> (PostgreSQL) 等工具备份数据库 。 |</p>
+<h3 id="开发阶段的最佳实践"><a href="#开发阶段的最佳实践" class="headerlink" title="开发阶段的最佳实践"></a>开发阶段的最佳实践</h3><ol>
+<li> <strong>为功能而非动图创建迁移</strong>：在开发一个新功能时，你可能会对<code>schema.prisma</code>文件进行多次修改。理想的工作流是，在一个功能分支上完成所有必要的Schema调整，然后在这些变更合并到主分支之前，<strong>生成一个单一的、描述清晰的迁移文件</strong>。这确保了版本历史中每个迁移都对应一个完整的业务功能，而非零碎的开发步骤 。</li>
+<li> <strong>使用 <code>--create-only</code> 标志进行精细控制</strong>：当需要精确控制生成的SQL，或者计划将多个小变更合并时，可以使用 <code>prisma migrate dev --create-only --name your_migration_name</code> 命令。这个命令会生成迁移SQL文件，但不会立即应用到数据库，给你机会去审查和编辑SQL内容，确认无误后再通过 <code>prisma migrate deploy</code> 应用它 。</li>
+<li> <strong>利用重置功能进行大胆探索</strong>：在开发环境，可以放心使用 <code>prisma migrate reset</code> 命令。它会清空数据库并从头重新应用所有迁移，非常适合在频繁修改Schema的早期阶段用来快速得到一个干净的状态 。</li>
+</ol>
+<h2 id="4-我手动修改了schema，然后运行了npx-prisma-migrate-deploy，此时数据库已经反应了我的修改。我再次修改schema，再次运行npx-prisma-migrate-deploy，数据库又进行了修改。此时数据库中应该有2条migration记录，是不是？"><a href="#4-我手动修改了schema，然后运行了npx-prisma-migrate-deploy，此时数据库已经反应了我的修改。我再次修改schema，再次运行npx-prisma-migrate-deploy，数据库又进行了修改。此时数据库中应该有2条migration记录，是不是？" class="headerlink" title="4. 我手动修改了schema，然后运行了npx prisma migrate deploy，此时数据库已经反应了我的修改。我再次修改schema，再次运行npx prisma migrate deploy，数据库又进行了修改。此时数据库中应该有2条migration记录，是不是？"></a>4. 我手动修改了schema，然后运行了npx prisma migrate deploy，此时数据库已经反应了我的修改。我再次修改schema，再次运行npx prisma migrate deploy，数据库又进行了修改。此时数据库中应该有2条migration记录，是不是？</h2><p>您对流程的理解有一个非常关键的误解。简单来说，您描述的操作（修改schema后直接运行 <code>prisma migrate deploy</code>）<strong>不会</strong>在数据库中产生两条迁移记录，实际上，它很可能根本不会成功，并会报错。</p>
+<p>下面这个表格清晰地对比了这两个核心命令的区别，这正是理解整个流程的关键。</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">核心功能</th>
+<th align="left">是否创建迁移文件</th>
+<th align="left">使用环境</th>
+<th align="left">比喻</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><code>prisma migrate dev</code></strong></td>
+<td align="left"><strong>创建</strong>迁移文件，并立即将其<strong>应用</strong>到数据库。</td>
+<td align="left">✅ 是</td>
+<td align="left"><strong>仅限开发环境</strong></td>
+<td align="left"><strong>“修路队”</strong>：负责设计和铺设新的道路（迁移文件）。</td>
+</tr>
+<tr>
+<td align="left"><strong><code>prisma migrate deploy</code></strong></td>
+<td align="left"><strong>应用</strong>现有（已生成）的迁移文件到数据库。</td>
+<td align="left">❌ 否</td>
+<td align="left"><strong>生产环境/测试环境</strong></td>
+<td align="left"><strong>“高铁司机”</strong>：只负责在已铺好的轨道（迁移文件）上行驶，不修新路。</td>
+</tr>
+</tbody></table>
+<p>您设想的问题是直接运行 <code>prisma migrate deploy</code> 来应对新的schema修改。这之所以行不通，是因为：</p>
+<ul>
+<li>  <strong><code>migrate deploy</code> 找不到新迁移文件</strong>：<code>migrate deploy</code> 命令的唯一职责是查找 <code>prisma/migrations/</code> 文件夹中那些<strong>已经生成但尚未应用</strong>的迁移文件。如果您只是修改了 <code>schema.prisma</code> 而没有先用 <code>migrate dev</code> 生成对应的迁移文件，那么 <code>migrate deploy</code> 就无文件可应用。</li>
+<li>  <strong>环境隔离</strong>：<code>prisma migrate dev</code> 是一个强大的命令，它可能会重置数据库，因此<strong>绝对不能在生产环境使用</strong>。生产环境应该是一个稳定、只读的环境，只能被动地应用经过测试的、已成文的迁移脚本（即通过 <code>migrate deploy</code>），而不能在现场创建新的迁移。</li>
+</ul>
+<h2 id="5-prisma-migrate-dev-可以只生成迁移文件，不执行迁移文件吗？"><a href="#5-prisma-migrate-dev-可以只生成迁移文件，不执行迁移文件吗？" class="headerlink" title="5. prisma migrate dev 可以只生成迁移文件，不执行迁移文件吗？"></a>5. prisma migrate dev 可以只生成迁移文件，不执行迁移文件吗？</h2><p>关于 <code>prisma migrate dev</code> 命令，一个常见的误解是它“只”生成迁移文件。恰恰相反，它的核心设计是<strong>一个一体化的命令，通常会连续完成“生成迁移文件”和“在开发数据库上应用该迁移”这两个动作</strong>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">特性 / 场景</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>默认行为</strong></td>
+<td align="left">生成迁移文件 <strong>并立即</strong> 应用到开发数据库。</td>
+</tr>
+<tr>
+<td align="left"><strong><code>--create-only</code> 参数</strong></td>
+<td align="left">使用此参数时，<strong>只生成迁移文件，不执行应用</strong>。允许您检查或手动修改生成的SQL。</td>
+</tr>
+<tr>
+<td align="left"><strong>典型工作流步骤</strong></td>
+<td align="left">1. 对比Schema与数据库 -&gt; 2. 生成迁移文件 -&gt; 3. 应用迁移 -&gt; 4. 生成Prisma Client。</td>
+</tr>
+<tr>
+<td align="left"><strong>主要使用场景</strong></td>
+<td align="left">开发环境中的标准数据库变更流程。</td>
+</tr>
+<tr>
+<td align="left"><strong>与 <code>migrate deploy</code> 的区别</strong></td>
+<td align="left"><code>migrate deploy</code> 专门用于在生产环境中<strong>应用</strong>已存在的迁移文件，而不会生成新文件。</td>
+</tr>
+</tbody></table>
+<h3 id="如何实现“只生成不执行”？"><a href="#如何实现“只生成不执行”？" class="headerlink" title="如何实现“只生成不执行”？"></a>如何实现“只生成不执行”？</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx prisma migrate dev --name your_migration_name --create-only</span><br></pre></td></tr></table></figure>
+<p>这个命令会生成迁移文件，但会<strong>暂停</strong>在应用阶段，让你有机会审查甚至编辑生成的SQL。当你确认迁移文件无误后，需要再次运行 <code>npx prisma migrate dev</code>（不加 <code>--create-only</code>）来继续完成迁移的应用。这在处理像安全地重命名字段这类需要自定义SQL的场景中特别有用。</p>
+<h3 id="环境区分与注意事项"><a href="#环境区分与注意事项" class="headerlink" title="环境区分与注意事项"></a>环境区分与注意事项</h3><p>请务必记住，**<code>prisma migrate dev</code> 只能在开发环境使用**。对于生产环境，应使用 <code>prisma migrate deploy</code> 命令。<code>migrate deploy</code> 命令不会生成新的迁移文件，它的职责是检查 <code>prisma/migrations</code> 目录，并将所有尚未应用到生产数据库的迁移文件按顺序执行。<br>简而言之，<code>prisma migrate dev</code> 默认是“生成并执行”迁移文件。只有在附加 <code>--create-only</code> 参数时，才会实现“只生成不执行”的效果。</p>
+<h2 id="6-prisma-reset会清空迁移文件记录吗？"><a href="#6-prisma-reset会清空迁移文件记录吗？" class="headerlink" title="6. prisma reset会清空迁移文件记录吗？"></a>6. prisma reset会清空迁移文件记录吗？</h2><p>关于 <code>prisma migrate reset</code> 命令，其核心行为可以总结为：<strong>它会清空数据库中的数据以及数据库中的迁移历史记录，但不会删除你项目文件系统里的迁移文件</strong>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">受影响对象</th>
+<th align="left"><code>prisma migrate reset</code> 的影响</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>数据库中的数据</strong></td>
+<td align="left"><strong>会被清空</strong></td>
+<td align="left">所有表中的数据都将被删除。</td>
+</tr>
+<tr>
+<td align="left"><strong>数据库中的迁移历史记录</strong> (<code>_prisma_migrations</code> 表)</td>
+<td align="left"><strong>会被重置</strong></td>
+<td align="left">该表本身会被删除并重新创建，从而清空所有迁移记录。</td>
+</tr>
+<tr>
+<td align="left"><strong>项目中的迁移文件</strong> (<code>prisma/migrations/</code> 目录)</td>
+<td align="left"><strong>不会被删除</strong></td>
+<td align="left">本地硬盘上所有以时间戳命名的迁移文件夹和其中的 <code>.sql</code> 文件都会完好无损地保留。</td>
+</tr>
+</tbody></table>
+<h3 id="命令的工作流程与用途"><a href="#命令的工作流程与用途" class="headerlink" title="命令的工作流程与用途"></a>命令的工作流程与用途</h3><p>理解了这个核心区别后，我们来看看这个命令具体做了什么，以及它通常用在什么场景。</p>
+<ol>
+<li><p><strong>工作流程</strong>：当你执行 <code>npx prisma migrate reset</code> 后，它会：</p>
+<ul>
+<li>  丢弃数据库中所有由 Prisma Migrate 创建的表及其数据。</li>
+<li>  清除用于记录迁移历史的 <code>_prisma_migrations</code> 表。</li>
+<li>  然后，它会<strong>重新创建 <code>_prisma_migrations</code> 表</strong>，并依据你项目 <code>prisma/migrations/</code> 目录下现有的所有迁移文件，从头开始按顺序将它们全部应用到数据库，使数据库结构恢复到与当前数据模型一致的最新状态。</li>
+</ul>
+</li>
+<li><p> <strong>主要用途</strong>：这个命令是一个强大的<strong>开发工具</strong>。当你的开发数据库因为频繁的修改而处于一个混乱或不一致的状态时，它提供了一种“一键重置”的方法，让你能从一个干净的状态重新开始。<strong>绝对不要在生产环境中使用此命令</strong>，因为它会导致数据全部丢失。</p>
+</li>
+</ol>
+<h2 id="7-prisma-migrate-reset-为什么还需要应用migrate文件，它不是已经清理了表，当创建表的时候不是已经安装最新的schema生成表了吗？"><a href="#7-prisma-migrate-reset-为什么还需要应用migrate文件，它不是已经清理了表，当创建表的时候不是已经安装最新的schema生成表了吗？" class="headerlink" title="7. prisma migrate reset, 为什么还需要应用migrate文件，它不是已经清理了表，当创建表的时候不是已经安装最新的schema生成表了吗？"></a>7. prisma migrate reset, 为什么还需要应用migrate文件，它不是已经清理了表，当创建表的时候不是已经安装最新的schema生成表了吗？</h2><p>简单来说，<code>prisma migrate reset</code> 在清理数据库后，并不是直接按照您当前最新的 <code>schema.prisma</code> 文件来创建表，而是通过<strong>重新按顺序执行所有迁移文件</strong>来重建数据库结构。<br>下面这个表格清晰地对比了相关概念，帮助您理解其中的核心差异。<br>| 概念 | 角色与职责 | 与 <code>migrate reset</code> 的关系 |<br>| :— | :— | :— |<br>| <strong><code>schema.prisma</code> 文件</strong> | <strong>声明式模型</strong>：定义数据库结构<strong>应该</strong>是什么样子（目标状态）。 | 是生成迁移文件的蓝图，但 <code>migrate reset</code> 不直接使用它来创建数据库。 |<br>| <strong>迁移文件 (<code>migrations/</code> 目录)</strong> | <strong>版本化记录</strong>：包含一系列SQL脚本，记录了如何从零一步步构建到当前结构的<strong>所有变更</strong>（过程历史）。 | <strong><code>migrate reset</code> 重建数据库的唯一依据</strong>。它严格按顺序重新应用所有迁移文件。 |<br>| <strong><code>_prisma_migrations</code> 表</strong> | <strong>迁移历史账本</strong>：数据库中的一个特殊表，记录了哪些迁移已经被应用。 | 在重置过程中会被清除，然后在应用迁移文件时<strong>重新创建并填充</strong>。 |</p>
+<p><code>prisma migrate reset</code> 命令的执行流程是这样的：</p>
+<ol>
+<li> <strong>删除现有结构</strong>：首先，命令会丢弃您的开发数据库中所有由 Prisma Migrate 创建的表。</li>
+<li> <strong>清除历史记录</strong>：同时，用于记录迁移历史的 <code>_prisma_migrations</code> 表也被清除。</li>
+<li> <strong>重新应用所有迁移</strong>：接着，命令会查看 <code>prisma/migrations</code> 文件夹，<strong>按照迁移文件的时间戳顺序，从头开始依次执行每一个迁移文件中的SQL命令</strong>。这就像是在一个全新的空数据库上，严格按照项目的历史变更记录，一步一步地重新构建起最新的数据库结构。</li>
+<li> <strong>重建历史记录</strong>：在此过程中，<code>_prisma_migrations</code> 表也会被重新创建，并且所有迁移记录都会被标记为已应用。</li>
+</ol>
+<h3 id="为什么采用这种设计？"><a href="#为什么采用这种设计？" class="headerlink" title="为什么采用这种设计？"></a>为什么采用这种设计？</h3><p>您可能会问，为什么不直接根据最新的 <code>schema.prisma</code> 生成表呢？这种设计有几个重要原因：</p>
+<ul>
+<li>  <strong>保证迁移历史的连续性</strong>：这是最主要的原因。Prisma Migrate 的核心是<strong>版本控制</strong>。通过强制重放所有迁移，它能确保您的迁移历史是一条从零到当前状态的、完整且连续的链条。这对于团队协作、CI/CD流程以及排查问题至关重要。</li>
+<li>  <strong>验证迁移文件的正确性</strong>：这个过程也是一个验证步骤。如果某个迁移文件存在错误（例如，SQL语法错误或逻辑错误），在重置时就会暴露出来，让您在开发阶段就能发现并修复，避免将问题带到生产环境。</li>
+<li>  <strong>为生产环境部署做准备</strong>：生产环境的数据不能被随意重置。因此，生产环境使用 <code>prisma migrate deploy</code> 命令，它的工作方式正是“应用尚未运行的迁移文件”，而不是直接读取 <code>schema.prisma</code>。开发环境的 <code>reset</code> 模拟了这种“应用迁移”的行为，确保开发与生产行为一致。</li>
+</ul>
+<h3 id="快速同步的替代方案"><a href="#快速同步的替代方案" class="headerlink" title="快速同步的替代方案"></a>快速同步的替代方案</h3><p>如果您在非常早期的原型阶段，需要快速迭代且不关心迁移历史，Prisma 确实提供了一个直接同步的工具：<code>prisma db push</code>。这个命令会直接将您 <code>schema.prisma</code> 的当前状态与数据库同步，<strong>不会创建迁移文件</strong>。但请注意，**<code>db push</code> 仅用于开发**，绝不能用于生产环境，因为它会导致数据库的变更无法通过迁移历史进行追踪和管理。</p>
+<h2 id="8-我已经使用了prisma-db-push命令，怎么生成这次的迁移文件"><a href="#8-我已经使用了prisma-db-push命令，怎么生成这次的迁移文件" class="headerlink" title="8. 我已经使用了prisma db push命令，怎么生成这次的迁移文件"></a>8. 我已经使用了prisma db push命令，怎么生成这次的迁移文件</h2><p>使用 <code>prisma db push</code> 后想要为这次变更生成迁移文件。直接为已经执行的 <code>db push</code> 操作生成迁移文件是不可能的，因为这两种命令的工作流程不同，但您可以通过设置“基线”来补救，以便后续使用规范的迁移流程。</p>
+<h3 id="设置基线迁移"><a href="#设置基线迁移" class="headerlink" title="设置基线迁移"></a>设置基线迁移</h3><p>由于 <code>db push</code> 不会在 <code>_prisma_migrations</code> 表中留下记录，Prisma Migrate 会认为数据库当前的状态是“空白”的。为了弥补这一点，我们需要手动创建一个“基线迁移”，告诉Prisma：“数据库的当前状态就是这个样子，所有在此之前的变化都已就位”。之后的新变更就可以通过 <code>migrate dev</code> 来管理了。<br>操作步骤如下：</p>
+<ol>
+<li> <strong>确保状态一致</strong>：首先，确认您的数据库结构已经和当前的 <code>prisma/schema.prisma</code> 文件定义完全一致。可以再运行一次 <code>npx prisma db push</code> 进行确认。</li>
+<li><strong>创建基线迁移目录</strong>：在 <code>prisma/migrations</code> 目录下，创建一个新的迁移文件夹。为了强调这是一个基础的初始状态，可以命名为 <code>0_init</code> 或 <code>baseline</code>。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p prisma/migrations/0_init</span><br></pre></td></tr></table></figure></li>
+<li><strong>生成基线SQL文件</strong>：使用 <code>prisma migrate diff</code> 命令来生成一个SQL文件, <strong>migrate diff这个是关键命令</strong>，这个文件的内容应该是<strong>从空数据库状态到当前Schema状态所需的所有操作</strong>。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script &gt; prisma/migrations/0_init/migration.sql</span><br></pre></td></tr></table></figure>
+ <strong>关键检查</strong>：生成后，请务必打开 <code>prisma/migrations/0_init/migration.sql</code> 文件检查一下，确保其中的SQL语句（如建表等）符合您的预期。</li>
+<li><strong>标记基线迁移为已应用</strong>：使用 <code>prisma migrate resolve</code> 命令，将这个我们手动创建的基线迁移标记为“已应用”。这样，Prisma就会认为这个迁移所代表的数据库状态已经完成，后续的迁移将基于此状态进行，接着可以按正常的流程进行修改chema. <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx prisma migrate resolve --applied 0_init</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="9-prisma-migrations-表中的applied-steps-count如果是0或者1代表什么意思？"><a href="#9-prisma-migrations-表中的applied-steps-count如果是0或者1代表什么意思？" class="headerlink" title="9. _prisma_migrations 表中的applied_steps_count如果是0或者1代表什么意思？"></a>9. _prisma_migrations 表中的applied_steps_count如果是0或者1代表什么意思？</h2><p><code>_prisma_migrations</code> 表中的 <code>applied_steps_count</code> 字段记录了某个迁移文件在执行过程中<strong>实际成功应用的SQL语句数量</strong>。</p>
+<p>下面这个表格清晰地展示了不同取值的含义：<br>| 取值 | 通常含义 | 状态说明 |<br>| :— | :— | :— |<br>| <strong>0</strong> | 迁移已被记录，但包含的SQL语句<strong>未执行</strong>或<strong>执行失败</strong>。 | 异常或进行中状态 |<br>| <strong>1</strong> | 迁移包含的<strong>所有SQL变更已成功应用</strong>。 | 正常完成状态 |</p>
+<h3 id="详细解释与场景分析"><a href="#详细解释与场景分析" class="headerlink" title="详细解释与场景分析"></a>详细解释与场景分析</h3><p><code>_prisma_migrations</code> 表是Prisma Migrate用来追踪数据库迁移历史的内部表。每当使用 <code>prisma migrate dev</code> 或 <code>prisma migrate deploy</code> 应用一个迁移时，都会在此表中创建一条记录。每个迁移文件（<code>migration.sql</code>）可以包含一条或多条SQL语句（例如，创建表、添加字段、创建索引等）。<code>applied_steps_count</code> 字段的值就指示了这个迁移文件中的SQL语句有多少被成功执行。</p>
+<ul>
+<li><strong>取值为 0 的情况</strong>：这通常表示一个<strong>未成功完成</strong>的迁移状态。可能的原因包括：<ul>
+<li>  <strong>迁移执行失败</strong>：在应用迁移的过程中，某条SQL语句执行出错（例如，语法错误、外键冲突、权限不足等），导致整个迁移任务被标记为失败。此时，迁移虽在历史记录中，但其 <code>applied_steps_count</code> 为 0。</li>
+<li>  <strong>使用 <code>--create-only</code> 参数</strong>：如果你在创建迁移时使用了 <code>prisma migrate dev --create-only</code> 命令，Prisma 只会生成迁移文件，而不会立即执行它。这种情况下，该迁移记录在 <code>_prisma_migrations</code> 表中的 <code>applied_steps_count</code> 也会是 0，直到你后续通过 <code>prisma migrate dev</code>（不带 <code>--create-only</code>）或 <code>prisma migrate deploy</code> 成功应用它。</li>
+</ul>
+</li>
+<li>  <strong>取值为 1 (或更多) 的情况</strong>：这是<strong>最常见且健康的状态</strong>。它表示该迁移文件中的所有SQL操作都已成功应用到数据库。即便你的 <code>migration.sql</code> 文件里只有一条SQL语句（大多数情况如此），计数就是 1。如果文件中有多条语句，并且都成功执行了，计数就会是相应的语句数量。</li>
+</ul>
+<p>如果在生产环境或重要开发环境中发现 <code>applied_steps_count</code> 为 0 的迁移记录，这通常意味着存在需要解决的迁移问题。Prisma 提供 <code>prisma migrate resolve</code> 命令来手动干预迁移状态。具体操作取决于你的意图：</p>
+<ul>
+<li>  如果确认迁移中的SQL确实未执行，且现在需要执行，你应该解决导致失败的根本原因，然后使用 <code>prisma migrate deploy</code> 重新尝试应用迁移。</li>
+<li>  如果确认该迁移所定义的变更已经通过其他方式（例如手动执行SQL）在数据库中存在，你可以使用 <code>prisma migrate resolve --applied &lt;migration_name&gt;</code> 命令将该迁移标记为已应用，这会将 <code>applied_steps_count</code> 设置为一个正值（通常是1）。</li>
+</ul>
+<h2 id="10-prisma-migrate-resolve-–rolled-back-“your-migration-name”-这个命令的作用"><a href="#10-prisma-migrate-resolve-–rolled-back-“your-migration-name”-这个命令的作用" class="headerlink" title="10. prisma migrate resolve –rolled-back “your_migration_name” 这个命令的作用"></a>10. prisma migrate resolve –rolled-back “your_migration_name” 这个命令的作用</h2><p><code>prisma migrate resolve --rolled-back &quot;your_migration_name&quot;</code> 这个命令的核心作用是<strong>手动告知Prisma迁移系统，某个指定的迁移已被回滚（撤销）</strong>。它主要用来处理迁移过程中出现的异常状态，使迁移历史记录与实际数据库状态重新保持一致。<br>| 特性 | 说明 |<br>| :— | :— |<br>| <strong>主要功能</strong> | 将名为 <code>your_migration_name</code> 的迁移记录标记为“已回滚”(<code>ROLLED BACK</code>)。 |<br>| <strong>操作对象</strong> | 数据库中的 <code>_prisma_migrations</code> 表（迁移历史记录表）。 |<br>| <strong>是否执行SQL</strong> | <strong>否</strong>。此命令本身不执行任何实际的数据库回滚操作。 |<br>| <strong>典型使用场景</strong> | 解决迁移失败后的状态锁定；手动回滚后同步迁移历史。 |</p>
+<h3 id="命令工作原理与典型场景"><a href="#命令工作原理与典型场景" class="headerlink" title="命令工作原理与典型场景"></a>命令工作原理与典型场景</h3><p>理解这个命令的关键在于明确：<strong>它只更新Prisma内部的迁移历史记录，而不会直接操作数据库表结构</strong>。<br>Prisma通过一个名为 <code>_prisma_migrations</code> 的特殊表来跟踪所有迁移文件的应用状态。当一次迁移尝试失败后，它会在此表中留下一条状态为“失败”的记录。Prisma的防护机制会阻止新的迁移应用，直到这个失败状态被解决。<br><code>prisma migrate resolve --rolled-back</code> 命令的作用就是手动将这条失败迁移记录的状态更改为“已回滚”。这相当于告诉Prisma：“这个迁移带来的变更已经被撤销，你可以继续处理后续的迁移了。”<br>此命令通常在以下两种场景下使用：</p>
+<ol>
+<li> <strong>迁移执行失败后进行清理</strong>：当 <code>prisma migrate dev</code> 或 <code>prisma migrate deploy</code> 命令执行某个迁移文件中的SQL语句失败后（例如，因语法错误或数据冲突），该迁移会被标记为失败并阻塞后续所有迁移。在修复了导致失败的问题后，你可以使用此命令将失败的迁移标记为已回滚，从而解除阻塞状态。</li>
+<li> <strong>手动执行回滚后同步状态</strong>：如果你通过其他方式（如手动执行SQL或使用数据库管理工具）撤销了某个迁移的变更，你需要使用此命令在Prisma的迁移历史中标记该迁移已回滚，以使Prisma的元数据与数据库实际状态同步。</li>
+</ol>
+<h3 id="重要注意事项"><a href="#重要注意事项" class="headerlink" title="重要注意事项"></a>重要注意事项</h3><ul>
+<li>  <strong>此命令不执行数据库操作</strong>：再次强调，它仅修改迁移历史记录。实际的回滚操作（如执行 <code>DROP COLUMN</code>, <code>DROP TABLE</code> 等）需要你通过其他方式完成。</li>
+<li>  <strong>谨慎使用</strong>：错误地使用此命令可能导致迁移历史记录与数据库的实际结构不一致，从而引发更复杂的问题。请确保在完全理解当前状况后再使用。</li>
+<li>  <strong>与 <code>prisma migrate reset</code> 的区别</strong>：<code>prisma migrate reset</code> 是一个破坏性命令，它会清空数据库并重新应用所有迁移，通常仅在开发环境使用。而 <code>prisma migrate resolve --rolled-back</code> 则是一个调整元数据的修复命令，可在生产环境谨慎使用。</li>
+</ul>
+<h2 id="11-如果applied-steps-count为0的迁移记录长期存在，会对后续的数据库迁移操作产生什么具体影响？"><a href="#11-如果applied-steps-count为0的迁移记录长期存在，会对后续的数据库迁移操作产生什么具体影响？" class="headerlink" title="11. 如果applied_steps_count为0的迁移记录长期存在，会对后续的数据库迁移操作产生什么具体影响？"></a>11. 如果applied_steps_count为0的迁移记录长期存在，会对后续的数据库迁移操作产生什么具体影响？</h2><p>在 Prisma 的 <code>_prisma_migrations</code> 表中，如果一条迁移记录的 <code>applied_steps_count</code> 为 <code>0</code>，意味着这个迁移文件虽然存在于你的迁移历史文件夹中，但其包含的 SQL 语句<strong>并未成功应用到数据库</strong>。让这种状态的迁移记录长期存在，确实会对后续的数据库操作产生一系列具体影响。<br>| 影响领域 | 具体表现 |<br>| :— | :— |<br>| <strong>迁移流程阻塞</strong> | 执行 <code>prisma migrate dev</code> 或 <code>prisma migrate deploy</code> 时，Prisma 会检测到存在未应用的迁移，导致操作失败或中断。 |<br>| <strong>数据模型不一致</strong> | 数据库的实际结构（Schema）与 Prisma 数据模型（<code>schema.prisma</code>）所定义的结构不一致，可能引发应用查询错误。 |<br>| <strong>团队协作混乱</strong> | 不同开发人员或环境间的数据库状态不一致，导致协作困难，可能出现在A机器上正常但在B机器上报错的情况。 |<br>| <strong>架构漂移警告</strong> | 使用 <code>prisma migrate dev</code> 时，Prisma 会利用影子数据库对比检测到的架构差异与未应用的迁移，可能产生令人困惑的警告。 |</p>
+<h3 id="理解核心原因与解决方案"><a href="#理解核心原因与解决方案" class="headerlink" title="理解核心原因与解决方案"></a>理解核心原因与解决方案</h3><p>出现 <code>applied_steps_count</code> 为 <code>0</code> 的记录，通常源于以下情况：</p>
+<ul>
+<li>  <strong>迁移执行失败</strong>：在应用迁移的过程中，某条SQL语句因错误（如语法错误、约束冲突等）而执行失败。</li>
+<li>  <strong>使用 <code>--create-only</code> 参数</strong>：仅生成了迁移文件，但尚未执行。</li>
+</ul>
+<h4 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h4><p>解决此问题的核心思路是让迁移记录的状态与实际数据库状态重新达成一致。你可以使用 Prisma 提供的 <code>prisma migrate resolve</code> 命令来手动干预。<br>具体操作取决于你的意图：</p>
+<ol>
+<li><p><strong>如果确认迁移需要应用，但之前失败了</strong>：</p>
+<ul>
+<li>  首先，检查并解决导致迁移失败的根本原因（例如，修复SQL脚本）。</li>
+<li>  然后，使用 <code>prisma migrate deploy</code> 命令重新尝试应用该迁移。成功后，其 <code>applied_steps_count</code> 会更新为正数。</li>
+</ul>
+</li>
+<li><p><strong>如果确认该迁移的变更已通过其他方式完成（例如手动执行了SQL），或此迁移已不再需要</strong>：</p>
+<ul>
+<li>你可以使用以下命令，将该迁移标记为“已应用”状态。这会将 <code>applied_steps_count</code> 设置为一个正值（通常是1），但<strong>不会</strong>实际执行迁移文件中的SQL语句。这是一种状态修复操作。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx prisma migrate resolve --applied <span class="string">&quot;你的迁移名称&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>  <strong>请注意</strong>：此操作前提是你<strong>百分之百确定</strong>数据库的当前结构已经包含了该迁移所定义的所有变更。如果判断失误，会导致数据模型与数据库结构永久不一致。</li>
+</ul>
+</li>
+</ol>
+<h2 id="11-prisma-resolve和-prisma-resolve-–rolled-back是什么区别？"><a href="#11-prisma-resolve和-prisma-resolve-–rolled-back是什么区别？" class="headerlink" title="11. prisma resolve和 prisma resolve –rolled-back是什么区别？"></a>11. prisma resolve和 prisma resolve –rolled-back是什么区别？</h2><p><code>prisma migrate resolve</code> 命令用于手动修正 Prisma 迁移系统中的状态记录。简单来说，<code>prisma migrate resolve</code> 用于将迁移标记为 <strong>“已成功应用”</strong>，而 <code>prisma migrate resolve --rolled-back</code> 用于将迁移标记为 <strong>“已回滚”</strong>。它们都只修改迁移历史记录，而<strong>不会</strong>实际执行或回滚数据库中的 SQL 操作。</p>
+<p>下面这个表格清晰地展示了两者的核心区别。</p>
+<table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left"><code>prisma migrate resolve --applied</code></th>
+<th align="left"><code>prisma migrate resolve --rolled-back</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>核心作用</strong></td>
+<td align="left">将指定迁移标记为<strong>已应用</strong>。</td>
+<td align="left">将指定迁移标记为<strong>已回滚</strong>。</td>
+</tr>
+<tr>
+<td align="left"><strong>修改的数据库状态</strong></td>
+<td align="left">更新 <code>_prisma_migrations</code> 表中该条记录的状态。</td>
+<td align="left">更新 <code>_prisma_migrations</code> 表中该条记录的状态。</td>
+</tr>
+<tr>
+<td align="left"><strong>是否执行迁移文件中的SQL</strong></td>
+<td align="left"><strong>否</strong></td>
+<td align="left"><strong>否</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>典型应用场景</strong></td>
+<td align="left">迁移已由其他方式（如手动）成功应用到数据库，但迁移历史中无记录。</td>
+<td align="left">1. 一个迁移<strong>应用失败</strong>，需要解除阻塞状态。<br>2. 迁移的变更<strong>已被手动撤销</strong>，需要同步迁移历史。</td>
+</tr>
+</tbody></table>
+<h3 id="💡-工作原理与使用场景"><a href="#💡-工作原理与使用场景" class="headerlink" title="💡 工作原理与使用场景"></a>💡 工作原理与使用场景</h3><p>理解这两个命令的关键在于明确：它们<strong>只操作Prisma内部的迁移历史记录（即 <code>_prisma_migrations</code> 表），而不会直接执行或回滚任何数据库结构变更</strong>。你可以把它们看作是迁移历史的“管理员”，负责修正账本，而不是直接去修改仓库里的实物。</p>
+<h4 id="使用-prisma-migrate-resolve-applied-的场景"><a href="#使用-prisma-migrate-resolve-applied-的场景" class="headerlink" title="使用 prisma migrate resolve --applied 的场景"></a><strong>使用 <code>prisma migrate resolve --applied</code> 的场景</strong></h4><p>假设你的数据库里已经存在某张表（比如通过 <code>prisma db push</code> 或手动执行SQL语句创建的），但Prisma的迁移历史中并没有相应的记录。这时，如果你运行 <code>prisma migrate dev</code> 或 <code>prisma migrate deploy</code>，Prisma会尝试去创建这张已存在的表，从而导致冲突。</p>
+<p><strong>解决方法</strong>是：你可以先创建一个对应的迁移文件（或使用已存在的），然后使用 <code>--applied</code> 参数告诉Prisma：“这个迁移所代表的变更已经在数据库里了，请直接将其标记为已完成。” 这样，Prisma就会跳过该迁移，继续处理后续的迁移。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例：将名为 &quot;2023100100000_init&quot; 的迁移标记为已应用</span></span><br><span class="line">npx prisma migrate resolve --applied 2023100100000_init</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用-prisma-migrate-resolve-rolled-back-的场景"><a href="#使用-prisma-migrate-resolve-rolled-back-的场景" class="headerlink" title="使用 prisma migrate resolve --rolled-back 的场景"></a><strong>使用 <code>prisma migrate resolve --rolled-back</code> 的场景</strong></h4><p>这个命令通常用于处理迁移过程中的异常状态。主要场景有两个：</p>
+<ol>
+<li><p><strong>迁移应用失败后清理</strong>：当一个迁移（例如名为 <code>add_email_table</code>）在执行过程中失败后，它会在迁移历史中留下一个“失败”的记录。这个失败记录会阻塞所有后续的迁移。此时，你可以使用 <code>--rolled-back</code> 参数将这个失败的迁移标记为“已回滚”，从而解除阻塞，以便你修复问题后重新尝试。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例：将失败的迁移 &quot;add_email_table&quot; 标记为已回滚</span></span><br><span class="line">npx prisma migrate resolve --rolled-back add_email_table</span><br></pre></td></tr></table></figure></li>
+<li><p> <strong>手动回滚后同步状态</strong>：如果你通过数据库管理工具手动执行了SQL，撤销了某个迁移的变更，你需要让Prisma的迁移历史与数据库的实际状态同步。这时，就需要使用 <code>--rolled-back</code> 将该迁移标记为已回滚。</p>
+</li>
+</ol>
+<h3 id="实践案例：处理一个失败的迁移"><a href="#实践案例：处理一个失败的迁移" class="headerlink" title="实践案例：处理一个失败的迁移"></a>实践案例：处理一个失败的迁移</h3><p>假设你在团队协作中遇到以下情况：</p>
+<ol>
+<li> 同事小张创建并成功应用了迁移 <code>2023111100000_add_profile</code>。</li>
+<li> 你在不知情的情况下，在本地也创建了一个同名的迁移（但内容不同）。</li>
+<li> 当你尝试运行 <code>prisma migrate deploy</code> 时，由于表已存在，迁移失败。</li>
+<li> 此时迁移被阻塞，无法继续。</li>
+</ol>
+<p><strong>修复流程如下</strong>：</p>
+<ol>
+<li><strong>标记失败迁移为已回滚</strong>：首先，清除失败的迁移记录。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx prisma migrate resolve --rolled-back 2023111100000_add_profile</span><br></pre></td></tr></table></figure></li>
+<li> <strong>解决冲突</strong>：删除或重命名你本地产生的重复迁移文件，确保你的迁移历史与团队一致。</li>
+<li><strong>继续正常部署</strong>：现在可以正常应用新的迁移了。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx prisma migrate deploy</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>简单来说，这两个命令是 Prisma 迁移系统的“状态修复工具”。<code>--applied</code> 用于补录“成功”记录，而 <code>--rolled-back</code> 用于处理“失败”或记录“撤销”操作。正确使用它们可以解决因迁移状态不同步导致的各类问题，但在操作前务必<strong>确保数据库的实际结构与你将要标记的状态完全吻合</strong>，否则会导致更严重的不一致。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/09/04/vibe-coding/" rel="prev" title="vibe-coding">
+      <i class="fa fa-chevron-left"></i> vibe-coding
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Prisma-%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">Prisma 命令行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E5%91%BD%E4%BB%A4%E9%80%9F%E8%A7%88"><span class="nav-number">2.</span> <span class="nav-text">核心命令速览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-number">3.</span> <span class="nav-text">开发环境工作流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">生产环境部署流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E4%B8%8E%E6%8A%80%E5%B7%A7"><span class="nav-number">5.</span> <span class="nav-text">关键注意事项与技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A6%81%E6%AD%A2"><span class="nav-number">6.</span> <span class="nav-text">禁止</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">7.</span> <span class="nav-text">Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%A6%82%E6%9E%9C%E5%9C%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83prisma-migrate-reset%EF%BC%8C%E6%8E%A5%E7%9D%80%E5%8F%88%E8%BF%9B%E8%A1%8C%E4%BA%86%E4%BA%86%E6%95%B0%E6%8D%AE%E5%BA%93schema%E7%9A%84%E4%BF%AE%E6%94%B9%E5%8E%BB%E4%BF%AE%E6%94%B9Table%E5%AE%9A%E4%B9%89%EF%BC%8C%E6%AD%A4%E6%97%B6%E4%BD%BF%E7%94%A8prisma-migrate-dev-%E2%80%93name-your-migration-name%E4%BA%A7%E7%94%9F%E7%9A%84%E8%BF%81%E7%A7%BB%E6%96%87%E4%BB%B6%E5%8F%AA%E6%98%AF%E5%AF%B9%E5%BA%94%E8%BF%99%E6%AC%A1schema%E7%9A%84%E4%BF%AE%E6%94%B9%E5%90%97%EF%BC%9F"><span class="nav-number">7.1.</span> <span class="nav-text">1. 如果在开发环境prisma migrate reset，接着又进行了了数据库schema的修改去修改Table定义，此时使用prisma migrate dev –name your_migration_name产生的迁移文件只是对应这次schema的修改吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%88%91%E8%A6%81%E4%BF%AE%E6%94%B9schema%EF%BC%8C%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">7.2.</span> <span class="nav-text">2. 我要修改schema，正确的操作流程是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%A6%82%E6%9E%9C%E6%88%91%E5%BE%88%E9%A2%91%E7%B9%81%E7%9A%84%E4%BF%AE%E6%94%B9schema%EF%BC%8C%E9%82%A3%E4%B9%88%E6%80%8E%E4%B9%88%E7%AE%A1%E7%90%86%E8%BF%81%E7%A7%BB%E6%96%87%E4%BB%B6"><span class="nav-number">7.3.</span> <span class="nav-text">3. 如果我很频繁的修改schema，那么怎么管理迁移文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E9%98%B6%E6%AE%B5%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">7.3.1.</span> <span class="nav-text">开发阶段的最佳实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%88%91%E6%89%8B%E5%8A%A8%E4%BF%AE%E6%94%B9%E4%BA%86schema%EF%BC%8C%E7%84%B6%E5%90%8E%E8%BF%90%E8%A1%8C%E4%BA%86npx-prisma-migrate-deploy%EF%BC%8C%E6%AD%A4%E6%97%B6%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B7%B2%E7%BB%8F%E5%8F%8D%E5%BA%94%E4%BA%86%E6%88%91%E7%9A%84%E4%BF%AE%E6%94%B9%E3%80%82%E6%88%91%E5%86%8D%E6%AC%A1%E4%BF%AE%E6%94%B9schema%EF%BC%8C%E5%86%8D%E6%AC%A1%E8%BF%90%E8%A1%8Cnpx-prisma-migrate-deploy%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%88%E8%BF%9B%E8%A1%8C%E4%BA%86%E4%BF%AE%E6%94%B9%E3%80%82%E6%AD%A4%E6%97%B6%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E5%BA%94%E8%AF%A5%E6%9C%892%E6%9D%A1migration%E8%AE%B0%E5%BD%95%EF%BC%8C%E6%98%AF%E4%B8%8D%E6%98%AF%EF%BC%9F"><span class="nav-number">7.4.</span> <span class="nav-text">4. 我手动修改了schema，然后运行了npx prisma migrate deploy，此时数据库已经反应了我的修改。我再次修改schema，再次运行npx prisma migrate deploy，数据库又进行了修改。此时数据库中应该有2条migration记录，是不是？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-prisma-migrate-dev-%E5%8F%AF%E4%BB%A5%E5%8F%AA%E7%94%9F%E6%88%90%E8%BF%81%E7%A7%BB%E6%96%87%E4%BB%B6%EF%BC%8C%E4%B8%8D%E6%89%A7%E8%A1%8C%E8%BF%81%E7%A7%BB%E6%96%87%E4%BB%B6%E5%90%97%EF%BC%9F"><span class="nav-number">7.5.</span> <span class="nav-text">5. prisma migrate dev 可以只生成迁移文件，不执行迁移文件吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E2%80%9C%E5%8F%AA%E7%94%9F%E6%88%90%E4%B8%8D%E6%89%A7%E8%A1%8C%E2%80%9D%EF%BC%9F"><span class="nav-number">7.5.1.</span> <span class="nav-text">如何实现“只生成不执行”？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8C%BA%E5%88%86%E4%B8%8E%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">7.5.2.</span> <span class="nav-text">环境区分与注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-prisma-reset%E4%BC%9A%E6%B8%85%E7%A9%BA%E8%BF%81%E7%A7%BB%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BD%95%E5%90%97%EF%BC%9F"><span class="nav-number">7.6.</span> <span class="nav-text">6. prisma reset会清空迁移文件记录吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E4%B8%8E%E7%94%A8%E9%80%94"><span class="nav-number">7.6.1.</span> <span class="nav-text">命令的工作流程与用途</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-prisma-migrate-reset-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E9%9C%80%E8%A6%81%E5%BA%94%E7%94%A8migrate%E6%96%87%E4%BB%B6%EF%BC%8C%E5%AE%83%E4%B8%8D%E6%98%AF%E5%B7%B2%E7%BB%8F%E6%B8%85%E7%90%86%E4%BA%86%E8%A1%A8%EF%BC%8C%E5%BD%93%E5%88%9B%E5%BB%BA%E8%A1%A8%E7%9A%84%E6%97%B6%E5%80%99%E4%B8%8D%E6%98%AF%E5%B7%B2%E7%BB%8F%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%9A%84schema%E7%94%9F%E6%88%90%E8%A1%A8%E4%BA%86%E5%90%97%EF%BC%9F"><span class="nav-number">7.7.</span> <span class="nav-text">7. prisma migrate reset, 为什么还需要应用migrate文件，它不是已经清理了表，当创建表的时候不是已经安装最新的schema生成表了吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%87%E7%94%A8%E8%BF%99%E7%A7%8D%E8%AE%BE%E8%AE%A1%EF%BC%9F"><span class="nav-number">7.7.1.</span> <span class="nav-text">为什么采用这种设计？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%90%8C%E6%AD%A5%E7%9A%84%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="nav-number">7.7.2.</span> <span class="nav-text">快速同步的替代方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%88%91%E5%B7%B2%E7%BB%8F%E4%BD%BF%E7%94%A8%E4%BA%86prisma-db-push%E5%91%BD%E4%BB%A4%EF%BC%8C%E6%80%8E%E4%B9%88%E7%94%9F%E6%88%90%E8%BF%99%E6%AC%A1%E7%9A%84%E8%BF%81%E7%A7%BB%E6%96%87%E4%BB%B6"><span class="nav-number">7.8.</span> <span class="nav-text">8. 我已经使用了prisma db push命令，怎么生成这次的迁移文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%9F%BA%E7%BA%BF%E8%BF%81%E7%A7%BB"><span class="nav-number">7.8.1.</span> <span class="nav-text">设置基线迁移</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-prisma-migrations-%E8%A1%A8%E4%B8%AD%E7%9A%84applied-steps-count%E5%A6%82%E6%9E%9C%E6%98%AF0%E6%88%96%E8%80%851%E4%BB%A3%E8%A1%A8%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="nav-number">7.9.</span> <span class="nav-text">9. _prisma_migrations 表中的applied_steps_count如果是0或者1代表什么意思？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A%E4%B8%8E%E5%9C%BA%E6%99%AF%E5%88%86%E6%9E%90"><span class="nav-number">7.9.1.</span> <span class="nav-text">详细解释与场景分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-prisma-migrate-resolve-%E2%80%93rolled-back-%E2%80%9Cyour-migration-name%E2%80%9D-%E8%BF%99%E4%B8%AA%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">7.10.</span> <span class="nav-text">10. prisma migrate resolve –rolled-back “your_migration_name” 这个命令的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E5%85%B8%E5%9E%8B%E5%9C%BA%E6%99%AF"><span class="nav-number">7.10.1.</span> <span class="nav-text">命令工作原理与典型场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">7.10.2.</span> <span class="nav-text">重要注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%A6%82%E6%9E%9Capplied-steps-count%E4%B8%BA0%E7%9A%84%E8%BF%81%E7%A7%BB%E8%AE%B0%E5%BD%95%E9%95%BF%E6%9C%9F%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%BC%9A%E5%AF%B9%E5%90%8E%E7%BB%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%93%8D%E4%BD%9C%E4%BA%A7%E7%94%9F%E4%BB%80%E4%B9%88%E5%85%B7%E4%BD%93%E5%BD%B1%E5%93%8D%EF%BC%9F"><span class="nav-number">7.11.</span> <span class="nav-text">11. 如果applied_steps_count为0的迁移记录长期存在，会对后续的数据库迁移操作产生什么具体影响？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E6%A0%B8%E5%BF%83%E5%8E%9F%E5%9B%A0%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">7.11.1.</span> <span class="nav-text">理解核心原因与解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%AD%A5%E9%AA%A4"><span class="nav-number">7.11.1.1.</span> <span class="nav-text">解决步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-prisma-resolve%E5%92%8C-prisma-resolve-%E2%80%93rolled-back%E6%98%AF%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">7.12.</span> <span class="nav-text">11. prisma resolve和 prisma resolve –rolled-back是什么区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%92%A1-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">7.12.1.</span> <span class="nav-text">💡 工作原理与使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-prisma-migrate-resolve-applied-%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-number">7.12.1.1.</span> <span class="nav-text">使用 prisma migrate resolve --applied 的场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-prisma-migrate-resolve-rolled-back-%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-number">7.12.1.2.</span> <span class="nav-text">使用 prisma migrate resolve --rolled-back 的场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%A4%84%E7%90%86%E4%B8%80%E4%B8%AA%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%BF%81%E7%A7%BB"><span class="nav-number">7.12.2.</span> <span class="nav-text">实践案例：处理一个失败的迁移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.12.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="qsl"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">qsl</p>
+  <div class="site-description" itemprop="description">Mobile, Web</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">88</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qsl</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://edwardqian.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2025/11/19/prisma/";
+    this.page.identifier = "2025/11/19/prisma/";
+    this.page.title = "prisma";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://edwardqian.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -157,6 +157,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/13/bash/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/02/13/bash/" class="post-title-link" itemprop="url">bash</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-02-13 15:49:47" itemprop="dateCreated datePublished" datetime="2019-02-13T15:49:47+08:00">2019-02-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-14 14:26:09" itemprop="dateModified" datetime="2021-01-14T14:26:09+08:00">2021-01-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/02/13/bash/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/13/bash/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-tr"><a href="#1-tr" class="headerlink" title="1. tr"></a>1. tr</h3><p>echo $PATH | tr ‘:’ ‘\n’</p>
+<h3 id="2-xargs"><a href="#2-xargs" class="headerlink" title="2. xargs"></a>2. xargs</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find . -<span class="built_in">type</span> f | xargs -I&#123;&#125; md5sum &#123;&#125; <span class="comment"># &#123;&#125; 是用来代替管道之前标准输出内容的。</span></span><br><span class="line"><span class="built_in">cat</span> ~/.zshrc | xargs -n 3</span><br></pre></td></tr></table></figure>
+<p>加 -I 参数 需要事先指定替换字符<br>args:xargs的默认命令是echo，空格是默认定界符。  默认替换符号是{}<br>-I {}批定了替换字符串，表示文件内容，能循环按要求替换相应的参数  使用-I指定一个替换字符串{}，这个字符串在xargs扩展时会被替换掉，<br>当-I与xargs结合使用，每一个参数命令都会被执行一次：<br>-n num 后面加次数，表示命令在执行的时候一次用的argument的个数，默认是用所有的<br>-d 自定义定界符 </p>
+<h3 id="3-IFS"><a href="#3-IFS" class="headerlink" title="3. IFS"></a>3. IFS</h3><p>IFS（internal field separator）界定符，默认有三种：空格、制表符、换行符。Bash默认只要找到其中一种，就分隔字符，如果要指定使用如下方式：</p>
+<ul>
+<li>指定只用换行: IFS=$(‘\n’)</li>
+<li>指定空格: IFS=’ ‘ </li>
+<li>指定<code>,</code>: IFS=’,’，这个在处理csv文件中有帮助。</li>
+</ul>
+<h3 id="4-重定向"><a href="#4-重定向" class="headerlink" title="4. 重定向"></a>4. 重定向</h3><p>Linux系统预留可三个文件描述符：0、1和2，他们的意义如下所示：<br>0——标准输入（stdin）<br>1——标准输出（stdout）<br>2——标准错误（stderr）</p>
+<p>2&gt;/dev/null<br>意思就是把错误输出到“黑洞”</p>
+<blockquote>
+<p>/dev/null 2&gt;&amp;1<br>默认情况是1，也就是等同于1&gt;/dev/null 2&gt;&amp;1。意思就是把标准输出重定向到“黑洞”，还把错误输出2重定向到标准输出1，也就是标准输出和错误输出都进了“黑洞”</p>
+</blockquote>
+<p>2&gt;&amp;1 &gt;/dev/null<br>意思就是把错误输出2重定向到标准出书1，也就是屏幕，标准输出进了“黑洞”，也就是标准输出进了黑洞，错误输出打印到屏幕。</p>
+<p>重定向的符号有两个：&gt;或&gt;&gt;，两者的区别是：前者会先清空文件，然后再写入内容，后者会将重定向的内容追加到现有文件的尾部。</p>
+<h3 id="5-后台运行"><a href="#5-后台运行" class="headerlink" title="5. 后台运行"></a>5. 后台运行</h3><p>ctrl + z 挂起程序，可以用bg恢复放入后台，恢复完之后可以用fg把后台任务召回前台。jobs可以查看后台任务，前面的+号代表默认后台任务，-号代表下一个默认任务。<br>ctrl + c 中断程序，不能恢复了。</p>
+<p>默认情况下，当你在终端会话shell中运行脚本时，交互式shell会挂起，直到脚本运行完。可以在命令名后加一个&amp;符号来让脚本或命令以后台模式运行。当你在后台模式运行命令或脚本时，交互式shell会返回，允许你继续输入其他命令。任何通过这种方法运行的后台进程仍会绑定到该终端会话。如果退出了终端会话，后台进程也会退出。</p>
+<p>可以用nohup命令阻止这种情况发生。该命令会拦截任何发给某个命令来停止其运行的信号 (比如当你退出终端会话时)。这样就可以让脚本继续在后台运行，即便是你已经退出了终端会话。 当你将进程置入后台时，仍然可以控制它的运行。jobs命令可以查看该shell会话启动的进程。</p>
+<p>只要知道后台进程的作业号，就可以用kill命令向该进程发送Linux信号，或者用fg命令将该进程带回到该shell会话的前台。你可以用Ctrl+Z组合键挂起正在运行的前台进程，然后用bg命令将 其置入后台模式。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/ShadowSocks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -991,106 +1089,6 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/mac-ruby/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="Mobile, Web">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/08/22/mac-ruby/" class="post-title-link" itemprop="url">mac-ruby</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-08-22 15:54:59" itemprop="dateCreated datePublished" datetime="2018-08-22T15:54:59+08:00">2018-08-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-05 13:15:59" itemprop="dateModified" datetime="2023-03-05T13:15:59+08:00">2023-03-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mac/" itemprop="url" rel="index"><span itemprop="name">mac</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/08/22/mac-ruby/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/22/mac-ruby/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-rvm"><a href="#1-rvm" class="headerlink" title="1.rvm"></a>1.rvm</h3><p>管理不同的ruby版本。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rvm list <span class="comment">#列出不同的ruby版本</span></span><br><span class="line">rvm use 2.4.1 --default <span class="comment">#使用ruby 2.4.1做为默认版本</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-gem"><a href="#2-gem" class="headerlink" title="2.gem"></a>2.gem</h3><p>管理ruby的库文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gem install cocoapods <span class="comment">#安装cocoapods到全局环境</span></span><br><span class="line">gem environment <span class="comment"># gem的环境，看gem的安装目录</span></span><br><span class="line">gem list --<span class="built_in">local</span> <span class="comment">#看gem中库的版本，如果看到一个库有2个不同版本，说明在2个路径都可以查到，比如/usr/local/bin和$HOME/.rvm/gems/ruby-2.4.1/bin/bundler</span></span><br><span class="line">gem cleanup <span class="comment">#清除gem的缓存，当gem中lib太多会导致很卡，因为ruby运行会遍历lib下的所有库，这个查找依赖的方式十分地低效。。</span></span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014621915/article/details/62221705">https://blog.csdn.net/u014621915/article/details/62221705</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/22/mac-ruby/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1162,7 +1160,7 @@ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, 
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

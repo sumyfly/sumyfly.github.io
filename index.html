@@ -157,6 +157,147 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2025/11/19/prisma/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="qsl">
+      <meta itemprop="description" content="Mobile, Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QSL">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/11/19/prisma/" class="post-title-link" itemprop="url">prisma</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-11-19 17:49:08 / Modified: 19:16:06" itemprop="dateCreated datePublished" datetime="2025-11-19T17:49:08+08:00">2025-11-19</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2025/11/19/prisma/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/11/19/prisma/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Prisma-命令行"><a href="#Prisma-命令行" class="headerlink" title="Prisma 命令行"></a>Prisma 命令行</h1><p>Prisma CLI 提供了一套完整的命令来支持数据库的开发、迁移和维护工作。下面我将主要命令按照开发流程和环境进行分类说明，并特别注明在 PostgreSQL 数据库下的注意事项。</p>
+<h1 id="核心命令速览"><a href="#核心命令速览" class="headerlink" title="核心命令速览"></a>核心命令速览</h1><p>下表汇总了Prisma的核心CLI命令及其主要用途，你可以对其有个快速的整体印象。</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">主要用途</th>
+<th align="left">典型使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>prisma init</code></td>
+<td align="left">初始化一个新的Prisma项目结构。</td>
+<td align="left">新项目搭建，创建<code>schema.prisma</code>和<code>.env</code>文件模板。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma generate</code></td>
+<td align="left">根据数据模型生成Prisma Client（类型安全的查询客户端）。</td>
+<td align="left"><strong>每次修改<code>schema.prisma</code>文件后都必须运行</strong>，以使更改生效于代码。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma db pull</code></td>
+<td align="left">从现有数据库提取结构，生成Prisma数据模型（反向工程）。</td>
+<td align="left">接管一个已有的数据库项目。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma db push</code></td>
+<td align="left">将Prisma数据模型中的更改直接同步到数据库，<strong>不生成迁移文件</strong>。</td>
+<td align="left">仅用于开发环境的快速原型设计，切勿在生产环境使用。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma migrate dev</code></td>
+<td align="left">在开发环境中，创建并应用数据库迁移文件，同时生成Client。</td>
+<td align="left">开发阶段管理所有数据库结构变更的<strong>主要命令</strong>。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma migrate deploy</code></td>
+<td align="left">将已生成的迁移文件应用到生产环境数据库。</td>
+<td align="left">在生产服务器上部署最新的数据库结构变更。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma migrate resolve</code></td>
+<td align="left">手动解决迁移冲突，标记某个迁移为已应用或已回滚。</td>
+<td align="left">当<code>migrate deploy</code>失败，数据库状态与迁移历史不一致时。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma migrate reset</code></td>
+<td align="left">重置整个数据库，清空所有数据并重新应用所有迁移。</td>
+<td align="left">开发或测试环境中，需要回归到初始干净状态时。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma studio</code></td>
+<td align="left">启动一个Web界面，用于直观地查看和编辑数据库中的数据。</td>
+<td align="left">开发调试时快速查看、修改数据。</td>
+</tr>
+<tr>
+<td align="left"><code>prisma db seed</code></td>
+<td align="left">运行种子脚本，为数据库填充初始数据。</td>
+<td align="left">在<code>migrate reset</code>后或首次初始化数据库后自动填充基础数据。</td>
+</tr>
+</tbody></table>
+<p>执行<code>prisma migrate</code>系列命令，会产生数据记录表<code>_prisma_migrations</code>，记录每次迁移的详细信息，包括名称、开始时间、结束时间、状态等。Prisma在数据库中的id是迁移文件的MD5哈希值，所以迁移结束后手动修改迁移文件也会报不一致的错误。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/11/19/prisma/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2025/09/04/vibe-coding/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -947,95 +1088,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/05/26/macOS%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="qsl">
-      <meta itemprop="description" content="Mobile, Web">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QSL">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/26/macOS%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">macOS结构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-05-26 20:40:14" itemprop="dateCreated datePublished" datetime="2022-05-26T20:40:14+08:00">2022-05-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-27 09:48:00" itemprop="dateModified" datetime="2022-05-27T09:48:00+08:00">2022-05-27</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/05/26/macOS%E7%BB%93%E6%9E%84/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/05/26/macOS结构/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-macOS结构"><a href="#1-macOS结构" class="headerlink" title="1. macOS结构"></a>1. macOS结构</h3><p><img src="/images/macOS.webp" alt="macOS"></p>
-<blockquote>
-<p>Mac OS X 包含两个主要部分：以 FreeBSD 源代码 和 Mach 微核心为基础的 XUN 混合内核，并在 XNU 上构建的 Darwin 核心系统；及一个由苹果开发，称为 Aqua 的闭源、独占版权的图形用户界面。细分的看，Mac OS X 系统可以分成五层结构，每一层有其代表性技术。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/26/macOS%E7%BB%93%E6%9E%84/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1107,7 +1159,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
